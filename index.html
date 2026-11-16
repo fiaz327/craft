@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-
-<html class="dark" lang="en"><head>
+<html lang="en">
+<head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
 <meta content="mobile_tab" name="shell-type"/>
 <title>DevCraft — 50+ Free Client-Side Developer Tools &amp; Zero Server Upload Web Utilities</title>
 <meta content="Discover 50+ lightning-fast, 100% client-side developer, designer, and financial micro-tools. Zero server upload, completely private in-browser utilities, offline ready." name="description"/>
-<meta content="Free Client-Side Developer Tools, Zero Server Upload Web Utilities, Private In-Browser Calculators, CSS Glassmorphism generator, PX to REM converter, client side privacy tools" name="keywords"/>
+<meta content="Free Client-Side Developer Tools, Zero Server Upload Web Utilities, Private In-Browser Calculators, CSS Glassmorphism generator, PX to REM converter, client side privacy tools, online developer tools" name="keywords"/>
 <!-- Google Fonts & Material Symbols -->
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -257,8 +257,8 @@
 </button>
 <!-- Theme Toggle Switch (Dark / Light) -->
 <button aria-label="Toggle Theme Mode" class="w-9 h-9 flex items-center justify-center rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface transition-all active:scale-90 relative overflow-hidden group" id="themeToggleBtn" title="Toggle Light / Dark Mode">
-<span class="material-symbols-outlined text-[20px] text-amber-400 hidden" id="themeIconLight">light_mode</span>
-<span class="material-symbols-outlined text-[20px] text-indigo-400" id="themeIconDark">dark_mode</span>
+<span class="material-symbols-outlined text-[20px] text-amber-400" id="themeIconLight">light_mode</span>
+<span class="material-symbols-outlined text-[20px] text-indigo-400 hidden" id="themeIconDark">dark_mode</span>
 </button>
 <!-- Offline / Client State Indicator Badge -->
 <div class="hidden sm:flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-500 text-[11px] font-mono font-medium">
@@ -1027,7 +1027,7 @@
 <!-- Complete Vanilla JavaScript Interactive Engine -->
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-      // 1. Working Dark/Light Mode Toggle Switch
+      // 1. Working Dark/Light Mode Toggle Switch (Default to Light Mode)
       const themeToggleBtn = document.getElementById('themeToggleBtn');
       const lightIcon = document.getElementById('themeIconLight');
       const darkIcon = document.getElementById('themeIconDark');
@@ -1036,21 +1036,21 @@
       function updateThemeIcons(isDark) {
         if (isDark) {
           rootHtml.classList.add('dark');
-          lightIcon.classList.add('hidden');
-          darkIcon.classList.remove('hidden');
+          lightIcon.classList.remove('hidden');
+          darkIcon.classList.add('hidden');
         } else {
           rootHtml.classList.remove('dark');
-          darkIcon.classList.add('hidden');
-          lightIcon.classList.remove('hidden');
+          darkIcon.classList.remove('hidden');
+          lightIcon.classList.add('hidden');
         }
       }
 
-      // Check system or saved preference
+      // Check system or saved preference (Default to light mode if not set)
       const savedTheme = localStorage.getItem('devcraft_theme');
       if (savedTheme) {
         updateThemeIcons(savedTheme === 'dark');
       } else {
-        updateThemeIcons(true); // Default sleek dark mode
+        updateThemeIcons(false); // Default to Light Mode
       }
 
       if (themeToggleBtn) {
@@ -1329,4 +1329,5 @@
       filterTools();
     });
   </script>
-</body></html>
+</body>
+</html>
