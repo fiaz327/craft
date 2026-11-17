@@ -1,17 +1,18 @@
-<!DOCTYPE html>
+
+html_code = """<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
-  <title>Free Online Receipt Maker &amp; Printable Shop Invoice Generator (PDF &amp; Stamp)</title>
-  <meta content="Create clean, printable shop receipts and customer invoices in seconds. Add items by unit or weight, calculate discounts and balance due, apply a PAID or PENDING stamp, and save as PDF." name="description"/>
-  <meta content="free online receipt maker, shop receipt generator pdf, printable customer receipt template, receipt generator with paid stamp, retail billing receipt maker, simple invoice and receipt creator" name="keywords"/>
+  <title>Free Printable Receipt Maker &amp; Shop Invoice Generator (PDF &amp; Thermal)</title>
+  <meta content="Create clean, printable shop receipts and retail invoices online in seconds. Add items by unit or weight, calculate discounts and balance due, apply PAID or PENDING stamps, and download high-res PDF or thermal printer formats." name="description"/>
+  <meta content="free printable receipt maker, online shop invoice generator pdf, retail billing receipt template, receipt maker with paid stamp, thermal printer receipt generator, grocery store bill maker online" name="keywords"/>
   <link rel="canonical" href="https://divcraft.online/receipt-maker.html"/>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%234f46e5'><path d='M19.5 3.5L18 2l-1.5 1.5L15 2l-1.5 1.5L12 2l-1.5 1.5L9 2 7.5 3.5 6 2v14H3v3c0 1.66 1.34 3 3 3h12c1.66 0 3-1.34 3-3V2l-1.5 1.5zM15 20H6c-.55 0-1-.45-1-1v-1h10v2zm4-1c0 .55-.45 1-1 1s-1-.45-1-1v-3H8V5h11v14z'/></svg>">
 
   <!-- Open Graph / Social SEO -->
-  <meta property="og:title" content="Free Online Receipt Maker & Printable Shop Invoice Generator"/>
-  <meta property="og:description" content="Build custom business receipts with unit/weight pricing, automatic discounts, balance tracking, and a round PAID or red PENDING stamp. Export high-res PDF in one click."/>
+  <meta property="og:title" content="Free Printable Receipt Maker & Shop Invoice Generator"/>
+  <meta property="og:description" content="Build custom retail receipts with unit/weight pricing, automatic discounts, balance tracking, stamps, and instant A4 or Thermal PDF export."/>
   <meta property="og:type" content="website"/>
   <meta property="og:url" content="https://divcraft.online/receipt-maker.html"/>
 
@@ -89,6 +90,7 @@
     html:not(.dark) .bg-surface { background-color: #f8fafc !important; }
     html:not(.dark) .bg-surface-container-lowest { background-color: #ffffff !important; }
     html:not(.dark) .bg-surface-container-low { background-color: #ffffff !important; }
+    html.dark .bg-surface-container-low { background-color: #121826 !important; }
     html:not(.dark) .bg-surface-container { background-color: #f1f5f9 !important; }
     html:not(.dark) .bg-surface-container-high { background-color: #e2e8f0 !important; }
     html:not(.dark) .text-on-surface { color: #0f172a !important; }
@@ -99,7 +101,6 @@
        ========================================================= */
     .receipt-paper {
       width: 100%;
-      max-width: 138mm;
       background: #ffffff !important;
       color: #0f172a !important;
       padding: 22px 20px;
@@ -111,34 +112,13 @@
       box-shadow: 0 12px 32px rgba(15, 23, 42, 0.12);
       box-sizing: border-box;
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      transition: max-width 0.25s ease;
     }
 
-    /* Subtle Diagonal SAMPLE Watermark Hovering Over Preview */
-    .sample-watermark {
-      position: absolute;
-      top: 24%;
-      left: 50%;
-      transform: translate(-50%, -50%) rotate(-24deg);
-      font-size: 46px;
-      font-weight: 900;
-      letter-spacing: 0.18em;
-      color: rgba(79, 70, 229, 0.08);
-      border: 3px dashed rgba(79, 70, 229, 0.14);
-      padding: 4px 18px;
-      border-radius: 8px;
-      pointer-events: none;
-      user-select: none;
-      z-index: 4;
-      white-space: nowrap;
-      transition: opacity 0.2s ease;
-    }
-    .receipt-paper:hover .sample-watermark {
-      opacity: 0.25;
-    }
-    /* Hide sample badge when exporting PDF */
-    .exporting-pdf .sample-watermark {
-      display: none !important;
-    }
+    /* Format Width Variants */
+    .format-standard { max-width: 138mm !important; }
+    .format-thermal-80 { max-width: 78mm !important; padding: 16px 12px !important; font-size: 11px !important; }
+    .format-thermal-58 { max-width: 56mm !important; padding: 12px 8px !important; font-size: 10px !important; }
 
     /* --- EXACT CIRCULAR PAID & RECTANGULAR PENDING STAMP SYSTEM --- */
     .stamp-container {
@@ -148,8 +128,8 @@
       transform: translateY(-50%) rotate(-12deg);
       z-index: 10;
       pointer-events: none;
-      width: 146px;
-      height: 146px;
+      width: 130px;
+      height: 130px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -158,31 +138,31 @@
     .stamp-pending {
       border: 4px double #dc2626;
       color: #dc2626;
-      font-size: 22px;
+      font-size: 20px;
       font-weight: 900;
-      padding: 6px 16px;
-      opacity: 0.28;
+      padding: 6px 14px;
+      opacity: 0.35;
       text-transform: uppercase;
       letter-spacing: 0.08em;
-      background: rgba(255, 255, 255, 0.65);
+      background: rgba(255, 255, 255, 0.75);
     }
 
     .stamp-paid-circle {
-      width: 146px;
-      height: 146px;
+      width: 130px;
+      height: 130px;
       position: relative;
       display: flex;
       align-items: center;
       justify-content: center;
       color: #15803d;
-      opacity: 0.34;
+      opacity: 0.38;
       box-sizing: border-box;
     }
 
     .outer-ring-1 {
       position: absolute;
-      width: 146px;
-      height: 146px;
+      width: 130px;
+      height: 130px;
       border: 3px solid #15803d;
       border-radius: 50%;
       top: 0;
@@ -192,8 +172,8 @@
 
     .outer-ring-2 {
       position: absolute;
-      width: 138px;
-      height: 138px;
+      width: 122px;
+      height: 122px;
       border: 1px solid #15803d;
       border-radius: 50%;
       top: 4px;
@@ -203,25 +183,25 @@
 
     .inner-circle-border {
       position: absolute;
-      width: 80px;
-      height: 80px;
+      width: 72px;
+      height: 72px;
       border: 2px solid #15803d;
       border-radius: 50%;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      font-size: 21px;
+      font-size: 19px;
       font-weight: 900;
-      background: rgba(255, 255, 255, 0.85);
+      background: rgba(255, 255, 255, 0.9);
       z-index: 5;
       box-sizing: border-box;
       letter-spacing: 0.04em;
     }
 
     .stamp-paid-circle svg {
-      width: 146px;
-      height: 146px;
+      width: 130px;
+      height: 130px;
       position: absolute;
       top: 0;
       left: 0;
@@ -230,10 +210,10 @@
 
     .curved-text {
       font-family: 'Arial Black', Impact, sans-serif;
-      font-size: 13.5px;
+      font-size: 12px;
       font-weight: 900;
       fill: #15803d;
-      letter-spacing: 1px;
+      letter-spacing: 0.8px;
     }
 
     @media print {
@@ -243,11 +223,9 @@
         position: fixed;
         left: 0;
         top: 0;
-        width: 138mm;
         box-shadow: none;
         border: none;
       }
-      .sample-watermark { display: none !important; }
     }
   </style>
 
@@ -258,7 +236,7 @@
     "@graph": [
       {
         "@type": "SoftwareApplication",
-        "name": "Free Online Receipt Maker & Shop Invoice Generator",
+        "name": "Free Printable Receipt Maker & Shop Invoice Generator",
         "applicationCategory": "BusinessApplication",
         "operatingSystem": "Web Browser",
         "url": "https://divcraft.online/receipt-maker.html",
@@ -267,7 +245,7 @@
           "price": "0",
           "priceCurrency": "USD"
         },
-        "description": "Browser-based shop receipt and invoice generator with unit and weight pricing, discount options, balance due tracking, official PAID/PENDING stamps, and instant PDF export."
+        "description": "Browser-based shop receipt and retail invoice generator with unit and weight pricing, discount options, balance tracking, optional PAID/PENDING stamps, thermal printer formats, and instant PDF export."
       },
       {
         "@type": "FAQPage",
@@ -277,23 +255,23 @@
             "name": "How do I create a printable receipt for my shop online?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Enter your business name, phone number, and address in the Shop Details section, add your products with quantities and unit or weight prices, and click Save PDF to download a ready-to-print receipt."
+              "text": "Enter your business name, phone number, and address in the Shop Details section, add your products with quantities and unit or weight prices, and click Save PDF to download a ready-to-print customer receipt."
             }
           },
           {
             "@type": "Question",
-            "name": "How does the PAID and PENDING stamp work?",
+            "name": "Does the receipt include a PAID or PENDING stamp by default?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "When the Stamp option is enabled, the receipt automatically applies a green circular stamp with your shop name when the full amount is received, or a red PENDING stamp whenever a customer balance remains due."
+              "text": "No. By default, receipts are generated without any stamp. You can enable the official stamp option in the settings if you want a green PAID stamp or red PENDING stamp to appear."
             }
           },
           {
             "@type": "Question",
-            "name": "Is my customer or shop billing data saved on any server?",
+            "name": "Can I format receipts for thermal receipt printers like 80mm or 58mm?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "No. Everything runs locally inside your web browser. Your shop details can optionally be saved on your own device for convenience, and nothing is ever uploaded to external servers."
+              "text": "Yes! Use the printer format switcher above the live preview to instantly switch between Standard A4/Letter, Thermal 80mm, and Thermal 58mm widths before printing or exporting your PDF."
             }
           }
         ]
@@ -304,7 +282,7 @@
 </head>
 <body class="bg-surface text-on-surface font-sans flex flex-col min-h-screen transition-colors duration-200">
 
-  <!-- Fixed Top Navigation Header (Matches index.html & glassmorphism-lab.html) -->
+  <!-- Fixed Top Navigation Header -->
   <header class="fixed top-0 w-full z-50 pt-safe bg-surface/90 backdrop-blur-xl border-b border-outline/10 shadow-sm transition-colors duration-200">
     <div class="h-16 px-4 md:px-8 max-w-7xl mx-auto flex items-center justify-between gap-3">
       <!-- Brand & Tagline -->
@@ -357,10 +335,10 @@
             <span>Back to All Tools</span>
           </a>
           <h1 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-on-surface">
-            Free Online Shop Receipt &amp; Invoice Maker
+            Free Printable Receipt Maker &amp; Shop Invoice Generator
           </h1>
           <p class="text-sm text-on-surface-variant max-w-2xl">
-            Build clean, itemized customer receipts with flexible unit or weight pricing, automatic discounts, balance due tracking, and official PAID or PENDING stamps.
+            Build clean, itemized customer receipts with flexible unit or weight pricing, automatic discounts, balance tracking, thermal printer sizing, and optional official stamps.
           </p>
         </div>
 
@@ -548,7 +526,7 @@
                 <span class="w-6 h-6 rounded-lg bg-primary/15 text-primary font-mono text-xs font-bold flex items-center justify-center">5</span>
                 <div>
                   <h2 class="font-bold text-sm sm:text-base text-on-surface">Official Receipt Stamp</h2>
-                  <p class="text-[11px] text-on-surface-variant">Auto-apply green PAID stamp or red PENDING balance stamp</p>
+                  <p class="text-[11px] text-on-surface-variant">Optional green PAID or red PENDING stamp</p>
                 </div>
               </div>
               <span class="material-symbols-outlined text-on-surface-variant transition-transform duration-200" data-acc-icon>expand_more</span>
@@ -558,9 +536,9 @@
               <label class="flex items-center justify-between p-3 rounded-xl bg-surface-container border border-outline/15 cursor-pointer select-none">
                 <div class="flex flex-col">
                   <span class="text-xs font-bold text-on-surface">Enable Official Stamp on Receipt</span>
-                  <span class="text-[11px] text-on-surface-variant">Shows green circular PAID stamp when paid in full, or red PENDING stamp if balance is due.</span>
+                  <span class="text-[11px] text-on-surface-variant">Off by default. Check to apply green PAID or red PENDING stamp.</span>
                 </div>
-                <input id="enableStampCheckbox" type="checkbox" checked class="w-5 h-5 rounded border-outline/30 text-primary focus:ring-primary/20"/>
+                <input id="enableStampCheckbox" type="checkbox" class="w-5 h-5 rounded border-outline/30 text-primary focus:ring-primary/20"/>
               </label>
 
               <div class="flex flex-col gap-1">
@@ -578,11 +556,24 @@
         <div class="lg:col-span-6 lg:sticky lg:top-20 flex flex-col gap-4">
 
           <div class="bg-surface-container-low border border-outline/15 rounded-2xl p-4 sm:p-5 shadow-sm flex flex-col gap-4">
-            <!-- Top Action Bar -->
-            <div class="flex flex-wrap items-center justify-between gap-2 pb-3 border-b border-outline/10">
+            <!-- Top Action Bar & Format Switcher -->
+            <div class="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-outline/10">
               <div class="flex items-center gap-2">
                 <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
                 <h2 class="font-bold text-base text-on-surface">Live Receipt Preview</h2>
+              </div>
+
+              <!-- Format Switcher: Standard vs Thermal 80mm vs Thermal 58mm -->
+              <div class="flex items-center gap-1 bg-surface-container p-1 rounded-xl border border-outline/15">
+                <button type="button" data-format="standard" class="format-btn px-2.5 py-1 rounded-lg bg-surface-container-lowest text-primary font-mono text-xs font-bold shadow-xs transition-all">
+                  Standard A4
+                </button>
+                <button type="button" data-format="thermal80" class="format-btn px-2.5 py-1 rounded-lg text-on-surface-variant hover:text-on-surface font-mono text-xs font-semibold transition-all">
+                  Thermal 80mm
+                </button>
+                <button type="button" data-format="thermal58" class="format-btn px-2.5 py-1 rounded-lg text-on-surface-variant hover:text-on-surface font-mono text-xs font-semibold transition-all">
+                  Thermal 58mm
+                </button>
               </div>
 
               <div class="flex items-center gap-2">
@@ -599,16 +590,13 @@
             </div>
 
             <!-- Stage Wrapper -->
-            <div class="w-full rounded-xl bg-slate-200/70 dark:bg-slate-900/70 p-3 sm:p-6 overflow-x-auto border border-outline/10">
+            <div class="w-full rounded-xl bg-slate-200/70 dark:bg-slate-900/70 p-3 sm:p-6 overflow-x-auto border border-outline/10 flex justify-center">
 
               <!-- THE ACTUAL PRINTABLE RECEIPT CARD -->
-              <div id="receiptPreviewPaper" class="receipt-paper">
-
-                <!-- Hovering Diagonal Sample Watermark (Automatically hidden during PDF/Print) -->
-                <div class="sample-watermark" aria-hidden="true">LIVE PREVIEW</div>
+              <div id="receiptPreviewPaper" class="receipt-paper format-standard">
 
                 <!-- Dynamic Official Stamp Overlay -->
-                <div id="receiptStampContainer" class="stamp-container">
+                <div id="receiptStampContainer" class="stamp-container hidden">
                   <!-- Green Circular Paid Stamp -->
                   <div id="stampPaidVisual" class="stamp-paid-circle">
                     <div class="outer-ring-1"></div>
@@ -726,7 +714,7 @@
             </div>
 
             <p class="text-[11px] text-on-surface-variant text-center">
-              Hover over the receipt to inspect details clearly. The light <strong>LIVE PREVIEW</strong> watermark is automatically removed when you click <strong>Save PDF</strong> or <strong>Print</strong>.
+              Switch between <strong>Standard A4</strong>, <strong>Thermal 80mm</strong>, and <strong>Thermal 58mm</strong> using the top format buttons to match your printer width before downloading PDF.
             </p>
           </div>
         </div>
@@ -759,10 +747,10 @@
           <div class="flex flex-col gap-2">
             <h3 class="text-base font-bold text-on-surface flex items-center gap-2">
               <span class="w-6 h-6 rounded-lg bg-primary/10 text-primary font-mono text-xs flex items-center justify-center font-bold">2</span>
-              Automatic Balance Tracking &amp; Status Stamps
+              Thermal Printer Formatting &amp; Optional Stamps
             </h3>
             <p class="text-sm text-on-surface-variant leading-relaxed">
-              Enter the cash or card amount received from your customer to see the remaining balance update immediately. If the customer pays the full bill, our stamp engine places a crisp green circular <strong>PAID</strong> seal featuring your store name. If a partial payment leaves an unpaid balance, it automatically switches to a red <strong>PENDING</strong> stamp so both you and your client have clear records.
+              By default, receipts are generated clean without stamps. If needed, you can enable the official stamp option in the menu to apply a green <strong>PAID</strong> seal or red <strong>PENDING</strong> balance stamp. Use our built-in format switcher to instantly format receipts for <strong>Standard A4</strong> documents or <strong>Thermal 80mm / 58mm</strong> receipt rolls.
             </p>
           </div>
         </div>
@@ -785,31 +773,31 @@
         <div class="flex flex-col gap-2.5">
           <div class="faq-item bg-surface-container-low border border-outline/15 rounded-xl overflow-hidden">
             <button type="button" class="faq-toggle w-full p-4 flex items-center justify-between text-left font-semibold text-xs sm:text-sm text-on-surface">
-              <span>How does "Overall Price" differ from "Per Unit" or "Per Kg" pricing?</span>
+              <span>Are stamps enabled on receipts by default?</span>
               <span class="material-symbols-outlined text-[20px] text-on-surface-variant faq-arrow transition-transform">expand_more</span>
             </button>
             <div class="faq-content hidden px-4 pb-4 text-xs sm:text-sm text-on-surface-variant leading-relaxed border-t border-outline/10 pt-3">
-              When you choose <strong>Per Unit</strong> or <strong>Per Kg</strong>, the calculator multiplies your price by the quantity entered (for example, 3 units × $10 = $30). When you select <strong>Overall Price</strong>, the line total stays fixed at the exact price you typed regardless of whether the quantity is 300 grams or 5 items—ideal for pre-weighed packets or custom bundles.
+              No. By default, receipts are generated clean without any stamp. You can turn on the official stamp option in section 5 if you want a green PAID or red PENDING stamp to appear over your receipt.
             </div>
           </div>
 
           <div class="faq-item bg-surface-container-low border border-outline/15 rounded-xl overflow-hidden">
             <button type="button" class="faq-toggle w-full p-4 flex items-center justify-between text-left font-semibold text-xs sm:text-sm text-on-surface">
-              <span>Will the "LIVE PREVIEW" watermark appear on my downloaded PDF?</span>
+              <span>How do I format receipts for 80mm or 58mm thermal printers?</span>
               <span class="material-symbols-outlined text-[20px] text-on-surface-variant faq-arrow transition-transform">expand_more</span>
             </button>
             <div class="faq-content hidden px-4 pb-4 text-xs sm:text-sm text-on-surface-variant leading-relaxed border-t border-outline/10 pt-3">
-              No. The light diagonal watermark is only shown on screen while editing. As soon as you click <strong>Save PDF</strong> or <strong>Print</strong>, it disappears automatically so your customer gets a clean, official receipt.
+              Simply click the <strong>Thermal 80mm</strong> or <strong>Thermal 58mm</strong> buttons right above the live preview. The receipt preview instantly adjusts to thermal receipt roll dimensions so you can print or save PDF in exact printer width.
             </div>
           </div>
 
           <div class="faq-item bg-surface-container-low border border-outline/15 rounded-xl overflow-hidden">
             <button type="button" class="faq-toggle w-full p-4 flex items-center justify-between text-left font-semibold text-xs sm:text-sm text-on-surface">
-              <span>Can I use this receipt generator on my mobile phone?</span>
+              <span>Is my shop and customer billing data safe?</span>
               <span class="material-symbols-outlined text-[20px] text-on-surface-variant faq-arrow transition-transform">expand_more</span>
             </button>
             <div class="faq-content hidden px-4 pb-4 text-xs sm:text-sm text-on-surface-variant leading-relaxed border-t border-outline/10 pt-3">
-              Yes. The collapsible dropdown sections are built specifically for mobile screens so you can create a receipt at your shop counter, download the PDF, and send it straight to your customer over WhatsApp or email.
+              Yes. All calculations and PDF renderings execute entirely inside your web browser. Nothing is stored or transmitted to any external server.
             </div>
           </div>
         </div>
@@ -957,7 +945,7 @@
           });
         }
 
-        // 2. Accordion Dropdown Logic (Shop Details open by default, Product Details open for quick entry)
+        // 2. Accordion Dropdown Logic
         document.querySelectorAll('.acc-header').forEach(function (headerBtn) {
           headerBtn.addEventListener('click', function () {
             const targetId = headerBtn.getAttribute('data-acc-target');
@@ -978,7 +966,36 @@
           });
         });
 
-        // 3. State & Default Sample Items
+        // 3. Printer Format Switcher (Standard A4 vs Thermal 80mm vs Thermal 58mm)
+        const receiptPreviewPaper = document.getElementById('receiptPreviewPaper');
+        let currentPdfWidthMm = 138; // Default Standard
+
+        document.querySelectorAll('.format-btn').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            document.querySelectorAll('.format-btn').forEach(function (b) {
+              b.classList.remove('bg-surface-container-lowest', 'text-primary', 'font-bold', 'shadow-xs');
+              b.classList.add('text-on-surface-variant', 'font-semibold');
+            });
+            btn.classList.add('bg-surface-container-lowest', 'text-primary', 'font-bold', 'shadow-xs');
+            btn.classList.remove('text-on-surface-variant', 'font-semibold');
+
+            const fmt = btn.getAttribute('data-format');
+            receiptPreviewPaper.classList.remove('format-standard', 'format-thermal-80', 'format-thermal-58');
+
+            if (fmt === 'thermal80') {
+              receiptPreviewPaper.classList.add('format-thermal-80');
+              currentPdfWidthMm = 78;
+            } else if (fmt === 'thermal58') {
+              receiptPreviewPaper.classList.add('format-thermal-58');
+              currentPdfWidthMm = 56;
+            } else {
+              receiptPreviewPaper.classList.add('format-standard');
+              currentPdfWidthMm = 138;
+            }
+          });
+        });
+
+        // 4. State & Default Sample Items
         let products = [
           { id: 1, name: 'Organic Basmati Rice', qty: 2, unit: 'kg', price: 12.50, rateMode: 'per_kg' },
           { id: 2, name: 'Artisan Sourdough Loaf', qty: 3, unit: 'unit', price: 4.50, rateMode: 'per_unit' },
@@ -1068,7 +1085,7 @@
             .replace(/"/g, '&quot;');
         }
 
-        // 4. Render Product Entry Boxes in Left Panel
+        // 5. Render Product Entry Boxes in Left Panel
         function renderProductInputs() {
           productRowsContainer.innerHTML = products.map(function (item, idx) {
             return (
@@ -1160,7 +1177,7 @@
           });
         }
 
-        // 5. Core Calculation & Live Preview Update
+        // 6. Core Calculation & Live Preview Update
         let latestNetTotal = 0;
 
         function updateLiveReceipt() {
@@ -1308,18 +1325,14 @@
           });
         }
 
-        // 6. PDF Export & Print Handlers
+        // 7. PDF Export & Print Handlers
         const downloadPdfBtn = document.getElementById('downloadPdfBtn');
-        const receiptPreviewPaper = document.getElementById('receiptPreviewPaper');
 
         if (downloadPdfBtn && receiptPreviewPaper) {
           downloadPdfBtn.addEventListener('click', async function () {
             const origHtml = downloadPdfBtn.innerHTML;
             downloadPdfBtn.disabled = true;
             downloadPdfBtn.innerHTML = '<span class="material-symbols-outlined text-[16px] animate-spin">progress_activity</span><span>Generating...</span>';
-
-            // Hide sample watermark cleanly before capture
-            receiptPreviewPaper.classList.add('exporting-pdf');
 
             try {
               const canvas = await window.html2canvas(receiptPreviewPaper, {
@@ -1331,7 +1344,7 @@
 
               const imgData = canvas.toDataURL('image/png');
               const jsPDFCtor = window.jspdf.jsPDF;
-              const pdfWidth = 138;
+              const pdfWidth = currentPdfWidthMm;
               const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
 
               const pdf = new jsPDFCtor({
@@ -1346,7 +1359,6 @@
             } catch (err) {
               alert('Could not export PDF: ' + err.message);
             } finally {
-              receiptPreviewPaper.classList.remove('exporting-pdf');
               downloadPdfBtn.disabled = false;
               downloadPdfBtn.innerHTML = origHtml;
             }
@@ -1360,7 +1372,7 @@
           });
         }
 
-        // 7. FAQ Accordion
+        // 8. FAQ Accordion
         document.querySelectorAll('.faq-item').forEach(function (item) {
           const toggle = item.querySelector('.faq-toggle');
           const content = item.querySelector('.faq-content');
@@ -1391,3 +1403,9 @@
   </script>
 </body>
 </html>
+"""
+
+with open("receipt-maker.html", "w", encoding="utf-8") as f:
+    f.write(html_code)
+
+print("Updated receipt-maker.html successfully.")
