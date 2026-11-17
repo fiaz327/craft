@@ -1,20 +1,13 @@
-
-html_code = """<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
-  <title>Free Printable Receipt Maker &amp; Shop Invoice Generator (PDF &amp; Thermal)</title>
-  <meta content="Create clean, printable shop receipts and retail invoices online in seconds. Add items by unit or weight, calculate discounts and balance due, apply PAID or PENDING stamps, and download high-res PDF or thermal printer formats." name="description"/>
-  <meta content="free printable receipt maker, online shop invoice generator pdf, retail billing receipt template, receipt maker with paid stamp, thermal printer receipt generator, grocery store bill maker online" name="keywords"/>
+  <title>Free Online Receipt Maker &amp; Printable Shop Invoice Generator | PDF &amp; Stamp</title>
+  <meta content="Create clean, printable shop receipts and customer invoices instantly in your browser. Add items by unit or weight, calculate discounts, track balance due, stamp PAID or PENDING, and download PDF." name="description"/>
+  <meta content="free online receipt maker, shop receipt generator pdf, printable customer receipt template, receipt generator with paid stamp, retail billing receipt maker, simple invoice and receipt creator, online bill generator, POS receipt printer" name="keywords"/>
   <link rel="canonical" href="https://divcraft.online/receipt-maker.html"/>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%234f46e5'><path d='M19.5 3.5L18 2l-1.5 1.5L15 2l-1.5 1.5L12 2l-1.5 1.5L9 2 7.5 3.5 6 2v14H3v3c0 1.66 1.34 3 3 3h12c1.66 0 3-1.34 3-3V2l-1.5 1.5zM15 20H6c-.55 0-1-.45-1-1v-1h10v2zm4-1c0 .55-.45 1-1 1s-1-.45-1-1v-3H8V5h11v14z'/></svg>">
-
-  <!-- Open Graph / Social SEO -->
-  <meta property="og:title" content="Free Printable Receipt Maker & Shop Invoice Generator"/>
-  <meta property="og:description" content="Build custom retail receipts with unit/weight pricing, automatic discounts, balance tracking, stamps, and instant A4 or Thermal PDF export."/>
-  <meta property="og:type" content="website"/>
-  <meta property="og:url" content="https://divcraft.online/receipt-maker.html"/>
 
   <!-- Google Fonts & Material Symbols -->
   <link href="https://fonts.googleapis.com" rel="preconnect"/>
@@ -90,7 +83,6 @@ html_code = """<!DOCTYPE html>
     html:not(.dark) .bg-surface { background-color: #f8fafc !important; }
     html:not(.dark) .bg-surface-container-lowest { background-color: #ffffff !important; }
     html:not(.dark) .bg-surface-container-low { background-color: #ffffff !important; }
-    html.dark .bg-surface-container-low { background-color: #121826 !important; }
     html:not(.dark) .bg-surface-container { background-color: #f1f5f9 !important; }
     html:not(.dark) .bg-surface-container-high { background-color: #e2e8f0 !important; }
     html:not(.dark) .text-on-surface { color: #0f172a !important; }
@@ -101,6 +93,7 @@ html_code = """<!DOCTYPE html>
        ========================================================= */
     .receipt-paper {
       width: 100%;
+      max-width: 115mm;
       background: #ffffff !important;
       color: #0f172a !important;
       padding: 22px 20px;
@@ -112,109 +105,97 @@ html_code = """<!DOCTYPE html>
       box-shadow: 0 12px 32px rgba(15, 23, 42, 0.12);
       box-sizing: border-box;
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      transition: max-width 0.25s ease;
     }
 
-    /* Format Width Variants */
-    .format-standard { max-width: 138mm !important; }
-    .format-thermal-80 { max-width: 78mm !important; padding: 16px 12px !important; font-size: 11px !important; }
-    .format-thermal-58 { max-width: 56mm !important; padding: 12px 8px !important; font-size: 10px !important; }
-
-    /* --- EXACT CIRCULAR PAID & RECTANGULAR PENDING STAMP SYSTEM --- */
+    /* --- STARBURST ROSETTE STAMP SYSTEM (GREEN PAID / RED PENDING) --- */
     .stamp-container {
       position: absolute;
       top: 74%;
-      right: 34%;
-      transform: translateY(-50%) rotate(-12deg);
+      right: 32%;
+      transform: translateY(-50%) rotate(-10deg);
       z-index: 10;
       pointer-events: none;
-      width: 130px;
-      height: 130px;
+      width: 150px;
+      height: 150px;
       display: flex;
       align-items: center;
       justify-content: center;
     }
 
-    .stamp-pending {
-      border: 4px double #dc2626;
-      color: #dc2626;
-      font-size: 20px;
-      font-weight: 900;
-      padding: 6px 14px;
-      opacity: 0.35;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      background: rgba(255, 255, 255, 0.75);
-    }
-
-    .stamp-paid-circle {
-      width: 130px;
-      height: 130px;
+    .stamp-rosette {
+      width: 150px;
+      height: 150px;
       position: relative;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #15803d;
-      opacity: 0.38;
       box-sizing: border-box;
+      opacity: 0.88;
     }
 
-    .outer-ring-1 {
+    .stamp-rosette.paid {
+      color: #16a34a;
+    }
+    .stamp-rosette.pending {
+      color: #dc2626;
+    }
+
+    .stamp-rosette svg {
+      width: 150px;
+      height: 150px;
       position: absolute;
-      width: 130px;
-      height: 130px;
-      border: 3px solid #15803d;
-      border-radius: 50%;
       top: 0;
       left: 0;
-      box-sizing: border-box;
     }
 
-    .outer-ring-2 {
+    .rosette-starburst {
+      fill: none;
+      stroke-width: 3.5;
+      stroke-linejoin: round;
+      stroke-linecap: round;
+    }
+    .stamp-rosette.paid .rosette-starburst { stroke: #16a34a00; fill: rgba(22, 163, 74, 0.04); }
+    .stamp-rosette.pending .rosette-starburst { stroke: #16a34a00; fill: rgba(220, 38, 38, 0.04); }
+
+    .rosette-ring {
       position: absolute;
-      width: 122px;
-      height: 122px;
-      border: 1px solid #15803d;
+      width: 124px;
+      height: 124px;
+      border: 1.5px dashed currentColor;
       border-radius: 50%;
-      top: 4px;
-      left: 4px;
+      top: 13px;
+      left: 13px;
       box-sizing: border-box;
     }
 
-    .inner-circle-border {
+    .rosette-center {
       position: absolute;
-      width: 72px;
-      height: 72px;
-      border: 2px solid #15803d;
+      width: 78px;
+      height: 78px;
+      border: 2.5px solid currentColor;
       border-radius: 50%;
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
-      font-size: 19px;
+      font-family: 'Arial Black', Impact, sans-serif;
+      font-size: 20px;
       font-weight: 900;
-      background: rgba(255, 255, 255, 0.9);
+      background: #ffffff;
       z-index: 5;
       box-sizing: border-box;
       letter-spacing: 0.04em;
     }
-
-    .stamp-paid-circle svg {
-      width: 130px;
-      height: 130px;
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: 2;
-    }
+    .stamp-rosette.paid .rosette-center { color: #16a34a; }
+    .stamp-rosette.pending .rosette-center { color: #dc2626; font-size: 15px; }
 
     .curved-text {
       font-family: 'Arial Black', Impact, sans-serif;
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 900;
-      fill: #15803d;
-      letter-spacing: 0.8px;
+      letter-spacing: 1.2px;
     }
+    .stamp-rosette.paid .curved-text { fill: #16a34a00; }
+    .stamp-rosette.pending .curved-text { fill: #16a34a00; }
 
     @media print {
       body * { visibility: hidden; }
@@ -223,70 +204,19 @@ html_code = """<!DOCTYPE html>
         position: fixed;
         left: 0;
         top: 0;
+        width: 115mm;
         box-shadow: none;
         border: none;
       }
     }
   </style>
-
-  <!-- JSON-LD Structured Data for SEO -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "SoftwareApplication",
-        "name": "Free Printable Receipt Maker & Shop Invoice Generator",
-        "applicationCategory": "BusinessApplication",
-        "operatingSystem": "Web Browser",
-        "url": "https://divcraft.online/receipt-maker.html",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD"
-        },
-        "description": "Browser-based shop receipt and retail invoice generator with unit and weight pricing, discount options, balance tracking, optional PAID/PENDING stamps, thermal printer formats, and instant PDF export."
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "How do I create a printable receipt for my shop online?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Enter your business name, phone number, and address in the Shop Details section, add your products with quantities and unit or weight prices, and click Save PDF to download a ready-to-print customer receipt."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Does the receipt include a PAID or PENDING stamp by default?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "No. By default, receipts are generated without any stamp. You can enable the official stamp option in the settings if you want a green PAID stamp or red PENDING stamp to appear."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Can I format receipts for thermal receipt printers like 80mm or 58mm?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes! Use the printer format switcher above the live preview to instantly switch between Standard A4/Letter, Thermal 80mm, and Thermal 58mm widths before printing or exporting your PDF."
-            }
-          }
-        ]
-      }
-    ]
-  }
-  </script>
 </head>
 <body class="bg-surface text-on-surface font-sans flex flex-col min-h-screen transition-colors duration-200">
 
   <!-- Fixed Top Navigation Header -->
   <header class="fixed top-0 w-full z-50 pt-safe bg-surface/90 backdrop-blur-xl border-b border-outline/10 shadow-sm transition-colors duration-200">
     <div class="h-16 px-4 md:px-8 max-w-7xl mx-auto flex items-center justify-between gap-3">
-      <!-- Brand & Tagline -->
-      <a class="flex items-center gap-2.5 group" href="index.html">
+      <div class="flex items-center gap-2.5 group">
         <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-indigo-600 via-primary to-cyan-400 p-[1.5px] shadow-sm flex items-center justify-center">
           <div class="w-full h-full bg-surface-container-lowest rounded-[10px] flex items-center justify-center">
             <span class="material-symbols-outlined text-primary text-[20px]">terminal</span>
@@ -299,22 +229,14 @@ html_code = """<!DOCTYPE html>
           </div>
           <span class="text-[10px] font-mono text-on-surface-variant font-medium tracking-wide">Client-Side Hub</span>
         </div>
-      </a>
+      </div>
 
-      <!-- Header Actions -->
       <div class="flex items-center gap-2">
-        <a href="index.html" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-surface-container hover:bg-surface-container-high text-xs font-mono font-medium text-on-surface transition-all">
-          <span class="material-symbols-outlined text-[16px]">grid_view</span>
-          <span>All Tools</span>
-        </a>
-
-        <!-- Theme Toggle Switch -->
         <button type="button" aria-label="Toggle Theme Mode" class="w-9 h-9 flex items-center justify-center rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface transition-all active:scale-90" id="themeToggleBtn" title="Toggle Light / Dark Mode">
           <span class="material-symbols-outlined text-[20px] text-amber-400" id="themeIconLight">light_mode</span>
           <span class="material-symbols-outlined text-[20px] text-indigo-400 hidden" id="themeIconDark">dark_mode</span>
         </button>
 
-        <!-- Client State Badge -->
         <div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 dark:text-emerald-400 text-[11px] font-mono font-medium">
           <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
           <span>Runs in Browser</span>
@@ -327,22 +249,16 @@ html_code = """<!DOCTYPE html>
   <main class="flex flex-col relative w-full pt-20 pb-24 min-h-screen">
     <div class="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 flex flex-col gap-6">
 
-      <!-- Breadcrumb & Tool Header -->
       <section class="pt-3 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
         <div class="flex flex-col gap-1.5">
-          <a href="index.html" class="inline-flex items-center gap-1 text-xs font-mono text-primary hover:underline w-fit">
-            <span class="material-symbols-outlined text-[15px]">arrow_back</span>
-            <span>Back to All Tools</span>
-          </a>
           <h1 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-on-surface">
-            Free Printable Receipt Maker &amp; Shop Invoice Generator
+            Free Online Shop Receipt &amp; Invoice Maker
           </h1>
           <p class="text-sm text-on-surface-variant max-w-2xl">
-            Build clean, itemized customer receipts with flexible unit or weight pricing, automatic discounts, balance tracking, thermal printer sizing, and optional official stamps.
+            Build clean, itemized customer receipts with flexible unit or weight pricing, automatic discounts, balance due tracking, and official PAID or PENDING stamps[cite: 16].
           </p>
         </div>
 
-        <!-- Quick Currency & Save Shop Info Controls -->
         <div class="flex flex-wrap items-center gap-2">
           <div class="flex items-center gap-1.5 bg-surface-container-low border border-outline/15 rounded-xl px-3 py-1.5">
             <span class="text-xs font-mono text-on-surface-variant">Currency:</span>
@@ -363,15 +279,13 @@ html_code = """<!DOCTYPE html>
         </div>
       </section>
 
-      <!-- Main 2-Column Studio Workspace: Left Accordion Builder + Right Live Receipt Preview -->
+      <!-- Main Workspace -->
       <section class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
 
-        <!-- =========================================================
-             LEFT COLUMN: 5 ACCORDION DROPDOWN SECTIONS (6 cols on lg)
-             ========================================================= -->
+        <!-- Left Accordion Controls -->
         <div class="lg:col-span-6 flex flex-col gap-3.5">
 
-          <!-- 1. SHOP DETAILS DROPDOWN (OPEN BY DEFAULT) -->
+          <!-- 1. Shop Details -->
           <div class="accordion-card bg-surface-container-low border border-outline/15 rounded-2xl overflow-hidden shadow-sm">
             <button type="button" data-acc-target="accShopDetails" class="acc-header w-full px-4 sm:px-5 py-3.5 flex items-center justify-between bg-surface-container/50 hover:bg-surface-container transition-colors text-left">
               <div class="flex items-center gap-2.5">
@@ -385,19 +299,16 @@ html_code = """<!DOCTYPE html>
             </button>
 
             <div id="accShopDetails" class="p-4 sm:p-5 flex flex-col gap-3.5 border-t border-outline/10">
-              <!-- Box 1: Business Name -->
               <div class="flex flex-col gap-1">
                 <label for="shopNameInput" class="text-xs font-semibold text-on-surface">Business / Shop Name</label>
                 <input id="shopNameInput" type="text" value="METRO FRESH MART & BAKERY" placeholder="e.g., Green Valley Grocers" class="w-full rounded-xl bg-surface-container-lowest border border-outline/20 text-sm text-on-surface px-3.5 py-2 focus:border-primary focus:ring-primary/20"/>
               </div>
 
-              <!-- Box 2: Address -->
               <div class="flex flex-col gap-1">
                 <label for="shopAddressInput" class="text-xs font-semibold text-on-surface">Shop Address</label>
                 <input id="shopAddressInput" type="text" value="742 Evergreen Plaza, Suite 104, Austin, TX" placeholder="Street address, city, or market location" class="w-full rounded-xl bg-surface-container-lowest border border-outline/20 text-sm text-on-surface px-3.5 py-2 focus:border-primary focus:ring-primary/20"/>
               </div>
 
-              <!-- Box 3: Phone Number -->
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div class="flex flex-col gap-1">
                   <label for="shopPhoneInput" class="text-xs font-semibold text-on-surface">Phone Number</label>
@@ -409,7 +320,6 @@ html_code = """<!DOCTYPE html>
                 </div>
               </div>
 
-              <!-- Receipt Number & Date -->
               <div class="grid grid-cols-2 gap-3 pt-1">
                 <div class="flex flex-col gap-1">
                   <label for="receiptNoInput" class="text-xs font-semibold text-on-surface">Receipt #</label>
@@ -423,7 +333,7 @@ html_code = """<!DOCTYPE html>
             </div>
           </div>
 
-          <!-- 2. PRODUCT DETAILS DROPDOWN -->
+          <!-- 2. Product Details -->
           <div class="accordion-card bg-surface-container-low border border-outline/15 rounded-2xl overflow-hidden shadow-sm">
             <button type="button" data-acc-target="accProductDetails" class="acc-header w-full px-4 sm:px-5 py-3.5 flex items-center justify-between bg-surface-container/50 hover:bg-surface-container transition-colors text-left">
               <div class="flex items-center gap-2.5">
@@ -437,10 +347,7 @@ html_code = """<!DOCTYPE html>
             </button>
 
             <div id="accProductDetails" class="p-4 sm:p-5 flex flex-col gap-3.5 border-t border-outline/10">
-              <!-- Dynamic Product List Container -->
               <div id="productRowsContainer" class="flex flex-col gap-3"></div>
-
-              <!-- Add Another Product (+ Button) -->
               <button type="button" id="addProductBtn" class="w-full py-2.5 px-4 rounded-xl border-2 border-dashed border-primary/40 hover:border-primary bg-primary/5 hover:bg-primary/10 text-primary font-mono text-xs font-bold flex items-center justify-center gap-1.5 transition-all active:scale-[0.99]">
                 <span class="material-symbols-outlined text-[18px]">add_circle</span>
                 <span>Add Another Product</span>
@@ -448,7 +355,7 @@ html_code = """<!DOCTYPE html>
             </div>
           </div>
 
-          <!-- 3. DISCOUNT DROPDOWN -->
+          <!-- 3. Discount -->
           <div class="accordion-card bg-surface-container-low border border-outline/15 rounded-2xl overflow-hidden shadow-sm">
             <button type="button" data-acc-target="accDiscountDetails" class="acc-header w-full px-4 sm:px-5 py-3.5 flex items-center justify-between bg-surface-container/50 hover:bg-surface-container transition-colors text-left">
               <div class="flex items-center gap-2.5">
@@ -466,17 +373,14 @@ html_code = """<!DOCTYPE html>
               <div class="flex items-stretch rounded-xl overflow-hidden border border-outline/20 bg-surface-container-lowest focus-within:border-primary">
                 <input id="discountValueInput" type="number" min="0" step="any" value="0" placeholder="0" class="w-full border-none bg-transparent text-sm font-mono font-semibold text-on-surface px-3.5 py-2 focus:ring-0"/>
                 <select id="discountTypeSelect" class="border-0 border-l border-outline/15 bg-surface-container text-xs font-mono font-semibold text-on-surface px-3 py-2 focus:ring-0">
-                  <option value="percent">Percentage (%)</option>
+                  <option value="percent">Per (%)</option>
                   <option value="fixed">Fixed Amount</option>
                 </select>
               </div>
-              <p class="text-[11px] text-on-surface-variant">
-                Select <strong>Percentage (%)</strong> to deduct a percentage from the total bill, or <strong>Fixed Amount</strong> to subtract an exact cash discount.
-              </p>
             </div>
           </div>
 
-          <!-- 4. RECEIVED AMOUNT & BALANCE DUE DROPDOWN -->
+          <!-- 4. Payment & Balance -->
           <div class="accordion-card bg-surface-container-low border border-outline/15 rounded-2xl overflow-hidden shadow-sm">
             <button type="button" data-acc-target="accPaymentDetails" class="acc-header w-full px-4 sm:px-5 py-3.5 flex items-center justify-between bg-surface-container/50 hover:bg-surface-container transition-colors text-left">
               <div class="flex items-center gap-2.5">
@@ -513,20 +417,17 @@ html_code = """<!DOCTYPE html>
                   <input id="footerNoteInput" type="text" value="Thank you for shopping with us!" class="w-full rounded-xl bg-surface-container-lowest border border-outline/20 text-xs text-on-surface px-3 py-2 focus:border-primary focus:ring-primary/20"/>
                 </div>
               </div>
-              <p class="text-[11px] text-on-surface-variant">
-                If the customer pays less than the net total, the remaining balance automatically shows as <strong>Balance Due</strong> on the receipt.
-              </p>
             </div>
           </div>
 
-          <!-- 5. OFFICIAL STAMP DROPDOWN -->
+          <!-- 5. Official Stamp -->
           <div class="accordion-card bg-surface-container-low border border-outline/15 rounded-2xl overflow-hidden shadow-sm">
             <button type="button" data-acc-target="accStampDetails" class="acc-header w-full px-4 sm:px-5 py-3.5 flex items-center justify-between bg-surface-container/50 hover:bg-surface-container transition-colors text-left">
               <div class="flex items-center gap-2.5">
                 <span class="w-6 h-6 rounded-lg bg-primary/15 text-primary font-mono text-xs font-bold flex items-center justify-center">5</span>
                 <div>
                   <h2 class="font-bold text-sm sm:text-base text-on-surface">Official Receipt Stamp</h2>
-                  <p class="text-[11px] text-on-surface-variant">Optional green PAID or red PENDING stamp</p>
+                  <p class="text-[11px] text-on-surface-variant">Auto-apply green PAID stamp or red PENDING balance stamp</p>
                 </div>
               </div>
               <span class="material-symbols-outlined text-on-surface-variant transition-transform duration-200" data-acc-icon>expand_more</span>
@@ -536,7 +437,7 @@ html_code = """<!DOCTYPE html>
               <label class="flex items-center justify-between p-3 rounded-xl bg-surface-container border border-outline/15 cursor-pointer select-none">
                 <div class="flex flex-col">
                   <span class="text-xs font-bold text-on-surface">Enable Official Stamp on Receipt</span>
-                  <span class="text-[11px] text-on-surface-variant">Off by default. Check to apply green PAID or red PENDING stamp.</span>
+                  <span class="text-[11px] text-on-surface-variant">Shows green circular PAID stamp when paid in full, or red PENDING stamp if balance is due.</span>
                 </div>
                 <input id="enableStampCheckbox" type="checkbox" class="w-5 h-5 rounded border-outline/30 text-primary focus:ring-primary/20"/>
               </label>
@@ -550,30 +451,13 @@ html_code = """<!DOCTYPE html>
 
         </div>
 
-        <!-- =========================================================
-             RIGHT COLUMN: LIVE RECEIPT PREVIEW & PDF EXPORT (6 cols)
-             ========================================================= -->
+        <!-- Right Live Preview Column -->
         <div class="lg:col-span-6 lg:sticky lg:top-20 flex flex-col gap-4">
-
           <div class="bg-surface-container-low border border-outline/15 rounded-2xl p-4 sm:p-5 shadow-sm flex flex-col gap-4">
-            <!-- Top Action Bar & Format Switcher -->
-            <div class="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-outline/10">
+            <div class="flex flex-wrap items-center justify-between gap-2 pb-3 border-b border-outline/10">
               <div class="flex items-center gap-2">
                 <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
                 <h2 class="font-bold text-base text-on-surface">Live Receipt Preview</h2>
-              </div>
-
-              <!-- Format Switcher: Standard vs Thermal 80mm vs Thermal 58mm -->
-              <div class="flex items-center gap-1 bg-surface-container p-1 rounded-xl border border-outline/15">
-                <button type="button" data-format="standard" class="format-btn px-2.5 py-1 rounded-lg bg-surface-container-lowest text-primary font-mono text-xs font-bold shadow-xs transition-all">
-                  Standard A4
-                </button>
-                <button type="button" data-format="thermal80" class="format-btn px-2.5 py-1 rounded-lg text-on-surface-variant hover:text-on-surface font-mono text-xs font-semibold transition-all">
-                  Thermal 80mm
-                </button>
-                <button type="button" data-format="thermal58" class="format-btn px-2.5 py-1 rounded-lg text-on-surface-variant hover:text-on-surface font-mono text-xs font-semibold transition-all">
-                  Thermal 58mm
-                </button>
               </div>
 
               <div class="flex items-center gap-2">
@@ -589,38 +473,30 @@ html_code = """<!DOCTYPE html>
               </div>
             </div>
 
-            <!-- Stage Wrapper -->
-            <div class="w-full rounded-xl bg-slate-200/70 dark:bg-slate-900/70 p-3 sm:p-6 overflow-x-auto border border-outline/10 flex justify-center">
+            <!-- Receipt Paper Card -->
+            <div class="w-full rounded-xl bg-slate-200/70 dark:bg-slate-900/70 p-3 sm:p-6 overflow-x-auto border border-outline/10">
+              <div id="receiptPreviewPaper" class="receipt-paper">
 
-              <!-- THE ACTUAL PRINTABLE RECEIPT CARD -->
-              <div id="receiptPreviewPaper" class="receipt-paper format-standard">
-
-                <!-- Dynamic Official Stamp Overlay -->
+                <!-- Starburst Stamp Overlay -->
                 <div id="receiptStampContainer" class="stamp-container hidden">
-                  <!-- Green Circular Paid Stamp -->
-                  <div id="stampPaidVisual" class="stamp-paid-circle">
-                    <div class="outer-ring-1"></div>
-                    <div class="outer-ring-2"></div>
+                  <div id="stampRosetteVisual" class="stamp-rosette paid">
                     <svg viewBox="0 0 160 160">
-                      <path id="stampTextCurve" d="M 24, 80 a 56,56 0 1,1 112,0 a 56,56 0 1,1 -112,0" fill="transparent" />
+                      <path class="rosette-starburst" d="M80,3.5 L88.5,14 L101.5,8 L107.5,20 L121,17 L124,30 L138,30 L138,44 L150,51 L148,65 L159,75 L152,89 L160,100 L150,111 L156,125 L144,133 L147,147 L133,151 L132,165 L118,165 L113,178 L99,174 L91,185 L78,179 L68,187 L57,179 L48,185 L39,173 L26,177 L23,163 L11,161 L12,147 L1,139 L6,125 L0,113 L9,101 L2,89 L11,77 L4,65 L15,57 L11,44 L25,40 L24,26 L38,25 L45,13 L58,19 L67,9 L80,3.5 Z" transform="translate(0, -10)" />
+                      <path id="stampTextCurveTop" d="M 32, 72 a 48,48 0 0,1 96, 0" fill="transparent" />
+                      <path id="stampTextCurveBottom" d="M 128, 92 a 48,48 0 0,1 -96, 0" fill="transparent" />
                       <text class="curved-text">
-                        <textPath id="stampCurvedTextPath" href="#stampTextCurve" startOffset="2%">
-                          ★ METRO FRESH MART ★
-                        </textPath>
+                        <textPath href="#stampTextCurveTop" startOffset="8%">THANK YOU</textPath>
+                      </text>
+                      <text class="curved-text">
+                        <textPath href="#stampTextCurveBottom" startOffset="12%">THANK YOU</textPath>
                       </text>
                     </svg>
-                    <div class="inner-circle-border">
-                      <span>PAID</span>
-                    </div>
-                  </div>
-
-                  <!-- Red Pending Stamp -->
-                  <div id="stampPendingVisual" class="stamp-pending hidden">
-                    PENDING
+                    <div class="rosette-ring"></div>
+                    <div id="stampCenterText" class="rosette-center">PAID</div>
                   </div>
                 </div>
 
-                <!-- Receipt Header: Business Details -->
+                <!-- Receipt Header -->
                 <div class="text-center border-b-2 border-slate-800 pb-2.5 mb-3">
                   <div id="prevShopName" class="text-xl sm:text-2xl font-black tracking-tight text-slate-900 uppercase leading-tight">
                     METRO FRESH MART &amp; BAKERY
@@ -635,20 +511,17 @@ html_code = """<!DOCTYPE html>
                   </div>
                 </div>
 
-                <!-- Receipt Badge -->
                 <div class="text-center mb-3">
                   <span class="inline-block bg-slate-900 text-white text-[10px] font-mono font-bold tracking-widest uppercase px-3 py-1 rounded">
                     SALES RECEIPT
                   </span>
                 </div>
 
-                <!-- Receipt Meta Row -->
                 <div class="flex justify-between text-xs text-slate-700 mb-2">
                   <span>Receipt #: <strong id="prevReceiptNo" class="text-slate-900 font-mono">INV-1048</strong></span>
                   <span>Date: <strong id="prevReceiptDate" class="text-slate-900 font-mono">17-Nov-2026</strong></span>
                 </div>
 
-                <!-- Customer & Payment Method Strip -->
                 <div class="border-l-4 border-indigo-600 pl-2.5 py-1 mb-3 bg-slate-50/80 text-xs flex flex-col gap-0.5">
                   <div class="flex justify-between">
                     <span class="text-slate-600">Customer:</span>
@@ -660,22 +533,18 @@ html_code = """<!DOCTYPE html>
                   </div>
                 </div>
 
-                <!-- Itemized Products Table -->
                 <table class="w-full text-left border-collapse mb-3 text-xs">
                   <thead>
                     <tr class="border-y border-slate-800 text-[11px] uppercase tracking-wider text-slate-700">
                       <th class="py-1.5 font-bold">Item</th>
                       <th class="py-1.5 font-bold text-center">Qty</th>
-                      <th class="py-1.5 font-bold text-right">Rate</th>
+                      <th class="py-1.5 font-bold text-right">Price</th>
                       <th class="py-1.5 font-bold text-right">Total</th>
                     </tr>
                   </thead>
-                  <tbody id="prevItemsTbody" class="divide-y divide-slate-200 text-slate-800">
-                    <!-- Populated dynamically via JS -->
-                  </tbody>
+                  <tbody id="prevItemsTbody" class="divide-y divide-slate-200 text-slate-800"></tbody>
                 </table>
 
-                <!-- Totals & Balance Box -->
                 <div class="bg-slate-50 border border-slate-200 rounded-lg p-2.5 text-xs flex flex-col gap-1.5 mb-2.5">
                   <div class="flex justify-between text-slate-700">
                     <span>Subtotal:</span>
@@ -698,13 +567,11 @@ html_code = """<!DOCTYPE html>
                   </div>
                 </div>
 
-                <!-- Remaining Balance / Change Line -->
                 <div class="flex justify-between items-center px-1 text-xs font-bold">
                   <span id="prevBalanceLabel" class="text-slate-800">Balance Due:</span>
                   <span id="prevBalanceValue" class="font-mono text-emerald-700">$0.00</span>
                 </div>
 
-                <!-- Footer Bar -->
                 <div class="mt-4 pt-2 border-t border-dotted border-slate-500 flex items-center justify-between text-[11px]">
                   <span id="prevFooterNote" class="font-semibold italic text-slate-700">Thank you for shopping with us!</span>
                   <span class="text-[9px] font-mono font-bold uppercase tracking-wider px-1.5 py-0.5 border border-slate-400 rounded text-slate-700">Customer Copy</span>
@@ -712,24 +579,18 @@ html_code = """<!DOCTYPE html>
 
               </div>
             </div>
-
-            <p class="text-[11px] text-on-surface-variant text-center">
-              Switch between <strong>Standard A4</strong>, <strong>Thermal 80mm</strong>, and <strong>Thermal 58mm</strong> using the top format buttons to match your printer width before downloading PDF.
-            </p>
           </div>
         </div>
 
       </section>
 
-      <!-- =========================================================
-           HUMAN-WRITTEN SEO GUIDE (~500 WORDS)
-           ========================================================= -->
-      <article class="bg-surface-container-low border border-outline/15 rounded-2xl p-5 sm:p-8 shadow-sm flex flex-col gap-6 mt-2">
+      <!-- HUMAN-WRITTEN SEO & CONTENT SECTION -->
+      <article class="bg-surface-container-low border border-outline/15 rounded-2xl p-5 sm:p-8 shadow-sm flex flex-col gap-6 mt-4">
         <div class="flex flex-col gap-2 max-w-3xl">
-          <span class="text-xs font-mono uppercase tracking-wider text-primary font-semibold">Small Business Billing Guide</span>
+          <span class="text-xs font-mono uppercase tracking-wider text-primary font-semibold">Small Business Billing &amp; POS Guide</span>
           <h2 class="text-xl sm:text-2xl font-bold text-on-surface">How to Make a Printable Shop Receipt Online Without Accounting Software</h2>
           <p class="text-sm text-on-surface-variant leading-relaxed">
-            Whether you run a neighborhood grocery store, bakery, repair counter, or freelance service desk, handing a clear itemized receipt builds immediate trust with your customers. Instead of installing bulky invoicing apps or paying monthly fees, you can generate a clean, print-ready customer receipt right inside your browser in under a minute.
+            If you run a small grocery shop, bakery, clothing store, or repair counter, giving a neat receipt to your customer always build good trust. You don't really need to buy expensive POS software or pay monthly fees just for making bills. With our free online receipt maker, you can easily create a clean, printable shop receipt or customer invoice right inside your browser in just few seconds.
           </p>
         </div>
 
@@ -740,31 +601,24 @@ html_code = """<!DOCTYPE html>
               Flexible Unit &amp; Weight Pricing Made Simple
             </h3>
             <p class="text-sm text-on-surface-variant leading-relaxed">
-              Shops rarely sell everything the same way. When adding items to your receipt, choose between <strong>Units</strong>, <strong>Kilograms (kg)</strong>, <strong>Grams</strong>, or <strong>Boxes</strong>. You can also switch the rate dropdown between <strong>Per Unit / Per Kg</strong> (which multiplies automatically by quantity) or <strong>Overall Price</strong> when charging a flat bundle rate for loose items.
+              Retail stores rarely sell everything by exact unit count. When adding products to your customer receipt, you can easily select between <strong>Units</strong>, <strong>Kilograms (kg)</strong>, <strong>Grams</strong>, <strong>Boxes</strong>, or <strong>Liters</strong>. Switch between per-unit pricing (which auto-multiplies by quantity) and overall flat pricing for pre-weighted or bundled items.
             </p>
           </div>
 
           <div class="flex flex-col gap-2">
             <h3 class="text-base font-bold text-on-surface flex items-center gap-2">
               <span class="w-6 h-6 rounded-lg bg-primary/10 text-primary font-mono text-xs flex items-center justify-center font-bold">2</span>
-              Thermal Printer Formatting &amp; Optional Stamps
+              Automatic Balance Tracking &amp; Status Stamps
             </h3>
             <p class="text-sm text-on-surface-variant leading-relaxed">
-              By default, receipts are generated clean without stamps. If needed, you can enable the official stamp option in the menu to apply a green <strong>PAID</strong> seal or red <strong>PENDING</strong> balance stamp. Use our built-in format switcher to instantly format receipts for <strong>Standard A4</strong> documents or <strong>Thermal 80mm / 58mm</strong> receipt rolls.
+              Record cash, card, or mobile wallet payments to calculate remaining customer balances instantly. When an invoice is paid in full, toggle our official stamp feature to apply a crisp green <strong>PAID</strong> seal, or a red <strong>PENDING</strong> stamp if a balance remains due.
             </p>
           </div>
         </div>
-
-        <div class="flex flex-col gap-2 pt-2 border-t border-outline/10">
-          <h3 class="text-base font-bold text-on-surface">Save Your Store Header Locally for Faster Repeat Billing</h3>
-          <p class="text-sm text-on-surface-variant leading-relaxed">
-            Click <strong>Remember Shop</strong> at the top of the page to store your business name, phone number, and street address inside your browser's local storage. Next time you open the receipt maker on your phone or counter PC, your store header loads automatically—with zero cloud uploads and complete customer privacy.
-          </p>
-        </div>
       </article>
 
-      <!-- FAQ Section -->
-      <section aria-labelledby="faq-heading" class="flex flex-col gap-3">
+      <!-- FAQ SECTION -->
+      <section aria-labelledby="faq-heading" class="flex flex-col gap-3 mt-2">
         <div class="flex flex-col gap-1">
           <span class="text-xs font-mono uppercase tracking-wider text-primary font-semibold">Common Questions</span>
           <h2 id="faq-heading" class="text-lg sm:text-2xl font-bold text-on-surface">Online Receipt Maker FAQ</h2>
@@ -773,38 +627,38 @@ html_code = """<!DOCTYPE html>
         <div class="flex flex-col gap-2.5">
           <div class="faq-item bg-surface-container-low border border-outline/15 rounded-xl overflow-hidden">
             <button type="button" class="faq-toggle w-full p-4 flex items-center justify-between text-left font-semibold text-xs sm:text-sm text-on-surface">
-              <span>Are stamps enabled on receipts by default?</span>
+              <span>How do I create a printable customer receipt for my shop online?</span>
               <span class="material-symbols-outlined text-[20px] text-on-surface-variant faq-arrow transition-transform">expand_more</span>
             </button>
             <div class="faq-content hidden px-4 pb-4 text-xs sm:text-sm text-on-surface-variant leading-relaxed border-t border-outline/10 pt-3">
-              No. By default, receipts are generated clean without any stamp. You can turn on the official stamp option in section 5 if you want a green PAID or red PENDING stamp to appear over your receipt.
+              Simply enter your shop name, address, and phone number in the business details section. Add your products, quantities, and prices, check your totals, and click <strong>Save PDF</strong> or <strong>Print</strong> to generate a high-resolution customer receipt instantly.
             </div>
           </div>
 
           <div class="faq-item bg-surface-container-low border border-outline/15 rounded-xl overflow-hidden">
             <button type="button" class="faq-toggle w-full p-4 flex items-center justify-between text-left font-semibold text-xs sm:text-sm text-on-surface">
-              <span>How do I format receipts for 80mm or 58mm thermal printers?</span>
+              <span>Is my customer billing data or shop information uploaded to any server?</span>
               <span class="material-symbols-outlined text-[20px] text-on-surface-variant faq-arrow transition-transform">expand_more</span>
             </button>
             <div class="faq-content hidden px-4 pb-4 text-xs sm:text-sm text-on-surface-variant leading-relaxed border-t border-outline/10 pt-3">
-              Simply click the <strong>Thermal 80mm</strong> or <strong>Thermal 58mm</strong> buttons right above the live preview. The receipt preview instantly adjusts to thermal receipt roll dimensions so you can print or save PDF in exact printer width.
+              No. All calculations, previews, and PDF exports run 100% locally inside your web browser. Your business data remains completely private and secure on your own device.
             </div>
           </div>
 
           <div class="faq-item bg-surface-container-low border border-outline/15 rounded-xl overflow-hidden">
             <button type="button" class="faq-toggle w-full p-4 flex items-center justify-between text-left font-semibold text-xs sm:text-sm text-on-surface">
-              <span>Is my shop and customer billing data safe?</span>
+              <span>Can I use this receipt generator on my mobile phone or tablet?</span>
               <span class="material-symbols-outlined text-[20px] text-on-surface-variant faq-arrow transition-transform">expand_more</span>
             </button>
             <div class="faq-content hidden px-4 pb-4 text-xs sm:text-sm text-on-surface-variant leading-relaxed border-t border-outline/10 pt-3">
-              Yes. All calculations and PDF renderings execute entirely inside your web browser. Nothing is stored or transmitted to any external server.
+              Yes. The tool is fully responsive and optimized for mobile devices, allowing you to create receipts right at your shop counter and share PDFs instantly with customers over WhatsApp or email.
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Related Tools Grid (Matches index.html) -->
-      <section class="flex flex-col gap-4 pt-2">
+      <!-- RELATED TOOLS GRID -->
+      <section class="flex flex-col gap-4 pt-4">
         <div class="flex items-center justify-between">
           <div>
             <h2 class="text-lg sm:text-xl font-bold text-on-surface">More Free Browser Tools</h2>
@@ -888,7 +742,7 @@ html_code = """<!DOCTYPE html>
         </div>
       </section>
 
-      <!-- Footer -->
+      <!-- FOOTER -->
       <footer class="mt-6 pt-8 pb-4 border-t border-outline/15 text-xs text-on-surface-variant flex flex-col gap-4">
         <div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 font-mono text-[11px]">
           <a class="hover:text-primary transition-colors" href="index.html">Home</a>
@@ -910,13 +764,10 @@ html_code = """<!DOCTYPE html>
     </div>
   </main>
 
-  <!-- =========================================================
-       CLIENT-SIDE RECEIPT ENGINE JAVASCRIPT
-       ========================================================= -->
+  <!-- Script Engine -->
   <script>
     (function () {
       function initReceiptMaker() {
-        // 1. Theme Toggle Sync
         const themeToggleBtn = document.getElementById('themeToggleBtn');
         const lightIcon = document.getElementById('themeIconLight');
         const darkIcon = document.getElementById('themeIconDark');
@@ -945,7 +796,6 @@ html_code = """<!DOCTYPE html>
           });
         }
 
-        // 2. Accordion Dropdown Logic
         document.querySelectorAll('.acc-header').forEach(function (headerBtn) {
           headerBtn.addEventListener('click', function () {
             const targetId = headerBtn.getAttribute('data-acc-target');
@@ -966,44 +816,13 @@ html_code = """<!DOCTYPE html>
           });
         });
 
-        // 3. Printer Format Switcher (Standard A4 vs Thermal 80mm vs Thermal 58mm)
-        const receiptPreviewPaper = document.getElementById('receiptPreviewPaper');
-        let currentPdfWidthMm = 138; // Default Standard
-
-        document.querySelectorAll('.format-btn').forEach(function (btn) {
-          btn.addEventListener('click', function () {
-            document.querySelectorAll('.format-btn').forEach(function (b) {
-              b.classList.remove('bg-surface-container-lowest', 'text-primary', 'font-bold', 'shadow-xs');
-              b.classList.add('text-on-surface-variant', 'font-semibold');
-            });
-            btn.classList.add('bg-surface-container-lowest', 'text-primary', 'font-bold', 'shadow-xs');
-            btn.classList.remove('text-on-surface-variant', 'font-semibold');
-
-            const fmt = btn.getAttribute('data-format');
-            receiptPreviewPaper.classList.remove('format-standard', 'format-thermal-80', 'format-thermal-58');
-
-            if (fmt === 'thermal80') {
-              receiptPreviewPaper.classList.add('format-thermal-80');
-              currentPdfWidthMm = 78;
-            } else if (fmt === 'thermal58') {
-              receiptPreviewPaper.classList.add('format-thermal-58');
-              currentPdfWidthMm = 56;
-            } else {
-              receiptPreviewPaper.classList.add('format-standard');
-              currentPdfWidthMm = 138;
-            }
-          });
-        });
-
-        // 4. State & Default Sample Items
         let products = [
-          { id: 1, name: 'Organic Basmati Rice', qty: 2, unit: 'kg', price: 12.50, rateMode: 'per_kg' },
-          { id: 2, name: 'Artisan Sourdough Loaf', qty: 3, unit: 'unit', price: 4.50, rateMode: 'per_unit' },
-          { id: 3, name: 'Roasted Almonds Pack', qty: 300, unit: 'gram', price: 6.00, rateMode: 'overall' }
+          { id: 1, name: 'Basmati Rice', qty: 2, unit: 'kg', price: 12.50, rateMode: 'per_kg' },
+          { id: 2, name: 'Artisan Sourdough', qty: 3, unit: 'unit', price: 4.50, rateMode: 'per_unit' },
+          { id: 3, name: 'Almonds Pack', qty: 300, unit: 'gram', price: 6.00, rateMode: 'overall' }
         ];
         let nextProductId = 4;
 
-        // Input References
         const currencySelect = document.getElementById('currencySelect');
         const shopNameInput = document.getElementById('shopNameInput');
         const shopAddressInput = document.getElementById('shopAddressInput');
@@ -1026,14 +845,25 @@ html_code = """<!DOCTYPE html>
         const enableStampCheckbox = document.getElementById('enableStampCheckbox');
         const stampCityInput = document.getElementById('stampCityInput');
 
-        // Set Today's Date by default
         const today = new Date();
         const yyyy = today.getFullYear();
         const mm = String(today.getMonth() + 1).padStart(2, '0');
         const dd = String(today.getDate()).padStart(2, '0');
         if (receiptDateInput) receiptDateInput.value = yyyy + '-' + mm + '-' + dd;
 
-        // Load Saved Shop Details if user previously clicked "Remember Shop"
+        function detectDefaultCurrency() {
+          try {
+            const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
+            const lang = navigator.language || '';
+            if (tz.includes('Karachi') || lang.includes('PK')) return 'Rs. ';
+            if (tz.includes('London') || lang.includes('GB')) return '£';
+            if (tz.includes('Calcutta') || tz.includes('Kolkata') || lang.includes('IN')) return '₹';
+            if (tz.includes('Dubai') || lang.includes('AE')) return 'AED ';
+            if (tz.includes('Europe') || lang.includes('DE') || lang.includes('FR') || lang.includes('IT') || lang.includes('ES')) return '€';
+          } catch(e) {}
+          return '$';
+        }
+
         try {
           const savedShop = JSON.parse(localStorage.getItem('divcraft_shop_profile') || 'null');
           if (savedShop) {
@@ -1042,8 +872,12 @@ html_code = """<!DOCTYPE html>
             if (savedShop.phone) shopPhoneInput.value = savedShop.phone;
             if (savedShop.currency) currencySelect.value = savedShop.currency;
             if (savedShop.stampCity) stampCityInput.value = savedShop.stampCity;
+          } else {
+            currencySelect.value = detectDefaultCurrency();
           }
-        } catch (e) {}
+        } catch (e) {
+          currencySelect.value = detectDefaultCurrency();
+        }
 
         const saveShopDefaultsBtn = document.getElementById('saveShopDefaultsBtn');
         if (saveShopDefaultsBtn) {
@@ -1085,7 +919,6 @@ html_code = """<!DOCTYPE html>
             .replace(/"/g, '&quot;');
         }
 
-        // 5. Render Product Entry Boxes in Left Panel
         function renderProductInputs() {
           productRowsContainer.innerHTML = products.map(function (item, idx) {
             return (
@@ -1096,13 +929,10 @@ html_code = """<!DOCTYPE html>
                     ? '<button type="button" data-remove-id="' + item.id + '" class="text-xs font-mono text-red-500 hover:underline flex items-center gap-0.5"><span class="material-symbols-outlined text-[15px]">delete</span>Remove</button>'
                     : '') +
                 '</div>' +
-
                 '<div>' +
                   '<input type="text" data-field="name" data-id="' + item.id + '" value="' + escapeHtml(item.name) + '" placeholder="Product or service name" class="prod-input w-full rounded-xl bg-surface-container-lowest border border-outline/20 text-xs sm:text-sm text-on-surface px-3 py-2 focus:border-primary focus:ring-primary/20"/>' +
                 '</div>' +
-
                 '<div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">' +
-                  // Qty + Unit Dropdown
                   '<div class="flex flex-col gap-1">' +
                     '<span class="text-[11px] font-medium text-on-surface-variant">Quantity &amp; Unit</span>' +
                     '<div class="flex items-stretch rounded-xl overflow-hidden border border-outline/20 bg-surface-container-lowest focus-within:border-primary">' +
@@ -1116,8 +946,6 @@ html_code = """<!DOCTYPE html>
                       '</select>' +
                     '</div>' +
                   '</div>' +
-
-                  // Price + Pricing Mode Dropdown (Per Unit / Per Kg / Overall Price)
                   '<div class="flex flex-col gap-1">' +
                     '<span class="text-[11px] font-medium text-on-surface-variant">Price &amp; Rate Type</span>' +
                     '<div class="flex items-stretch rounded-xl overflow-hidden border border-outline/20 bg-surface-container-lowest focus-within:border-primary">' +
@@ -1134,7 +962,6 @@ html_code = """<!DOCTYPE html>
             );
           }).join('');
 
-          // Attach live listeners to product inputs
           productRowsContainer.querySelectorAll('.prod-input').forEach(function (el) {
             el.addEventListener('input', function () {
               const id = parseInt(el.getAttribute('data-id'), 10);
@@ -1151,7 +978,6 @@ html_code = """<!DOCTYPE html>
             });
           });
 
-          // Remove button listeners
           productRowsContainer.querySelectorAll('[data-remove-id]').forEach(function (btn) {
             btn.addEventListener('click', function () {
               const id = parseInt(btn.getAttribute('data-remove-id'), 10);
@@ -1177,11 +1003,9 @@ html_code = """<!DOCTYPE html>
           });
         }
 
-        // 6. Core Calculation & Live Preview Update
         let latestNetTotal = 0;
 
         function updateLiveReceipt() {
-          // Header Details
           const shopName = (shopNameInput.value || 'YOUR SHOP NAME').trim();
           const shopPhone = (shopPhoneInput.value || '').trim();
           const shopAddress = (shopAddressInput.value || '').trim();
@@ -1198,7 +1022,6 @@ html_code = """<!DOCTYPE html>
           document.getElementById('prevPaymentMethod').textContent = paymentMethodSelect.value;
           document.getElementById('prevFooterNote').textContent = footerNoteInput.value || 'Thank you for your business!';
 
-          // Calculate Items & Build Table Rows
           let subtotal = 0;
           const tbodyHtml = products.map(function (item) {
             const label = item.name.trim() || 'Unnamed Item';
@@ -1232,7 +1055,6 @@ html_code = """<!DOCTYPE html>
           document.getElementById('prevItemsTbody').innerHTML = tbodyHtml;
           document.getElementById('prevSubtotal').textContent = formatMoney(subtotal);
 
-          // Discount Calculation
           const discVal = parseFloat(discountValueInput.value) || 0;
           const discType = discountTypeSelect.value;
           let discountAmount = 0;
@@ -1258,7 +1080,6 @@ html_code = """<!DOCTYPE html>
           latestNetTotal = netTotal;
           document.getElementById('prevNetTotal').textContent = formatMoney(netTotal);
 
-          // Received Amount & Remaining Balance
           const received = parseFloat(receivedAmountInput.value) || 0;
           document.getElementById('prevAmountReceived').textContent = formatMoney(received);
 
@@ -1280,33 +1101,24 @@ html_code = """<!DOCTYPE html>
             balanceValEl.className = 'font-mono text-emerald-700 font-extrabold';
           }
 
-          // Official Stamp Toggle & Auto PAID vs PENDING State
           const stampContainer = document.getElementById('receiptStampContainer');
-          const stampPaidVisual = document.getElementById('stampPaidVisual');
-          const stampPendingVisual = document.getElementById('stampPendingVisual');
-          const stampCurvedTextPath = document.getElementById('stampCurvedTextPath');
+          const stampRosetteVisual = document.getElementById('stampRosetteVisual');
+          const stampCenterText = document.getElementById('stampCenterText');
 
           if (enableStampCheckbox.checked) {
             stampContainer.classList.remove('hidden');
-            const ringShop = shopName.toUpperCase().slice(0, 20);
-            const ringTag = (stampCityInput.value || 'OFFICIAL').toUpperCase().slice(0, 16);
-            if (stampCurvedTextPath) {
-              stampCurvedTextPath.textContent = '★ ' + ringShop + ' ★ ' + ringTag;
-            }
-
             if (balanceDue <= 0.009) {
-              stampPaidVisual.classList.remove('hidden');
-              stampPendingVisual.classList.add('hidden');
+              stampRosetteVisual.className = 'stamp-rosette paid';
+              stampCenterText.textContent = 'PAID';
             } else {
-              stampPaidVisual.classList.add('hidden');
-              stampPendingVisual.classList.remove('hidden');
+              stampRosetteVisual.className = 'stamp-rosette pending';
+              stampCenterText.textContent = 'PENDING';
             }
           } else {
             stampContainer.classList.add('hidden');
           }
         }
 
-        // Bind All Global Form Inputs
         [
           currencySelect, shopNameInput, shopAddressInput, shopPhoneInput,
           customerNameInput, receiptNoInput, receiptDateInput,
@@ -1325,8 +1137,8 @@ html_code = """<!DOCTYPE html>
           });
         }
 
-        // 7. PDF Export & Print Handlers
         const downloadPdfBtn = document.getElementById('downloadPdfBtn');
+        const receiptPreviewPaper = document.getElementById('receiptPreviewPaper');
 
         if (downloadPdfBtn && receiptPreviewPaper) {
           downloadPdfBtn.addEventListener('click', async function () {
@@ -1344,7 +1156,7 @@ html_code = """<!DOCTYPE html>
 
               const imgData = canvas.toDataURL('image/png');
               const jsPDFCtor = window.jspdf.jsPDF;
-              const pdfWidth = currentPdfWidthMm;
+              const pdfWidth = 138;
               const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
 
               const pdf = new jsPDFCtor({
@@ -1372,7 +1184,7 @@ html_code = """<!DOCTYPE html>
           });
         }
 
-        // 8. FAQ Accordion
+        // FAQ Accordion
         document.querySelectorAll('.faq-item').forEach(function (item) {
           const toggle = item.querySelector('.faq-toggle');
           const content = item.querySelector('.faq-content');
@@ -1389,7 +1201,6 @@ html_code = """<!DOCTYPE html>
           });
         });
 
-        // Initial Render
         renderProductInputs();
         updateLiveReceipt();
       }
@@ -1403,9 +1214,3 @@ html_code = """<!DOCTYPE html>
   </script>
 </body>
 </html>
-"""
-
-with open("receipt-maker.html", "w", encoding="utf-8") as f:
-    f.write(html_code)
-
-print("Updated receipt-maker.html successfully.")
