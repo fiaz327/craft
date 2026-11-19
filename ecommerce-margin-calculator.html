@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+  <title>Ecommerce Profit Margin Calculator – Free Profit &amp; Price Tool | DivCraft</title>
+  <meta content="Use this free ecommerce profit margin calculator to check real profit per order, product cost, shipping, store fees, ad spend, and selling price in your browser." name="description"/>
+  <meta content="ecommerce profit margin calculator, product profit calculator, dropshipping profit calculator, selling price calculator, ecommerce commission calculator, online profit calculator" name="keywords"/>
+  <link rel="canonical" href="https://divcraft.online/1234.html"/>
+  <meta property="og:title" content="Ecommerce Profit Margin Calculator – Free Profit &amp; Price Tool"/>
+  <meta property="og:description" content="Check your real ecommerce profit margin, product cost, shipping, marketplace fees, ad spend, and selling price right in your browser."/>
+  <meta property="og:type" content="website"/>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Ecommerce Profit Margin Calculator",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Any",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "description": "Free online ecommerce profit margin calculator to check product profit, shipping cost, platform fees, ad cost, and selling price."
+  }
+  </script>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%234f46e5'><path d='M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z'/></svg>">
+
+  <!-- Google Fonts & Material Symbols -->
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-surface": "#131b2e",
+            "secondary": "#00687a",
+            "primary-container": "#4f46e5",
+            "outline": "#777587",
+            "surface": "#faf8ff",
+            "surface-container-high": "#e2e7ff",
+            "surface-container": "#eaedff",
+            "primary": "#3525cd",
+            "on-surface-variant": "#464555",
+            "outline-variant": "#c7c4d8",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-low": "#f2f3ff"
+          },
+          fontFamily: {
+            sans: ["Inter", "sans-serif"],
+            mono: ["JetBrains Mono", "monospace"]
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    @layer base {
+      html, body {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        transition: background-color 0.25s ease, color 0.25s ease;
+      }
+      body { overscroll-behavior-y: none; }
+      .pb-safe { padding-bottom: env(safe-area-inset-bottom, 16px); }
+      .pt-safe { padding-top: env(safe-area-inset-top, 0px); }
+    }
+
+    html.dark { color-scheme: dark; }
+    html.dark body { background-color: #0c1019 !important; color: #e4e9f7 !important; }
+    html.dark .bg-surface { background-color: #0c1019 !important; }
+    html.dark .bg-surface-container-lowest { background-color: #080c14 !important; }
+    html.dark .bg-surface-container-low { background-color: #121826 !important; }
+    html.dark .bg-surface-container { background-color: #182033 !important; }
+    html.dark .bg-surface-container-high { background-color: #1f2a42 !important; }
+    html.dark .text-on-surface { color: #f1f5f9 !important; }
+    html.dark .text-on-surface-variant { color: #94a3b8 !important; }
+    html.dark .border-outline-variant { border-color: #1e293b !important; }
+
+    html:not(.dark) body { background-color: #f8fafc !important; color: #0f172a !important; }
+    html:not(.dark) .bg-surface { background-color: #f8fafc !important; }
+    html:not(.dark) .bg-surface-container-lowest { background-color: #ffffff !important; }
+    html:not(.dark) .bg-surface-container-low { background-color: #ffffff !important; }
+    html:not(.dark) .bg-surface-container { background-color: #f1f5f9 !important; }
+    html:not(.dark) .bg-surface-container-high { background-color: #e2e8f0 !important; }
+    html:not(.dark) .text-on-surface { color: #0f172a !important; }
+    html:not(.dark) .text-on-surface-variant { color: #475569 !important; }
+  </style>
+</head>
+<body class="bg-surface text-on-surface font-sans flex flex-col min-h-screen transition-colors duration-200">
+
+  <!-- Fixed Top Navigation Header -->
+  <header class="fixed top-0 w-full z-50 pt-safe bg-surface/90 backdrop-blur-xl border-b border-outline/10 shadow-sm transition-colors duration-200">
+    <div class="h-16 px-4 md:px-8 max-w-7xl mx-auto flex items-center justify-between gap-3">
+      <a href="index.html" class="flex items-center gap-2.5 group">
+        <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-indigo-600 via-primary to-cyan-400 p-[1.5px] shadow-sm flex items-center justify-center">
+          <div class="w-full h-full bg-surface-container-lowest rounded-[10px] flex items-center justify-center">
+            <span class="material-symbols-outlined text-primary text-[20px]">terminal</span>
+          </div>
+        </div>
+        <div class="flex flex-col">
+          <div class="flex items-center gap-1.5">
+            <span class="font-bold text-lg tracking-tight text-on-surface group-hover:text-primary transition-colors">DivCraft</span>
+            <span class="text-[9px] font-mono font-bold px-1.5 py-0.5 rounded bg-primary/10 text-primary uppercase tracking-wider">v2.4</span>
+          </div>
+          <span class="text-[10px] font-mono text-on-surface-variant font-medium tracking-wide">Client-Side Hub</span>
+        </div>
+      </a>
+
+      <div class="flex items-center gap-2">
+        <a href="index.html" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-surface-container hover:bg-surface-container-high text-xs font-mono font-medium text-on-surface transition-all">
+          <span class="material-symbols-outlined text-[16px]">grid_view</span>
+          <span>All Tools</span>
+        </a>
+
+        <button type="button" aria-label="Toggle Theme Mode" class="w-9 h-9 flex items-center justify-center rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface transition-all active:scale-90" id="themeToggleBtn" title="Toggle Light / Dark Mode">
+          <span class="material-symbols-outlined text-[20px] text-amber-400" id="themeIconLight">light_mode</span>
+          <span class="material-symbols-outlined text-[20px] text-indigo-400 hidden" id="themeIconDark">dark_mode</span>
+        </button>
+
+        <div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 dark:text-emerald-400 text-[11px] font-mono font-medium">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+          <span>Runs in Browser</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Area -->
+  <main class="flex flex-col relative w-full pt-20 pb-24 min-h-screen">
+    <div class="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 flex flex-col gap-6">
+
+      <!-- Page Title & Top Action Bar -->
+      <section class="pt-3 flex flex-col sm:flex-row sm:items-end justify-between gap-3">
+        <div class="flex flex-col gap-1.5">
+          <a href="index.html" class="inline-flex items-center gap-1 text-xs font-mono text-primary hover:underline w-fit">
+            <span class="material-symbols-outlined text-[15px]">arrow_back</span>
+            <span>Back to All Tools</span>
+          </a>
+          <h1 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-on-surface">
+            Ecommerce Profit Margin Calculator
+          </h1>
+          <p class="text-sm text-on-surface-variant max-w-2xl">
+            Check your real profit per order, product cost, shipping, store fees, ad spend, and selling price right in your browser.
+          </p>
+        </div>
+
+        <!-- Currency & Remember My Fees kept side by side on one line -->
+        <div class="flex items-center gap-2 w-full sm:w-auto">
+          <div class="flex items-center gap-1.5 bg-surface-container-low border border-outline/15 rounded-xl px-2.5 sm:px-3 py-1.5 shrink-0">
+            <span class="text-xs font-mono text-on-surface-variant">Currency:</span>
+            <select id="currencySelect" class="bg-transparent border-none text-xs font-mono font-bold text-primary p-0 pr-5 focus:ring-0">
+              <option value="$">$ (USD)</option>
+              <option value="£">£ (GBP)</option>
+              <option value="€">€ (EUR)</option>
+              <option value="CAD $">CAD $</option>
+              <option value="AUD $">AUD $</option>
+              <option value="Rs. ">Rs. (PKR)</option>
+            </select>
+          </div>
+
+          <button type="button" id="saveDefaultsBtn" class="flex-1 sm:flex-initial justify-center inline-flex items-center gap-1.5 px-3 sm:px-3.5 py-2 rounded-xl bg-surface-container hover:bg-surface-container-high border border-outline/15 text-xs font-mono font-semibold text-on-surface transition-all active:scale-95 whitespace-nowrap">
+            <span class="material-symbols-outlined text-[16px] text-primary">bookmark_add</span>
+            <span>Remember My Fees</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- Main 2-Column Workspace -->
+      <section class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+
+        <!-- LEFT COLUMN: INPUT CONTROLS (6 cols) -->
+        <div class="lg:col-span-6 flex flex-col gap-3.5">
+
+          <!-- 1. Product Price & Item Costs -->
+          <div class="accordion-card bg-surface-container-low border border-outline/15 rounded-2xl overflow-hidden shadow-sm">
+            <button type="button" data-acc-target="accPricing" class="acc-header w-full px-4 sm:px-5 py-3.5 flex items-center justify-between bg-surface-container/50 hover:bg-surface-container transition-colors text-left">
+              <div class="flex items-center gap-2.5">
+                <span class="w-6 h-6 rounded-lg bg-primary text-white font-mono text-xs font-bold flex items-center justify-center">1</span>
+                <div>
+                  <h2 class="font-bold text-sm sm:text-base text-on-surface">Selling Price &amp; Order Costs</h2>
+                  <p class="text-[11px] text-on-surface-variant">What the customer pays vs. what the item &amp; shipping cost you</p>
+                </div>
+              </div>
+              <span class="material-symbols-outlined text-on-surface-variant transition-transform duration-200 rotate-180" data-acc-icon>expand_more</span>
+            </button>
+
+            <div id="accPricing" class="p-4 sm:p-5 flex flex-col gap-3.5 border-t border-outline/10">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div class="flex flex-col gap-1">
+                  <label for="sellingPriceInput" class="text-xs font-semibold text-on-surface">Customer Selling Price</label>
+                  <input id="sellingPriceInput" type="number" min="0" step="any" value="38.00" class="calc-input w-full rounded-xl bg-surface-container-lowest border border-outline/20 font-mono text-sm font-bold text-on-surface px-3.5 py-2 focus:border-primary focus:ring-primary/20"/>
+                  <span class="text-[11px] text-on-surface-variant">Total amount paid by buyer</span>
+                </div>
+                <div class="flex flex-col gap-1">
+                  <label for="cogsInput" class="text-xs font-semibold text-on-surface">Product Cost (Supplier / COGS)</label>
+                  <input id="cogsInput" type="number" min="0" step="any" value="9.50" class="calc-input w-full rounded-xl bg-surface-container-lowest border border-outline/20 font-mono text-sm font-bold text-on-surface px-3.5 py-2 focus:border-primary focus:ring-primary/20"/>
+                  <span class="text-[11px] text-on-surface-variant">Cost to buy or make 1 unit</span>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div class="flex flex-col gap-1">
+                  <label for="shippingCostInput" class="text-xs font-semibold text-on-surface">Shipping / Delivery Fee</label>
+                  <input id="shippingCostInput" type="number" min="0" step="any" value="5.20" class="calc-input w-full rounded-xl bg-surface-container-lowest border border-outline/20 font-mono text-sm text-on-surface px-3.5 py-2 focus:border-primary focus:ring-primary/20"/>
+                  <span class="text-[11px] text-on-surface-variant">Courier or fulfillment cost</span>
+                </div>
+                <div class="flex flex-col gap-1">
+                  <label for="packagingCostInput" class="text-xs font-semibold text-on-surface">Packaging / Box Cost</label>
+                  <input id="packagingCostInput" type="number" min="0" step="any" value="0.85" class="calc-input w-full rounded-xl bg-surface-container-lowest border border-outline/20 font-mono text-sm text-on-surface px-3.5 py-2 focus:border-primary focus:ring-primary/20"/>
+                  <span class="text-[11px] text-on-surface-variant">Mailers, boxes, or inserts</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. Marketplace Fees & Tax (100% Manual Editable) -->
+          <div class="accordion-card bg-surface-container-low border border-outline/15 rounded-2xl overflow-hidden shadow-sm">
+            <button type="button" data-acc-target="accFeesTax" class="acc-header w-full px-4 sm:px-5 py-3.5 flex items-center justify-between bg-surface-container/50 hover:bg-surface-container transition-colors text-left">
+              <div class="flex items-center gap-2.5">
+                <span class="w-6 h-6 rounded-lg bg-primary text-white font-mono text-xs font-bold flex items-center justify-center">2</span>
+                <div>
+                  <h2 class="font-bold text-sm sm:text-base text-on-surface">Store Fees &amp; Tax / VAT</h2>
+                  <p class="text-[11px] text-on-surface-variant">Type your own platform fee %, payment fee % &amp; tax rate</p>
+                </div>
+              </div>
+              <span class="material-symbols-outlined text-on-surface-variant transition-transform duration-200 rotate-180" data-acc-icon>expand_more</span>
+            </button>
+
+            <div id="accFeesTax" class="p-4 sm:p-5 flex flex-col gap-3.5 border-t border-outline/10">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div class="flex flex-col gap-1">
+                  <label for="platformFeePctInput" class="text-xs font-semibold text-on-surface">Platform / Referral Fee (%)</label>
+                  <input id="platformFeePctInput" type="number" min="0" max="100" step="any" value="8.0" class="calc-input w-full rounded-xl bg-surface-container-lowest border border-outline/20 font-mono text-sm font-bold text-on-surface px-3.5 py-2 focus:border-primary focus:ring-primary/20"/>
+                  <span class="text-[11px] text-on-surface-variant">Store or marketplace commission %</span>
+                </div>
+                <div class="flex flex-col gap-1">
+                  <label for="paymentFeePctInput" class="text-xs font-semibold text-on-surface">Payment Processing Fee (%)</label>
+                  <input id="paymentFeePctInput" type="number" min="0" max="100" step="any" value="2.9" class="calc-input w-full rounded-xl bg-surface-container-lowest border border-outline/20 font-mono text-sm text-on-surface px-3.5 py-2 focus:border-primary focus:ring-primary/20"/>
+                  <span class="text-[11px] text-on-surface-variant">Card or checkout fee percentage</span>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div class="flex flex-col gap-1">
+                  <label for="fixedFeeInput" class="text-xs font-semibold text-on-surface">Fixed Fee per Order</label>
+                  <input id="fixedFeeInput" type="number" min="0" step="any" value="0.30" class="calc-input w-full rounded-xl bg-surface-container-lowest border border-outline/20 font-mono text-sm text-on-surface px-3.5 py-2 focus:border-primary focus:ring-primary/20"/>
+                  <span class="text-[11px] text-on-surface-variant">Listing or per-order flat charge</span>
+                </div>
+                <div class="flex flex-col gap-1">
+                  <label for="taxVatPctInput" class="text-xs font-semibold text-on-surface">Sales Tax / VAT Set-Aside (%)</label>
+                  <input id="taxVatPctInput" type="number" min="0" max="100" step="any" value="0" class="calc-input w-full rounded-xl bg-surface-container-lowest border border-outline/20 font-mono text-sm text-on-surface px-3.5 py-2 focus:border-primary focus:ring-primary/20"/>
+                  <span class="text-[11px] text-on-surface-variant">Optional tax/VAT share to hold back</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. Ad Spend & Target Margin -->
+          <div class="accordion-card bg-surface-container-low border border-outline/15 rounded-2xl overflow-hidden shadow-sm">
+            <button type="button" data-acc-target="accAds" class="acc-header w-full px-4 sm:px-5 py-3.5 flex items-center justify-between bg-surface-container/50 hover:bg-surface-container transition-colors text-left">
+              <div class="flex items-center gap-2.5">
+                <span class="w-6 h-6 rounded-lg bg-primary text-white font-mono text-xs font-bold flex items-center justify-center">3</span>
+                <div>
+                  <h2 class="font-bold text-sm sm:text-base text-on-surface">Ad Spend &amp; Target Profit Margin</h2>
+                  <p class="text-[11px] text-on-surface-variant">Enter ad cost per sale (or 0 for organic) &amp; desired margin %</p>
+                </div>
+              </div>
+              <span class="material-symbols-outlined text-on-surface-variant transition-transform duration-200 rotate-180" data-acc-icon>expand_more</span>
+            </button>
+
+            <div id="accAds" class="p-4 sm:p-5 flex flex-col gap-3.5 border-t border-outline/10">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div class="flex flex-col gap-1">
+                  <label for="adSpendInput" class="text-xs font-semibold text-on-surface">Ad / Promotion Cost per Order</label>
+                  <input id="adSpendInput" type="number" min="0" step="any" value="6.50" class="calc-input w-full rounded-xl bg-surface-container-lowest border border-outline/20 font-mono text-sm font-bold text-on-surface px-3.5 py-2 focus:border-primary focus:ring-primary/20"/>
+                  <span class="text-[11px] text-on-surface-variant">Put 0 if order comes without ads</span>
+                </div>
+                <div class="flex flex-col gap-1">
+                  <label for="targetMarginInput" class="text-xs font-semibold text-on-surface">Desired Net Margin (%)</label>
+                  <input id="targetMarginInput" type="number" min="0" max="80" step="any" value="20" class="calc-input w-full rounded-xl bg-surface-container-lowest border border-outline/20 font-mono text-sm text-on-surface px-3.5 py-2 focus:border-primary focus:ring-primary/20"/>
+                  <span class="text-[11px] text-on-surface-variant">Used to calculate suggested price</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- RIGHT COLUMN: LIVE PROFIT & BREAK-EVEN PREVIEW (6 cols) -->
+        <div class="lg:col-span-6 lg:sticky lg:top-20 flex flex-col gap-4">
+          <div class="bg-surface-container-low border border-outline/15 rounded-2xl p-4 sm:p-6 shadow-sm flex flex-col gap-5">
+
+            <div class="flex items-center justify-between pb-3 border-b border-outline/10">
+              <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                <h2 class="font-bold text-base text-on-surface">Live Profit &amp; Margin Breakdown</h2>
+              </div>
+              <span id="statusVerdictBadge" class="text-[11px] font-mono font-bold px-2.5 py-1 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400">
+                Profitable Order
+              </span>
+            </div>
+
+            <!-- Top KPI Cards -->
+            <div class="grid grid-cols-2 gap-3">
+              <div class="p-4 rounded-xl bg-surface-container border border-outline/15 flex flex-col gap-1">
+                <span class="text-[11px] font-mono uppercase tracking-wider text-on-surface-variant">Net Profit / Order</span>
+                <span id="liveNetProfit" class="text-2xl sm:text-3xl font-black font-mono text-emerald-600 dark:text-emerald-400">$11.51</span>
+                <span id="liveProfitMargin" class="text-xs font-mono text-on-surface-variant">30.3% Net Margin</span>
+              </div>
+
+              <div class="p-4 rounded-xl bg-surface-container border border-outline/15 flex flex-col gap-1">
+                <span class="text-[11px] font-mono uppercase tracking-wider text-on-surface-variant">Break-Even ROAS</span>
+                <span id="liveBreakEvenRoas" class="text-2xl sm:text-3xl font-black font-mono text-primary">2.11x</span>
+                <span id="liveMaxAdBudget" class="text-xs font-mono text-on-surface-variant">Max Ad Spend: $18.01</span>
+              </div>
+            </div>
+
+            <!-- Visual Cost Split Bar -->
+            <div class="flex flex-col gap-2">
+              <div class="flex flex-wrap items-center justify-between gap-1 text-xs">
+                <span class="font-semibold text-on-surface">Where Every Dollar Goes</span>
+                <span id="liveSuggestedPrice" class="font-mono text-xs text-primary font-semibold">Suggested Price (20% margin): $32.78</span>
+              </div>
+              <div class="w-full h-3.5 rounded-full overflow-hidden bg-surface-container flex border border-outline/15">
+                <div id="barProduct" class="bg-indigo-600 h-full transition-all duration-200" style="width: 41%"></div>
+                <div id="barFees" class="bg-amber-500 h-full transition-all duration-200" style="width: 12%"></div>
+                <div id="barAds" class="bg-rose-500 h-full transition-all duration-200" style="width: 17%"></div>
+                <div id="barTax" class="bg-cyan-500 h-full transition-all duration-200" style="width: 0%"></div>
+                <div id="barProfit" class="bg-emerald-500 h-full transition-all duration-200" style="width: 30%"></div>
+              </div>
+              <div class="flex flex-wrap gap-x-4 gap-y-1 text-[11px] font-mono text-on-surface-variant pt-0.5">
+                <span class="inline-flex items-center gap-1"><i class="w-2.5 h-2.5 rounded-full bg-indigo-600 inline-block"></i>Product &amp; Ship</span>
+                <span class="inline-flex items-center gap-1"><i class="w-2.5 h-2.5 rounded-full bg-amber-500 inline-block"></i>Fees</span>
+                <span class="inline-flex items-center gap-1"><i class="w-2.5 h-2.5 rounded-full bg-rose-500 inline-block"></i>Ads</span>
+                <span class="inline-flex items-center gap-1"><i class="w-2.5 h-2.5 rounded-full bg-cyan-500 inline-block"></i>Tax/VAT</span>
+                <span class="inline-flex items-center gap-1"><i class="w-2.5 h-2.5 rounded-full bg-emerald-500 inline-block"></i>Net Profit</span>
+              </div>
+            </div>
+
+            <!-- Detailed Line-by-Line Ledger -->
+            <div class="rounded-xl bg-surface-container-lowest border border-outline/15 p-3.5 text-xs flex flex-col gap-2">
+              <div class="flex justify-between text-on-surface">
+                <span class="font-semibold">Customer Selling Price</span>
+                <span id="ledgerSellPrice" class="font-mono font-bold">$38.00</span>
+              </div>
+              <div class="flex justify-between text-on-surface-variant">
+                <span>Product + Shipping + Packaging</span>
+                <span id="ledgerProductTotal" class="font-mono text-red-500">-$15.55</span>
+              </div>
+              <div class="flex justify-between text-on-surface-variant">
+                <span id="ledgerFeeLabel">Platform + Payment Fees (10.9% + $0.30)</span>
+                <span id="ledgerFeeTotal" class="font-mono text-red-500">-$4.44</span>
+              </div>
+              <div class="flex justify-between text-on-surface-variant">
+                <span id="ledgerTaxLabel">Tax / VAT Set-Aside (0.0%)</span>
+                <span id="ledgerTaxTotal" class="font-mono text-red-500">-$0.00</span>
+              </div>
+              <div class="flex justify-between text-on-surface-variant">
+                <span>Ad / Promotion Spend</span>
+                <span id="ledgerAdTotal" class="font-mono text-red-500">-$6.50</span>
+              </div>
+              <div class="flex justify-between text-sm font-extrabold border-t border-outline/15 pt-2 mt-1">
+                <span class="text-on-surface">True Net Profit</span>
+                <span id="ledgerFinalProfit" class="font-mono text-emerald-600 dark:text-emerald-400">$11.51</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </section>
+
+      <!-- EASY HUMAN ARTICLE (SEO) -->
+      <article class="bg-surface-container-low border border-outline/15 rounded-2xl p-5 sm:p-7 shadow-sm flex flex-col gap-4 mt-2">
+        <div class="flex flex-col gap-1.5">
+          <span class="text-[11px] font-mono uppercase tracking-wider text-primary font-semibold">Seller Pricing Guide</span>
+          <h2 class="text-lg sm:text-2xl font-bold text-on-surface">How to Use This Profit Margin Calculator for Online Sales</h2>
+          <p class="text-sm text-on-surface-variant leading-relaxed">
+            When you sell products online, it is easy to think a sale made good money until you count every cost. A product profit calculator helps you see what is actually left in your pocket after you pay for the item, shipping, box or mailer, store fees, tax, and ads.
+          </p>
+        </div>
+
+        <p class="text-sm text-on-surface-variant leading-relaxed">
+          Start with your selling price and what you paid for the product. Then add your shipping and packing cost so nothing is left out. Whether you sell on your own store, do dropshipping, or list items on places like TikTok Shop, Etsy, eBay, or Amazon, every selling channel has its own fee rules. That is why you can type your own platform fee percent, card or payment fee percent, and any flat fee per order.
+        </p>
+
+        <p class="text-sm text-on-surface-variant leading-relaxed">
+          If you run ads or pay for promotions on an order, put that cost in too. Right away, you will see your real profit per order and profit margin in plain numbers. If your ad cost is too high, you will spot it early before losing money on more orders, and you can check the suggested selling price to hit the margin you want.
+        </p>
+      </article>
+
+      <!-- FAQ SECTION -->
+      <section aria-labelledby="faq-heading" class="flex flex-col gap-3">
+        <div class="flex flex-col gap-1">
+          <span class="text-[11px] font-mono uppercase tracking-wider text-primary font-semibold">Helpful Answers</span>
+          <h2 id="faq-heading" class="text-lg sm:text-xl font-bold text-on-surface">Frequently Asked Questions</h2>
+        </div>
+
+        <div class="flex flex-col gap-2.5">
+          <div class="faq-item bg-surface-container-low border border-outline/15 rounded-xl overflow-hidden">
+            <button type="button" class="faq-toggle w-full p-4 flex items-center justify-between text-left font-semibold text-xs sm:text-sm text-on-surface">
+              <span>How do I find my real profit margin on an ecommerce product?</span>
+              <span class="material-symbols-outlined text-[20px] text-on-surface-variant faq-arrow transition-transform">expand_more</span>
+            </button>
+            <div class="faq-content hidden px-4 pb-4 text-xs sm:text-sm text-on-surface-variant leading-relaxed border-t border-outline/10 pt-3">
+              Take what the buyer pays for the item, subtract your product cost, shipping, packing, store and payment fees, tax set-aside, and ad spend. Divide what is left by the selling price and multiply by 100 to get your profit margin percent. This calculator updates that math live as you type.
+            </div>
+          </div>
+
+          <div class="faq-item bg-surface-container-low border border-outline/15 rounded-xl overflow-hidden">
+            <button type="button" class="faq-toggle w-full p-4 flex items-center justify-between text-left font-semibold text-xs sm:text-sm text-on-surface">
+              <span>Can I use this for TikTok Shop, Etsy, eBay, Amazon, or dropshipping?</span>
+              <span class="material-symbols-outlined text-[20px] text-on-surface-variant faq-arrow transition-transform">expand_more</span>
+            </button>
+            <div class="faq-content hidden px-4 pb-4 text-xs sm:text-sm text-on-surface-variant leading-relaxed border-t border-outline/10 pt-3">
+              Yes. Because each marketplace and category charges different fees—and those rates can change over time—you can type your own fee percentages and fixed order fee directly into the boxes, then click <strong>Remember My Fees</strong> to keep them saved for next time.
+            </div>
+          </div>
+
+          <div class="faq-item bg-surface-container-low border border-outline/15 rounded-xl overflow-hidden">
+            <button type="button" class="faq-toggle w-full p-4 flex items-center justify-between text-left font-semibold text-xs sm:text-sm text-on-surface">
+              <span>How does the selling price suggestion work?</span>
+              <span class="material-symbols-outlined text-[20px] text-on-surface-variant faq-arrow transition-transform">expand_more</span>
+            </button>
+            <div class="faq-content hidden px-4 pb-4 text-xs sm:text-sm text-on-surface-variant leading-relaxed border-t border-outline/10 pt-3">
+              Enter your desired net margin percent and your costs, and the tool estimates a selling price that covers your product, shipping, fees, and ad cost while leaving your target profit margin.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- RELATED TOOLS GRID -->
+      <section class="flex flex-col gap-3.5 pt-2">
+        <div class="flex items-center justify-between">
+          <div>
+            <h2 class="text-lg sm:text-xl font-bold text-on-surface">Related Tools</h2>
+            <p class="text-xs text-on-surface-variant">More free tools that run right in your browser.</p>
+          </div>
+          <a href="index.html" class="text-xs font-mono text-primary hover:underline">All tools →</a>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+          <a href="receipt-maker.html" class="bg-surface-container-low border border-outline/15 rounded-xl p-3.5 sm:p-4 flex flex-col justify-between shadow-xs hover:border-primary/50 hover:shadow-md transition-all group">
+            <div class="flex flex-col gap-2">
+              <div class="w-8 h-8 rounded-lg bg-indigo-500/10 text-indigo-500 flex items-center justify-center">
+                <span class="material-symbols-outlined text-[18px]">receipt_long</span>
+              </div>
+              <div>
+                <h3 class="font-bold text-xs sm:text-sm text-on-surface group-hover:text-primary transition-colors">Receipt Maker</h3>
+                <p class="text-[11px] text-on-surface-variant line-clamp-2 mt-0.5">Make clean shop receipts with discounts, stamps, and PDF export.</p>
+              </div>
+            </div>
+            <div class="flex items-center justify-between pt-3 mt-3 border-t border-outline/10">
+              <span class="text-[10px] font-mono text-on-surface-variant">Billing</span>
+              <span class="inline-flex items-center gap-0.5 text-xs font-mono text-primary group-hover:translate-x-0.5 transition-transform">
+                Open <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+              </span>
+            </div>
+          </a>
+
+          <a href="glassmorphism-lab.html" class="bg-surface-container-low border border-outline/15 rounded-xl p-3.5 sm:p-4 flex flex-col justify-between shadow-xs hover:border-primary/50 hover:shadow-md transition-all group">
+            <div class="flex flex-col gap-2">
+              <div class="w-8 h-8 rounded-lg bg-cyan-500/10 text-cyan-500 flex items-center justify-center">
+                <span class="material-symbols-outlined text-[18px]">blur_on</span>
+              </div>
+              <div>
+                <h3 class="font-bold text-xs sm:text-sm text-on-surface group-hover:text-primary transition-colors">Glassmorphism Lab</h3>
+                <p class="text-[11px] text-on-surface-variant line-clamp-2 mt-0.5">Adjust blur, glow, and borders for frosted glass UI cards.</p>
+              </div>
+            </div>
+            <div class="flex items-center justify-between pt-3 mt-3 border-t border-outline/10">
+              <span class="text-[10px] font-mono text-on-surface-variant">Design</span>
+              <span class="inline-flex items-center gap-0.5 text-xs font-mono text-primary group-hover:translate-x-0.5 transition-transform">
+                Open <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+              </span>
+            </div>
+          </a>
+
+          <a href="index.html" class="bg-surface-container-low border border-outline/15 rounded-xl p-3.5 sm:p-4 flex flex-col justify-between shadow-xs hover:border-primary/50 hover:shadow-md transition-all group">
+            <div class="flex flex-col gap-2">
+              <div class="w-8 h-8 rounded-lg bg-emerald-500/10 text-emerald-500 flex items-center justify-center">
+                <span class="material-symbols-outlined text-[18px]">qr_code_2</span>
+              </div>
+              <div>
+                <h3 class="font-bold text-xs sm:text-sm text-on-surface group-hover:text-primary transition-colors">QR Code Studio</h3>
+                <p class="text-[11px] text-on-surface-variant line-clamp-2 mt-0.5">Create quick links, payment codes, and WiFi QR codes.</p>
+              </div>
+            </div>
+            <div class="flex items-center justify-between pt-3 mt-3 border-t border-outline/10">
+              <span class="text-[10px] font-mono text-on-surface-variant">Utility</span>
+              <span class="inline-flex items-center gap-0.5 text-xs font-mono text-primary group-hover:translate-x-0.5 transition-transform">
+                Open <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+              </span>
+            </div>
+          </a>
+
+          <a href="index.html" class="bg-surface-container-low border border-outline/15 rounded-xl p-3.5 sm:p-4 flex flex-col justify-between shadow-xs hover:border-primary/50 hover:shadow-md transition-all group">
+            <div class="flex flex-col gap-2">
+              <div class="w-8 h-8 rounded-lg bg-amber-500/10 text-amber-500 flex items-center justify-center">
+                <span class="material-symbols-outlined text-[18px]">calculate</span>
+              </div>
+              <div>
+                <h3 class="font-bold text-xs sm:text-sm text-on-surface group-hover:text-primary transition-colors">More Browser Tools</h3>
+                <p class="text-[11px] text-on-surface-variant line-clamp-2 mt-0.5">Browse all lightweight calculators and helpers on DivCraft.</p>
+              </div>
+            </div>
+            <div class="flex items-center justify-between pt-3 mt-3 border-t border-outline/10">
+              <span class="text-[10px] font-mono text-on-surface-variant">Hub</span>
+              <span class="inline-flex items-center gap-0.5 text-xs font-mono text-primary group-hover:translate-x-0.5 transition-transform">
+                Open <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+              </span>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="mt-6 pt-8 pb-4 border-t border-outline/15 text-xs text-on-surface-variant flex flex-col gap-4">
+        <div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 font-mono text-[11px]">
+          <a class="hover:text-primary transition-colors" href="index.html">Home</a>
+          <a class="hover:text-primary transition-colors" href="index.html#about">About Us</a>
+          <a class="hover:text-primary transition-colors" href="index.html#privacy">Privacy Policy</a>
+          <a class="hover:text-primary transition-colors" href="index.html#terms">Terms of Service</a>
+          <a class="hover:text-primary transition-colors" href="index.html#contact">Contact Us</a>
+        </div>
+        <div class="max-w-3xl mx-auto text-center flex flex-col gap-1.5">
+          <p class="text-[11px] leading-relaxed text-on-surface-variant/80">
+            <strong>Publisher Disclosure:</strong> DivCraft runs 100% locally in your browser with zero server tracking.
+          </p>
+          <p class="text-[10px] text-on-surface-variant/60">
+            © 2026 DivCraft Hub. All rights reserved.
+          </p>
+        </div>
+      </footer>
+
+    </div>
+  </main>
+
+  <script>
+    (function () {
+      const themeToggleBtn = document.getElementById('themeToggleBtn');
+      const lightIcon = document.getElementById('themeIconLight');
+      const darkIcon = document.getElementById('themeIconDark');
+      const rootHtml = document.documentElement;
+
+      function updateThemeIcons(isDark) {
+        if (isDark) {
+          rootHtml.classList.add('dark');
+          if (lightIcon) lightIcon.classList.remove('hidden');
+          if (darkIcon) darkIcon.classList.add('hidden');
+        } else {
+          rootHtml.classList.remove('dark');
+          if (darkIcon) darkIcon.classList.remove('hidden');
+          if (lightIcon) lightIcon.classList.add('hidden');
+        }
+      }
+
+      const savedTheme = localStorage.getItem('devcraft_theme');
+      updateThemeIcons(savedTheme === 'dark');
+
+      if (themeToggleBtn) {
+        themeToggleBtn.addEventListener('click', function () {
+          const willBeDark = !rootHtml.classList.contains('dark');
+          updateThemeIcons(willBeDark);
+          localStorage.setItem('devcraft_theme', willBeDark ? 'dark' : 'light');
+        });
+      }
+
+      document.querySelectorAll('.acc-header').forEach(function (headerBtn) {
+        headerBtn.addEventListener('click', function () {
+          const targetId = headerBtn.getAttribute('data-acc-target');
+          const targetBody = document.getElementById(targetId);
+          const icon = headerBtn.querySelector('[data-acc-icon]');
+          if (!targetBody) return;
+          const isHidden = targetBody.classList.contains('hidden');
+          if (isHidden) {
+            targetBody.classList.remove('hidden');
+            targetBody.classList.add('flex');
+            if (icon) icon.classList.add('rotate-180');
+          } else {
+            targetBody.classList.add('hidden');
+            targetBody.classList.remove('flex');
+            if (icon) icon.classList.remove('rotate-180');
+          }
+        });
+      });
+
+      document.querySelectorAll('.faq-item').forEach(function (item) {
+        const toggle = item.querySelector('.faq-toggle');
+        const content = item.querySelector('.faq-content');
+        const arrow = item.querySelector('.faq-arrow');
+        if (!toggle || !content) return;
+        toggle.addEventListener('click', function () {
+          const isClosed = content.classList.contains('hidden');
+          document.querySelectorAll('.faq-content').forEach(function (c) { c.classList.add('hidden'); });
+          document.querySelectorAll('.faq-arrow').forEach(function (a) { a.style.transform = 'rotate(0deg)'; });
+          if (isClosed) {
+            content.classList.remove('hidden');
+            if (arrow) arrow.style.transform = 'rotate(180deg)';
+          }
+        });
+      });
+
+      const currencySelect = document.getElementById('currencySelect');
+      const sellingPriceInput = document.getElementById('sellingPriceInput');
+      const cogsInput = document.getElementById('cogsInput');
+      const shippingCostInput = document.getElementById('shippingCostInput');
+      const packagingCostInput = document.getElementById('packagingCostInput');
+      const platformFeePctInput = document.getElementById('platformFeePctInput');
+      const paymentFeePctInput = document.getElementById('paymentFeePctInput');
+      const fixedFeeInput = document.getElementById('fixedFeeInput');
+      const taxVatPctInput = document.getElementById('taxVatPctInput');
+      const adSpendInput = document.getElementById('adSpendInput');
+      const targetMarginInput = document.getElementById('targetMarginInput');
+      const saveDefaultsBtn = document.getElementById('saveDefaultsBtn');
+
+      try {
+        const saved = JSON.parse(localStorage.getItem('divcraft_ecom_fees') || 'null');
+        if (saved) {
+          if (saved.currency) currencySelect.value = saved.currency;
+          if (saved.platPct !== undefined) platformFeePctInput.value = saved.platPct;
+          if (saved.payPct !== undefined) paymentFeePctInput.value = saved.payPct;
+          if (saved.fixedFee !== undefined) fixedFeeInput.value = saved.fixedFee;
+          if (saved.taxPct !== undefined) taxVatPctInput.value = saved.taxPct;
+        }
+      } catch (e) {}
+
+      if (saveDefaultsBtn) {
+        saveDefaultsBtn.addEventListener('click', function () {
+          localStorage.setItem('divcraft_ecom_fees', JSON.stringify({
+            currency: currencySelect.value,
+            platPct: platformFeePctInput.value,
+            payPct: paymentFeePctInput.value,
+            fixedFee: fixedFeeInput.value,
+            taxPct: taxVatPctInput.value
+          }));
+          const orig = saveDefaultsBtn.innerHTML;
+          saveDefaultsBtn.innerHTML = '<span class="material-symbols-outlined text-[16px] text-emerald-500">check</span><span>Saved!</span>';
+          setTimeout(function () { saveDefaultsBtn.innerHTML = orig; }, 1500);
+        });
+      }
+
+      function fmt(n) {
+        const sym = currencySelect.value || '$';
+        const val = isNaN(n) ? 0 : n;
+        const absVal = Math.abs(val).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+        return (val < 0 ? '-' : '') + sym + absVal;
+      }
+
+      function calculateAll() {
+        const sellPrice = parseFloat(sellingPriceInput.value) || 0;
+        const cogs = parseFloat(cogsInput.value) || 0;
+        const shipCost = parseFloat(shippingCostInput.value) || 0;
+        const packCost = parseFloat(packagingCostInput.value) || 0;
+        const platPct = parseFloat(platformFeePctInput.value) || 0;
+        const payPct = parseFloat(paymentFeePctInput.value) || 0;
+        const fixedFee = parseFloat(fixedFeeInput.value) || 0;
+        const taxPct = parseFloat(taxVatPctInput.value) || 0;
+        const adSpend = parseFloat(adSpendInput.value) || 0;
+        const targetMargin = Math.min(80, Math.max(0, parseFloat(targetMarginInput.value) || 0));
+
+        const hardCosts = cogs + shipCost + packCost;
+        const combinedPct = (platPct + payPct + taxPct) / 100;
+        const feeAmount = sellPrice * ((platPct + payPct) / 100) + fixedFee;
+        const taxAmount = sellPrice * (taxPct / 100);
+
+        const profitBeforeAds = sellPrice - hardCosts - feeAmount - taxAmount;
+        const netProfit = profitBeforeAds - adSpend;
+        const marginPct = sellPrice > 0 ? (netProfit / sellPrice) * 100 : 0;
+        const breakEvenRoas = profitBeforeAds > 0 ? (sellPrice / profitBeforeAds) : 0;
+
+        const denom = 1 - combinedPct - (targetMargin / 100);
+        const suggestedPrice = denom > 0.05 ? ((hardCosts + fixedFee + adSpend) / denom) : 0;
+
+        const profitEl = document.getElementById('liveNetProfit');
+        profitEl.textContent = fmt(netProfit);
+        profitEl.className = 'text-2xl sm:text-3xl font-black font-mono ' + (netProfit >= 0 ? 'text-emerald-600 dark:text-emerald-400' : 'text-red-600 dark:text-red-400');
+
+        const verdictEl = document.getElementById('statusVerdictBadge');
+        if (netProfit > 0.01) {
+          verdictEl.textContent = 'Profitable Order';
+          verdictEl.className = 'text-[11px] font-mono font-bold px-2.5 py-1 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400';
+        } else if (netProfit < -0.01) {
+          verdictEl.textContent = 'Losing Money';
+          verdictEl.className = 'text-[11px] font-mono font-bold px-2.5 py-1 rounded-full bg-red-500/10 text-red-600 dark:text-red-400';
+        } else {
+          verdictEl.textContent = 'Break-Even';
+          verdictEl.className = 'text-[11px] font-mono font-bold px-2.5 py-1 rounded-full bg-amber-500/10 text-amber-600 dark:text-amber-400';
+        }
+
+        document.getElementById('liveProfitMargin').textContent = marginPct.toFixed(1) + '% Net Margin';
+        document.getElementById('liveBreakEvenRoas').textContent = profitBeforeAds > 0 ? breakEvenRoas.toFixed(2) + 'x' : 'N/A (Loss)';
+        document.getElementById('liveMaxAdBudget').textContent = 'Max Ad Spend: ' + fmt(Math.max(0, profitBeforeAds));
+        document.getElementById('liveSuggestedPrice').textContent = suggestedPrice > 0
+          ? 'Suggested Price (' + targetMargin + '% margin): ' + fmt(suggestedPrice)
+          : 'Adjust margin or fees';
+
+        document.getElementById('ledgerSellPrice').textContent = fmt(sellPrice);
+        document.getElementById('ledgerProductTotal').textContent = '-' + fmt(hardCosts).replace('-', '');
+        document.getElementById('ledgerFeeLabel').textContent = 'Platform + Payment Fees (' + (platPct + payPct).toFixed(1) + '% + ' + fmt(fixedFee) + ')';
+        document.getElementById('ledgerFeeTotal').textContent = '-' + fmt(feeAmount).replace('-', '');
+        document.getElementById('ledgerTaxLabel').textContent = 'Tax / VAT Set-Aside (' + taxPct.toFixed(1) + '%)';
+        document.getElementById('ledgerTaxTotal').textContent = '-' + fmt(taxAmount).replace('-', '');
+        document.getElementById('ledgerAdTotal').textContent = '-' + fmt(adSpend).replace('-', '');
+
+        const finalLedgerEl = document.getElementById('ledgerFinalProfit');
+        finalLedgerEl.textContent = fmt(netProfit);
+        finalLedgerEl.className = 'font-mono font-extrabold ' + (netProfit >= 0 ? 'text-emerald-600 dark:text-emerald-400' : 'text-red-600 dark:text-red-400');
+
+        if (sellPrice > 0) {
+          document.getElementById('barProduct').style.width = Math.max(0, Math.min(100, (hardCosts / sellPrice) * 100)) + '%';
+          document.getElementById('barFees').style.width = Math.max(0, Math.min(100, (feeAmount / sellPrice) * 100)) + '%';
+          document.getElementById('barAds').style.width = Math.max(0, Math.min(100, (adSpend / sellPrice) * 100)) + '%';
+          document.getElementById('barTax').style.width = Math.max(0, Math.min(100, (taxAmount / sellPrice) * 100)) + '%';
+          document.getElementById('barProfit').style.width = Math.max(0, Math.min(100, (Math.max(0, netProfit) / sellPrice) * 100)) + '%';
+        }
+      }
+
+      document.querySelectorAll('.calc-input, #currencySelect').forEach(function (el) {
+        el.addEventListener('input', calculateAll);
+        el.addEventListener('change', calculateAll);
+      });
+
+      calculateAll();
+    })();
+  </script>
+</body>
+</html>
