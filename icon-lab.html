@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+  <title>Free SVG Icons &amp; Customizer – Icon Lab | DivCraft</title>
+  <meta content="Browse 120 categorized vector icons, customize color, stroke, and size, and copy clean SVG code or image link for free in your browser." name="description"/>
+  <meta content="free svg icons, svg icon library, icon customizer, copy svg code, svg data url, vector icons for websites, ui icons" name="keywords"/>
+  <link rel="canonical" href="https://divcraft.online/icon-lab.html"/>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%234f46e5'><path d='M12 2L2 7l10 5 10-5-10-5zm0 13l-10-5v6l10 5 10-5v-6l-10 5z'/></svg>">
+
+  <!-- Google Fonts & Material Symbols -->
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-surface": "#131b2e",
+            "secondary": "#00687a",
+            "primary-container": "#4f46e5",
+            "outline": "#777587",
+            "surface": "#faf8ff",
+            "surface-container-high": "#e2e7ff",
+            "surface-container": "#eaedff",
+            "primary": "#3525cd",
+            "on-surface-variant": "#464555",
+            "outline-variant": "#c7c4d8",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-low": "#f2f3ff"
+          },
+          fontFamily: {
+            sans: ["Inter", "sans-serif"],
+            mono: ["JetBrains Mono", "monospace"]
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    @layer base {
+      html, body {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        transition: background-color 0.25s ease, color 0.25s ease;
+      }
+      body { overscroll-behavior-y: none; }
+      .pb-safe { padding-bottom: env(safe-area-inset-bottom, 16px); }
+      .pt-safe { padding-top: env(safe-area-inset-top, 0px); }
+    }
+
+    html.dark { color-scheme: dark; }
+    html.dark body { background-color: #0c1019 !important; color: #e4e9f7 !important; }
+    html.dark .bg-surface { background-color: #0c1019 !important; }
+    html.dark .bg-surface-container-lowest { background-color: #080c14 !important; }
+    html.dark .bg-surface-container-low { background-color: #121826 !important; }
+    html.dark .bg-surface-container { background-color: #182033 !important; }
+    html.dark .bg-surface-container-high { background-color: #1f2a42 !important; }
+    html.dark .text-on-surface { color: #f1f5f9 !important; }
+    html.dark .text-on-surface-variant { color: #94a3b8 !important; }
+    html.dark .border-outline-variant { border-color: #1e293b !important; }
+
+    html:not(.dark) body { background-color: #f8fafc !important; color: #0f172a !important; }
+    html:not(.dark) .bg-surface { background-color: #f8fafc !important; }
+    html:not(.dark) .bg-surface-container-lowest { background-color: #ffffff !important; }
+    html:not(.dark) .bg-surface-container-low { background-color: #ffffff !important; }
+    html:not(.dark) .bg-surface-container { background-color: #f1f5f9 !important; }
+    html:not(.dark) .bg-surface-container-high { background-color: #e2e8f0 !important; }
+    html:not(.dark) .text-on-surface { color: #0f172a !important; }
+    html:not(.dark) .text-on-surface-variant { color: #475569 !important; }
+
+    .checkerboard {
+      background-image:
+        linear-gradient(45deg, rgba(148, 163, 184, 0.14) 25%, transparent 25%),
+        linear-gradient(-45deg, rgba(148, 163, 184, 0.14) 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, rgba(148, 163, 184, 0.14) 75%),
+        linear-gradient(-45deg, transparent 75%, rgba(148, 163, 184, 0.14) 75%);
+      background-size: 16px 16px;
+      background-position: 0 0, 0 8px, 8px -8px, -8px 0;
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface font-sans flex flex-col min-h-screen transition-colors duration-200">
+
+  <!-- Fixed Top Navigation Header -->
+  <header class="fixed top-0 w-full z-50 pt-safe bg-surface/90 backdrop-blur-xl border-b border-outline/10 shadow-sm transition-colors duration-200">
+    <div class="h-16 px-4 md:px-8 max-w-7xl mx-auto flex items-center justify-between gap-3">
+      <a href="index.html" class="flex items-center gap-2.5 group">
+        <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-indigo-600 via-primary to-cyan-400 p-[1.5px] shadow-sm flex items-center justify-center">
+          <div class="w-full h-full bg-surface-container-lowest rounded-[10px] flex items-center justify-center">
+            <span class="material-symbols-outlined text-primary text-[20px]">terminal</span>
+          </div>
+        </div>
+        <div class="flex flex-col">
+          <div class="flex items-center gap-1.5">
+            <span class="font-bold text-lg tracking-tight text-on-surface group-hover:text-primary transition-colors">DivCraft</span>
+            <span class="text-[9px] font-mono font-bold px-1.5 py-0.5 rounded bg-primary/10 text-primary uppercase tracking-wider">v2.4</span>
+          </div>
+          <span class="text-[10px] font-mono text-on-surface-variant font-medium tracking-wide">Client-Side Hub</span>
+        </div>
+      </a>
+
+      <div class="flex items-center gap-2">
+        <a href="index.html" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-surface-container hover:bg-surface-container-high text-xs font-mono font-medium text-on-surface transition-all">
+          <span class="material-symbols-outlined text-[16px]">grid_view</span>
+          <span>All Tools</span>
+        </a>
+
+        <button type="button" aria-label="Toggle Theme Mode" class="w-9 h-9 flex items-center justify-center rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface transition-all active:scale-90" id="themeToggleBtn" title="Toggle Light / Dark Mode">
+          <span class="material-symbols-outlined text-[20px] text-amber-400" id="themeIconLight">light_mode</span>
+          <span class="material-symbols-outlined text-[20px] text-indigo-400 hidden" id="themeIconDark">dark_mode</span>
+        </button>
+
+        <div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 dark:text-emerald-400 text-[11px] font-mono font-medium">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+          <span>Runs in Browser</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Area -->
+  <main class="flex flex-col relative w-full pt-20 pb-24 min-h-screen">
+    <div class="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 flex flex-col gap-8">
+
+      <!-- Page Header -->
+      <section class="pt-3 flex flex-col sm:flex-row sm:items-end justify-between gap-3">
+        <div class="flex flex-col gap-1.5">
+          <a href="index.html" class="inline-flex items-center gap-1 text-xs font-mono text-primary hover:underline w-fit">
+            <span class="material-symbols-outlined text-[15px]">arrow_back</span>
+            <span>Back to All Tools</span>
+          </a>
+          <h1 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-on-surface">
+            Icon Lab – Free Vector Icon Library
+          </h1>
+          <p class="text-sm text-on-surface-variant max-w-2xl">
+            120 sharp vector icons sorted by category. Change color, stroke thickness, frame, and size, then copy SVG code or link snippet for free.
+          </p>
+        </div>
+
+        <div class="flex items-center gap-2 shrink-0">
+          <span id="iconCountBadge" class="px-3 py-1.5 rounded-xl bg-surface-container border border-outline/15 text-xs font-mono font-bold text-primary">
+            0 Icons
+          </span>
+        </div>
+      </section>
+
+      <!-- Search & Category Filter Bar -->
+      <section class="bg-surface-container-low border border-outline/15 rounded-2xl p-4 flex flex-col gap-3.5 shadow-sm">
+        <div class="relative">
+          <span class="material-symbols-outlined text-[19px] text-on-surface-variant absolute left-3.5 top-1/2 -translate-y-1/2">search</span>
+          <input id="iconSearchInput" type="search" placeholder="Search by icon name or category (e.g. mail, wallet, lock, camera, truck, chart, rocket)..." class="w-full pl-10 pr-4 py-2.5 rounded-xl bg-surface-container-lowest border border-outline/20 text-sm text-on-surface focus:border-primary focus:ring-primary/20"/>
+        </div>
+
+        <div id="categoryTabs" class="flex items-center gap-1.5 overflow-x-auto pb-1">
+          <!-- Category tabs rendered via JS -->
+        </div>
+      </section>
+
+      <!-- Main Studio Workspace: Icon Grid (7 cols) + Live Customizer & Export (5 cols) -->
+      <section class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+
+        <!-- LEFT: ICON LIBRARY GRID -->
+        <div class="lg:col-span-7 flex flex-col gap-3">
+          <div id="iconGrid" class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-2.5">
+            <!-- Distinct icons rendered via JS -->
+          </div>
+          <p id="emptyIconMsg" class="hidden text-center text-sm text-on-surface-variant py-10 bg-surface-container-low rounded-2xl border border-outline/15">
+            No matching icons found. Try another word or category.
+          </p>
+        </div>
+
+        <!-- RIGHT: LIVE CUSTOMIZER & CODE / LINK EXPORT -->
+        <div class="lg:col-span-5 lg:sticky lg:top-20 flex flex-col gap-4">
+          <div class="bg-surface-container-low border border-outline/15 rounded-2xl p-4 sm:p-5 shadow-sm flex flex-col gap-4">
+
+            <div class="flex items-center justify-between pb-2.5 border-b border-outline/10">
+              <div>
+                <h2 id="selectedIconTitle" class="font-bold text-base text-on-surface">Home</h2>
+                <p id="selectedIconMeta" class="text-[11px] font-mono text-on-surface-variant">Category: UI &amp; Navigation • Free</p>
+              </div>
+              <span class="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-full bg-emerald-500/15 text-emerald-600 dark:text-emerald-400">
+                FREE SVG
+              </span>
+            </div>
+
+            <!-- Live Preview Box -->
+            <div class="checkerboard rounded-2xl border border-outline/15 h-36 flex items-center justify-center relative overflow-hidden">
+              <div id="liveIconStage" class="flex items-center justify-center transition-all duration-150"></div>
+            </div>
+
+            <!-- Customization Controls -->
+            <div class="grid grid-cols-2 gap-3">
+              <div class="flex flex-col gap-1">
+                <label for="iconColorInput" class="text-xs font-semibold text-on-surface">Icon Color</label>
+                <div class="flex items-center gap-2 bg-surface-container-lowest border border-outline/20 rounded-xl px-2.5 py-1.5">
+                  <input id="iconColorInput" type="color" value="#4f46e5" class="w-7 h-7 rounded cursor-pointer border-0 bg-transparent p-0"/>
+                  <span id="iconColorHex" class="text-xs font-mono text-on-surface-variant">#4f46e5</span>
+                </div>
+              </div>
+
+              <div class="flex flex-col gap-1">
+                <label for="iconBadgeSelect" class="text-xs font-semibold text-on-surface">Frame Style</label>
+                <select id="iconBadgeSelect" class="rounded-xl bg-surface-container-lowest border border-outline/20 text-xs font-mono text-on-surface px-3 py-2 focus:border-primary">
+                  <option value="none">Plain Icon</option>
+                  <option value="rounded" selected>Rounded Frame</option>
+                  <option value="circle">Circle Frame</option>
+                  <option value="soft">Soft Tint Box</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-3">
+              <div class="flex flex-col gap-1">
+                <div class="flex justify-between text-xs">
+                  <label for="iconStrokeRange" class="font-semibold text-on-surface">Stroke Weight</label>
+                  <span id="iconStrokeVal" class="font-mono text-primary font-bold">2.0</span>
+                </div>
+                <input id="iconStrokeRange" type="range" min="1.2" max="3.0" step="0.2" value="2.0" class="accent-primary cursor-pointer"/>
+              </div>
+
+              <div class="flex flex-col gap-1">
+                <div class="flex justify-between text-xs">
+                  <label for="iconSizeRange" class="font-semibold text-on-surface">Preview Size</label>
+                  <span id="iconSizeVal" class="font-mono text-primary font-bold">48px</span>
+                </div>
+                <input id="iconSizeRange" type="range" min="24" max="84" step="4" value="48" class="accent-primary cursor-pointer"/>
+              </div>
+            </div>
+
+            <!-- Export Mode Switcher: Full Code vs Link Snippet -->
+            <div class="flex flex-col gap-2">
+              <div class="flex items-center justify-between gap-2 flex-wrap">
+                <div class="flex items-center gap-1 bg-surface-container p-1 rounded-xl">
+                  <button type="button" id="modeCodeBtn" class="px-2.5 py-1 rounded-lg bg-primary text-white text-xs font-mono font-semibold">
+                    SVG Code
+                  </button>
+                  <button type="button" id="modeLinkBtn" class="px-2.5 py-1 rounded-lg text-on-surface-variant hover:text-on-surface text-xs font-mono font-semibold">
+                    Link / Data URL
+                  </button>
+                </div>
+
+                <div class="flex items-center gap-1.5">
+                  <button type="button" id="copyOutputBtn" class="px-3 py-1.5 rounded-lg bg-primary hover:bg-primary-container text-white text-xs font-mono font-semibold transition-all active:scale-95">
+                    Copy
+                  </button>
+                  <button type="button" id="downloadSvgBtn" class="px-3 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high border border-outline/15 text-on-surface text-xs font-mono font-semibold transition-all active:scale-95">
+                    .SVG
+                  </button>
+                </div>
+              </div>
+
+              <textarea id="exportOutputBox" rows="4" readonly class="w-full rounded-xl bg-surface-container-lowest border border-outline/20 font-mono text-[11px] text-on-surface-variant p-3 focus:ring-0"></textarea>
+            </div>
+
+          </div>
+        </div>
+
+      </section>
+
+      <!-- SEO Guide & FAQ Section (~450 words in clear, natural English) -->
+      <section class="bg-surface-container-low border border-outline/15 rounded-2xl p-5 sm:p-7 shadow-sm flex flex-col gap-6">
+        <div class="flex flex-col gap-3">
+          <h2 class="text-xl sm:text-2xl font-bold text-on-surface">
+            How to Use Free SVG Icons, Code, and Links in Your Projects
+          </h2>
+          <p class="text-sm leading-relaxed text-on-surface-variant">
+            Good icons make any website, dashboard, mobile screen, or online store easier to scan and more pleasant to use. Instead of searching across heavy icon packs or paying monthly fees for basic UI and business symbols, Icon Lab gives you clean vector icons right in your browser with zero sign-up. Every icon is built on a crisp grid so it stays sharp on retina displays, laptops, and phones at any size.
+          </p>
+          <p class="text-sm leading-relaxed text-on-surface-variant">
+            You can browse icons by category—such as navigation, shopping and finance, developer and tech, security and files, media and chat, or time and places—or type a keyword in the search box to jump straight to what you need. Once you pick an icon, adjust its color, line thickness, frame style, and preview size to match your brand palette before copying or downloading.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="bg-surface-container-lowest border border-outline/15 rounded-xl p-4 flex flex-col gap-1.5">
+            <h3 class="font-bold text-sm text-on-surface">Should I copy the SVG code or the Link / Data URL?</h3>
+            <p class="text-xs leading-relaxed text-on-surface-variant">
+              Use <strong>SVG Code</strong> when pasting directly into HTML, React, Vue, or component templates where you want fast inline rendering and easy CSS styling. Choose <strong>Link / Data URL</strong> when you want a ready-to-use image tag snippet you can drop into HTML or page builders without uploading separate icon files first.
+            </p>
+          </div>
+
+          <div class="bg-surface-container-lowest border border-outline/15 rounded-xl p-4 flex flex-col gap-1.5">
+            <h3 class="font-bold text-sm text-on-surface">Why do web designers prefer vector icons over PNGs?</h3>
+            <p class="text-xs leading-relaxed text-on-surface-variant">
+              Vector icons scale smoothly without blurriness and usually take very little space. Whether you place a small icon next to a button or show a larger icon in a feature card, changing stroke weight and color keeps every icon looking consistent across light and dark themes.
+            </p>
+          </div>
+
+          <div class="bg-surface-container-lowest border border-outline/15 rounded-xl p-4 flex flex-col gap-1.5">
+            <h3 class="font-bold text-sm text-on-surface">Can I use these icons in client and commercial websites?</h3>
+            <p class="text-xs leading-relaxed text-on-surface-variant">
+              Yes. You can customize, copy, and use the generated vector icons in personal sites, client projects, web apps, and store pages freely. You can also save an <code>.svg</code> file directly if your workflow prefers standalone vector files.
+            </p>
+          </div>
+
+          <div class="bg-surface-container-lowest border border-outline/15 rounded-xl p-4 flex flex-col gap-1.5">
+            <h3 class="font-bold text-sm text-on-surface">How does Icon Lab fit with other DivCraft tools?</h3>
+            <p class="text-xs leading-relaxed text-on-surface-variant">
+              When you are building a store page or landing section, you can pair clean UI and commerce icons with our <strong>Ecommerce Profit Margin Calculator</strong> to check product pricing and margins, or explore more browser utilities on DivCraft.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Related Tools Section -->
+      <section class="flex flex-col gap-3.5">
+        <div class="flex items-center justify-between">
+          <h2 class="text-lg sm:text-xl font-bold text-on-surface">Related DivCraft Tools</h2>
+          <a href="index.html" class="text-xs font-mono text-primary hover:underline">View All →</a>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5">
+          <a href="ecommerce-margin-calculator.html" class="bg-surface-container-low border border-outline/15 hover:border-primary/50 rounded-xl p-4 flex flex-col justify-between gap-2 transition-all group">
+            <div>
+              <h3 class="font-bold text-sm text-on-surface group-hover:text-primary transition-colors">Ecommerce Profit Calc</h3>
+              <p class="text-xs text-on-surface-variant mt-0.5">Calculate real product profit, margin, shipping, fees, ad spend, and selling price.</p>
+            </div>
+            <span class="text-xs font-mono text-primary inline-flex items-center gap-1">Open Tool <span class="material-symbols-outlined text-[14px]">arrow_forward</span></span>
+          </a>
+
+          <a href="index.html" class="bg-surface-container-low border border-outline/15 hover:border-primary/50 rounded-xl p-4 flex flex-col justify-between gap-2 transition-all group">
+            <div>
+              <h3 class="font-bold text-sm text-on-surface group-hover:text-primary transition-colors">Payment Fee Calculator</h3>
+              <p class="text-xs text-on-surface-variant mt-0.5">Check net payouts, take rates, and transaction fees for online payments.</p>
+            </div>
+            <span class="text-xs font-mono text-primary inline-flex items-center gap-1">Open Tool <span class="material-symbols-outlined text-[14px]">arrow_forward</span></span>
+          </a>
+
+          <a href="index.html" class="bg-surface-container-low border border-outline/15 hover:border-primary/50 rounded-xl p-4 flex flex-col justify-between gap-2 transition-all group">
+            <div>
+              <h3 class="font-bold text-sm text-on-surface group-hover:text-primary transition-colors">Browser Utility Hub</h3>
+              <p class="text-xs text-on-surface-variant mt-0.5">Explore fast, free client-side tools for builders, sellers, and creators.</p>
+            </div>
+            <span class="text-xs font-mono text-primary inline-flex items-center gap-1">Explore Hub <span class="material-symbols-outlined text-[14px]">arrow_forward</span></span>
+          </a>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="mt-2 pt-8 pb-4 border-t border-outline/15 text-xs text-on-surface-variant flex flex-col gap-4">
+        <div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 font-mono text-[11px]">
+          <a class="hover:text-primary transition-colors" href="index.html">Home</a>
+          <a class="hover:text-primary transition-colors" href="index.html#about">About Us</a>
+          <a class="hover:text-primary transition-colors" href="index.html#privacy">Privacy Policy</a>
+          <a class="hover:text-primary transition-colors" href="index.html#terms">Terms of Service</a>
+          <a class="hover:text-primary transition-colors" href="index.html#contact">Contact Us</a>
+        </div>
+        <div class="max-w-3xl mx-auto text-center flex flex-col gap-1.5">
+          <p class="text-[11px] leading-relaxed text-on-surface-variant/80">
+            <strong>Publisher Disclosure:</strong> DivCraft runs 100% locally in your browser with zero server tracking.
+          </p>
+          <p class="text-[10px] text-on-surface-variant/60">
+            © 2026 DivCraft Hub. All rights reserved.
+          </p>
+        </div>
+      </footer>
+
+    </div>
+  </main>
+
+  <script>
+    (function () {
+      const themeToggleBtn = document.getElementById('themeToggleBtn');
+      const lightIcon = document.getElementById('themeIconLight');
+      const darkIcon = document.getElementById('themeIconDark');
+      const rootHtml = document.documentElement;
+
+      function updateThemeIcons(isDark) {
+        if (isDark) {
+          rootHtml.classList.add('dark');
+          if (lightIcon) lightIcon.classList.remove('hidden');
+          if (darkIcon) darkIcon.classList.add('hidden');
+        } else {
+          rootHtml.classList.remove('dark');
+          if (darkIcon) darkIcon.classList.remove('hidden');
+          if (lightIcon) lightIcon.classList.add('hidden');
+        }
+      }
+
+      updateThemeIcons(localStorage.getItem('devcraft_theme') === 'dark');
+      if (themeToggleBtn) {
+        themeToggleBtn.addEventListener('click', function () {
+          const willBeDark = !rootHtml.classList.contains('dark');
+          updateThemeIcons(willBeDark);
+          localStorage.setItem('devcraft_theme', willBeDark ? 'dark' : 'light');
+        });
+      }
+
+      // Original 60 icons untouched + 60 additional distinct vector icons (120 total)
+      const ICON_LIBRARY = [
+        // UI & Navigation (Original 12)
+        { id: 'home', name: 'Home', cat: 'UI & Navigation', paths: '<path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1v-9.5z"/>' },
+        { id: 'menu', name: 'Menu Lines', cat: 'UI & Navigation', paths: '<line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>' },
+        { id: 'grid', name: 'App Grid', cat: 'UI & Navigation', paths: '<rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/>' },
+        { id: 'search', name: 'Search', cat: 'UI & Navigation', paths: '<circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>' },
+        { id: 'settings', name: 'Settings Gear', cat: 'UI & Navigation', paths: '<circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>' },
+        { id: 'bell', name: 'Bell Alert', cat: 'UI & Navigation', paths: '<path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/>' },
+        { id: 'user', name: 'User Profile', cat: 'UI & Navigation', paths: '<path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>' },
+        { id: 'filter', name: 'Filter Funnel', cat: 'UI & Navigation', paths: '<polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/>' },
+        { id: 'refresh', name: 'Refresh Cycle', cat: 'UI & Navigation', paths: '<polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/>' },
+        { id: 'arrow-right', name: 'Arrow Right', cat: 'UI & Navigation', paths: '<line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>' },
+        { id: 'check-circle', name: 'Check Circle', cat: 'UI & Navigation', paths: '<path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>' },
+        { id: 'plus-circle', name: 'Add Circle', cat: 'UI & Navigation', paths: '<circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/>' },
+
+        // Commerce & Finance (Original 12)
+        { id: 'cart', name: 'Shopping Cart', cat: 'Commerce & Finance', paths: '<circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>' },
+        { id: 'bag', name: 'Shopping Bag', cat: 'Commerce & Finance', paths: '<path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/>' },
+        { id: 'wallet', name: 'Wallet', cat: 'Commerce & Finance', paths: '<path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"/><path d="M3 5v14a2 2 0 0 0 2 2h16v-5"/><path d="M18 12a2 2 0 0 0 0 4h4v-4Z"/>' },
+        { id: 'card', name: 'Credit Card', cat: 'Commerce & Finance', paths: '<rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/>' },
+        { id: 'tag', name: 'Price Tag', cat: 'Commerce & Finance', paths: '<path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/>' },
+        { id: 'percent', name: 'Discount Percent', cat: 'Commerce & Finance', paths: '<line x1="19" y1="5" x2="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/>' },
+        { id: 'bar-chart', name: 'Bar Chart', cat: 'Commerce & Finance', paths: '<line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>' },
+        { id: 'trending-up', name: 'Trending Up', cat: 'Commerce & Finance', paths: '<polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/>' },
+        { id: 'dollar', name: 'Dollar Coin', cat: 'Commerce & Finance', paths: '<line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>' },
+        { id: 'truck', name: 'Delivery Truck', cat: 'Commerce & Finance', paths: '<rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/>' },
+        { id: 'package', name: 'Parcel Box', cat: 'Commerce & Finance', paths: '<line x1="16.5" y1="9.4" x2="7.5" y2="4.21"/><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/>' },
+        { id: 'receipt', name: 'Receipt Invoice', cat: 'Commerce & Finance', paths: '<path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1-2-1z"/><line x1="8" y1="7" x2="16" y2="7"/><line x1="8" y1="11" x2="16" y2="11"/><line x1="8" y1="15" x2="13" y2="15"/>' },
+
+        // Tech & Dev (Original 12)
+        { id: 'code', name: 'Code Brackets', cat: 'Tech & Dev', paths: '<polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>' },
+        { id: 'terminal', name: 'Terminal Prompt', cat: 'Tech & Dev', paths: '<polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/>' },
+        { id: 'cpu', name: 'Microchip CPU', cat: 'Tech & Dev', paths: '<rect x="4" y="4" width="16" height="16" rx="2" ry="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/>' },
+        { id: 'database', name: 'Database', cat: 'Tech & Dev', paths: '<ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>' },
+        { id: 'cloud', name: 'Cloud Storage', cat: 'Tech & Dev', paths: '<path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/>' },
+        { id: 'wifi', name: 'WiFi Signal', cat: 'Tech & Dev', paths: '<path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/>' },
+        { id: 'git-branch', name: 'Git Branch', cat: 'Tech & Dev', paths: '<line x1="6" y1="3" x2="6" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/>' },
+        { id: 'layers', name: 'Layers Stack', cat: 'Tech & Dev', paths: '<polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/>' },
+        { id: 'laptop', name: 'Laptop', cat: 'Tech & Dev', paths: '<rect x="3" y="4" width="18" height="12" rx="2" ry="2"/><line x1="2" y1="20" x2="22" y2="20"/>' },
+        { id: 'smartphone', name: 'Smartphone', cat: 'Tech & Dev', paths: '<rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/>' },
+        { id: 'zap', name: 'Lightning Zap', cat: 'Tech & Dev', paths: '<polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>' },
+        { id: 'globe', name: 'Globe Network', cat: 'Tech & Dev', paths: '<circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>' },
+
+        // Security & Files (Original 12)
+        { id: 'shield', name: 'Shield Check', cat: 'Security & Files', paths: '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/>' },
+        { id: 'lock', name: 'Padlock Closed', cat: 'Security & Files', paths: '<rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>' },
+        { id: 'unlock', name: 'Padlock Open', cat: 'Security & Files', paths: '<rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/>' },
+        { id: 'key', name: 'Security Key', cat: 'Security & Files', paths: '<circle cx="7.5" cy="15.5" r="5.5"/><path d="m21 2-9.6 9.6"/><path d="m15.5 7.5 3 3L22 7l-3-3"/>' },
+        { id: 'eye', name: 'Eye View', cat: 'Security & Files', paths: '<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>' },
+        { id: 'file', name: 'File Text', cat: 'Security & Files', paths: '<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/>' },
+        { id: 'folder', name: 'Folder', cat: 'Security & Files', paths: '<path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/>' },
+        { id: 'download', name: 'Download', cat: 'Security & Files', paths: '<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>' },
+        { id: 'upload', name: 'Upload', cat: 'Security & Files', paths: '<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/>' },
+        { id: 'copy', name: 'Copy Paste', cat: 'Security & Files', paths: '<rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>' },
+        { id: 'trash', name: 'Trash Delete', cat: 'Security & Files', paths: '<polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>' },
+        { id: 'edit', name: 'Edit Pencil', cat: 'Security & Files', paths: '<path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>' },
+
+        // Media & Communication (Original 12)
+        { id: 'mail', name: 'Mail Envelope', cat: 'Media & Communication', paths: '<path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>' },
+        { id: 'phone', name: 'Phone Call', cat: 'Media & Communication', paths: '<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.58 2.81.7A2 2 0 0 1 22 16.92z"/>' },
+        { id: 'message', name: 'Chat Bubble', cat: 'Media & Communication', paths: '<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>' },
+        { id: 'share', name: 'Share Nodes', cat: 'Media & Communication', paths: '<circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>' },
+        { id: 'camera', name: 'Camera', cat: 'Media & Communication', paths: '<path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/>' },
+        { id: 'video', name: 'Video Cam', cat: 'Media & Communication', paths: '<polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/>' },
+        { id: 'image', name: 'Photo Image', cat: 'Media & Communication', paths: '<rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/>' },
+        { id: 'mic', name: 'Microphone', cat: 'Media & Communication', paths: '<path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/>' },
+        { id: 'headphones', name: 'Headphones', cat: 'Media & Communication', paths: '<path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/>' },
+        { id: 'play', name: 'Play Triangle', cat: 'Media & Communication', paths: '<polygon points="5 3 19 12 5 21 5 3"/>' },
+        { id: 'volume', name: 'Speaker Volume', cat: 'Media & Communication', paths: '<polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>' },
+        { id: 'link', name: 'Chain Link', cat: 'Media & Communication', paths: '<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>' },
+
+        // Time & Extras (Original 12)
+        { id: 'calendar', name: 'Calendar', cat: 'Time & Extras', paths: '<rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>' },
+        { id: 'clock', name: 'Clock Time', cat: 'Time & Extras', paths: '<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>' },
+        { id: 'map-pin', name: 'Map Pin', cat: 'Time & Extras', paths: '<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>' },
+        { id: 'compass', name: 'Compass', cat: 'Time & Extras', paths: '<circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>' },
+        { id: 'sun', name: 'Sun Light', cat: 'Time & Extras', paths: '<circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>' },
+        { id: 'moon', name: 'Moon Night', cat: 'Time & Extras', paths: '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>' },
+        { id: 'heart', name: 'Heart', cat: 'Time & Extras', paths: '<path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>' },
+        { id: 'star', name: 'Star', cat: 'Time & Extras', paths: '<polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>' },
+        { id: 'bookmark', name: 'Bookmark', cat: 'Time & Extras', paths: '<path d="m19 21-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/>' },
+        { id: 'award', name: 'Award Medal', cat: 'Time & Extras', paths: '<circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/>' },
+        { id: 'gift', name: 'Gift Box', cat: 'Time & Extras', paths: '<polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/>' },
+        { id: 'briefcase', name: 'Briefcase', cat: 'Time & Extras', paths: '<rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>' },
+
+        // +60 Additional Distinct Icons (12 per category)
+
+        // UI & Navigation (+12)
+        { id: 'arrow-left', name: 'Arrow Left', cat: 'UI & Navigation', paths: '<line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/>' },
+        { id: 'arrow-up', name: 'Arrow Up', cat: 'UI & Navigation', paths: '<line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/>' },
+        { id: 'arrow-down', name: 'Arrow Down', cat: 'UI & Navigation', paths: '<line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/>' },
+        { id: 'chevron-right', name: 'Chevron Right', cat: 'UI & Navigation', paths: '<polyline points="9 18 15 12 9 6"/>' },
+        { id: 'chevron-left', name: 'Chevron Left', cat: 'UI & Navigation', paths: '<polyline points="15 18 9 12 15 6"/>' },
+        { id: 'x-circle', name: 'Close Circle', cat: 'UI & Navigation', paths: '<circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/>' },
+        { id: 'minus-circle', name: 'Minus Circle', cat: 'UI & Navigation', paths: '<circle cx="12" cy="12" r="10"/><line x1="8" y1="12" x2="16" y2="12"/>' },
+        { id: 'info-circle', name: 'Info Circle', cat: 'UI & Navigation', paths: '<circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/>' },
+        { id: 'help-circle', name: 'Help Question', cat: 'UI & Navigation', paths: '<circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/>' },
+        { id: 'alert-triangle', name: 'Warning Alert', cat: 'UI & Navigation', paths: '<path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>' },
+        { id: 'sliders', name: 'Sliders Control', cat: 'UI & Navigation', paths: '<line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/>' },
+        { id: 'maximize', name: 'Expand Frame', cat: 'UI & Navigation', paths: '<path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/>' },
+
+        // Commerce & Finance (+12)
+        { id: 'pie-chart', name: 'Pie Chart', cat: 'Commerce & Finance', paths: '<path d="M21.21 15.89A10 10 0 1 1 8 2.83"/><path d="M22 12A10 10 0 0 0 12 2v10z"/>' },
+        { id: 'trending-down', name: 'Trending Down', cat: 'Commerce & Finance', paths: '<polyline points="23 18 13.5 8.5 8.5 13.5 1 6"/><polyline points="17 18 23 18 23 12"/>' },
+        { id: 'calculator', name: 'Calculator', cat: 'Commerce & Finance', paths: '<rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="16" y1="14" x2="16" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/>' },
+        { id: 'coins', name: 'Coins Stack', cat: 'Commerce & Finance', paths: '<circle cx="8" cy="8" r="6"/><path d="M18.09 10.37A6 6 0 1 1 10.34 18"/><path d="M7 6h1v4"/><path d="m16.71 13.88.7.71-2.82 2.82"/>' },
+        { id: 'banknote', name: 'Cash Bill', cat: 'Commerce & Finance', paths: '<rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2"/><path d="M6 12h.01M18 12h.01"/>' },
+        { id: 'landmark', name: 'Bank Building', cat: 'Commerce & Finance', paths: '<line x1="3" y1="22" x2="21" y2="22"/><line x1="6" y1="18" x2="6" y2="11"/><line x1="10" y1="18" x2="10" y2="11"/><line x1="14" y1="18" x2="14" y2="11"/><line x1="18" y1="18" x2="18" y2="11"/><polygon points="12 2 20 7 4 7"/>' },
+        { id: 'storefront', name: 'Storefront', cat: 'Commerce & Finance', paths: '<path d="M3 9l1-5h16l1 5"/><path d="M5 9v11h14V9"/><path d="M9 20v-7h6v7"/>' },
+        { id: 'barcode', name: 'Barcode Scan', cat: 'Commerce & Finance', paths: '<path d="M3 5v14"/><path d="M8 5v14"/><path d="M12 5v14"/><path d="M17 5v14"/><path d="M21 5v14"/>' },
+        { id: 'qr-code', name: 'QR Code', cat: 'Commerce & Finance', paths: '<rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="3" height="3"/><line x1="21" y1="14" x2="21" y2="21"/><line x1="14" y1="21" x2="21" y2="21"/>' },
+        { id: 'anchor', name: 'Shipping Anchor', cat: 'Commerce & Finance', paths: '<circle cx="12" cy="5" r="3"/><line x1="12" y1="22" x2="12" y2="8"/><path d="M5 12H2a10 10 0 0 0 20 0h-3"/>' },
+        { id: 'scale', name: 'Balance Scale', cat: 'Commerce & Finance', paths: '<path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/>' },
+        { id: 'target', name: 'Goal Target', cat: 'Commerce & Finance', paths: '<circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>' },
+
+        // Tech & Dev (+12)
+        { id: 'server', name: 'Server Rack', cat: 'Tech & Dev', paths: '<rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/>' },
+        { id: 'hard-drive', name: 'Hard Drive', cat: 'Tech & Dev', paths: '<line x1="22" y1="12" x2="2" y2="12"/><path d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/><line x1="6" y1="16" x2="6.01" y2="16"/><line x1="10" y1="16" x2="10.01" y2="16"/>' },
+        { id: 'bluetooth', name: 'Bluetooth', cat: 'Tech & Dev', paths: '<polyline points="6.5 6.5 17.5 17.5 12 23 12 1 17.5 6.5 6.5 17.5"/>' },
+        { id: 'battery', name: 'Battery Full', cat: 'Tech & Dev', paths: '<rect x="1" y="6" width="18" height="12" rx="2" ry="2"/><line x1="23" y1="13" x2="23" y2="11"/><line x1="5" y1="10" x2="5" y2="14"/><line x1="9" y1="10" x2="9" y2="14"/><line x1="13" y1="10" x2="13" y2="14"/>' },
+        { id: 'tablet', name: 'Tablet Device', cat: 'Tech & Dev', paths: '<rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/>' },
+        { id: 'monitor', name: 'Desktop Monitor', cat: 'Tech & Dev', paths: '<rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>' },
+        { id: 'printer', name: 'Printer', cat: 'Tech & Dev', paths: '<polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/>' },
+        { id: 'watch', name: 'Smart Watch', cat: 'Tech & Dev', paths: '<circle cx="12" cy="12" r="7"/><polyline points="12 9 12 12 13.5 13.5"/><path d="M16.51 17.35l-.35 3.83a2 2 0 0 1-2 1.82H9.83a2 2 0 0 1-2-1.82l-.35-3.83m.01-10.7l.35-3.83A2 2 0 0 1 9.83 1h4.35a2 2 0 0 1 2 1.82l.35 3.83"/>' },
+        { id: 'command', name: 'Command Key', cat: 'Tech & Dev', paths: '<path d="M18 3a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3H6a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3V6a3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/>' },
+        { id: 'bug', name: 'Debug Bug', cat: 'Tech & Dev', paths: '<rect x="8" y="6" width="8" height="14" rx="4"/><path d="m19 7-3 2"/><path d="m5 7 3 2"/><path d="m19 19-3-2"/><path d="m5 19 3-2"/><path d="M20 13h-4"/><path d="M4 13h4"/><path d="m10 4 1 2"/><path d="m14 4-1 2"/>' },
+        { id: 'activity', name: 'Pulse Activity', cat: 'Tech & Dev', paths: '<polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>' },
+        { id: 'box', name: '3D Cube Box', cat: 'Tech & Dev', paths: '<path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/>' },
+
+        // Security & Files (+12)
+        { id: 'eye-off', name: 'Eye Hidden', cat: 'Security & Files', paths: '<path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/>' },
+        { id: 'fingerprint', name: 'Fingerprint ID', cat: 'Security & Files', paths: '<path d="M2 12C2 6.5 6.5 2 12 2a10 10 0 0 1 8 4"/><path d="M5 19.5C5.5 18 6 15 6 12a6 6 0 0 1 .34-2"/><path d="M8.65 22c.21-.66.45-1.32.57-2"/><path d="M9 6.8a6 6 0 0 1 9 5.2v2c0 .89-.03 1.77-.1 2.62"/><path d="M12 6a6 6 0 0 0-6 6v2c0 2-.5 4-1.5 5.5"/><path d="M15.3 18.2c-.3.9-.7 1.8-1.3 2.8"/><path d="M12 10a2 2 0 0 0-2 2c0 1.4-.3 2.8-.8 4"/>' },
+        { id: 'file-plus', name: 'New File', cat: 'Security & Files', paths: '<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/>' },
+        { id: 'file-check', name: 'Verified File', cat: 'Security & Files', paths: '<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><path d="m9 15 2 2 4-4"/>' },
+        { id: 'folder-open', name: 'Folder Open', cat: 'Security & Files', paths: '<path d="m6 14 1.5-2.9A2 2 0 0 1 9.24 10H20a2 2 0 0 1 1.94 2.5l-1.54 6a2 2 0 0 1-1.95 1.5H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H18a2 2 0 0 1 2 2v2"/>' },
+        { id: 'folder-plus', name: 'New Folder', cat: 'Security & Files', paths: '<path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/><line x1="12" y1="11" x2="12" y2="17"/><line x1="9" y1="14" x2="15" y2="14"/>' },
+        { id: 'save', name: 'Save Floppy', cat: 'Security & Files', paths: '<path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/>' },
+        { id: 'archive', name: 'Archive Box', cat: 'Security & Files', paths: '<rect x="2" y="4" width="20" height="5" rx="2"/><path d="M4 9v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9"/><path d="M10 13h4"/>' },
+        { id: 'clipboard', name: 'Clipboard', cat: 'Security & Files', paths: '<path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/>' },
+        { id: 'scissors', name: 'Cut Scissors', cat: 'Security & Files', paths: '<circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/>' },
+        { id: 'shield-alert', name: 'Shield Alert', cat: 'Security & Files', paths: '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>' },
+        { id: 'log-in', name: 'Sign In', cat: 'Security & Files', paths: '<path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/>' },
+
+        // Media & Communication (+12)
+        { id: 'send', name: 'Send Plane', cat: 'Media & Communication', paths: '<line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>' },
+        { id: 'inbox', name: 'Inbox Tray', cat: 'Media & Communication', paths: '<polyline points="22 12 16 12 14 15 10 15 8 12 2 12"/><path d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/>' },
+        { id: 'at-sign', name: 'At Mention', cat: 'Media & Communication', paths: '<circle cx="12" cy="12" r="4"/><path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-3.92 7.94"/>' },
+        { id: 'pause', name: 'Pause Bars', cat: 'Media & Communication', paths: '<rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/>' },
+        { id: 'stop', name: 'Stop Square', cat: 'Media & Communication', paths: '<rect x="5" y="5" width="14" height="14" rx="2"/>' },
+        { id: 'skip-forward', name: 'Next Track', cat: 'Media & Communication', paths: '<polygon points="5 4 15 12 5 20 5 4"/><line x1="19" y1="5" x2="19" y2="19"/>' },
+        { id: 'skip-back', name: 'Prev Track', cat: 'Media & Communication', paths: '<polygon points="19 20 9 12 19 4 19 20"/><line x1="5" y1="19" x2="5" y2="5"/>' },
+        { id: 'volume-mute', name: 'Mute Speaker', cat: 'Media & Communication', paths: '<polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/>' },
+        { id: 'music', name: 'Music Note', cat: 'Media & Communication', paths: '<path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/>' },
+        { id: 'radio', name: 'Broadcast Radio', cat: 'Media & Communication', paths: '<circle cx="12" cy="12" r="2"/><path d="M16.24 7.76a6 6 0 0 1 0 8.49m-8.48-.01a6 6 0 0 1 0-8.49m11.31-2.82a10 10 0 0 1 0 14.14m-14.14 0a10 10 0 0 1 0-14.14"/>' },
+        { id: 'rss', name: 'RSS Feed', cat: 'Media & Communication', paths: '<path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1"/>' },
+        { id: 'thumbs-up', name: 'Thumbs Up', cat: 'Media & Communication', paths: '<path d="M7 10v12"/><path d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2h0a3.13 3.13 0 0 1 3 3.88Z"/>' },
+
+        // Time & Extras (+12)
+        { id: 'hourglass', name: 'Hourglass Timer', cat: 'Time & Extras', paths: '<path d="M5 22h14"/><path d="M5 2h14"/><path d="M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22"/><path d="M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2"/>' },
+        { id: 'stopwatch', name: 'Stopwatch', cat: 'Time & Extras', paths: '<circle cx="12" cy="13" r="8"/><path d="M12 9v4l2 2"/><path d="M5 3 2 6"/><path d="m22 6-3-3"/><path d="M6.38 18.7 4 21"/><path d="M17.64 18.67 20 21"/>' },
+        { id: 'navigation', name: 'Navigation Arrow', cat: 'Time & Extras', paths: '<polygon points="3 11 22 2 13 21 11 13 3 11"/>' },
+        { id: 'flag', name: 'Flag Marker', cat: 'Time & Extras', paths: '<path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/>' },
+        { id: 'cloud-rain', name: 'Rain Cloud', cat: 'Time & Extras', paths: '<path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"/><path d="M16 14v6"/><path d="M8 14v6"/><path d="M12 16v6"/>' },
+        { id: 'flame', name: 'Flame Fire', cat: 'Time & Extras', paths: '<path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/>' },
+        { id: 'coffee', name: 'Coffee Cup', cat: 'Time & Extras', paths: '<path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/><line x1="6" y1="2" x2="6" y2="4"/><line x1="10" y1="2" x2="10" y2="4"/><line x1="14" y1="2" x2="14" y2="4"/>' },
+        { id: 'umbrella', name: 'Umbrella', cat: 'Time & Extras', paths: '<path d="M22 12a10.06 10.06 0 0 0-20 0Z"/><path d="M12 12v8a2 2 0 0 0 4 0"/><path d="M12 2v1"/>' },
+        { id: 'feather', name: 'Feather Pen', cat: 'Time & Extras', paths: '<path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"/><line x1="16" y1="8" x2="2" y2="22"/><line x1="17.5" y1="15" x2="9" y2="15"/>' },
+        { id: 'rocket', name: 'Rocket Launch', cat: 'Time & Extras', paths: '<path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/>' },
+        { id: 'sparkles', name: 'Sparkles', cat: 'Time & Extras', paths: '<path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z"/>' },
+        { id: 'crown', name: 'Crown', cat: 'Time & Extras', paths: '<path d="m2 4 3 12h14l3-12-6 7-4-7-4 7-6-7zm3 16h14"/>' }
+      ];
+
+      const CATEGORIES = ['All', ...new Set(ICON_LIBRARY.map(i => i.cat))];
+      let activeCat = 'All';
+      let exportMode = 'code'; // 'code' or 'link'
+      let selectedIcon = ICON_LIBRARY[0];
+
+      const categoryTabs = document.getElementById('categoryTabs');
+      const iconGrid = document.getElementById('iconGrid');
+      const iconCountBadge = document.getElementById('iconCountBadge');
+      const searchInput = document.getElementById('iconSearchInput');
+      const emptyMsg = document.getElementById('emptyIconMsg');
+
+      function renderCategoryTabs() {
+        categoryTabs.innerHTML = CATEGORIES.map(cat => {
+          const isActive = cat === activeCat;
+          return `<button type="button" data-cat="${cat}" class="cat-tab shrink-0 px-3 py-1.5 rounded-xl text-xs font-mono font-semibold transition-all ${isActive ? 'bg-primary text-white shadow-xs' : 'bg-surface-container hover:bg-surface-container-high text-on-surface-variant'}">${cat}</button>`;
+        }).join('');
+
+        document.querySelectorAll('.cat-tab').forEach(btn => {
+          btn.addEventListener('click', () => {
+            activeCat = btn.getAttribute('data-cat');
+            renderCategoryTabs();
+            renderIcons();
+          });
+        });
+      }
+
+      function buildSvgString(icon, color, strokeWidth, size) {
+        return `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="${color}" stroke-width="${strokeWidth}" stroke-linecap="round" stroke-linejoin="round">${icon.paths}</svg>`;
+      }
+
+      function buildDataUrlSnippet(svgMarkup) {
+        const encoded = encodeURIComponent(svgMarkup)
+          .replace(/'/g, '%27')
+          .replace(/"/g, '%22');
+        return `<img src="data:image/svg+xml,${encoded}" alt="${selectedIcon.name}" width="24" height="24" />`;
+      }
+
+      function updateCustomizer() {
+        const color = document.getElementById('iconColorInput').value;
+        const stroke = document.getElementById('iconStrokeRange').value;
+        const size = parseInt(document.getElementById('iconSizeRange').value, 10);
+        const badgeStyle = document.getElementById('iconBadgeSelect').value;
+
+        document.getElementById('iconColorHex').textContent = color;
+        document.getElementById('iconStrokeVal').textContent = parseFloat(stroke).toFixed(1);
+        document.getElementById('iconSizeVal').textContent = size + 'px';
+
+        document.getElementById('selectedIconTitle').textContent = selectedIcon.name;
+        document.getElementById('selectedIconMeta').textContent = `Category: ${selectedIcon.cat} • Free`;
+
+        const svgMarkup = buildSvgString(selectedIcon, color, stroke, size);
+        const stage = document.getElementById('liveIconStage');
+
+        let boxClasses = 'p-2';
+        let boxStyle = '';
+        if (badgeStyle === 'rounded') {
+          boxClasses = 'p-4 rounded-2xl border border-outline/20 bg-surface-container-lowest shadow-sm';
+        } else if (badgeStyle === 'circle') {
+          boxClasses = 'p-4 rounded-full border border-outline/20 bg-surface-container-lowest shadow-sm';
+        } else if (badgeStyle === 'soft') {
+          boxClasses = 'p-4 rounded-2xl shadow-sm';
+          boxStyle = `background-color: ${color}18; border: 1px solid ${color}33;`;
+        }
+
+        stage.className = `flex items-center justify-center transition-all duration-150 ${boxClasses}`;
+        stage.setAttribute('style', boxStyle);
+        stage.innerHTML = svgMarkup;
+
+        document.getElementById('exportOutputBox').value =
+          exportMode === 'code' ? svgMarkup : buildDataUrlSnippet(svgMarkup);
+      }
+
+      function renderIcons() {
+        const q = (searchInput.value || '').trim().toLowerCase();
+        const filtered = ICON_LIBRARY.filter(item => {
+          const matchCat = activeCat === 'All' || item.cat === activeCat;
+          const matchSearch = !q ||
+            item.name.toLowerCase().includes(q) ||
+            item.cat.toLowerCase().includes(q) ||
+            item.id.toLowerCase().includes(q);
+          return matchCat && matchSearch;
+        });
+
+        iconCountBadge.textContent = `${filtered.length} Icons`;
+
+        if (filtered.length === 0) {
+          iconGrid.innerHTML = '';
+          emptyMsg.classList.remove('hidden');
+          return;
+        }
+        emptyMsg.classList.add('hidden');
+
+        iconGrid.innerHTML = filtered.map(item => {
+          const isSelected = item.id === selectedIcon.id;
+          return `
+            <button type="button" data-icon-id="${item.id}" class="icon-tile flex flex-col items-center justify-center gap-2 p-3 rounded-xl border transition-all text-center ${isSelected ? 'bg-primary/10 border-primary shadow-xs' : 'bg-surface-container-low border-outline/15 hover:border-primary/40'}">
+              <div class="text-on-surface">${buildSvgString(item, 'currentColor', 2, 26)}</div>
+              <span class="text-[11px] font-medium text-on-surface-variant line-clamp-1">${item.name}</span>
+            </button>
+          `;
+        }).join('');
+
+        document.querySelectorAll('.icon-tile').forEach(tile => {
+          tile.addEventListener('click', () => {
+            const id = tile.getAttribute('data-icon-id');
+            const found = ICON_LIBRARY.find(i => i.id === id);
+            if (found) {
+              selectedIcon = found;
+              renderIcons();
+              updateCustomizer();
+            }
+          });
+        });
+      }
+
+      searchInput.addEventListener('input', renderIcons);
+      ['iconColorInput', 'iconBadgeSelect', 'iconStrokeRange', 'iconSizeRange'].forEach(id => {
+        document.getElementById(id).addEventListener('input', updateCustomizer);
+        document.getElementById(id).addEventListener('change', updateCustomizer);
+      });
+
+      const modeCodeBtn = document.getElementById('modeCodeBtn');
+      const modeLinkBtn = document.getElementById('modeLinkBtn');
+
+      modeCodeBtn.addEventListener('click', () => {
+        exportMode = 'code';
+        modeCodeBtn.className = 'px-2.5 py-1 rounded-lg bg-primary text-white text-xs font-mono font-semibold';
+        modeLinkBtn.className = 'px-2.5 py-1 rounded-lg text-on-surface-variant hover:text-on-surface text-xs font-mono font-semibold';
+        updateCustomizer();
+      });
+
+      modeLinkBtn.addEventListener('click', () => {
+        exportMode = 'link';
+        modeLinkBtn.className = 'px-2.5 py-1 rounded-lg bg-primary text-white text-xs font-mono font-semibold';
+        modeCodeBtn.className = 'px-2.5 py-1 rounded-lg text-on-surface-variant hover:text-on-surface text-xs font-mono font-semibold';
+        updateCustomizer();
+      });
+
+      document.getElementById('copyOutputBtn').addEventListener('click', function () {
+        const text = document.getElementById('exportOutputBox').value;
+        navigator.clipboard.writeText(text).then(() => {
+          const orig = this.textContent;
+          this.textContent = 'Copied!';
+          setTimeout(() => { this.textContent = orig; }, 1200);
+        });
+      });
+
+      document.getElementById('downloadSvgBtn').addEventListener('click', function () {
+        const color = document.getElementById('iconColorInput').value;
+        const stroke = document.getElementById('iconStrokeRange').value;
+        const size = parseInt(document.getElementById('iconSizeRange').value, 10);
+        const code = buildSvgString(selectedIcon, color, stroke, size);
+        const blob = new Blob([code], { type: 'image/svg+xml;charset=utf-8' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `${selectedIcon.id}-divcraft.svg`;
+        a.click();
+        URL.revokeObjectURL(url);
+      });
+
+      renderCategoryTabs();
+      renderIcons();
+      updateCustomizer();
+    })();
+  </script>
+</body>
+</html>
