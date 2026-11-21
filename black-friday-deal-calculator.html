@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+  <title>Black Friday 2026 Deal, Stackable Coupon &amp; US Sales Tax Calculator | DivCraft</title>
+  <meta content="Calculate final Black Friday 2026 checkout prices with stackable coupons, promo codes, cashback, and US state sales tax (California, Texas, NY &amp; all 50 states)." name="description"/>
+  <meta content="black friday deal calculator, when is black friday 2026, stackable coupon calculator black friday, black friday sales tax calculator california, black friday deals 2026, black friday best buy 2026" name="keywords"/>
+  <link rel="canonical" href="https://divcraft.online/black-friday-deal-calculator.html"/>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%234f46e5'><path d='M12 2L2 7l10 5 10-5-10-5zm0 13l-10-5v6l10 5 10-5v-6l-10 5z'/></svg>">
+
+  <!-- Google Fonts & Material Symbols -->
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-surface": "#131b2e",
+            "secondary": "#00687a",
+            "primary-container": "#4f46e5",
+            "outline": "#777587",
+            "surface": "#faf8ff",
+            "surface-container-high": "#e2e7ff",
+            "surface-container": "#eaedff",
+            "primary": "#3525cd",
+            "on-surface-variant": "#464555",
+            "outline-variant": "#c7c4d8",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-low": "#f2f3ff"
+          },
+          fontFamily: {
+            sans: ["Inter", "sans-serif"],
+            mono: ["JetBrains Mono", "monospace"]
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- FAQ & WebApplication Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "When is Black Friday 2026?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Black Friday 2026 falls on Friday, November 27, 2026, the day after US Thanksgiving, followed by Cyber Monday on November 30, 2026."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do you calculate stackable Black Friday coupons?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most retailers apply percentage coupons sequentially rather than adding them together. For example, a 30% store sale on a $200 item brings it to $140, and an extra 15% promo code reduces $140 by $21 to $119 before sales tax."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does Black Friday sales tax work in California and other US states?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "In most US states, sales tax is calculated on the discounted price after store markdowns and promo codes. California has a 7.25% statewide base rate plus local district taxes, while states like Oregon, Delaware, Montana, New Hampshire, and Alaska have 0% statewide sales tax."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    @layer base {
+      html, body {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        transition: background-color 0.25s ease, color 0.25s ease;
+      }
+      body { overscroll-behavior-y: none; }
+      .pb-safe { padding-bottom: env(safe-area-inset-bottom, 16px); }
+      .pt-safe { padding-top: env(safe-area-inset-top, 0px); }
+    }
+
+    html.dark { color-scheme: dark; }
+    html.dark body { background-color: #0c1019 !important; color: #e4e9f7 !important; }
+    html.dark .bg-surface { background-color: #0c1019 !important; }
+    html.dark .bg-surface-container-lowest { background-color: #080c14 !important; }
+    html.dark .bg-surface-container-low { background-color: #121826 !important; }
+    html.dark .bg-surface-container { background-color: #182033 !important; }
+    html.dark .bg-surface-container-high { background-color: #1f2a42 !important; }
+    html.dark .text-on-surface { color: #f1f5f9 !important; }
+    html.dark .text-on-surface-variant { color: #94a3b8 !important; }
+    html.dark .border-outline-variant { border-color: #1e293b !important; }
+
+    html:not(.dark) body { background-color: #f8fafc !important; color: #0f172a !important; }
+    html:not(.dark) .bg-surface { background-color: #f8fafc !important; }
+    html:not(.dark) .bg-surface-container-lowest { background-color: #ffffff !important; }
+    html:not(.dark) .bg-surface-container-low { background-color: #ffffff !important; }
+    html:not(.dark) .bg-surface-container { background-color: #f1f5f9 !important; }
+    html:not(.dark) .bg-surface-container-high { background-color: #e2e8f0 !important; }
+    html:not(.dark) .text-on-surface { color: #0f172a !important; }
+    html:not(.dark) .text-on-surface-variant { color: #475569 !important; }
+  </style>
+</head>
+<body class="bg-surface text-on-surface font-sans flex flex-col min-h-screen transition-colors duration-200">
+
+  <!-- Fixed Top Navigation Header -->
+  <header class="fixed top-0 w-full z-50 pt-safe bg-surface/90 backdrop-blur-xl border-b border-outline/10 shadow-sm transition-colors duration-200">
+    <div class="h-16 px-4 md:px-8 max-w-7xl mx-auto flex items-center justify-between gap-3">
+      <a href="index.html" class="flex items-center gap-2.5 group">
+        <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-indigo-600 via-primary to-cyan-400 p-[1.5px] shadow-sm flex items-center justify-center">
+          <div class="w-full h-full bg-surface-container-lowest rounded-[10px] flex items-center justify-center">
+            <span class="material-symbols-outlined text-primary text-[20px]">terminal</span>
+          </div>
+        </div>
+        <div class="flex flex-col">
+          <div class="flex items-center gap-1.5">
+            <span class="font-bold text-lg tracking-tight text-on-surface group-hover:text-primary transition-colors">DivCraft</span>
+            <span class="text-[9px] font-mono font-bold px-1.5 py-0.5 rounded bg-primary/10 text-primary uppercase tracking-wider">v2.4</span>
+          </div>
+          <span class="text-[10px] font-mono text-on-surface-variant font-medium tracking-wide">Client-Side Hub</span>
+        </div>
+      </a>
+
+      <div class="flex items-center gap-2">
+        <a href="index.html" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-surface-container hover:bg-surface-container-high text-xs font-mono font-medium text-on-surface transition-all">
+          <span class="material-symbols-outlined text-[16px]">grid_view</span>
+          <span>All Tools</span>
+        </a>
+
+        <button type="button" aria-label="Toggle Theme Mode" class="w-9 h-9 flex items-center justify-center rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface transition-all active:scale-90" id="themeToggleBtn" title="Toggle Light / Dark Mode">
+          <span class="material-symbols-outlined text-[20px] text-amber-400" id="themeIconLight">light_mode</span>
+          <span class="material-symbols-outlined text-[20px] text-indigo-400 hidden" id="themeIconDark">dark_mode</span>
+        </button>
+
+        <div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 dark:text-emerald-400 text-[11px] font-mono font-medium">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+          <span>Runs in Browser</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Area -->
+  <main class="flex flex-col relative w-full pt-20 pb-24 min-h-screen">
+    <div class="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 flex flex-col gap-8">
+
+      <!-- Page Header & Quick Key Dates Banner -->
+      <section class="pt-3 flex flex-col lg:flex-row lg:items-end justify-between gap-4">
+        <div class="flex flex-col gap-1.5">
+          <a href="index.html" class="inline-flex items-center gap-1 text-xs font-mono text-primary hover:underline w-fit">
+            <span class="material-symbols-outlined text-[15px]">arrow_back</span>
+            <span>Back to All Tools</span>
+          </a>
+          <h1 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-on-surface">
+            Black Friday 2026 Deal, Coupon &amp; US Tax Calculator
+          </h1>
+          <p class="text-sm text-on-surface-variant max-w-2xl">
+            Calculate stackable Black Friday discounts, promo codes, cashback, and exact US state sales tax (California, Texas, NY &amp; all 50 states) before you checkout.
+          </p>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-2 shrink-0">
+          <span class="px-3 py-1.5 rounded-xl bg-amber-500/10 border border-amber-500/25 text-xs font-mono font-bold text-amber-600 dark:text-amber-400">
+            Black Friday 2026: Nov 27
+          </span>
+          <span class="px-3 py-1.5 rounded-xl bg-surface-container border border-outline/15 text-xs font-mono font-semibold text-on-surface-variant">
+            Cyber Monday: Nov 30
+          </span>
+        </div>
+      </section>
+
+      <!-- MAIN INTERACTIVE CALCULATOR WORKSPACE -->
+      <section class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+
+        <!-- LEFT: INPUT CONTROLS (7 COLS) -->
+        <div class="lg:col-span-7 bg-surface-container-low border border-outline/15 rounded-2xl p-4 sm:p-6 shadow-sm flex flex-col gap-5">
+
+          <!-- Quick Scenario Presets -->
+          <div class="flex flex-col gap-2">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono font-bold uppercase tracking-wider text-on-surface-variant">Quick Deal Presets</span>
+              <button type="button" id="resetCalcBtn" class="text-xs font-mono text-primary hover:underline">Reset</button>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <button type="button" data-preset="bestbuy" class="preset-btn px-3 py-1.5 rounded-xl bg-surface-container hover:bg-surface-container-high border border-outline/15 text-xs font-mono font-medium text-on-surface transition-all">
+                4K TV Doorbuster ($899 • 35% + $50)
+              </button>
+              <button type="button" data-preset="apparel" class="preset-btn px-3 py-1.5 rounded-xl bg-surface-container hover:bg-surface-container-high border border-outline/15 text-xs font-mono font-medium text-on-surface transition-all">
+                Stackable Fashion (40% + 15% Code)
+              </button>
+              <button type="button" data-preset="taxfree" class="preset-btn px-3 py-1.5 rounded-xl bg-surface-container hover:bg-surface-container-high border border-outline/15 text-xs font-mono font-medium text-on-surface transition-all">
+                Laptop in Oregon (0% Tax)
+              </button>
+            </div>
+          </div>
+
+          <!-- Step 1: Item Prices -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2 border-t border-outline/10">
+            <div class="flex flex-col gap-1.5">
+              <label for="listPriceInput" class="text-xs font-bold text-on-surface">Advertised / Tag Price ($)</label>
+              <input id="listPriceInput" type="number" min="0" step="0.01" value="249.99" class="rounded-xl bg-surface-container-lowest border border-outline/20 px-3.5 py-2.5 text-sm font-mono text-on-surface focus:border-primary"/>
+              <span class="text-[11px] text-on-surface-variant">The sticker price shown before discounts.</span>
+            </div>
+
+            <div class="flex flex-col gap-1.5">
+              <label for="realNormalPriceInput" class="text-xs font-bold text-on-surface">Typical Pre-Sale Price ($) <span class="font-normal text-on-surface-variant">(Optional)</span></label>
+              <input id="realNormalPriceInput" type="number" min="0" step="0.01" value="219.99" class="rounded-xl bg-surface-container-lowest border border-outline/20 px-3.5 py-2.5 text-sm font-mono text-on-surface focus:border-primary"/>
+              <span class="text-[11px] text-on-surface-variant">Checks if the store inflated the tag price first.</span>
+            </div>
+          </div>
+
+          <!-- Step 2: Stackable Discounts & Coupons -->
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3.5 pt-2 border-t border-outline/10">
+            <div class="flex flex-col gap-1.5">
+              <label for="primaryDiscInput" class="text-xs font-bold text-on-surface">1st Store Sale (%)</label>
+              <input id="primaryDiscInput" type="number" min="0" max="99" step="0.5" value="30" class="rounded-xl bg-surface-container-lowest border border-outline/20 px-3 py-2.5 text-sm font-mono text-on-surface focus:border-primary"/>
+            </div>
+
+            <div class="flex flex-col gap-1.5">
+              <label for="extraCouponValInput" class="text-xs font-bold text-on-surface">2nd Stackable Coupon</label>
+              <div class="flex rounded-xl overflow-hidden border border-outline/20 bg-surface-container-lowest">
+                <input id="extraCouponValInput" type="number" min="0" step="0.5" value="15" class="w-full border-0 bg-transparent px-3 py-2.5 text-sm font-mono text-on-surface focus:ring-0"/>
+                <select id="extraCouponType" aria-label="Coupon Type" class="border-0 border-l border-outline/20 bg-surface-container px-2.5 text-xs font-mono font-bold text-on-surface focus:ring-0">
+                  <option value="percent" selected>%</option>
+                  <option value="dollar">$</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="flex flex-col gap-1.5">
+              <label for="cashbackInput" class="text-xs font-bold text-on-surface">Card / App Cashback (%)</label>
+              <input id="cashbackInput" type="number" min="0" max="50" step="0.5" value="5" class="rounded-xl bg-surface-container-lowest border border-outline/20 px-3 py-2.5 text-sm font-mono text-on-surface focus:border-primary"/>
+            </div>
+          </div>
+
+          <!-- Step 3: US State Sales Tax Selector -->
+          <div class="grid grid-cols-1 sm:grid-cols-12 gap-3.5 pt-2 border-t border-outline/10">
+            <div class="sm:col-span-7 flex flex-col gap-1.5">
+              <label for="usStateSelect" class="text-xs font-bold text-on-surface">US State (2026 Avg Combined Sales Tax)</label>
+              <select id="usStateSelect" class="rounded-xl bg-surface-container-lowest border border-outline/20 px-3 py-2.5 text-xs font-mono text-on-surface focus:border-primary">
+                <!-- Populated via JS with all 50 states + DC -->
+              </select>
+            </div>
+
+            <div class="sm:col-span-5 flex flex-col gap-1.5">
+              <label for="taxRateInput" class="text-xs font-bold text-on-surface">Applied Tax Rate (%)</label>
+              <input id="taxRateInput" type="number" min="0" max="15" step="0.01" value="8.85" class="rounded-xl bg-surface-container-lowest border border-outline/20 px-3 py-2.5 text-sm font-mono text-on-surface focus:border-primary"/>
+            </div>
+          </div>
+
+          <div class="flex items-center justify-between pt-1">
+            <label class="inline-flex items-center gap-2 text-xs text-on-surface-variant cursor-pointer">
+              <input id="quantityInput" type="number" min="1" max="50" value="1" class="w-16 rounded-lg bg-surface-container-lowest border border-outline/20 px-2.5 py-1 text-xs font-mono text-on-surface"/>
+              <span>Item Quantity</span>
+            </label>
+
+            <button type="button" id="copySummaryBtn" class="px-3.5 py-2 rounded-xl bg-primary hover:bg-primary-container text-white text-xs font-mono font-semibold transition-all active:scale-95">
+              Copy Deal Breakdown
+            </button>
+          </div>
+        </div>
+
+        <!-- RIGHT: LIVE CHECKOUT BREAKDOWN & DEAL VERDICT (5 COLS) -->
+        <div class="lg:col-span-5 lg:sticky lg:top-20 flex flex-col gap-4">
+          <div class="bg-surface-container-low border border-outline/15 rounded-2xl p-5 shadow-sm flex flex-col gap-4">
+
+            <div class="flex items-center justify-between border-b border-outline/10 pb-3">
+              <div>
+                <span class="text-[11px] font-mono uppercase tracking-wider text-on-surface-variant">Estimated Checkout Total</span>
+                <div id="finalOutOfPocketEl" class="text-3xl sm:text-4xl font-black font-mono text-primary mt-0.5">$161.91</div>
+              </div>
+              <span id="dealVerdictBadge" class="px-3 py-1 rounded-full text-[11px] font-mono font-bold bg-emerald-500/15 text-emerald-600 dark:text-emerald-400">
+                GENUINE DEAL
+              </span>
+            </div>
+
+            <!-- Key Highlight Cards -->
+            <div class="grid grid-cols-2 gap-3">
+              <div class="bg-surface-container-lowest border border-outline/15 rounded-xl p-3">
+                <span class="text-[11px] text-on-surface-variant block">Total Saved vs Tag</span>
+                <span id="totalSavedEl" class="text-lg font-extrabold font-mono text-emerald-600 dark:text-emerald-400">$101.25</span>
+                <span id="effectiveDiscountEl" class="text-[11px] font-mono text-on-surface-variant block">40.5% effective off</span>
+              </div>
+
+              <div class="bg-surface-container-lowest border border-outline/15 rounded-xl p-3">
+                <span class="text-[11px] text-on-surface-variant block">Net Cost After Cashback</span>
+                <span id="netAfterCashbackEl" class="text-lg font-extrabold font-mono text-on-surface">$154.47</span>
+                <span id="cashbackEarnedEl" class="text-[11px] font-mono text-primary block">+$7.44 rewards back</span>
+              </div>
+            </div>
+
+            <!-- Step-by-Step Math Receipt -->
+            <div class="bg-surface-container-lowest border border-outline/15 rounded-xl p-3.5 flex flex-col gap-2 text-xs font-mono">
+              <div class="flex justify-between text-on-surface-variant">
+                <span>Subtotal (Tag Price)</span>
+                <span id="rowTagSubtotal">$249.99</span>
+              </div>
+              <div class="flex justify-between text-emerald-600 dark:text-emerald-400">
+                <span>1st Store Discount</span>
+                <span id="rowFirstDiscount">-$75.00</span>
+              </div>
+              <div class="flex justify-between text-emerald-600 dark:text-emerald-400">
+                <span>2nd Stackable Coupon</span>
+                <span id="rowSecondCoupon">-$26.25</span>
+              </div>
+              <div class="flex justify-between font-bold text-on-surface pt-1.5 border-t border-outline/10">
+                <span>Discounted Pre-Tax Price</span>
+                <span id="rowPreTaxPrice">$148.74</span>
+              </div>
+              <div class="flex justify-between text-amber-600 dark:text-amber-400">
+                <span id="rowTaxLabel">Estimated Sales Tax (8.85%)</span>
+                <span id="rowTaxAmount">+$13.16</span>
+              </div>
+              <div class="flex justify-between font-extrabold text-sm text-primary pt-1.5 border-t border-outline/10">
+                <span>Final Checkout Price</span>
+                <span id="rowFinalTotal">$161.90</span>
+              </div>
+            </div>
+
+            <p id="anchorCheckNote" class="text-xs leading-relaxed text-on-surface-variant bg-surface-container rounded-xl p-3">
+              Compared to its typical pre-sale price ($219.99), you are still saving <strong>$71.25 (32.4% off)</strong> before tax.
+            </p>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- INTERACTIVE 50-STATE SALES TAX QUICK LOOKUP TABLE -->
+      <section class="bg-surface-container-low border border-outline/15 rounded-2xl p-5 sm:p-6 shadow-sm flex flex-col gap-4">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div>
+            <h2 class="text-lg sm:text-xl font-bold text-on-surface">
+              2026 US State Sales Tax Quick Lookup (Click Any State to Apply)
+            </h2>
+            <p class="text-xs text-on-surface-variant mt-0.5">
+              Compare state base rates and average combined local rates—including California, Texas, New York, Florida, and 0% tax states.
+            </p>
+          </div>
+          <input id="stateFilterInput" type="search" placeholder="Filter state (e.g. California, Oregon, Texas)..." class="sm:w-64 rounded-xl bg-surface-container-lowest border border-outline/20 px-3 py-2 text-xs text-on-surface focus:border-primary"/>
+        </div>
+
+        <div class="overflow-x-auto max-h-72 rounded-xl border border-outline/15">
+          <table class="w-full text-left border-collapse text-xs">
+            <thead class="bg-surface-container sticky top-0 font-mono text-[11px] uppercase text-on-surface-variant">
+              <tr>
+                <th class="py-2.5 px-3">State</th>
+                <th class="py-2.5 px-3">State Base Rate</th>
+                <th class="py-2.5 px-3">Avg Combined Rate</th>
+                <th class="py-2.5 px-3">Black Friday Tax Note</th>
+                <th class="py-2.5 px-3 text-right">Action</th>
+              </tr>
+            </thead>
+            <tbody id="stateTaxTableBody" class="divide-y divide-outline/10 bg-surface-container-lowest font-mono">
+              <!-- Populated via JS -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+     <!-- VISUAL, EASY-ENGLISH SEO GUIDE & Q&A SECTION -->
+      <article class="bg-surface-container-low border border-outline/15 rounded-2xl p-5 sm:p-8 shadow-sm flex flex-col gap-7">
+
+        <!-- Intro -->
+        <div class="flex flex-col gap-3">
+          <span class="text-[11px] font-mono font-bold uppercase tracking-wider text-primary">2026 Shopping &amp; Deal Guide</span>
+          <h2 class="text-xl sm:text-2xl font-extrabold text-on-surface">
+            Black Friday Deals 2026: How to Check Coupons, Discounts &amp; Sales Tax
+          </h2>
+          <p class="text-sm leading-relaxed text-on-surface-variant">
+            Finding real savings during <strong>Black Friday deals 2026</strong> takes more than just looking at a big percentage sign. Stores often combine store markdowns, promo codes, reward offers, and state sales tax at checkout. With this browser calculator, you can test different combinations in seconds and see what you actually pay before placing an order.
+          </p>
+        </div>
+
+        <!-- 3 Highlight Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div class="bg-surface-container-lowest border border-outline/15 rounded-xl p-4 flex flex-col gap-2">
+            <div class="flex items-center gap-2 text-primary font-bold text-sm">
+              <span class="material-symbols-outlined text-[19px]">event</span>
+              <h3>When Is Black Friday 2026?</h3>
+            </div>
+            <p class="text-xs leading-relaxed text-on-surface-variant">
+              Many shoppers ask, <strong>when is Black Friday 2026</strong>? It falls on <strong>Friday, November 27, 2026</strong>, the day after US Thanksgiving. Early sales start earlier in November, and Cyber Monday follows on November 30, 2026, so checking prices ahead of time helps you spot real drops during <strong>Black Friday deals 2026</strong>.
+            </p>
+          </div>
+
+          <div class="bg-surface-container-lowest border border-outline/15 rounded-xl p-4 flex flex-col gap-2">
+            <div class="flex items-center gap-2 text-primary font-bold text-sm">
+              <span class="material-symbols-outlined text-[19px]">tv</span>
+              <h3>Black Friday Best Buy 2026 &amp; Tech Offers</h3>
+            </div>
+            <p class="text-xs leading-relaxed text-on-surface-variant">
+              If you are watching <strong>Black Friday Best Buy 2026</strong> ads for TVs, laptops, headphones, or appliances, compare the sale price against the item's normal pre-sale price. A big discount on a raised list price can look better than it really is.
+            </p>
+          </div>
+
+          <div class="bg-surface-container-lowest border border-outline/15 rounded-xl p-4 flex flex-col gap-2">
+            <div class="flex items-center gap-2 text-primary font-bold text-sm">
+              <span class="material-symbols-outlined text-[19px]">receipt_long</span>
+              <h3>Black Friday Sales Tax Calculator California</h3>
+            </div>
+            <p class="text-xs leading-relaxed text-on-surface-variant">
+              Using a <strong>Black Friday sales tax calculator California</strong> shoppers can estimate checkout tax more accurately because California has a 7.25% statewide base rate plus local district taxes. Different US states charge different rates, which is why the tool above lets you switch states easily.
+            </p>
+          </div>
+        </div>
+
+        <!-- How to Calculate Stackable Black Friday Coupons -->
+        <div class="bg-surface-container-lowest border border-outline/15 rounded-xl p-5 flex flex-col gap-2.5">
+          <h3 class="font-bold text-base text-on-surface">
+            How to Calculate Stackable Black Friday Coupons Step by Step
+          </h3>
+          <p class="text-xs sm:text-sm leading-relaxed text-on-surface-variant">
+            Learning <strong>how to calculate stackable Black Friday coupons</strong> is simple once you know that most stores apply discounts one after another instead of adding percentages together. For example, if an item is $200 with a 30% sale and an extra 15% coupon:
+          </p>
+          <ul class="text-xs sm:text-sm text-on-surface-variant space-y-1.5 pl-4 list-disc">
+            <li><strong>First discount:</strong> 30% off $200 takes off $60, leaving $140.</li>
+            <li><strong>Second coupon:</strong> 15% off the remaining $140 takes off $21, leaving $119 before tax.</li>
+            <li><strong>Sales tax &amp; cashback:</strong> Sales tax is added on top of the discounted price in most states, and any card cashback lowers your final cost after checkout.</li>
+          </ul>
+        </div>
+
+        <!-- Q&A Section -->
+        <div class="flex flex-col gap-3">
+          <h3 class="font-bold text-base sm:text-lg text-on-surface">Quick Questions &amp; Answers</h3>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-3.5">
+            <div class="bg-surface-container-lowest border border-outline/15 rounded-xl p-4 flex flex-col gap-1">
+              <h4 class="font-bold text-xs sm:text-sm text-on-surface">Q1. When is Black Friday 2026 and when do sales start?</h4>
+              <p class="text-xs leading-relaxed text-on-surface-variant">
+                Black Friday 2026 is on November 27, 2026. Many retailers launch early <strong>Black Friday deals 2026</strong> weeks ahead and run extra offers through Cyber Monday.
+              </p>
+            </div>
+
+            <div class="bg-surface-container-lowest border border-outline/15 rounded-xl p-4 flex flex-col gap-1">
+              <h4 class="font-bold text-xs sm:text-sm text-on-surface">Q2. What should I check during Black Friday Best Buy 2026 sales?</h4>
+              <p class="text-xs leading-relaxed text-on-surface-variant">
+                Check model numbers, bundle terms, return windows, and tax in your state before buying. Plugging the sale tag and extra coupon into the calculator shows your real checkout cost fast.
+              </p>
+            </div>
+
+            <div class="bg-surface-container-lowest border border-outline/15 rounded-xl p-4 flex flex-col gap-1">
+              <h4 class="font-bold text-xs sm:text-sm text-on-surface">Q3. How does a Black Friday sales tax calculator California help?</h4>
+              <p class="text-xs leading-relaxed text-on-surface-variant">
+                California local tax rates vary by city and county, so a <strong>Black Friday sales tax calculator California</strong> setup lets you enter your local rate and see how tax affects the final bill after discounts.
+              </p>
+            </div>
+
+            <div class="bg-surface-container-lowest border border-outline/15 rounded-xl p-4 flex flex-col gap-1">
+              <h4 class="font-bold text-xs sm:text-sm text-on-surface">Q4. Why is learning how to calculate stackable Black Friday coupons important?</h4>
+              <p class="text-xs leading-relaxed text-on-surface-variant">
+                Knowing <strong>how to calculate stackable Black Friday coupons</strong> prevents overestimating your discount—30% off plus 15% off equals 40.5% total off, not 45%.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </article>
+
+      <!-- Related DivCraft Tools -->
+      <section class="flex flex-col gap-3.5">
+        <div class="flex items-center justify-between">
+          <h2 class="text-lg sm:text-xl font-bold text-on-surface">More Tools on DivCraft</h2>
+          <a href="index.html" class="text-xs font-mono text-primary hover:underline">All Tools →</a>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5">
+          <a href="ecommerce-margin-calculator.html" class="bg-surface-container-low border border-outline/15 hover:border-primary/50 rounded-xl p-4 flex flex-col justify-between gap-2 transition-all group">
+            <div>
+              <h3 class="font-bold text-sm text-on-surface group-hover:text-primary transition-colors">Ecommerce Profit Calc</h3>
+              <p class="text-xs text-on-surface-variant mt-0.5">Calculate real product profit, margin, shipping, fees, ad spend, and selling price.</p>
+            </div>
+            <span class="text-xs font-mono text-primary inline-flex items-center gap-1">Open Tool <span class="material-symbols-outlined text-[14px]">arrow_forward</span></span>
+          </a>
+
+          <a href="icon-lab.html" class="bg-surface-container-low border border-outline/15 hover:border-primary/50 rounded-xl p-4 flex flex-col justify-between gap-2 transition-all group">
+            <div>
+              <h3 class="font-bold text-sm text-on-surface group-hover:text-primary transition-colors">Icon Lab – Vector Customizer</h3>
+              <p class="text-xs text-on-surface-variant mt-0.5">Customize colors, stroke, and size for 120 free vector icons and copy SVG code or link.</p>
+            </div>
+            <span class="text-xs font-mono text-primary inline-flex items-center gap-1">Open Tool <span class="material-symbols-outlined text-[14px]">arrow_forward</span></span>
+          </a>
+
+          <a href="index.html" class="bg-surface-container-low border border-outline/15 hover:border-primary/50 rounded-xl p-4 flex flex-col justify-between gap-2 transition-all group">
+            <div>
+              <h3 class="font-bold text-sm text-on-surface group-hover:text-primary transition-colors">Payment Fee Calculator</h3>
+              <p class="text-xs text-on-surface-variant mt-0.5">Calculate Stripe, PayPal, and Wise net payouts and processing fees.</p>
+            </div>
+            <span class="text-xs font-mono text-primary inline-flex items-center gap-1">Open Tool <span class="material-symbols-outlined text-[14px]">arrow_forward</span></span>
+          </a>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="mt-2 pt-8 pb-4 border-t border-outline/15 text-xs text-on-surface-variant flex flex-col gap-4">
+        <div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 font-mono text-[11px]">
+          <a class="hover:text-primary transition-colors" href="index.html">Home</a>
+          <a class="hover:text-primary transition-colors" href="index.html#about">About Us</a>
+          <a class="hover:text-primary transition-colors" href="index.html#privacy">Privacy Policy</a>
+          <a class="hover:text-primary transition-colors" href="index.html#terms">Terms of Service</a>
+          <a class="hover:text-primary transition-colors" href="index.html#contact">Contact Us</a>
+        </div>
+        <div class="max-w-3xl mx-auto text-center flex flex-col gap-1.5">
+          <p class="text-[11px] leading-relaxed text-on-surface-variant/80">
+            <strong>Publisher Disclosure:</strong> DivCraft runs 100% locally in your browser with zero server tracking. Tax rates shown are statewide averages; local city/district taxes may vary slightly by ZIP code.
+          </p>
+          <p class="text-[10px] text-on-surface-variant/60">
+            © 2026 DivCraft Hub. All rights reserved.
+          </p>
+        </div>
+      </footer>
+
+    </div>
+  </main>
+
+  <script>
+    (function () {
+      // Theme Toggle
+      const themeToggleBtn = document.getElementById('themeToggleBtn');
+      const lightIcon = document.getElementById('themeIconLight');
+      const darkIcon = document.getElementById('themeIconDark');
+      const rootHtml = document.documentElement;
+
+      function updateThemeIcons(isDark) {
+        if (isDark) {
+          rootHtml.classList.add('dark');
+          if (lightIcon) lightIcon.classList.remove('hidden');
+          if (darkIcon) darkIcon.classList.add('hidden');
+        } else {
+          rootHtml.classList.remove('dark');
+          if (darkIcon) darkIcon.classList.remove('hidden');
+          if (lightIcon) lightIcon.classList.add('hidden');
+        }
+      }
+
+      updateThemeIcons(localStorage.getItem('devcraft_theme') === 'dark');
+      if (themeToggleBtn) {
+        themeToggleBtn.addEventListener('click', function () {
+          const willBeDark = !rootHtml.classList.contains('dark');
+          updateThemeIcons(willBeDark);
+          localStorage.setItem('devcraft_theme', willBeDark ? 'dark' : 'light');
+        });
+      }
+
+      // All 50 US States + DC (Base & Avg Combined Rates)
+      const US_STATES = [
+        { code: 'CA', name: 'California', base: 7.25, avg: 8.85, note: '7.25% base + city/county district tax' },
+        { code: 'TX', name: 'Texas', base: 6.25, avg: 8.20, note: '6.25% state + up to 2% local tax' },
+        { code: 'NY', name: 'New York', base: 4.00, avg: 8.53, note: 'NYC combined rate is 8.875%' },
+        { code: 'FL', name: 'Florida', base: 6.00, avg: 7.00, note: '6% state + county surtax' },
+        { code: 'IL', name: 'Illinois', base: 6.25, avg: 8.86, note: 'Chicago reaches 10.25%' },
+        { code: 'WA', name: 'Washington', base: 6.50, avg: 9.38, note: 'High combined local rates' },
+        { code: 'OR', name: 'Oregon', base: 0.00, avg: 0.00, note: '0% state & local sales tax' },
+        { code: 'DE', name: 'Delaware', base: 0.00, avg: 0.00, note: '0% state & local sales tax' },
+        { code: 'MT', name: 'Montana', base: 0.00, avg: 0.00, note: '0% general sales tax' },
+        { code: 'NH', name: 'New Hampshire', base: 0.00, avg: 0.00, note: '0% general sales tax' },
+        { code: 'AK', name: 'Alaska', base: 0.00, avg: 1.82, note: '0% state tax; some local city taxes' },
+        { code: 'AL', name: 'Alabama', base: 4.00, avg: 9.29, note: 'Local rates vary by county' },
+        { code: 'AZ', name: 'Arizona', base: 5.60, avg: 8.38, note: '5.6% state + municipal tax' },
+        { code: 'AR', name: 'Arkansas', base: 6.50, avg: 9.45, note: '6.5% state + local rates' },
+        { code: 'CO', name: 'Colorado', base: 2.90, avg: 7.81, note: '2.9% state + city/special district' },
+        { code: 'CT', name: 'Connecticut', base: 6.35, avg: 6.35, note: 'Flat 6.35% statewide' },
+        { code: 'DC', name: 'District of Columbia', base: 6.00, avg: 6.00, note: 'Flat 6% rate' },
+        { code: 'GA', name: 'Georgia', base: 4.00, avg: 7.38, note: '4% state + local option tax' },
+        { code: 'HI', name: 'Hawaii', base: 4.00, avg: 4.44, note: '4% GET (4.5% in Oahu)' },
+        { code: 'ID', name: 'Idaho', base: 6.00, avg: 6.03, note: '6% state rate' },
+        { code: 'IN', name: 'Indiana', base: 7.00, avg: 7.00, note: 'Flat 7% statewide' },
+        { code: 'IA', name: 'Iowa', base: 6.00, avg: 6.94, note: '6% state + 1% local option' },
+        { code: 'KS', name: 'Kansas', base: 6.50, avg: 8.65, note: '6.5% state + local taxes' },
+        { code: 'KY', name: 'Kentucky', base: 6.00, avg: 6.00, note: 'Flat 6% statewide' },
+        { code: 'LA', name: 'Louisiana', base: 4.45, avg: 9.56, note: 'High parish/local combined rate' },
+        { code: 'ME', name: 'Maine', base: 5.50, avg: 5.50, note: 'Flat 5.5% statewide' },
+        { code: 'MD', name: 'Maryland', base: 6.00, avg: 6.00, note: 'Flat 6% statewide' },
+        { code: 'MA', name: 'Massachusetts', base: 6.25, avg: 6.25, note: 'Flat 6.25% statewide' },
+        { code: 'MI', name: 'Michigan', base: 6.00, avg: 6.00, note: 'Flat 6% statewide' },
+        { code: 'MN', name: 'Minnesota', base: 6.88, avg: 8.04, note: '6.875% state + local transit/city' },
+        { code: 'MS', name: 'Mississippi', base: 7.00, avg: 7.06, note: '7% state rate' },
+        { code: 'MO', name: 'Missouri', base: 4.23, avg: 8.39, note: '4.225% state + local tax' },
+        { code: 'NE', name: 'Nebraska', base: 5.50, avg: 6.97, note: '5.5% state + city tax' },
+        { code: 'NV', name: 'Nevada', base: 6.85, avg: 8.24, note: 'Las Vegas combined rate is 8.375%' },
+        { code: 'NJ', name: 'New Jersey', base: 6.63, avg: 6.60, note: '6.625% statewide rate' },
+        { code: 'NM', name: 'New Mexico', base: 4.88, avg: 7.62, note: 'Gross receipts tax varies by city' },
+        { code: 'NC', name: 'North Carolina', base: 4.75, avg: 7.00, note: '4.75% state + county tax' },
+        { code: 'ND', name: 'North Dakota', base: 5.00, avg: 7.04, note: '5% state + local tax' },
+        { code: 'OH', name: 'Ohio', base: 5.75, avg: 7.24, note: '5.75% state + county tax' },
+        { code: 'OK', name: 'Oklahoma', base: 4.50, avg: 8.99, note: '4.5% state + municipal tax' },
+        { code: 'PA', name: 'Pennsylvania', base: 6.00, avg: 6.34, note: 'Philadelphia is 8%, Allegheny 7%' },
+        { code: 'RI', name: 'Rhode Island', base: 7.00, avg: 7.00, note: 'Flat 7% statewide' },
+        { code: 'SC', name: 'South Carolina', base: 6.00, avg: 7.50, note: '6% state + local option' },
+        { code: 'SD', name: 'South Dakota', base: 4.20, avg: 6.11, note: '4.2% state + municipal tax' },
+        { code: 'TN', name: 'Tennessee', base: 7.00, avg: 9.55, note: '7% state + up to 2.75% local' },
+        { code: 'UT', name: 'Utah', base: 6.10, avg: 7.25, note: '6.1% state + local tax' },
+        { code: 'VT', name: 'Vermont', base: 6.00, avg: 6.36, note: '6% state + 1% local option' },
+        { code: 'VA', name: 'Virginia', base: 5.30, avg: 5.77, note: 'Northern VA & Hampton Roads higher' },
+        { code: 'WV', name: 'West Virginia', base: 6.00, avg: 6.57, note: '6% state + 1% municipal' },
+        { code: 'WI', name: 'Wisconsin', base: 5.00, avg: 5.70, note: '5% state + county/stadium tax' },
+        { code: 'WY', name: 'Wyoming', base: 4.00, avg: 5.44, note: '4% state + local tax' }
+      ];
+
+      const stateSelect = document.getElementById('usStateSelect');
+      const taxRateInput = document.getElementById('taxRateInput');
+      const stateTableBody = document.getElementById('stateTaxTableBody');
+      const stateFilterInput = document.getElementById('stateFilterInput');
+
+      function populateStateDropdown() {
+        stateSelect.innerHTML = US_STATES.map(s =>
+          `<option value="${s.code}">${s.name} (${s.code}) — Avg ${s.avg.toFixed(2)}% (Base ${s.base.toFixed(2)}%)</option>`
+        ).join('');
+      }
+
+      function renderStateTable() {
+        const q = (stateFilterInput.value || '').trim().toLowerCase();
+        const list = US_STATES.filter(s =>
+          !q || s.name.toLowerCase().includes(q) || s.code.toLowerCase().includes(q) || s.note.toLowerCase().includes(q)
+        );
+
+        stateTableBody.innerHTML = list.map(s => `
+          <tr class="hover:bg-primary/5 transition-colors">
+            <td class="py-2 px-3 font-sans font-semibold text-on-surface">${s.name} (${s.code})</td>
+            <td class="py-2 px-3 text-on-surface-variant">${s.base.toFixed(2)}%</td>
+            <td class="py-2 px-3 font-bold text-primary">${s.avg.toFixed(2)}%</td>
+            <td class="py-2 px-3 font-sans text-on-surface-variant">${s.note}</td>
+            <td class="py-2 px-3 text-right">
+              <button type="button" data-apply-state="${s.code}" class="apply-state-btn px-2.5 py-1 rounded-lg bg-primary/10 hover:bg-primary text-primary hover:text-white text-[11px] font-semibold transition-all">
+                Use Rate
+              </button>
+            </td>
+          </tr>
+        `).join('');
+
+        document.querySelectorAll('.apply-state-btn').forEach(btn => {
+          btn.addEventListener('click', () => {
+            const code = btn.getAttribute('data-apply-state');
+            const found = US_STATES.find(st => st.code === code);
+            if (found) {
+              stateSelect.value = found.code;
+              taxRateInput.value = found.avg.toFixed(2);
+              recalculateDeal();
+              window.scrollTo({ top: 140, behavior: 'smooth' });
+            }
+          });
+        });
+      }
+
+      function fmtMoney(num) {
+        return '$' + (Math.max(0, num)).toFixed(2);
+      }
+
+      function recalculateDeal() {
+        const tagPrice = parseFloat(document.getElementById('listPriceInput').value) || 0;
+        const normalPrice = parseFloat(document.getElementById('realNormalPriceInput').value) || 0;
+        const firstDiscPct = Math.min(99, Math.max(0, parseFloat(document.getElementById('primaryDiscInput').value) || 0));
+        const extraCouponVal = Math.max(0, parseFloat(document.getElementById('extraCouponValInput').value) || 0);
+        const extraCouponType = document.getElementById('extraCouponType').value;
+        const cashbackPct = Math.min(50, Math.max(0, parseFloat(document.getElementById('cashbackInput').value) || 0));
+        const taxRatePct = Math.max(0, parseFloat(taxRateInput.value) || 0);
+        const qty = Math.max(1, parseInt(document.getElementById('quantityInput').value, 10) || 1);
+
+        const tagSubtotal = tagPrice * qty;
+        const firstDiscountAmt = tagSubtotal * (firstDiscPct / 100);
+        const afterFirstPrice = Math.max(0, tagSubtotal - firstDiscountAmt);
+
+        let secondCouponAmt = 0;
+        if (extraCouponType === 'percent') {
+          secondCouponAmt = afterFirstPrice * (Math.min(100, extraCouponVal) / 100);
+        } else {
+          secondCouponAmt = Math.min(afterFirstPrice, extraCouponVal * qty);
+        }
+
+        const preTaxTotal = Math.max(0, afterFirstPrice - secondCouponAmt);
+        const taxAmt = preTaxTotal * (taxRatePct / 100);
+        const finalCheckout = preTaxTotal + taxAmt;
+
+        const totalSavedVsTag = Math.max(0, tagSubtotal - preTaxTotal);
+        const effectiveOffPct = tagSubtotal > 0 ? (totalSavedVsTag / tagSubtotal) * 100 : 0;
+
+        const cashbackAmt = preTaxTotal * (cashbackPct / 100);
+        const netAfterCashback = Math.max(0, finalCheckout - cashbackAmt);
+
+        document.getElementById('finalOutOfPocketEl').textContent = fmtMoney(finalCheckout);
+        document.getElementById('totalSavedEl').textContent = fmtMoney(totalSavedVsTag);
+        document.getElementById('effectiveDiscountEl').textContent = `${effectiveOffPct.toFixed(1)}% effective off`;
+        document.getElementById('netAfterCashbackEl').textContent = fmtMoney(netAfterCashback);
+        document.getElementById('cashbackEarnedEl').textContent = `+${fmtMoney(cashbackAmt)} rewards back`;
+
+        document.getElementById('rowTagSubtotal').textContent = fmtMoney(tagSubtotal);
+        document.getElementById('rowFirstDiscount').textContent = `-${fmtMoney(firstDiscountAmt)}`;
+        document.getElementById('rowSecondCoupon').textContent = `-${fmtMoney(secondCouponAmt)}`;
+        document.getElementById('rowPreTaxPrice').textContent = fmtMoney(preTaxTotal);
+        document.getElementById('rowTaxLabel').textContent = `Estimated Sales Tax (${taxRatePct.toFixed(2)}%)`;
+        document.getElementById('rowTaxAmount').textContent = `+${fmtMoney(taxAmt)}`;
+        document.getElementById('rowFinalTotal').textContent = fmtMoney(finalCheckout);
+
+        // Anchor / Fake-Deal Verdict Check
+        const badgeEl = document.getElementById('dealVerdictBadge');
+        const noteEl = document.getElementById('anchorCheckNote');
+        if (normalPrice > 0) {
+          const normalSubtotal = normalPrice * qty;
+          const realDiff = normalSubtotal - preTaxTotal;
+          const realPct = normalSubtotal > 0 ? (realDiff / normalSubtotal) * 100 : 0;
+
+          if (realDiff > 0.5) {
+            badgeEl.textContent = realPct >= 25 ? 'GENUINE STEAL' : 'SOLID DEAL';
+            badgeEl.className = 'px-3 py-1 rounded-full text-[11px] font-mono font-bold bg-emerald-500/15 text-emerald-600 dark:text-emerald-400';
+            noteEl.innerHTML = `Compared to its typical pre-sale price (${fmtMoney(normalSubtotal)}), you are genuinely saving <strong>${fmtMoney(realDiff)} (${realPct.toFixed(1)}% off)</strong> before tax.`;
+          } else {
+            badgeEl.textContent = 'INFLATED TAG';
+            badgeEl.className = 'px-3 py-1 rounded-full text-[11px] font-mono font-bold bg-rose-500/15 text-rose-600 dark:text-rose-400';
+            noteEl.innerHTML = `Heads up: Even after coupons, ${fmtMoney(preTaxTotal)} is not cheaper than the typical pre-sale price (${fmtMoney(normalSubtotal)}).`;
+          }
+        } else {
+          badgeEl.textContent = `${effectiveOffPct.toFixed(0)}% OFF`;
+          badgeEl.className = 'px-3 py-1 rounded-full text-[11px] font-mono font-bold bg-primary/15 text-primary';
+          noteEl.textContent = 'Tip: Add a typical October price above to check whether the store inflated the list price before Black Friday.';
+        }
+      }
+
+      stateSelect.addEventListener('change', () => {
+        const found = US_STATES.find(s => s.code === stateSelect.value);
+        if (found) {
+          taxRateInput.value = found.avg.toFixed(2);
+          recalculateDeal();
+        }
+      });
+
+      document.querySelectorAll('.preset-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const p = btn.getAttribute('data-preset');
+          if (p === 'bestbuy') {
+            document.getElementById('listPriceInput').value = '899.99';
+            document.getElementById('realNormalPriceInput').value = '799.99';
+            document.getElementById('primaryDiscInput').value = '35';
+            document.getElementById('extraCouponType').value = 'dollar';
+            document.getElementById('extraCouponValInput').value = '50';
+            document.getElementById('cashbackInput').value = '5';
+            stateSelect.value = 'CA';
+            taxRateInput.value = '8.85';
+          } else if (p === 'apparel') {
+            document.getElementById('listPriceInput').value = '160.00';
+            document.getElementById('realNormalPriceInput').value = '140.00';
+            document.getElementById('primaryDiscInput').value = '40';
+            document.getElementById('extraCouponType').value = 'percent';
+            document.getElementById('extraCouponValInput').value = '15';
+            document.getElementById('cashbackInput').value = '4';
+            stateSelect.value = 'NY';
+            taxRateInput.value = '8.53';
+          } else if (p === 'taxfree') {
+            document.getElementById('listPriceInput').value = '1199.00';
+            document.getElementById('realNormalPriceInput').value = '1099.00';
+            document.getElementById('primaryDiscInput').value = '25';
+            document.getElementById('extraCouponType').value = 'dollar';
+            document.getElementById('extraCouponValInput').value = '75';
+            document.getElementById('cashbackInput').value = '3';
+            stateSelect.value = 'OR';
+            taxRateInput.value = '0.00';
+          }
+          recalculateDeal();
+        });
+      });
+
+      document.getElementById('resetCalcBtn').addEventListener('click', () => {
+        document.getElementById('listPriceInput').value = '249.99';
+        document.getElementById('realNormalPriceInput').value = '219.99';
+        document.getElementById('primaryDiscInput').value = '30';
+        document.getElementById('extraCouponType').value = 'percent';
+        document.getElementById('extraCouponValInput').value = '15';
+        document.getElementById('cashbackInput').value = '5';
+        document.getElementById('quantityInput').value = '1';
+        stateSelect.value = 'CA';
+        taxRateInput.value = '8.85';
+        recalculateDeal();
+      });
+
+      document.getElementById('copySummaryBtn').addEventListener('click', function () {
+        const text = [
+          `Black Friday 2026 Deal Summary (${stateSelect.value})`,
+          `Tag Subtotal: ${document.getElementById('rowTagSubtotal').textContent}`,
+          `1st Store Sale: ${document.getElementById('rowFirstDiscount').textContent}`,
+          `2nd Coupon: ${document.getElementById('rowSecondCoupon').textContent}`,
+          `Pre-Tax Price: ${document.getElementById('rowPreTaxPrice').textContent}`,
+          `${document.getElementById('rowTaxLabel').textContent}: ${document.getElementById('rowTaxAmount').textContent}`,
+          `Final Checkout Total: ${document.getElementById('rowFinalTotal').textContent}`,
+          `Net After Cashback: ${document.getElementById('netAfterCashbackEl').textContent}`
+        ].join('\n');
+
+        navigator.clipboard.writeText(text).then(() => {
+          const orig = this.textContent;
+          this.textContent = 'Copied!';
+          setTimeout(() => { this.textContent = orig; }, 1200);
+        });
+      });
+
+      ['listPriceInput', 'realNormalPriceInput', 'primaryDiscInput', 'extraCouponValInput', 'extraCouponType', 'cashbackInput', 'taxRateInput', 'quantityInput'].forEach(id => {
+        document.getElementById(id).addEventListener('input', recalculateDeal);
+        document.getElementById(id).addEventListener('change', recalculateDeal);
+      });
+
+      stateFilterInput.addEventListener('input', renderStateTable);
+
+      populateStateDropdown();
+      renderStateTable();
+      recalculateDeal();
+    })();
+  </script>
+</body>
+</html>
