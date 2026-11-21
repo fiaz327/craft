@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="google-site-verification" content="SNRxAZ5-8fnrHgYWHSv89TLdrGZBaA8onmHV8cwDjRc"/>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+  <title>Privacy Policy — DivCraft Client-Side Developer, CSS &amp; Calculator Tools</title>
+  <meta content="See how DivCraft protects your privacy across different user roles, keeps browser tool inputs local, and handles saved bookmarks and preferences." name="description"/>
+  <link rel="canonical" href="https://divcraft.online/privacy.html"/>
+
+  <!-- Open Graph / Social Sharing Meta Tags -->
+  <meta property="og:type" content="website"/>
+  <meta property="og:site_name" content="DivCraft"/>
+  <meta property="og:title" content="Privacy Policy — DivCraft Client-Side Tools Hub"/>
+  <meta property="og:description" content="Plain-English privacy details for visitors, sellers, shoppers, and developers using DivCraft."/>
+  <meta property="og:url" content="https://divcraft.online/privacy.html"/>
+  <meta property="og:image" content="https://divcraft.online/logo.png"/>
+
+  <!-- Favicon & Touch Icons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png"/>
+  <link rel="icon" type="image/png" sizes="192x192" href="favicon.png"/>
+  <link rel="apple-touch-icon" href="favicon.png"/>
+
+  <!-- Preconnect & Non-Blocking Google Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#3525cd",
+            "primary-container": "#4f46e5",
+            "surface": "#faf8ff",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-low": "#f2f3ff",
+            "surface-container": "#eaedff",
+            "surface-container-high": "#e2e7ff",
+            "on-surface": "#131b2e",
+            "on-surface-variant": "#464555",
+            "outline": "#777587"
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          fontFamily: {
+            sans: ["Inter", "system-ui", "sans-serif"],
+            mono: ["JetBrains Mono", "monospace"]
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    @layer base {
+      html, body {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        transition: background-color 0.2s ease, color 0.2s ease;
+      }
+      .pb-safe { padding-bottom: env(safe-area-inset-bottom, 16px); }
+      .pt-safe { padding-top: env(safe-area-inset-top, 0px); }
+    }
+    html.dark { color-scheme: dark; }
+    html.dark body { background-color: #0c1019 !important; color: #e4e9f7 !important; }
+    html.dark .bg-surface { background-color: #0c1019 !important; }
+    html.dark .bg-surface-container-lowest { background-color: #080c14 !important; }
+    html.dark .bg-surface-container-low { background-color: #121826 !important; }
+    html.dark .bg-surface-container { background-color: #182033 !important; }
+    html.dark .bg-surface-container-high { background-color: #1f2a42 !important; }
+    html.dark .text-on-surface { color: #f1f5f9 !important; }
+    html.dark .text-on-surface-variant { color: #94a3b8 !important; }
+
+    html:not(.dark) body { background-color: #f8fafc !important; color: #0f172a !important; }
+    html:not(.dark) .bg-surface { background-color: #f8fafc !important; }
+    html:not(.dark) .bg-surface-container-lowest { background-color: #ffffff !important; }
+    html:not(.dark) .bg-surface-container-low { background-color: #ffffff !important; }
+    html:not(.dark) .bg-surface-container { background-color: #f1f5f9 !important; }
+    html:not(.dark) .bg-surface-container-high { background-color: #e2e8f0 !important; }
+    html:not(.dark) .text-on-surface { color: #0f172a !important; }
+    html:not(.dark) .text-on-surface-variant { color: #475569 !important; }
+  </style>
+</head>
+<body class="bg-surface text-on-surface font-sans flex flex-col min-h-screen transition-colors duration-200">
+
+  <!-- Fixed Top Navigation Header (Matching DivCraft Home) -->
+  <header class="fixed top-0 w-full z-50 pt-safe bg-surface/90 backdrop-blur-xl border-b border-outline/10 shadow-sm transition-colors duration-200">
+    <div class="h-16 px-4 md:px-8 max-w-7xl mx-auto flex items-center justify-between gap-3">
+      <a class="flex items-center gap-2.5 group" href="index.html">
+        <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-indigo-600 via-primary to-cyan-400 p-[1.5px] shadow-sm flex items-center justify-center overflow-hidden">
+          <div class="w-full h-full bg-surface-container-lowest rounded-[10px] flex items-center justify-center overflow-hidden">
+            <img
+              src="logo.png"
+              alt="DivCraft Logo"
+              width="32"
+              height="32"
+              decoding="async"
+              class="w-7 h-7 object-contain"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-flex';"
+            />
+            <span class="material-symbols-outlined text-primary text-[20px] hidden">terminal</span>
+          </div>
+        </div>
+        <div class="flex flex-col">
+          <div class="flex items-center gap-1.5">
+            <span class="font-bold text-lg tracking-tight text-on-surface group-hover:text-primary transition-colors">DivCraft</span>
+            <span class="text-[9px] font-mono font-bold px-1.5 py-0.5 rounded bg-primary/10 text-primary uppercase tracking-wider">v2.4</span>
+          </div>
+          <span class="text-[10px] font-mono text-on-surface-variant font-medium tracking-wide">Client-Side Hub</span>
+        </div>
+      </a>
+
+      <div class="flex items-center gap-2">
+        <a href="index.html" class="hidden md:inline-flex items-center gap-1 px-3 py-1.5 rounded-xl bg-surface-container hover:bg-surface-container-high text-xs font-mono font-medium text-on-surface transition-colors">
+          <span>←</span>
+          <span>Tools Hub</span>
+        </a>
+
+        <button type="button" aria-label="Toggle Theme Mode" class="w-9 h-9 flex items-center justify-center rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface transition-all active:scale-90" id="themeToggleBtn" title="Toggle Light / Dark Mode">
+          <span class="material-symbols-outlined text-[20px] text-amber-400" id="themeIconLight">light_mode</span>
+          <span class="material-symbols-outlined text-[20px] text-indigo-400 hidden" id="themeIconDark">dark_mode</span>
+        </button>
+
+        <div class="hidden sm:flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-500 text-[11px] font-mono font-medium">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+          <span>Zero Server I/O</span>
+        </div>
+
+        <button type="button" aria-label="View Saved Tools" class="w-9 h-9 flex items-center justify-center rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-primary transition-all relative" id="headerSavedBtn">
+          <span class="material-symbols-outlined text-[19px]">bookmark</span>
+          <span class="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-primary text-white text-[9px] font-mono font-bold flex items-center justify-center hidden" id="savedCounter">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="flex-1 w-full pt-24 pb-16 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto flex flex-col gap-8">
+
+      <!-- Page Intro -->
+      <section class="rounded-2xl bg-surface-container-low border border-outline/15 p-6 sm:p-8 flex flex-col gap-3 shadow-xs">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-mono w-fit">
+          <span>🛡️</span>
+          <span>Plain-English Privacy Guide</span>
+        </div>
+        <h1 class="text-2xl sm:text-4xl font-extrabold tracking-tight text-on-surface">Privacy Policy</h1>
+        <p class="text-sm sm:text-base text-on-surface-variant max-w-3xl leading-relaxed">
+          We keep things simple at DivCraft. You do not need an account to use our tools, and your calculations or edits run right inside your browser instead of being sent to our servers.
+        </p>
+      </section>
+
+      <!-- Privacy by Role (3 Distinct Cards) -->
+      <section class="flex flex-col gap-4">
+        <div class="flex items-center justify-between">
+          <h2 class="text-lg sm:text-2xl font-bold text-on-surface">How Privacy Works for Your Role</h2>
+          <span class="text-xs font-mono text-on-surface-variant">Clear &amp; Practical</span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <!-- Role 1 -->
+          <article class="rounded-2xl bg-surface-container-low border border-outline/15 p-5 flex flex-col gap-3 shadow-xs">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono uppercase font-bold text-primary">Role 01 · Everyday Visitors</span>
+              <span class="material-symbols-outlined text-primary text-[20px]">person</span>
+            </div>
+            <h3 class="font-bold text-base text-on-surface">Browsing &amp; Saving Favorites</h3>
+            <p class="text-xs sm:text-sm text-on-surface-variant leading-relaxed">
+              When you search tools, switch between light and dark mode, or bookmark tools you like, those choices stay in your own browser storage. Nothing is tied to your name or profile because we do not run sign-ups.
+            </p>
+          </article>
+
+          <!-- Role 2 -->
+          <article class="rounded-2xl bg-surface-container-low border border-outline/15 p-5 flex flex-col gap-3 shadow-xs">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono uppercase font-bold text-amber-500">Role 02 · Sellers &amp; Shoppers</span>
+              <span class="material-symbols-outlined text-amber-500 text-[20px]">receipt_long</span>
+            </div>
+            <h3 class="font-bold text-base text-on-surface">Receipts, Margins &amp; Deal Math</h3>
+            <p class="text-xs sm:text-sm text-on-surface-variant leading-relaxed">
+              If you type product costs, ad spend, discount codes, or customer receipt details into a calculator or receipt generator, that math happens locally on your screen. We do not collect your sales numbers or invoice details.
+            </p>
+          </article>
+
+          <!-- Role 3 -->
+          <article class="rounded-2xl bg-surface-container-low border border-outline/15 p-5 flex flex-col gap-3 shadow-xs">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono uppercase font-bold text-cyan-500">Role 03 · Developers &amp; Designers</span>
+              <span class="material-symbols-outlined text-cyan-500 text-[20px]">code</span>
+            </div>
+            <h3 class="font-bold text-base text-on-surface">CSS Snippets &amp; UI Sandboxes</h3>
+            <p class="text-xs sm:text-sm text-on-surface-variant leading-relaxed">
+              Adjusting font sizes, glass blur sliders, or copying CSS snippets works directly in your tab. Keep in mind that external fonts or links you click follow their own third-party rules.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Main Content + Sidebar -->
+      <section class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div class="lg:col-span-2 flex flex-col gap-4">
+          <article class="rounded-2xl bg-surface-container-low border border-outline/15 p-5 sm:p-6 flex flex-col gap-2.5">
+            <h2 class="font-bold text-lg text-on-surface">What Stays in Your Browser</h2>
+            <p class="text-xs sm:text-sm text-on-surface-variant leading-relaxed">
+              Your theme choice (<code class="font-mono text-primary">devcraft_theme</code>) and saved tool bookmarks (<code class="font-mono text-primary">divcraft_saved_tools_v1</code>) are saved in your browser's local storage so they are ready the next time you visit. You can wipe them anytime from your browser settings or the Saved menu.
+            </p>
+          </article>
+
+          <article class="rounded-2xl bg-surface-container-low border border-outline/15 p-5 sm:p-6 flex flex-col gap-2.5">
+            <h2 class="font-bold text-lg text-on-surface">Ads, Sponsored Links &amp; Outside Sites</h2>
+            <p class="text-xs sm:text-sm text-on-surface-variant leading-relaxed">
+              Some sections show sponsored links or ads to help keep DivCraft free. If you click an external link—such as a partner platform or font CDN—that website may use its own cookies or collect standard traffic data under its own policy.
+            </p>
+          </article>
+
+          <!-- FAQ Accordion -->
+          <article class="rounded-2xl bg-surface-container-low border border-outline/15 p-5 sm:p-6 flex flex-col gap-3">
+            <h2 class="font-bold text-lg text-on-surface">Frequently Asked Questions</h2>
+
+            <div class="faq-item rounded-xl bg-surface-container border border-outline/10 overflow-hidden">
+              <button type="button" class="faq-toggle w-full p-3.5 flex items-center justify-between text-left text-xs sm:text-sm font-semibold text-on-surface">
+                <span>Do I have to create an account to use DivCraft?</span>
+                <span class="material-symbols-outlined text-[18px] faq-arrow transition-transform">expand_more</span>
+              </button>
+              <div class="faq-content hidden px-3.5 pb-3.5 text-xs sm:text-sm text-on-surface-variant leading-relaxed">
+                No. Every tool on DivCraft works right away without signing up or sharing an email address.
+              </div>
+            </div>
+
+            <div class="faq-item rounded-xl bg-surface-container border border-outline/10 overflow-hidden">
+              <button type="button" class="faq-toggle w-full p-3.5 flex items-center justify-between text-left text-xs sm:text-sm font-semibold text-on-surface">
+                <span>Does DivCraft store the receipts or numbers I enter?</span>
+                <span class="material-symbols-outlined text-[18px] faq-arrow transition-transform">expand_more</span>
+              </button>
+              <div class="faq-content hidden px-3.5 pb-3.5 text-xs sm:text-sm text-on-surface-variant leading-relaxed">
+                No. Tool inputs are handled locally in your browser rather than saved to a DivCraft database.
+              </div>
+            </div>
+
+            <div class="faq-item rounded-xl bg-surface-container border border-outline/10 overflow-hidden">
+              <button type="button" class="faq-toggle w-full p-3.5 flex items-center justify-between text-left text-xs sm:text-sm font-semibold text-on-surface">
+                <span>How do I remove my saved tools and preferences?</span>
+                <span class="material-symbols-outlined text-[18px] faq-arrow transition-transform">expand_more</span>
+              </button>
+              <div class="faq-content hidden px-3.5 pb-3.5 text-xs sm:text-sm text-on-surface-variant leading-relaxed">
+                Open the <strong>Saved</strong> button in the header and click <strong>Clear All</strong>, or clear site data for <code class="font-mono text-primary">divcraft.online</code> in your browser.
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Sidebar with All Tools Including receipt-maker.html -->
+        <aside class="flex flex-col gap-4">
+          <div class="rounded-2xl bg-surface-container-low border border-outline/15 p-5 flex flex-col gap-3 shadow-xs">
+            <div class="flex items-center justify-between">
+              <h2 class="font-bold text-xs uppercase font-mono text-primary">DivCraft Tools</h2>
+              <span class="text-[10px] font-mono text-on-surface-variant">Quick Links</span>
+            </div>
+            <div class="flex flex-col gap-2 text-xs">
+              <a href="https://divcraft.online/receipt-maker.html" class="p-2.5 rounded-xl bg-surface-container hover:border-primary/40 border border-transparent font-medium text-on-surface flex items-center justify-between transition-colors">
+                <span>Receipt Maker</span>
+                <span class="font-mono text-primary">→</span>
+              </a>
+              <a href="https://divcraft.online/glassmorphism-lab.html" class="p-2.5 rounded-xl bg-surface-container hover:border-primary/40 border border-transparent font-medium text-on-surface flex items-center justify-between transition-colors">
+                <span>Glassmorphism Lab</span>
+                <span class="font-mono text-primary">→</span>
+              </a>
+              <a href="https://divcraft.online/black-friday-deal-calculator.html" class="p-2.5 rounded-xl bg-surface-container hover:border-primary/40 border border-transparent font-medium text-on-surface flex items-center justify-between transition-colors">
+                <span>Black Friday Deal Calc</span>
+                <span class="font-mono text-primary">→</span>
+              </a>
+              <a href="https://divcraft.online/ecommerce-margin-calculator.html" class="p-2.5 rounded-xl bg-surface-container hover:border-primary/40 border border-transparent font-medium text-on-surface flex items-center justify-between transition-colors">
+                <span>Ecommerce Profit Calc</span>
+                <span class="font-mono text-primary">→</span>
+              </a>
+              <a href="index.html#pxInputWidget" class="p-2.5 rounded-xl bg-surface-container hover:border-primary/40 border border-transparent font-medium text-on-surface flex items-center justify-between transition-colors">
+                <span>PX to REM Sandbox</span>
+                <span class="font-mono text-primary">→</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="rounded-2xl bg-surface-container-low border border-outline/15 p-5 flex flex-col gap-2 text-xs font-mono shadow-xs">
+            <span class="text-on-surface-variant uppercase text-[11px] mb-1">Legal &amp; Info Pages</span>
+            <a href="about.html" class="hover:text-primary py-0.5">About Us</a>
+            <a href="terms.html" class="hover:text-primary py-0.5">Terms of Service</a>
+            <a href="cookies.html" class="hover:text-primary py-0.5">Cookie Policy</a>
+            <a href="disclaimer.html" class="hover:text-primary py-0.5">Disclaimer</a>
+            <a href="editorial.html" class="hover:text-primary py-0.5">Editorial Standards</a>
+            <a href="contact.html" class="hover:text-primary py-0.5">Contact Us</a>
+          </div>
+        </aside>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Saved Tools Modal -->
+  <div id="savedModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/60 backdrop-blur-xs p-4" role="dialog" aria-modal="true" aria-labelledby="savedModalTitle">
+    <div class="w-full max-w-md rounded-2xl bg-surface-container-low border border-outline/20 p-5 shadow-xl flex flex-col gap-4">
+      <div class="flex items-center justify-between border-b border-outline/10 pb-3">
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-primary text-[20px]">bookmark</span>
+          <h3 id="savedModalTitle" class="font-bold text-base text-on-surface">Saved Micro-Tools</h3>
+        </div>
+        <button type="button" id="closeSavedModal" aria-label="Close Saved Modal" class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-on-surface">✕</button>
+      </div>
+      <div id="savedToolsList" class="flex flex-col gap-2 max-h-64 overflow-y-auto text-xs"></div>
+      <div class="flex items-center justify-between pt-2 border-t border-outline/10">
+        <button type="button" id="clearSavedBtn" class="text-xs font-mono text-on-surface-variant hover:text-on-surface underline">Clear All</button>
+        <button type="button" id="doneSavedModal" class="px-3.5 py-1.5 rounded-lg bg-primary text-white text-xs font-mono font-medium">Done</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Theme Toggle
+      const themeToggleBtn = document.getElementById('themeToggleBtn');
+      const lightIcon = document.getElementById('themeIconLight');
+      const darkIcon = document.getElementById('themeIconDark');
+      const rootHtml = document.documentElement;
+
+      function syncTheme(isDark) {
+        rootHtml.classList.toggle('dark', isDark);
+        lightIcon?.classList.toggle('hidden', !isDark);
+        darkIcon?.classList.toggle('hidden', isDark);
+      }
+
+      const savedTheme = localStorage.getItem('devcraft_theme') === 'dark';
+      syncTheme(savedTheme);
+
+      themeToggleBtn?.addEventListener('click', () => {
+        const nextDark = !rootHtml.classList.contains('dark');
+        syncTheme(nextDark);
+        localStorage.setItem('devcraft_theme', nextDark ? 'dark' : 'light');
+      });
+
+      // Saved Modal Sync
+      const STORAGE_KEY = 'divcraft_saved_tools_v1';
+      const savedCounter = document.getElementById('savedCounter');
+      const savedModal = document.getElementById('savedModal');
+      const savedToolsList = document.getElementById('savedToolsList');
+      const headerSavedBtn = document.getElementById('headerSavedBtn');
+      const closeSavedModal = document.getElementById('closeSavedModal');
+      const doneSavedModal = document.getElementById('doneSavedModal');
+      const clearSavedBtn = document.getElementById('clearSavedBtn');
+
+      function getSaved() {
+        try {
+          const data = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+          return Array.isArray(data) ? data : [];
+        } catch {
+          return [];
+        }
+      }
+
+      function setSaved(items) {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
+        if (savedCounter) {
+          savedCounter.textContent = String(items.length);
+          savedCounter.classList.toggle('hidden', items.length === 0);
+        }
+      }
+
+      function renderSaved() {
+        const items = getSaved();
+        if (!savedToolsList) return;
+        if (items.length === 0) {
+          savedToolsList.innerHTML = `<p class="text-on-surface-variant py-4 text-center">No saved tools yet. Bookmark any tool from the hub to keep it here.</p>`;
+          return;
+        }
+        savedToolsList.innerHTML = items.map(item => `
+          <div class="flex items-center justify-between gap-2 p-2.5 rounded-xl bg-surface-container border border-outline/10">
+            <span class="font-semibold text-on-surface truncate">${item.title}</span>
+            <button type="button" data-remove-id="${item.id}" class="remove-saved-btn text-[11px] font-mono text-primary hover:underline shrink-0">Remove</button>
+          </div>
+        `).join('');
+
+        savedToolsList.querySelectorAll('.remove-saved-btn').forEach(btn => {
+          btn.addEventListener('click', () => {
+            const id = btn.getAttribute('data-remove-id');
+            const next = getSaved().filter(x => x.id !== id);
+            setSaved(next);
+            renderSaved();
+          });
+        });
+      }
+
+      setSaved(getSaved());
+
+      headerSavedBtn?.addEventListener('click', () => {
+        renderSaved();
+        savedModal?.classList.remove('hidden');
+        savedModal?.classList.add('flex');
+      });
+
+      function hideSavedModal() {
+        savedModal?.classList.add('hidden');
+        savedModal?.classList.remove('flex');
+      }
+
+      closeSavedModal?.addEventListener('click', hideSavedModal);
+      doneSavedModal?.addEventListener('click', hideSavedModal);
+      savedModal?.addEventListener('click', (e) => {
+        if (e.target === savedModal) hideSavedModal();
+      });
+      clearSavedBtn?.addEventListener('click', () => {
+        setSaved([]);
+        renderSaved();
+      });
+
+      // FAQ Accordion
+      document.querySelectorAll('.faq-item').forEach(item => {
+        const toggle = item.querySelector('.faq-toggle');
+        const content = item.querySelector('.faq-content');
+        const arrow = item.querySelector('.faq-arrow');
+        toggle?.addEventListener('click', () => {
+          if (!content) return;
+          const willOpen = content.classList.contains('hidden');
+          content.classList.toggle('hidden', !willOpen);
+          if (arrow) arrow.style.transform = willOpen ? 'rotate(180deg)' : 'rotate(0deg)';
+        });
+      });
+    });
+  </script>
+</body>
+</html>
