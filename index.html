@@ -1,23 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="google-site-verification" content="SNRxAZ5-8fnrHgYWHSv89TLdrGZBaA8onmHV8cwDjRc" />
-    <!-- Website Favicon (Browser Tab Icon) -->
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%234f46e5'><path d='M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-5 14H4v-4h11v4zm0-5H4V9h11v4zm5 5h-4V9h4v9z'/></svg>">
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
-<meta content="mobile_tab" name="shell-type"/>
-<title>DivCraft — 50+ Free Client-Side Developer Tools &amp; Zero Server Upload Web Utilities</title>
-<meta content="Discover 50+ lightning-fast, 100% client-side developer, designer, and financial micro-tools. Zero server upload, completely private in-browser utilities, offline ready." name="description"/>
-<meta content="Free Client-Side Developer Tools, Zero Server Upload Web Utilities, Private In-Browser Calculators, CSS Glassmorphism generator, PX to REM converter, client side privacy tools, online developer tools" name="keywords"/>
-<!-- Google Fonts & Material Symbols -->
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<!-- Tailwind CSS -->
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script id="tailwind-config">
+  <meta name="google-site-verification" content="SNRxAZ5-8fnrHgYWHSv89TLdrGZBaA8onmHV8cwDjRc"/>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+  <meta content="mobile_tab" name="shell-type"/>
+
+  <!-- Primary SEO Title & Meta Description -->
+  <title>DivCraft — Free Client-Side Developer, CSS &amp; Calculator Tools</title>
+  <meta content="Use free, fast, 100% in-browser developer, CSS, text, privacy, and calculator tools on DivCraft. Zero server uploads, instant results, and private local processing." name="description"/>
+  <meta content="free client side developer tools, in browser calculators, CSS glassmorphism generator, PX to REM converter, black friday deal calculator, ecommerce profit calculator, zero server upload tools" name="keywords"/>
+  <meta name="robots" content="index, follow, max-image-preview:large"/>
+  <link rel="canonical" href="https://divcraft.online/"/>
+
+  <!-- Open Graph / Social Sharing Meta Tags -->
+  <meta property="og:type" content="website"/>
+  <meta property="og:site_name" content="DivCraft"/>
+  <meta property="og:title" content="DivCraft — Free Client-Side Developer, CSS &amp; Calculator Tools"/>
+  <meta property="og:description" content="Fast, private, in-browser developer, CSS, privacy, and calculator tools with zero server uploads."/>
+  <meta property="og:url" content="https://divcraft.online/"/>
+  <meta property="og:image" content="https://divcraft.online/logo.png"/>
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="DivCraft — Free Client-Side Developer, CSS &amp; Calculator Tools"/>
+  <meta name="twitter:description" content="Fast, private, in-browser developer, CSS, privacy, and calculator tools with zero server uploads."/>
+  <meta name="twitter:image" content="https://divcraft.online/logo.png"/>
+
+  <!-- Favicon & Touch Icons (Root PNG Image Files) -->
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png"/>
+  <link rel="icon" type="image/png" sizes="192x192" href="favicon.png"/>
+  <link rel="apple-touch-icon" href="favicon.png"/>
+
+  <!-- Preconnect & Non-Blocking Google Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+  </noscript>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
     tailwind.config = {
       darkMode: "class",
       theme: {
@@ -78,23 +105,24 @@
             "full": "9999px"
           },
           fontFamily: {
-            sans: ["Inter", "sans-serif"],
+            sans: ["Inter", "system-ui", "sans-serif"],
             mono: ["JetBrains Mono", "monospace"]
           }
         }
       }
     };
   </script>
-<style>
+
+  <style>
     @layer base {
       html, body {
-        width: 100vw;
+        width: 100%;
         margin: 0;
         padding: 0;
-        transition: background-color 0.25s ease, color 0.25s ease;
+        transition: background-color 0.2s ease, color 0.2s ease;
       }
       body {
-        overscroll-behavior: none;
+        overscroll-behavior-y: none;
       }
       .pb-safe {
         padding-bottom: env(safe-area-inset-bottom, 16px);
@@ -114,7 +142,7 @@
       scrollbar-width: none;
     }
 
-    /* Dark Theme Overrides for crisp modern contrast */
+    /* Dark Theme Overrides */
     html.dark {
       color-scheme: dark;
     }
@@ -150,7 +178,7 @@
       border-color: rgba(148, 163, 184, 0.15) !important;
     }
 
-    /* Light Theme Crisp Styling */
+    /* Light Theme Styling */
     html:not(.dark) body {
       background-color: #f8fafc !important;
       color: #0f172a !important;
@@ -180,15 +208,17 @@
       border-color: #e2e8f0 !important;
     }
   </style>
-<!-- Rich Structured Schema (JSON-LD) for Google AdSense & SEO Compliance -->
-<script type="application/ld+json">
+
+  <!-- Structured Schema (JSON-LD) -->
+  <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@graph": [
       {
         "@type": "WebApplication",
-        "@id": "https://devcraft.tools/#app",
-        "name": "DevCraft — Client-Side Micro-Tools Hub",
+        "@id": "https://divcraft.online/#app",
+        "name": "DivCraft — Client-Side Micro-Tools Hub",
+        "url": "https://divcraft.online/",
         "applicationCategory": "DeveloperApplication",
         "operatingSystem": "All (Web Browser)",
         "offers": {
@@ -196,19 +226,19 @@
           "price": "0",
           "priceCurrency": "USD"
         },
-        "description": "Suite of 50+ free in-browser developer, CSS styling, privacy calculators, and utility converters running 100% client-side with zero data logging.",
-        "featureList": "PX to REM converter, CSS Glassmorphism previewer, WCAG audit, Box-shadow multi-layer generator, JSON to CSV parser, UTM builder."
+        "description": "Free in-browser developer, CSS, privacy, and calculator tools running client-side with zero server uploads.",
+        "featureList": "PX to REM converter, CSS Glassmorphism previewer, Black Friday Deal Calculator, Ecommerce Profit Margin Calculator, WCAG audit, JSON to CSV parser."
       },
       {
         "@type": "FAQPage",
-        "@id": "https://devcraft.tools/#faq",
+        "@id": "https://divcraft.online/#faq",
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "Why use DevCraft client-side micro-tools instead of traditional web utilities?",
+            "name": "Why use DivCraft client-side micro-tools instead of traditional web utilities?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Traditional tools upload your confidential assets, source code, and personal numbers to remote servers. DevCraft processes everything locally inside your browser runtime with HTML5 Canvas, WebAssembly, and JavaScript APIs with 0ms server latency and total privacy."
+              "text": "DivCraft processes inputs locally inside your browser using JavaScript, HTML5 APIs, and WebAssembly with fast response times and privacy."
             }
           },
           {
@@ -216,15 +246,15 @@
             "name": "Are my code snippets, images, or calculations sent to any server?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Never. All computations execute on your CPU and RAM locally. After page load, you can even disconnect your internet network and continue operating every tool offline."
+              "text": "Calculations and local conversions run directly in your browser without sending your data to a backend database."
             }
           },
           {
             "@type": "Question",
-            "name": "Are DevCraft micro-tools completely free to use?",
+            "name": "Are DivCraft micro-tools completely free to use?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes, DevCraft is 100% free and open to everyone without paywalls, sign-up requirements, or usage limits."
+              "text": "Yes, DivCraft tools are free to use in your browser with no paywalls."
             }
           }
         ]
@@ -234,832 +264,856 @@
   </script>
 </head>
 <body class="bg-surface text-on-surface font-sans flex flex-col min-h-screen transition-colors duration-200">
-<!-- Fixed Top Navigation Header -->
-<header class="fixed top-0 w-full z-50 pt-safe bg-surface/90 backdrop-blur-xl border-b border-outline/10 shadow-sm transition-colors duration-200">
-<div class="h-16 px-4 md:px-8 max-w-7xl mx-auto flex items-center justify-between gap-3">
-<!-- Brand & Tagline -->
-<a class="flex items-center gap-2.5 group" href="#">
-<div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-indigo-600 via-primary to-cyan-400 p-[1.5px] shadow-sm flex items-center justify-center">
-<div class="w-full h-full bg-surface-container-lowest rounded-[10px] flex items-center justify-center">
-<span class="material-symbols-outlined text-primary text-[20px]">terminal</span>
-</div>
-</div>
-<div class="flex flex-col">
-<div class="flex items-center gap-1.5">
-<span class="font-bold text-lg tracking-tight text-on-surface group-hover:text-primary transition-colors">DivCraft</span>
-<span class="text-[9px] font-mono font-bold px-1.5 py-0.5 rounded bg-primary/10 text-primary uppercase tracking-wider">v2.4</span>
-</div>
-<span class="text-[10px] font-mono text-on-surface-variant font-medium tracking-wide">Client-Side Hub</span>
-</div>
-</a>
-<!-- Header Action Items: Search quick-open, Dark Mode Switch, Bookmark & Profile -->
-<div class="flex items-center gap-2">
-<!-- Quick Focus Search Trigger -->
-<button aria-label="Focus Search Tools" class="w-9 h-9 flex items-center justify-center rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-primary transition-all active:scale-95" id="headerSearchBtn">
-<span class="material-symbols-outlined text-[19px]">search</span>
-</button>
-<!-- Theme Toggle Switch (Dark / Light) -->
-<button aria-label="Toggle Theme Mode" class="w-9 h-9 flex items-center justify-center rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface transition-all active:scale-90 relative overflow-hidden group" id="themeToggleBtn" title="Toggle Light / Dark Mode">
-<span class="material-symbols-outlined text-[20px] text-amber-400" id="themeIconLight">light_mode</span>
-<span class="material-symbols-outlined text-[20px] text-indigo-400 hidden" id="themeIconDark">dark_mode</span>
-</button>
-<!-- Offline / Client State Indicator Badge -->
-<div class="hidden sm:flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-500 text-[11px] font-mono font-medium">
-<span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
-<span>Zero Server I/O</span>
-</div>
-<!-- Saved Counter Trigger -->
-<button aria-label="View Saved Tools" class="w-9 h-9 flex items-center justify-center rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-primary transition-all relative" id="headerSavedBtn">
-<span class="material-symbols-outlined text-[19px]">bookmark</span>
-<span class="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-primary text-white text-[9px] font-mono font-bold flex items-center justify-center hidden" id="savedCounter">0</span>
-</button>
-</div>
-</div>
-</header>
-<!-- Main Content Layout Area -->
-<main class="flex flex-col relative w-full pt-20 pb-28 min-h-screen">
-<div class="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 flex flex-col gap-6">
-<!-- Hero & High-Intent Search Section -->
-<section class="relative pt-4 pb-2 flex flex-col gap-5 overflow-hidden">
-<!-- Ambient Radial Glow Accent -->
-<div class="absolute -top-24 left-1/2 -translate-x-1/2 w-96 h-96 bg-primary/10 rounded-full blur-3xl pointer-events-none -z-10"></div>
-<div class="absolute top-10 right-0 w-64 h-64 bg-cyan-500/10 rounded-full blur-2xl pointer-events-none -z-10"></div>
-<!-- SEO Pill Badge -->
-<div class="inline-flex items-center gap-2 px-3 py-1 bg-surface-container rounded-full w-fit border border-outline/10 text-xs shadow-sm">
-<span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-<span class="font-mono text-primary font-semibold text-[11px] tracking-wide">100% In-Browser · 0ms Server Latency</span>
-<span class="text-on-surface-variant font-mono text-[10px]">| 54 Free Utilities</span>
-</div>
-<!-- Headline targeting major search queries -->
-<div class="flex flex-col gap-2">
-<h1 class="text-2xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-on-surface leading-tight">
+
+  <!-- Fixed Top Navigation Header -->
+  <header class="fixed top-0 w-full z-50 pt-safe bg-surface/90 backdrop-blur-xl border-b border-outline/10 shadow-sm transition-colors duration-200">
+    <div class="h-16 px-4 md:px-8 max-w-7xl mx-auto flex items-center justify-between gap-3">
+      <!-- Brand Logo as PNG Image -->
+      <a class="flex items-center gap-2.5 group" href="index.html">
+        <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-indigo-600 via-primary to-cyan-400 p-[1.5px] shadow-sm flex items-center justify-center overflow-hidden">
+          <div class="w-full h-full bg-surface-container-lowest rounded-[10px] flex items-center justify-center overflow-hidden">
+            <img
+              src="logo.png"
+              alt="DivCraft Logo"
+              width="32"
+              height="32"
+              decoding="async"
+              class="w-7 h-7 object-contain"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-flex';"
+            />
+            <span class="material-symbols-outlined text-primary text-[20px] hidden">terminal</span>
+          </div>
+        </div>
+        <div class="flex flex-col">
+          <div class="flex items-center gap-1.5">
+            <span class="font-bold text-lg tracking-tight text-on-surface group-hover:text-primary transition-colors">DivCraft</span>
+            <span class="text-[9px] font-mono font-bold px-1.5 py-0.5 rounded bg-primary/10 text-primary uppercase tracking-wider">v2.4</span>
+          </div>
+          <span class="text-[10px] font-mono text-on-surface-variant font-medium tracking-wide">Client-Side Hub</span>
+        </div>
+      </a>
+
+      <!-- Header Actions -->
+      <div class="flex items-center gap-2">
+        <button type="button" aria-label="Focus Search Tools" class="w-9 h-9 flex items-center justify-center rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-primary transition-all active:scale-95" id="headerSearchBtn">
+          <span class="material-symbols-outlined text-[19px]">search</span>
+        </button>
+
+        <button type="button" aria-label="Toggle Theme Mode" class="w-9 h-9 flex items-center justify-center rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface transition-all active:scale-90 relative overflow-hidden group" id="themeToggleBtn" title="Toggle Light / Dark Mode">
+          <span class="material-symbols-outlined text-[20px] text-amber-400" id="themeIconLight">light_mode</span>
+          <span class="material-symbols-outlined text-[20px] text-indigo-400 hidden" id="themeIconDark">dark_mode</span>
+        </button>
+
+        <div class="hidden sm:flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-500 text-[11px] font-mono font-medium">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+          <span>Zero Server I/O</span>
+        </div>
+
+        <button type="button" aria-label="View Saved Tools" class="w-9 h-9 flex items-center justify-center rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-primary transition-all relative" id="headerSavedBtn">
+          <span class="material-symbols-outlined text-[19px]">bookmark</span>
+          <span class="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-primary text-white text-[9px] font-mono font-bold flex items-center justify-center hidden" id="savedCounter">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Layout Area -->
+  <main class="flex flex-col relative w-full pt-20 pb-28 min-h-screen">
+    <div class="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 flex flex-col gap-6">
+
+      <!-- Hero & Search Section -->
+      <section class="relative pt-4 pb-2 flex flex-col gap-5 overflow-hidden">
+        <div class="absolute -top-24 left-1/2 -translate-x-1/2 w-96 h-96 bg-primary/10 rounded-full blur-3xl pointer-events-none -z-10"></div>
+        <div class="absolute top-10 right-0 w-64 h-64 bg-cyan-500/10 rounded-full blur-2xl pointer-events-none -z-10"></div>
+
+        <div class="inline-flex items-center gap-2 px-3 py-1 bg-surface-container rounded-full w-fit border border-outline/10 text-xs shadow-sm">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span class="font-mono text-primary font-semibold text-[11px] tracking-wide">100% In-Browser · Fast Local Tools</span>
+          <span class="text-on-surface-variant font-mono text-[10px]" id="heroToolsCount">| 16 Active Tools</span>
+        </div>
+
+        <div class="flex flex-col gap-2">
+          <h1 class="text-2xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-on-surface leading-tight">
             Free Client-Side <br class="sm:hidden"/>
-<span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-cyan-400">
-              Developer &amp; Designer Tools
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-cyan-400">
+              Developer &amp; Utility Tools
             </span>
-</h1>
-<p class="text-sm sm:text-base text-on-surface-variant max-w-2xl font-normal leading-relaxed">
-            Zero server uploads. Private, instantaneous web utilities engineered with HTML5 Canvas, WebAssembly, and local JavaScript. Safe for sensitive tokens, code, and financial data.
+          </h1>
+          <p class="text-sm sm:text-base text-on-surface-variant max-w-2xl font-normal leading-relaxed">
+            Fast, private web tools for CSS styling, calculations, text formatting, and developer workflows—running directly in your browser with zero server uploads.
           </p>
-</div>
-<!-- Live Instant Search Bar -->
-<div class="relative w-full max-w-3xl flex items-center group">
-<div class="absolute left-3.5 flex items-center pointer-events-none text-primary">
-<span class="material-symbols-outlined text-[22px]">search</span>
-</div>
-<input autocomplete="off" class="w-full h-13 pl-11 pr-24 py-3 bg-surface-container-lowest text-on-surface placeholder:text-on-surface-variant/60 font-sans text-sm sm:text-base rounded-2xl border border-outline/20 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 shadow-sm transition-all" id="toolSearchInput" placeholder="Search CSS glass, PX to REM, box shadow, regex, QR code, fees..." type="search"/>
-<div class="absolute right-3 flex items-center gap-1.5">
-<button aria-label="Clear Search" class="hidden w-6 h-6 rounded-full bg-surface-container text-on-surface-variant hover:text-on-surface text-xs items-center justify-center" id="clearSearchBtn">
+        </div>
+
+        <!-- Live Instant Search Bar -->
+        <div class="relative w-full max-w-3xl flex items-center group">
+          <div class="absolute left-3.5 flex items-center pointer-events-none text-primary">
+            <span class="material-symbols-outlined text-[22px]">search</span>
+          </div>
+          <input autocomplete="off" class="w-full h-13 pl-11 pr-24 py-3 bg-surface-container-lowest text-on-surface placeholder:text-on-surface-variant/60 font-sans text-sm sm:text-base rounded-2xl border border-outline/20 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 shadow-sm transition-all" id="toolSearchInput" placeholder="Search Black Friday deal calc, profit margin, glass, PX to REM, regex..." type="search"/>
+          <div class="absolute right-3 flex items-center gap-1.5">
+            <button type="button" aria-label="Clear Search" class="hidden w-6 h-6 rounded-full bg-surface-container text-on-surface-variant hover:text-on-surface text-xs items-center justify-center" id="clearSearchBtn">
               ✕
             </button>
-<span class="hidden sm:inline-flex px-2 py-0.5 rounded-md bg-surface-container text-on-surface-variant font-mono text-[11px] font-semibold">⌘K</span>
-</div>
-</div>
-<!-- Trust Badges & Guarantees Ribbon -->
-<div class="flex items-center gap-2 overflow-x-auto pb-1 text-nowrap no-scrollbar pt-1">
-<div class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container text-xs font-mono text-on-surface shadow-xs border border-outline/10">
-<span class="text-indigo-400">⚡</span>
-<span>0ms Local Latency</span>
-</div>
-<div class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container text-xs font-mono text-on-surface shadow-xs border border-outline/10">
-<span class="text-cyan-400">🛡️</span>
-<span>100% Client-Side</span>
-</div>
-<div class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container text-xs font-mono text-on-surface shadow-xs border border-outline/10">
-<span class="text-emerald-400">🔒</span>
-<span>Zero Server Logs</span>
-</div>
-<div class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container text-xs font-mono text-on-surface shadow-xs border border-outline/10">
-<span class="text-amber-400">★</span>
-<span>4.96/5 (18k Makers)</span>
-</div>
-</div>
-</section>
-<!-- AD PLACEMENT 1: Top Responsive Banner (AdSense Compliant) -->
-<section aria-label="Sponsored Content" class="w-full flex flex-col items-center justify-center my-1">
-<div class="w-full max-w-4xl p-2.5 rounded-xl bg-surface-container border border-dashed border-outline/25 text-center flex flex-col items-center justify-center min-h-[90px] relative">
-<span class="text-[9px] font-mono tracking-widest uppercase text-on-surface-variant/70 mb-1">ADVERTISEMENT · SPONSORED</span>
-<div class="flex flex-col sm:flex-row items-center justify-center gap-2 text-xs text-on-surface-variant">
-<span class="font-medium text-on-surface">Cloudflare Workers &amp; Vercel Edge</span> — Deploy serverless functions globally with sub-50ms TTFB.
-            <a class="inline-flex items-center gap-1 text-primary font-semibold hover:underline text-xs" href="#" rel="noopener sponsored">
+            <span class="hidden sm:inline-flex px-2 py-0.5 rounded-md bg-surface-container text-on-surface-variant font-mono text-[11px] font-semibold">⌘K</span>
+          </div>
+        </div>
+
+        <!-- Trust Badges -->
+        <div class="flex items-center gap-2 overflow-x-auto pb-1 text-nowrap no-scrollbar pt-1">
+          <div class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container text-xs font-mono text-on-surface shadow-xs border border-outline/10">
+            <span class="text-indigo-400">⚡</span>
+            <span>Instant Browser Math</span>
+          </div>
+          <div class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container text-xs font-mono text-on-surface shadow-xs border border-outline/10">
+            <span class="text-cyan-400">🛡️</span>
+            <span>100% Client-Side</span>
+          </div>
+          <div class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container text-xs font-mono text-on-surface shadow-xs border border-outline/10">
+            <span class="text-emerald-400">🔒</span>
+            <span>No Backend Upload</span>
+          </div>
+          <div class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container text-xs font-mono text-on-surface shadow-xs border border-outline/10">
+            <span class="text-amber-400">★</span>
+            <span>Free In-Browser Hub</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Top Banner -->
+      <section aria-label="Sponsored Content" class="w-full flex flex-col items-center justify-center my-1">
+        <div class="w-full max-w-4xl p-2.5 rounded-xl bg-surface-container border border-dashed border-outline/25 text-center flex flex-col items-center justify-center min-h-[90px] relative">
+          <span class="text-[9px] font-mono tracking-widest uppercase text-on-surface-variant/70 mb-1">ADVERTISEMENT · SPONSORED</span>
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-2 text-xs text-on-surface-variant">
+            <span class="font-medium text-on-surface">Cloudflare Workers &amp; Vercel Edge</span> — Deploy serverless functions globally with fast edge response.
+            <a class="inline-flex items-center gap-1 text-primary font-semibold hover:underline text-xs" href="https://workers.cloudflare.com/" target="_blank" rel="noopener noreferrer nofollow sponsored">
               Explore Platform <span class="material-symbols-outlined text-[14px]">open_in_new</span>
-</a>
-</div>
-<span class="text-[9px] text-on-surface-variant/50 mt-1">Google AdSense Partner Verified · DevCraft Privacy Compliant</span>
-</div>
-</section>
-<!-- Category Filter Pills Navigation -->
-<nav aria-label="Tool Categories" class="flex items-center gap-2 overflow-x-auto no-scrollbar py-1">
-<button class="cat-pill active flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-primary text-white text-xs font-mono font-medium shadow-sm transition-all whitespace-nowrap" data-cat="all">
-<span>All</span>
-<span class="pill-count px-1.5 py-0.2 bg-white/20 rounded-full text-[10px]">54</span>
-</button>
-<button class="cat-pill flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface text-xs font-mono font-medium transition-all whitespace-nowrap border border-outline/10" data-cat="dev">
-<span>💻 Developer</span>
-<span class="pill-count px-1.5 py-0.2 bg-surface-container-high rounded-full text-[10px]">16</span>
-</button>
-<button class="cat-pill flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface text-xs font-mono font-medium transition-all whitespace-nowrap border border-outline/10" data-cat="css">
-<span>🎨 CSS &amp; Design</span>
-<span class="pill-count px-1.5 py-0.2 bg-surface-container-high rounded-full text-[10px]">14</span>
-</button>
-<button class="cat-pill flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface text-xs font-mono font-medium transition-all whitespace-nowrap border border-outline/10" data-cat="text">
-<span>📝 Content &amp; Text</span>
-<span class="pill-count px-1.5 py-0.2 bg-surface-container-high rounded-full text-[10px]">9</span>
-</button>
-<button class="cat-pill flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface text-xs font-mono font-medium transition-all whitespace-nowrap border border-outline/10" data-cat="calc">
-<span>🧮 Calculators</span>
-<span class="pill-count px-1.5 py-0.2 bg-surface-container-high rounded-full text-[10px]">9</span>
-</button>
-<button class="cat-pill flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface text-xs font-mono font-medium transition-all whitespace-nowrap border border-outline/10" data-cat="privacy">
-<span>🛡️ Privacy</span>
-<span class="pill-count px-1.5 py-0.2 bg-surface-container-high rounded-full text-[10px]">6</span>
-</button>
-</nav>
-<!-- Trending Section & Live Interactive Sandboxes -->
-<section class="flex flex-col gap-4">
-<div class="flex items-center justify-between">
-<div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-amber-500 text-[22px]">local_fire_department</span>
-<h2 class="text-base sm:text-xl font-bold text-on-surface">Trending Micro-Tools</h2>
-</div>
-<span class="text-[11px] font-mono text-on-surface-variant uppercase tracking-wider">Live In-Browser Sandboxes</span>
-</div>
-<!-- 2 Interactive Mini Widgets Side-by-Side on Desktop, Stacked on Mobile -->
-<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-<!-- Interactive Widget 1: Instant PX to REM Converter -->
-<article class="bg-surface-container-low border border-outline/15 rounded-2xl p-4 sm:p-5 shadow-sm flex flex-col justify-between gap-4">
-<div class="flex items-start justify-between">
-<div class="flex items-center gap-3">
-<div class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
-<span class="material-symbols-outlined text-[22px]">format_size</span>
-</div>
-<div>
-<div class="flex items-center gap-2">
-<h3 class="font-bold text-sm sm:text-base text-on-surface">PX to REM / EM Converter</h3>
-<span class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-emerald-500/10 text-emerald-500 font-semibold">Live Sandbox</span>
-</div>
-<p class="text-xs text-on-surface-variant">Instant typography math without leaving the page.</p>
-</div>
-</div>
-<button aria-label="Bookmark PX to REM" class="bookmark-btn text-on-surface-variant/70 hover:text-primary transition-colors">
-<span class="material-symbols-outlined text-[19px]">bookmark</span>
-</button>
-</div>
-<!-- Mini Interactive Form Inside Card -->
-<div class="bg-surface-container-lowest p-3 rounded-xl border border-outline/10 flex flex-col gap-2.5">
-<div class="grid grid-cols-2 gap-2.5">
-<div>
-<label class="block text-[10px] font-mono text-on-surface-variant uppercase mb-1">Pixel Input</label>
-<div class="flex items-center bg-surface-container rounded-lg px-2.5 py-1.5">
-<input class="w-full bg-transparent font-mono text-sm text-on-surface focus:outline-none" id="pxInputWidget" type="number" value="24"/>
-<span class="text-[11px] font-mono text-on-surface-variant">px</span>
-</div>
-</div>
-<div>
-<label class="block text-[10px] font-mono text-on-surface-variant uppercase mb-1">Base Font</label>
-<div class="flex items-center bg-surface-container rounded-lg px-2.5 py-1.5">
-<input class="w-full bg-transparent font-mono text-sm text-on-surface focus:outline-none" id="basePxInput" type="number" value="16"/>
-<span class="text-[11px] font-mono text-on-surface-variant">px</span>
-</div>
-</div>
-</div>
-<!-- Output Row -->
-<div class="flex items-center justify-between pt-1 border-t border-outline/10">
-<div class="flex items-center gap-2">
-<span class="text-xs text-on-surface-variant font-mono">Result:</span>
-<span class="font-mono font-bold text-base text-primary" id="remOutputWidget">1.500rem</span>
-</div>
-<button class="flex items-center gap-1 px-2.5 py-1 rounded-lg bg-primary/10 hover:bg-primary/20 text-primary text-xs font-mono font-medium transition-all active:scale-95" id="copyRemWidgetBtn">
-<span class="material-symbols-outlined text-[14px]">content_copy</span>
-<span>Copy CSS</span>
-</button>
-</div>
-</div>
-<!-- Visual Preview Pill -->
-<div class="flex items-center justify-between text-xs text-on-surface-variant pt-1">
-<div class="flex items-center gap-2">
-<span class="text-[11px] font-mono">Visual scale:</span>
-<span class="text-on-surface font-semibold truncate max-w-[170px]" id="pxVisualSample" style="font-size: 24px; line-height: 1.1;">Preview text</span>
-</div>
-<span class="text-[11px] font-mono text-on-surface-variant">★ 4.97 (5.8k)</span>
-</div>
-</article>
-<!-- Interactive Widget 2: Glassmorphism & Shadow Preview -->
-<article class="bg-surface-container-low border border-outline/15 rounded-2xl p-4 sm:p-5 shadow-sm flex flex-col justify-between gap-4">
-<div class="flex items-start justify-between">
-<div class="flex items-center gap-3">
-<div class="w-10 h-10 rounded-xl bg-cyan-500/10 text-cyan-500 flex items-center justify-center">
-<span class="material-symbols-outlined text-[22px]">blur_on</span>
-</div>
-<div>
-<div class="flex items-center gap-2">
-<h3 class="font-bold text-sm sm:text-base text-on-surface">CSS Glassmorphism Studio</h3>
-<span class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-cyan-500/10 text-cyan-500 font-semibold">Interactive</span>
-</div>
-<p class="text-xs text-on-surface-variant">Real-time backdrop blur slider &amp; instant style token.</p>
-</div>
-</div>
-<button aria-label="Bookmark Glassmorphism" class="bookmark-btn text-on-surface-variant/70 hover:text-primary transition-colors">
-<span class="material-symbols-outlined text-[19px]">bookmark</span>
-</button>
-</div>
-<!-- Mini Blur Sandbox -->
-<div class="relative rounded-xl overflow-hidden p-4 bg-gradient-to-tr from-indigo-900/40 via-purple-900/30 to-cyan-800/40 border border-outline/10 flex flex-col gap-2">
-<div class="w-full p-3 rounded-lg border border-white/20 text-white flex items-center justify-between" id="glassPreviewCard" style="background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(12px);">
-<div class="flex flex-col">
-<span class="text-xs font-semibold text-white drop-shadow-sm">Frosted Glass Surface</span>
-<span class="text-[10px] font-mono text-white/80" id="glassCSSLabel">backdrop-filter: blur(12px);</span>
-</div>
-<span class="material-symbols-outlined text-white/90 text-[18px]">verified_user</span>
-</div>
-<!-- Slider for blur value -->
-<div class="flex items-center justify-between gap-3 pt-1">
-<span class="text-[10px] font-mono text-on-surface-variant uppercase">Blur Radius</span>
-<input class="w-32 accent-indigo-500 cursor-pointer" id="glassBlurSlider" max="30" min="0" type="range" value="12"/>
-<span class="text-xs font-mono font-bold text-on-surface" id="glassBlurVal">12px</span>
-</div>
-</div>
-<!-- Actions Row -->
-<div class="flex items-center justify-between pt-1">
-<span class="text-[11px] font-mono text-cyan-400">⚡ 0ms Export</span>
-<button class="flex items-center gap-1 px-3 py-1.5 rounded-lg bg-primary text-white text-xs font-mono font-medium shadow-sm active:scale-95 transition-all" id="copyGlassBtn">
-<span class="material-symbols-outlined text-[14px]">content_copy</span>
-<span>Copy Snippet</span>
-</button>
-</div>
-</article>
-</div>
-</section>
-<!-- Complete Categorized Directory Grid (Mobile 2-Column Responsive Layout) -->
-<section class="flex flex-col gap-4 pt-2">
-<div class="flex items-center justify-between">
-<div class="flex flex-col">
-<h2 class="text-lg sm:text-2xl font-bold text-on-surface">All Verified Micro-Tools</h2>
-<p class="text-xs sm:text-sm text-on-surface-variant">Tap any tool to launch in-browser sandbox or copy snippets.</p>
-</div>
-<div class="flex items-center gap-1.5">
-<span class="text-xs font-mono px-2.5 py-1 rounded-full bg-surface-container border border-outline/10 text-on-surface" id="activeFilterBadge">
+            </a>
+          </div>
+          <span class="text-[9px] text-on-surface-variant/50 mt-1">Google AdSense Partner Ready · DivCraft Privacy Compliant</span>
+        </div>
+      </section>
+
+      <!-- Category Filter Pills Navigation -->
+      <nav aria-label="Tool Categories" class="flex items-center gap-2 overflow-x-auto no-scrollbar py-1">
+        <button type="button" class="cat-pill active flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-primary text-white text-xs font-mono font-medium shadow-sm transition-all whitespace-nowrap" data-cat="all">
+          <span>All</span>
+          <span class="pill-count px-1.5 py-0.2 bg-white/20 rounded-full text-[10px]" data-count-cat="all">16</span>
+        </button>
+        <button type="button" class="cat-pill flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface text-xs font-mono font-medium transition-all whitespace-nowrap border border-outline/10" data-cat="dev">
+          <span>💻 Developer</span>
+          <span class="pill-count px-1.5 py-0.2 bg-surface-container-high rounded-full text-[10px]" data-count-cat="dev">4</span>
+        </button>
+        <button type="button" class="cat-pill flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface text-xs font-mono font-medium transition-all whitespace-nowrap border border-outline/10" data-cat="css">
+          <span>🎨 CSS &amp; Design</span>
+          <span class="pill-count px-1.5 py-0.2 bg-surface-container-high rounded-full text-[10px]" data-count-cat="css">4</span>
+        </button>
+        <button type="button" class="cat-pill flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface text-xs font-mono font-medium transition-all whitespace-nowrap border border-outline/10" data-cat="text">
+          <span>📝 Content &amp; Text</span>
+          <span class="pill-count px-1.5 py-0.2 bg-surface-container-high rounded-full text-[10px]" data-count-cat="text">3</span>
+        </button>
+        <button type="button" class="cat-pill flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface text-xs font-mono font-medium transition-all whitespace-nowrap border border-outline/10" data-cat="calc">
+          <span>🧮 Calculators</span>
+          <span class="pill-count px-1.5 py-0.2 bg-surface-container-high rounded-full text-[10px]" data-count-cat="calc">3</span>
+        </button>
+        <button type="button" class="cat-pill flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface text-xs font-mono font-medium transition-all whitespace-nowrap border border-outline/10" data-cat="privacy">
+          <span>🛡️ Privacy</span>
+          <span class="pill-count px-1.5 py-0.2 bg-surface-container-high rounded-full text-[10px]" data-count-cat="privacy">2</span>
+        </button>
+      </nav>
+
+      <!-- Trending Section & Live Interactive Sandboxes -->
+      <section class="flex flex-col gap-4">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-amber-500 text-[22px]">local_fire_department</span>
+            <h2 class="text-base sm:text-xl font-bold text-on-surface">Trending Micro-Tools</h2>
+          </div>
+          <span class="text-[11px] font-mono text-on-surface-variant uppercase tracking-wider">Live In-Browser Sandboxes</span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <!-- Interactive Widget 1: Instant PX to REM Converter -->
+          <article class="bg-surface-container-low border border-outline/15 rounded-2xl p-4 sm:p-5 shadow-sm flex flex-col justify-between gap-4" data-tool-id="sandbox-px-rem" data-tool-title="PX to REM / EM Converter">
+            <div class="flex items-start justify-between">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
+                  <span class="material-symbols-outlined text-[22px]">format_size</span>
+                </div>
+                <div>
+                  <div class="flex items-center gap-2">
+                    <h3 class="font-bold text-sm sm:text-base text-on-surface">PX to REM / EM Converter</h3>
+                    <span class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-emerald-500/10 text-emerald-500 font-semibold">Live Sandbox</span>
+                  </div>
+                  <p class="text-xs text-on-surface-variant">Instant typography math without leaving the page.</p>
+                </div>
+              </div>
+              <button type="button" aria-label="Bookmark PX to REM" class="bookmark-btn text-on-surface-variant/70 hover:text-primary transition-colors" data-tool-id="sandbox-px-rem" data-tool-title="PX to REM / EM Converter">
+                <span class="material-symbols-outlined text-[19px]">bookmark</span>
+              </button>
+            </div>
+
+            <div class="bg-surface-container-lowest p-3 rounded-xl border border-outline/10 flex flex-col gap-2.5">
+              <div class="grid grid-cols-2 gap-2.5">
+                <div>
+                  <label for="pxInputWidget" class="block text-[10px] font-mono text-on-surface-variant uppercase mb-1">Pixel Input</label>
+                  <div class="flex items-center bg-surface-container rounded-lg px-2.5 py-1.5">
+                    <input class="w-full bg-transparent font-mono text-sm text-on-surface focus:outline-none" id="pxInputWidget" type="number" value="24"/>
+                    <span class="text-[11px] font-mono text-on-surface-variant">px</span>
+                  </div>
+                </div>
+                <div>
+                  <label for="basePxInput" class="block text-[10px] font-mono text-on-surface-variant uppercase mb-1">Base Font</label>
+                  <div class="flex items-center bg-surface-container rounded-lg px-2.5 py-1.5">
+                    <input class="w-full bg-transparent font-mono text-sm text-on-surface focus:outline-none" id="basePxInput" type="number" value="16"/>
+                    <span class="text-[11px] font-mono text-on-surface-variant">px</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="flex items-center justify-between pt-1 border-t border-outline/10">
+                <div class="flex items-center gap-2">
+                  <span class="text-xs text-on-surface-variant font-mono">Result:</span>
+                  <span class="font-mono font-bold text-base text-primary" id="remOutputWidget">1.5rem</span>
+                </div>
+                <button type="button" class="flex items-center gap-1 px-2.5 py-1 rounded-lg bg-primary/10 hover:bg-primary/20 text-primary text-xs font-mono font-medium transition-all active:scale-95" id="copyRemWidgetBtn">
+                  <span class="material-symbols-outlined text-[14px]">content_copy</span>
+                  <span>Copy CSS</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="flex items-center justify-between text-xs text-on-surface-variant pt-1">
+              <div class="flex items-center gap-2">
+                <span class="text-[11px] font-mono">Visual scale:</span>
+                <span class="text-on-surface font-semibold truncate max-w-[170px]" id="pxVisualSample" style="font-size: 24px; line-height: 1.1;">Preview text</span>
+              </div>
+              <span class="text-[11px] font-mono text-on-surface-variant">★ 4.97</span>
+            </div>
+          </article>
+
+          <!-- Interactive Widget 2: Glassmorphism Preview -->
+          <article class="bg-surface-container-low border border-outline/15 rounded-2xl p-4 sm:p-5 shadow-sm flex flex-col justify-between gap-4" data-tool-id="sandbox-glass" data-tool-title="CSS Glassmorphism Studio">
+            <div class="flex items-start justify-between">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-cyan-500/10 text-cyan-500 flex items-center justify-center">
+                  <span class="material-symbols-outlined text-[22px]">blur_on</span>
+                </div>
+                <div>
+                  <div class="flex items-center gap-2">
+                    <h3 class="font-bold text-sm sm:text-base text-on-surface">CSS Glassmorphism Studio</h3>
+                    <span class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-cyan-500/10 text-cyan-500 font-semibold">Interactive</span>
+                  </div>
+                  <p class="text-xs text-on-surface-variant">Real-time backdrop blur slider &amp; instant style token.</p>
+                </div>
+              </div>
+              <button type="button" aria-label="Bookmark Glassmorphism" class="bookmark-btn text-on-surface-variant/70 hover:text-primary transition-colors" data-tool-id="sandbox-glass" data-tool-title="CSS Glassmorphism Studio">
+                <span class="material-symbols-outlined text-[19px]">bookmark</span>
+              </button>
+            </div>
+
+            <div class="relative rounded-xl overflow-hidden p-4 bg-gradient-to-tr from-indigo-900/40 via-purple-900/30 to-cyan-800/40 border border-outline/10 flex flex-col gap-2">
+              <div class="w-full p-3 rounded-lg border border-white/20 text-white flex items-center justify-between" id="glassPreviewCard" style="background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(12px);">
+                <div class="flex flex-col">
+                  <span class="text-xs font-semibold text-white drop-shadow-sm">Frosted Glass Surface</span>
+                  <span class="text-[10px] font-mono text-white/80" id="glassCSSLabel">backdrop-filter: blur(12px);</span>
+                </div>
+                <span class="material-symbols-outlined text-white/90 text-[18px]">verified_user</span>
+              </div>
+
+              <div class="flex items-center justify-between gap-3 pt-1">
+                <label for="glassBlurSlider" class="text-[10px] font-mono text-on-surface-variant uppercase">Blur Radius</label>
+                <input class="w-32 accent-indigo-500 cursor-pointer" id="glassBlurSlider" max="30" min="0" type="range" value="12"/>
+                <span class="text-xs font-mono font-bold text-on-surface" id="glassBlurVal">12px</span>
+              </div>
+            </div>
+
+            <div class="flex items-center justify-between pt-1">
+              <span class="text-[11px] font-mono text-cyan-400">⚡ Instant CSS</span>
+              <button type="button" class="flex items-center gap-1 px-3 py-1.5 rounded-lg bg-primary text-white text-xs font-mono font-medium shadow-sm active:scale-95 transition-all" id="copyGlassBtn">
+                <span class="material-symbols-outlined text-[14px]">content_copy</span>
+                <span>Copy Snippet</span>
+              </button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Complete Categorized Directory Grid -->
+      <section class="flex flex-col gap-4 pt-2">
+        <div class="flex items-center justify-between">
+          <div class="flex flex-col">
+            <h2 class="text-lg sm:text-2xl font-bold text-on-surface">All Verified Micro-Tools</h2>
+            <p class="text-xs sm:text-sm text-on-surface-variant">Tap any tool to open in-browser or filter by category.</p>
+          </div>
+          <div class="flex items-center gap-1.5">
+            <span class="text-xs font-mono px-2.5 py-1 rounded-full bg-surface-container border border-outline/10 text-on-surface" id="activeFilterBadge">
               Showing <span id="toolsCount">16</span> tools
             </span>
-</div>
-</div>
-<!-- Empty search state container (hidden by default) -->
-<div class="hidden flex-col items-center justify-center p-8 bg-surface-container-low rounded-2xl border border-dashed border-outline/20 text-center gap-2" id="noResultsState">
-<span class="material-symbols-outlined text-4xl text-on-surface-variant">search_off</span>
-<h3 class="font-bold text-on-surface">No micro-tools match your search</h3>
-<p class="text-xs text-on-surface-variant">Try searching for generic terms like "CSS", "PX", "Git", "Contrast" or reset categories.</p>
-<button class="mt-2 px-3 py-1.5 rounded-lg bg-primary text-white text-xs font-mono" id="resetSearchBtn">Reset Search</button>
-</div>
-<!-- 2-Column on Mobile, 3-Column on Tablet, 4-Column on Desktop Grid -->
-<div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3" id="toolsGrid">
-<!-- Tool 1: PX to REM -->
-<article class="tool-card bg-surface-container-low border border-outline/15 rounded-xl p-3 sm:p-4 flex flex-col justify-between shadow-xs hover:border-primary/50 hover:shadow-md transition-all group" data-cat="css" data-keywords="px to rem em typography font size css conversion responsive">
-<div class="flex flex-col gap-2">
-<div class="flex items-center justify-between">
-<div class="w-8 h-8 rounded-lg bg-indigo-500/10 text-indigo-500 flex items-center justify-center">
-<span class="material-symbols-outlined text-[18px]">format_size</span>
-</div>
-<button aria-label="Bookmark Tool" class="bookmark-btn text-on-surface-variant/60 hover:text-primary transition-colors">
-<span class="material-symbols-outlined text-[17px]">bookmark</span>
-</button>
-</div>
-<div>
-<h3 class="font-bold text-xs sm:text-sm text-on-surface group-hover:text-primary transition-colors leading-tight">PX to REM / EM</h3>
-<p class="text-[11px] text-on-surface-variant line-clamp-2 mt-0.5">Fluid typography calculations &amp; clamp() CSS builder.</p>
-</div>
-</div>
-<div class="flex items-center justify-between pt-3 mt-auto border-t border-outline/10">
-<span class="text-[10px] font-mono text-on-surface-variant">★ 4.97</span>
-<span class="inline-flex items-center gap-0.5 text-xs font-mono text-primary group-hover:translate-x-0.5 transition-transform">
-                Launch <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
-</span>
-</div>
-</article>
-<!-- Tool 2: CSS Glassmorphism -->
-<article class="tool-card bg-surface-container-low border border-outline/15 rounded-xl p-3 sm:p-4 flex flex-col justify-between shadow-xs hover:border-primary/50 hover:shadow-md transition-all group" data-cat="css" data-keywords="glassmorphism blur frosted glass css generator backdrop filter neumorphism">
-  <a href="https://divcraft.online/glassmorphism-lab.html" class="flex flex-col justify-between h-full w-full">
-    <div class="flex flex-col gap-2">
-      <div class="flex items-center justify-between">
-        <div class="w-8 h-8 rounded-lg bg-cyan-500/10 text-cyan-500 flex items-center justify-center">
-          <span class="material-symbols-outlined text-[18px]">blur_on</span>
+          </div>
         </div>
-        <button type="button" aria-label="Bookmark Tool" class="bookmark-btn text-on-surface-variant/60 hover:text-primary transition-colors" onclick="event.preventDefault(); event.stopPropagation();">
-          <span class="material-symbols-outlined text-[17px]">bookmark</span>
-        </button>
-      </div>
-      <div>
-        <h3 class="font-bold text-xs sm:text-sm text-on-surface group-hover:text-primary transition-colors leading-tight">Glassmorphism Lab</h3>
-        <p class="text-[11px] text-on-surface-variant line-clamp-2 mt-0.5">Sliders for backdrop blur, specular glow, and border highlights.</p>
-      </div>
-    </div>
-    <div class="flex items-center justify-between pt-3 mt-auto border-t border-outline/10">
-      <span class="text-[10px] font-mono text-on-surface-variant">★ 4.95</span>
-      <span class="inline-flex items-center gap-0.5 text-xs font-mono text-primary group-hover:translate-x-0.5 transition-transform">
-        Launch <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
-      </span>
-    </div>
-  </a>
-</article>
-<!-- Tool 12: Black Friday 2026 Deal & Tax Calculator -->
-<article class="tool-card bg-surface-container-low border border-outline/15 rounded-xl p-3 sm:p-4 flex flex-col justify-between shadow-xs hover:border-primary/50 hover:shadow-md transition-all group" data-cat="calc" data-keywords="black friday 2026 deal calculator stackable coupon sales tax california best buy">
-  <a href="https://divcraft.online/black-friday-deal-calculator.html" class="flex flex-col justify-between h-full w-full">
-    <div class="flex flex-col gap-2">
-      <div class="flex items-center justify-between">
-        <div class="w-8 h-8 rounded-lg bg-amber-500/10 text-amber-500 flex items-center justify-center">
-          <span class="material-symbols-outlined text-[18px]">local_offer</span>
+
+        <!-- Empty search state -->
+        <div class="hidden flex-col items-center justify-center p-8 bg-surface-container-low rounded-2xl border border-dashed border-outline/20 text-center gap-2" id="noResultsState">
+          <span class="material-symbols-outlined text-4xl text-on-surface-variant">search_off</span>
+          <h3 class="font-bold text-on-surface">No micro-tools match your search</h3>
+          <p class="text-xs text-on-surface-variant">Try searching for "Black Friday", "Margin", "Glass", "PX", or reset categories.</p>
+          <button type="button" class="mt-2 px-3 py-1.5 rounded-lg bg-primary text-white text-xs font-mono" id="resetSearchBtn">Reset Search</button>
         </div>
-        <button type="button" aria-label="Bookmark Tool" class="bookmark-btn text-on-surface-variant/60 hover:text-primary transition-colors" onclick="event.preventDefault(); event.stopPropagation();">
-          <span class="material-symbols-outlined text-[17px]">bookmark</span>
-        </button>
-      </div>
-      <div>
-        <h3 class="font-bold text-xs sm:text-sm text-on-surface group-hover:text-primary transition-colors leading-tight">Black Friday Deal Calc</h3>
-        <p class="text-[11px] text-on-surface-variant line-clamp-2 mt-0.5">Calculate stackable Black Friday coupons, cashback, and US state sales tax.</p>
-      </div>
-    </div>
-    <div class="flex items-center justify-between pt-3 mt-auto border-t border-outline/10">
-      <span class="text-[10px] font-mono text-on-surface-variant">★ 4.96</span>
-      <span class="inline-flex items-center gap-0.5 text-xs font-mono text-primary group-hover:translate-x-0.5 transition-transform">
-        Launch <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
-      </span>
-    </div>
-  </a>
-</article>
-<!-- Tool 3: Box Shadow Multi-Layer -->
-<article class="tool-card bg-surface-container-low border border-outline/15 rounded-xl p-3 sm:p-4 flex flex-col justify-between shadow-xs hover:border-primary/50 hover:shadow-md transition-all group" data-cat="css" data-keywords="box shadow multi layer smooth shadows ambient elevation css drop shadow">
-<div class="flex flex-col gap-2">
-<div class="flex items-center justify-between">
-<div class="w-8 h-8 rounded-lg bg-indigo-500/10 text-indigo-500 flex items-center justify-center">
-<span class="material-symbols-outlined text-[18px]">layers</span>
-</div>
-<button aria-label="Bookmark Tool" class="bookmark-btn text-on-surface-variant/60 hover:text-primary transition-colors">
-<span class="material-symbols-outlined text-[17px]">bookmark</span>
-</button>
-</div>
-<div>
-<h3 class="font-bold text-xs sm:text-sm text-on-surface group-hover:text-primary transition-colors leading-tight">Box-Shadow Layers</h3>
-<p class="text-[11px] text-on-surface-variant line-clamp-2 mt-0.5">Silky smooth multi-layer elevation drops without harsh edges.</p>
-</div>
-</div>
-<div class="flex items-center justify-between pt-3 mt-auto border-t border-outline/10">
-<span class="text-[10px] font-mono text-on-surface-variant">★ 4.92</span>
-<span class="inline-flex items-center gap-0.5 text-xs font-mono text-primary group-hover:translate-x-0.5 transition-transform">
-                Launch <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
-</span>
-</div>
-</article>
-<!-- Tool 4: WCAG Color Contrast -->
-<article class="tool-card bg-surface-container-low border border-outline/15 rounded-xl p-3 sm:p-4 flex flex-col justify-between shadow-xs hover:border-primary/50 hover:shadow-md transition-all group" data-cat="css" data-keywords="wcag color contrast audit accessibility aa aaa ratio simulator">
-<div class="flex flex-col gap-2">
-<div class="flex items-center justify-between">
-<div class="w-8 h-8 rounded-lg bg-emerald-500/10 text-emerald-500 flex items-center justify-center">
-<span class="material-symbols-outlined text-[18px]">contrast</span>
-</div>
-<button aria-label="Bookmark Tool" class="bookmark-btn text-on-surface-variant/60 hover:text-primary transition-colors">
-<span class="material-symbols-outlined text-[17px]">bookmark</span>
-</button>
-</div>
-<div>
-<h3 class="font-bold text-xs sm:text-sm text-on-surface group-hover:text-primary transition-colors leading-tight">WCAG AA/AAA Audit</h3>
-<p class="text-[11px] text-on-surface-variant line-clamp-2 mt-0.5">Compliance ratio checker with simulated colorblind vision filters.</p>
-</div>
-</div>
-<div class="flex items-center justify-between pt-3 mt-auto border-t border-outline/10">
-<span class="text-[10px] font-mono text-on-surface-variant">★ 5.00</span>
-<span class="inline-flex items-center gap-0.5 text-xs font-mono text-primary group-hover:translate-x-0.5 transition-transform">
-                Launch <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
-</span>
-</div>
-</article>
-<!-- Tool 5: Git Command Builder -->
-<article class="tool-card bg-surface-container-low border border-outline/15 rounded-xl p-3 sm:p-4 flex flex-col justify-between shadow-xs hover:border-primary/50 hover:shadow-md transition-all group" data-cat="dev" data-keywords="git command builder terminal cheat sheet rebase cherry pick reset">
-<div class="flex flex-col gap-2">
-<div class="flex items-center justify-between">
-<div class="w-8 h-8 rounded-lg bg-orange-500/10 text-orange-500 flex items-center justify-center">
-<span class="material-symbols-outlined text-[18px]">terminal</span>
-</div>
-<button aria-label="Bookmark Tool" class="bookmark-btn text-on-surface-variant/60 hover:text-primary transition-colors">
-<span class="material-symbols-outlined text-[17px]">bookmark</span>
-</button>
-</div>
-<div>
-<h3 class="font-bold text-xs sm:text-sm text-on-surface group-hover:text-primary transition-colors leading-tight">Git Cheat &amp; Builder</h3>
-<p class="text-[11px] text-on-surface-variant line-clamp-2 mt-0.5">Interactive rebase, squash, bisect, and commit recovery generator.</p>
-</div>
-</div>
-<div class="flex items-center justify-between pt-3 mt-auto border-t border-outline/10">
-<span class="text-[10px] font-mono text-on-surface-variant">★ 4.91</span>
-<span class="inline-flex items-center gap-0.5 text-xs font-mono text-primary group-hover:translate-x-0.5 transition-transform">
-                Launch <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
-</span>
-</div>
-</article>
-<!-- Tool 6: Tailwind CSS Playground -->
-<article class="tool-card bg-surface-container-low border border-outline/15 rounded-xl p-3 sm:p-4 flex flex-col justify-between shadow-xs hover:border-primary/50 hover:shadow-md transition-all group" data-cat="dev" data-keywords="tailwind flex grid visual layout sandbox class strings builder">
-<div class="flex flex-col gap-2">
-<div class="flex items-center justify-between">
-<div class="w-8 h-8 rounded-lg bg-cyan-500/10 text-cyan-500 flex items-center justify-center">
-<span class="material-symbols-outlined text-[18px]">grid_view</span>
-</div>
-<button aria-label="Bookmark Tool" class="bookmark-btn text-on-surface-variant/60 hover:text-primary transition-colors">
-<span class="material-symbols-outlined text-[17px]">bookmark</span>
-</button>
-</div>
-<div>
-<h3 class="font-bold text-xs sm:text-sm text-on-surface group-hover:text-primary transition-colors leading-tight">Tailwind Grid &amp; Flex</h3>
-<p class="text-[11px] text-on-surface-variant line-clamp-2 mt-0.5">Visual flexbox and grid sandbox that exports pure utility classes.</p>
-</div>
-</div>
-<div class="flex items-center justify-between pt-3 mt-auto border-t border-outline/10">
-<span class="text-[10px] font-mono text-on-surface-variant">★ 4.93</span>
-<span class="inline-flex items-center gap-0.5 text-xs font-mono text-primary group-hover:translate-x-0.5 transition-transform">
-                Launch <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
-</span>
-</div>
-</article>
-<!-- Tool 7: QR Code & WiFi Key Generator -->
-<article class="tool-card bg-surface-container-low border border-outline/15 rounded-xl p-3 sm:p-4 flex flex-col justify-between shadow-xs hover:border-primary/50 hover:shadow-md transition-all group" data-cat="privacy" data-keywords="qr code generator wifi key svg vector canvas local offline qr">
-<div class="flex flex-col gap-2">
-<div class="flex items-center justify-between">
-<div class="w-8 h-8 rounded-lg bg-emerald-500/10 text-emerald-500 flex items-center justify-center">
-<span class="material-symbols-outlined text-[18px]">qr_code_2</span>
-</div>
-<button aria-label="Bookmark Tool" class="bookmark-btn text-on-surface-variant/60 hover:text-primary transition-colors">
-<span class="material-symbols-outlined text-[17px]">bookmark</span>
-</button>
-</div>
-<div>
-<h3 class="font-bold text-xs sm:text-sm text-on-surface group-hover:text-primary transition-colors leading-tight">Private QR Generator</h3>
-<p class="text-[11px] text-on-surface-variant line-clamp-2 mt-0.5">100% canvas rendered. Supports vector SVG export &amp; guest WiFi keys.</p>
-</div>
-</div>
-<div class="flex items-center justify-between pt-3 mt-auto border-t border-outline/10">
-<span class="text-[10px] font-mono text-on-surface-variant">★ 4.96</span>
-<span class="inline-flex items-center gap-0.5 text-xs font-mono text-primary group-hover:translate-x-0.5 transition-transform">
-                Launch <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
-</span>
-</div>
-</article>
-<!-- Tool 8: WebP Image Compressor -->
-<article class="tool-card bg-surface-container-low border border-outline/15 rounded-xl p-3 sm:p-4 flex flex-col justify-between shadow-xs hover:border-primary/50 hover:shadow-md transition-all group" data-cat="privacy" data-keywords="webp compressor wasm webassembly resize shrink local privacy zero upload image">
-<div class="flex flex-col gap-2">
-<div class="flex items-center justify-between">
-<div class="w-8 h-8 rounded-lg bg-indigo-500/10 text-indigo-500 flex items-center justify-center">
-<span class="material-symbols-outlined text-[18px]">speed</span>
-</div>
-<button aria-label="Bookmark Tool" class="bookmark-btn text-on-surface-variant/60 hover:text-primary transition-colors">
-<span class="material-symbols-outlined text-[17px]">bookmark</span>
-</button>
-</div>
-<div>
-<h3 class="font-bold text-xs sm:text-sm text-on-surface group-hover:text-primary transition-colors leading-tight">WebP WebAssembly Opt</h3>
-<p class="text-[11px] text-on-surface-variant line-clamp-2 mt-0.5">Shrink image files up to 80% locally. Zero remote uploads ever.</p>
-</div>
-</div>
-<div class="flex items-center justify-between pt-3 mt-auto border-t border-outline/10">
-<span class="text-[10px] font-mono text-on-surface-variant">★ 4.99</span>
-<span class="inline-flex items-center gap-0.5 text-xs font-mono text-primary group-hover:translate-x-0.5 transition-transform">
-                Launch <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
-</span>
-</div>
-</article>
-<!-- Tool 9: Ecommerce Profit Margin Calculator -->
-<article class="tool-card bg-surface-container-low border border-outline/15 rounded-xl p-3 sm:p-4 flex flex-col justify-between shadow-xs hover:border-primary/50 hover:shadow-md transition-all group" data-cat="calc" data-keywords="ecommerce profit margin calculator product profit calculator dropshipping selling price fee cost">
-  <a href="https://divcraft.online/ecommerce-margin-calculator.html" class="flex flex-col justify-between h-full w-full">
-    <div class="flex flex-col gap-2">
-      <div class="flex items-center justify-between">
-        <div class="w-8 h-8 rounded-lg bg-amber-500/10 text-amber-500 flex items-center justify-center">
-          <span class="material-symbols-outlined text-[18px]">account_balance_wallet</span>
+
+        <!-- Tools Grid -->
+        <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3" id="toolsGrid">
+          <!-- Tool 1: PX to REM -->
+          <article class="tool-card bg-surface-container-low border border-outline/15 rounded-xl p-3 sm:p-4 flex flex-col justify-between shadow-xs hover:border-primary/50 hover:shadow-md transition-all group" data-cat="css" data-tool-id="tool-px-rem" data-keywords="px to rem em typography font size css conversion responsive">
+            <div class="flex flex-col gap-2">
+              <div class="flex items-center justify-between">
+                <div class="w-8 h-8 rounded-lg bg-indigo-500/10 text-indigo-500 flex items-center justify-center">
+                  <span class="material-symbols-outlined text-[18px]">format_size</span>
+                </div>
+                <button type="button" aria-label="Bookmark Tool" class="bookmark-btn text-on-surface-variant/60 hover:text-primary transition-colors" data-tool-id="tool-px-rem" data-tool-title="PX to REM / EM">
+                  <span class="material-symbols-outlined text-[17px]">bookmark</span>
+                </button>
+              </div>
+              <div>
+                <h3 class="font-bold text-xs sm:text-sm text-on-surface group-hover:text-primary transition-colors leading-tight">PX to REM / EM</h3>
+                <p class="text-[11px] text-on-surface-variant line-clamp-2 mt-0.5">Fluid typography calculations &amp; clamp() CSS builder.</p>
+              </div>
+            </div>
+            <div class="flex items-center justify-between pt-3 mt-auto border-t border-outline/10">
+              <span class="text-[10px] font-mono text-on-surface-variant">★ 4.97</span>
+              <a href="#pxInputWidget" class="inline-flex items-center gap-0.5 text-xs font-mono text-primary group-hover:translate-x-0.5 transition-transform">
+                Sandbox <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Tool 2: CSS Glassmorphism -->
+          <article class="tool-card bg-surface-container-low border border-outline/15 rounded-xl p-3 sm:p-4 flex flex-col justify-between shadow-xs hover:border-primary/50 hover:shadow-md transition-all group" data-cat="css" data-tool-id="tool-glass" data-keywords="glassmorphism blur frosted glass css generator backdrop filter neumorphism">
+            <a href="https://divcraft.online/glassmorphism-lab.html" class="flex flex-col justify-between h-full w-full">
+              <div class="flex flex-col gap-2">
+                <div class="flex items-center justify-between">
+                  <div class="w-8 h-8 rounded-lg bg-cyan-500/10 text-cyan-500 flex items-center justify-center">
+                    <span class="material-symbols-outlined text-[18px]">blur_on</span>
+                  </div>
+                  <button type="button" aria-label="Bookmark Tool" class="bookmark-btn text-on-surface-variant/60 hover:text-primary transition-colors" data-tool-id="tool-glass" data-tool-title="Glassmorphism Lab" onclick="event.preventDefault(); event.stopPropagation();">
+                    <span class="material-symbols-outlined text-[17px]">bookmark</span>
+                  </button>
+                </div>
+                <div>
+                  <h3 class="font-bold text-xs sm:text-sm text-on-surface group-hover:text-primary transition-colors leading-tight">Glassmorphism Lab</h3>
+                  <p class="text-[11px] text-on-surface-variant line-clamp-2 mt-0.5">Sliders for backdrop blur, specular glow, and border highlights.</p>
+                </div>
+              </div>
+              <div class="flex items-center justify-between pt-3 mt-auto border-t border-outline/10">
+                <span class="text-[10px] font-mono text-on-surface-variant">★ 4.95</span>
+                <span class="inline-flex items-center gap-0.5 text-xs font-mono text-primary group-hover:translate-x-0.5 transition-transform">
+                  Launch <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+                </span>
+              </div>
+            </a>
+          </article>
+
+          <!-- Tool 3: Black Friday 2026 Deal & Tax Calculator -->
+          <article class="tool-card bg-surface-container-low border border-outline/15 rounded-xl p-3 sm:p-4 flex flex-col justify-between shadow-xs hover:border-primary/50 hover:shadow-md transition-all group" data-cat="calc" data-tool-id="tool-bf-calc" data-keywords="black friday 2026 deal calculator stackable coupon sales tax california best buy">
+            <a href="https://divcraft.online/black-friday-deal-calculator.html" class="flex flex-col justify-between h-full w-full">
+              <div class="flex flex-col gap-2">
+                <div class="flex items-center justify-between">
+                  <div class="w-8 h-8 rounded-lg bg-amber-500/10 text-amber-500 flex items-center justify-center">
+                    <span class="material-symbols-outlined text-[18px]">local_offer</span>
+                  </div>
+                  <button type="button" aria-label="Bookmark Tool" class="bookmark-btn text-on-surface-variant/60 hover:text-primary transition-colors" data-tool-id="tool-bf-calc" data-tool-title="Black Friday Deal Calc" onclick="event.preventDefault(); event.stopPropagation();">
+                    <span class="material-symbols-outlined text-[17px]">bookmark</span>
+                  </button>
+                </div>
+                <div>
+                  <h3 class="font-bold text-xs sm:text-sm text-on-surface group-hover:text-primary transition-colors leading-tight">Black Friday Deal Calc</h3>
+                  <p class="text-[11px] text-on-surface-variant line-clamp-2 mt-0.5">Calculate stackable Black Friday coupons, cashback, and US state sales tax.</p>
+                </div>
+              </div>
+              <div class="flex items-center justify-between pt-3 mt-auto border-t border-outline/10">
+                <span class="text-[10px] font-mono text-on-surface-variant">★ 4.96</span>
+                <span class="inline-flex items-center gap-0.5 text-xs font-mono text-primary group-hover:translate-x-0.5 transition-transform">
+                  Launch <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+                </span>
+              </div>
+            </a>
+          </article>
+
+          <!-- Tool 4: Box Shadow Multi-Layer -->
+          <article class="tool-card bg-surface-container-low border border-outline/15 rounded-xl p-3 sm:p-4 flex flex-col justify-between shadow-xs hover:border-primary/50 hover:shadow-md transition-all group" data-cat="css" data-tool-id="tool-box-shadow" data-keywords="box shadow multi layer smooth shadows ambient elevation css drop shadow">
+            <div class="flex flex-col gap-2">
+              <div class="flex items-center justify-between">
+                <div class="w-8 h-8 rounded-lg bg-indigo-500/10 text-indigo-500 flex items-center justify-center">
+                  <span class="material-symbols-outlined text-[18px]">layers</span>
+                </div>
+                <button type="button" aria-label="Bookmark Tool" class="bookmark-btn text-on-surface-variant/60 hover:text-primary transition-colors" data-tool-id="tool-box-shadow" data-tool-title="Box-Shadow Layers">
+                  <span class="material-symbols-outlined text-[17px]">bookmark</span>
+                </button>
+              </div>
+              <div>
+                <h3 class="font-bold text-xs sm:text-sm text-on-surface group-hover:text-primary transition-colors leading-tight">Box-Shadow Layers</h3>
+                <p class="text-[11px] text-on-surface-variant line-clamp-2 mt-0.5">Silky smooth multi-layer elevation drops without harsh edges.</p>
+              </div>
+            </div>
+            <div class="flex items-center justify-between pt-3 mt-auto border-t border-outline/10">
+              <span class="text-[10px] font-mono text-on-surface-variant">★ 4.92</span>
+              <span class="inline-flex items-center gap-0.5 text-xs font-mono text-on-surface-variant">Soon</span>
+            </div>
+          </article>
+
+          <!-- Tool 5: WCAG Color Contrast -->
+          <article class="tool-card bg-surface-container-low border border-outline/15 rounded-xl p-3 sm:p-4 flex flex-col justify-between shadow-xs hover:border-primary/50 hover:shadow-md transition-all group" data-cat="css" data-tool-id="tool-wcag" data-keywords="wcag color contrast audit accessibility aa aaa ratio simulator">
+            <div class="flex flex-col gap-2">
+              <div class="flex items-center justify-between">
+                <div class="w-8 h-8 rounded-lg bg-emerald-500/10 text-emerald-500 flex items-center justify-center">
+                  <span class="material-symbols-outlined text-[18px]">contrast</span>
+                </div>
+                <button type="button" aria-label="Bookmark Tool" class="bookmark-btn text-on-surface-variant/60 hover:text-primary transition-colors" data-tool-id="tool-wcag" data-tool-title="WCAG AA/AAA Audit">
+                  <span class="material-symbols-outlined text-[17px]">bookmark</span>
+                </button>
+              </div>
+              <div>
+                <h3 class="font-bold text-xs sm:text-sm text-on-surface group-hover:text-primary transition-colors leading-tight">WCAG AA/AAA Audit</h3>
+                <p class="text-[11px] text-on-surface-variant line-clamp-2 mt-0.5">Compliance ratio checker with simulated colorblind vision filters.</p>
+              </div>
+            </div>
+            <div class="flex items-center justify-between pt-3 mt-auto border-t border-outline/10">
+              <span class="text-[10px] font-mono text-on-surface-variant">★ 5.00</span>
+              <span class="inline-flex items-center gap-0.5 text-xs font-mono text-on-surface-variant">Soon</span>
+            </div>
+          </article>
+
+          <!-- Tool 6: Git Command Builder -->
+          <article class="tool-card bg-surface-container-low border border-outline/15 rounded-xl p-3 sm:p-4 flex flex-col justify-between shadow-xs hover:border-primary/50 hover:shadow-md transition-all group" data-cat="dev" data-tool-id="tool-git" data-keywords="git command builder terminal cheat sheet rebase cherry pick reset">
+            <div class="flex flex-col gap-2">
+              <div class="flex items-center justify-between">
+                <div class="w-8 h-8 rounded-lg bg-orange-500/10 text-orange-500 flex items-center justify-center">
+                  <span class="material-symbols-outlined text-[18px]">terminal</span>
+                </div>
+                <button type="button" aria-label="Bookmark Tool" class="bookmark-btn text-on-surface-variant/60 hover:text-primary transition-colors" data-tool-id="tool-git" data-tool-title="Git Cheat & Builder">
+                  <span class="material-symbols-outlined text-[17px]">bookmark</span>
+                </button>
+              </div>
+              <div>
+                <h3 class="font-bold text-xs sm:text-sm text-on-surface group-hover:text-primary transition-colors leading-tight">Git Cheat &amp; Builder</h3>
+                <p class="text-[11px] text-on-surface-variant line-clamp-2 mt-0.5">Interactive rebase, squash, bisect, and commit recovery generator.</p>
+              </div>
+            </div>
+            <div class="flex items-center justify-between pt-3 mt-auto border-t border-outline/10">
+              <span class="text-[10px] font-mono text-on-surface-variant">★ 4.91</span>
+              <span class="inline-flex items-center gap-0.5 text-xs font-mono text-on-surface-variant">Soon</span>
+            </div>
+          </article>
+
+          <!-- Tool 7: Tailwind CSS Playground -->
+          <article class="tool-card bg-surface-container-low border border-outline/15 rounded-xl p-3 sm:p-4 flex flex-col justify-between shadow-xs hover:border-primary/50 hover:shadow-md transition-all group" data-cat="dev" data-tool-id="tool-tailwind" data-keywords="tailwind flex grid visual layout sandbox class strings builder">
+            <div class="flex flex-col gap-2">
+              <div class="flex items-center justify-between">
+                <div class="w-8 h-8 rounded-lg bg-cyan-500/10 text-cyan-500 flex items-center justify-center">
+                  <span class="material-symbols-outlined text-[18px]">grid_view</span>
+                </div>
+                <button type="button" aria-label="Bookmark Tool" class="bookmark-btn text-on-surface-variant/60 hover:text-primary transition-colors" data-tool-id="tool-tailwind" data-tool-title="Tailwind Grid & Flex">
+                  <span class="material-symbols-outlined text-[17px]">bookmark</span>
+                </button>
+              </div>
+              <div>
+                <h3 class="font-bold text-xs sm:text-sm text-on-surface group-hover:text-primary transition-colors leading-tight">Tailwind Grid &amp; Flex</h3>
+                <p class="text-[11px] text-on-surface-variant line-clamp-2 mt-0.5">Visual flexbox and grid sandbox that exports pure utility classes.</p>
+              </div>
+            </div>
+            <div class="flex items-center justify-between pt-3 mt-auto border-t border-outline/10">
+              <span class="text-[10px] font-mono text-on-surface-variant">★ 4.93</span>
+              <span class="inline-flex items-center gap-0.5 text-xs font-mono text-on-surface-variant">Soon</span>
+            </div>
+          </article>
+
+          <!-- Tool 8: QR Code & WiFi Key Generator -->
+          <article class="tool-card bg-surface-container-low border border-outline/15 rounded-xl p-3 sm:p-4 flex flex-col justify-between shadow-xs hover:border-primary/50 hover:shadow-md transition-all group" data-cat="privacy" data-tool-id="tool-qr" data-keywords="qr code generator wifi key svg vector canvas local offline qr">
+            <div class="flex flex-col gap-2">
+              <div class="flex items-center justify-between">
+                <div class="w-8 h-8 rounded-lg bg-emerald-500/10 text-emerald-500 flex items-center justify-center">
+                  <span class="material-symbols-outlined text-[18px]">qr_code_2</span>
+                </div>
+                <button type="button" aria-label="Bookmark Tool" class="bookmark-btn text-on-surface-variant/60 hover:text-primary transition-colors" data-tool-id="tool-qr" data-tool-title="Private QR Generator">
+                  <span class="material-symbols-outlined text-[17px]">bookmark</span>
+                </button>
+              </div>
+              <div>
+                <h3 class="font-bold text-xs sm:text-sm text-on-surface group-hover:text-primary transition-colors leading-tight">Private QR Generator</h3>
+                <p class="text-[11px] text-on-surface-variant line-clamp-2 mt-0.5">100% canvas rendered. Supports vector SVG export &amp; guest WiFi keys.</p>
+              </div>
+            </div>
+            <div class="flex items-center justify-between pt-3 mt-auto border-t border-outline/10">
+              <span class="text-[10px] font-mono text-on-surface-variant">★ 4.96</span>
+              <span class="inline-flex items-center gap-0.5 text-xs font-mono text-on-surface-variant">Soon</span>
+            </div>
+          </article>
+
+          <!-- Tool 9: WebP Image Compressor -->
+          <article class="tool-card bg-surface-container-low border border-outline/15 rounded-xl p-3 sm:p-4 flex flex-col justify-between shadow-xs hover:border-primary/50 hover:shadow-md transition-all group" data-cat="privacy" data-tool-id="tool-webp" data-keywords="webp compressor wasm webassembly resize shrink local privacy zero upload image">
+            <div class="flex flex-col gap-2">
+              <div class="flex items-center justify-between">
+                <div class="w-8 h-8 rounded-lg bg-indigo-500/10 text-indigo-500 flex items-center justify-center">
+                  <span class="material-symbols-outlined text-[18px]">speed</span>
+                </div>
+                <button type="button" aria-label="Bookmark Tool" class="bookmark-btn text-on-surface-variant/60 hover:text-primary transition-colors" data-tool-id="tool-webp" data-tool-title="WebP WebAssembly Opt">
+                  <span class="material-symbols-outlined text-[17px]">bookmark</span>
+                </button>
+              </div>
+              <div>
+                <h3 class="font-bold text-xs sm:text-sm text-on-surface group-hover:text-primary transition-colors leading-tight">WebP WebAssembly Opt</h3>
+                <p class="text-[11px] text-on-surface-variant line-clamp-2 mt-0.5">Shrink image files up to 80% locally. Zero remote uploads ever.</p>
+              </div>
+            </div>
+            <div class="flex items-center justify-between pt-3 mt-auto border-t border-outline/10">
+              <span class="text-[10px] font-mono text-on-surface-variant">★ 4.99</span>
+              <span class="inline-flex items-center gap-0.5 text-xs font-mono text-on-surface-variant">Soon</span>
+            </div>
+          </article>
+
+          <!-- Tool 10: Ecommerce Profit Margin Calculator -->
+          <article class="tool-card bg-surface-container-low border border-outline/15 rounded-xl p-3 sm:p-4 flex flex-col justify-between shadow-xs hover:border-primary/50 hover:shadow-md transition-all group" data-cat="calc" data-tool-id="tool-ecom-calc" data-keywords="ecommerce profit margin calculator product profit calculator dropshipping selling price fee cost">
+            <a href="https://divcraft.online/ecommerce-margin-calculator.html" class="flex flex-col justify-between h-full w-full">
+              <div class="flex flex-col gap-2">
+                <div class="flex items-center justify-between">
+                  <div class="w-8 h-8 rounded-lg bg-amber-500/10 text-amber-500 flex items-center justify-center">
+                    <span class="material-symbols-outlined text-[18px]">account_balance_wallet</span>
+                  </div>
+                  <button type="button" aria-label="Bookmark Tool" class="bookmark-btn text-on-surface-variant/60 hover:text-primary transition-colors" data-tool-id="tool-ecom-calc" data-tool-title="Ecommerce Profit Calc" onclick="event.preventDefault(); event.stopPropagation();">
+                    <span class="material-symbols-outlined text-[17px]">bookmark</span>
+                  </button>
+                </div>
+                <div>
+                  <h3 class="font-bold text-xs sm:text-sm text-on-surface group-hover:text-primary transition-colors leading-tight">Ecommerce Profit Calc</h3>
+                  <p class="text-[11px] text-on-surface-variant line-clamp-2 mt-0.5">Calculate real product profit, margin, shipping, fees, ad spend, and selling price.</p>
+                </div>
+              </div>
+              <div class="flex items-center justify-between pt-3 mt-auto border-t border-outline/10">
+                <span class="text-[10px] font-mono text-on-surface-variant">★ 4.95</span>
+                <span class="inline-flex items-center gap-0.5 text-xs font-mono text-primary group-hover:translate-x-0.5 transition-transform">
+                  Launch <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+                </span>
+              </div>
+            </a>
+          </article>
+
+          <!-- Tool 11: SaaS Churn & LTV Calculator -->
+          <article class="tool-card bg-surface-container-low border border-outline/15 rounded-xl p-3 sm:p-4 flex flex-col justify-between shadow-xs hover:border-primary/50 hover:shadow-md transition-all group" data-cat="calc" data-tool-id="tool-saas" data-keywords="saas churn ltv lifetime value mrr arr retention payback runway">
+            <div class="flex flex-col gap-2">
+              <div class="flex items-center justify-between">
+                <div class="w-8 h-8 rounded-lg bg-purple-500/10 text-purple-500 flex items-center justify-center">
+                  <span class="material-symbols-outlined text-[18px]">trending_up</span>
+                </div>
+                <button type="button" aria-label="Bookmark Tool" class="bookmark-btn text-on-surface-variant/60 hover:text-primary transition-colors" data-tool-id="tool-saas" data-tool-title="SaaS Churn & LTV">
+                  <span class="material-symbols-outlined text-[17px]">bookmark</span>
+                </button>
+              </div>
+              <div>
+                <h3 class="font-bold text-xs sm:text-sm text-on-surface group-hover:text-primary transition-colors leading-tight">SaaS Churn &amp; LTV</h3>
+                <p class="text-[11px] text-on-surface-variant line-clamp-2 mt-0.5">Forecast customer lifetime value, payback period &amp; net MRR decay.</p>
+              </div>
+            </div>
+            <div class="flex items-center justify-between pt-3 mt-auto border-t border-outline/10">
+              <span class="text-[10px] font-mono text-on-surface-variant">★ 4.88</span>
+              <span class="inline-flex items-center gap-0.5 text-xs font-mono text-on-surface-variant">Soon</span>
+            </div>
+          </article>
+
+          <!-- Tool 12: JSON to CSV / XML Converter -->
+          <article class="tool-card bg-surface-container-low border border-outline/15 rounded-xl p-3 sm:p-4 flex flex-col justify-between shadow-xs hover:border-primary/50 hover:shadow-md transition-all group" data-cat="dev" data-tool-id="tool-json-csv" data-keywords="json to csv xml parser convert table data memory local">
+            <div class="flex flex-col gap-2">
+              <div class="flex items-center justify-between">
+                <div class="w-8 h-8 rounded-lg bg-cyan-500/10 text-cyan-500 flex items-center justify-center">
+                  <span class="material-symbols-outlined text-[18px]">sync_alt</span>
+                </div>
+                <button type="button" aria-label="Bookmark Tool" class="bookmark-btn text-on-surface-variant/60 hover:text-primary transition-colors" data-tool-id="tool-json-csv" data-tool-title="JSON <> CSV / XML">
+                  <span class="material-symbols-outlined text-[17px]">bookmark</span>
+                </button>
+              </div>
+              <div>
+                <h3 class="font-bold text-xs sm:text-sm text-on-surface group-hover:text-primary transition-colors leading-tight">JSON &lt;&gt; CSV / XML</h3>
+                <p class="text-[11px] text-on-surface-variant line-clamp-2 mt-0.5">Parse multi-megabyte payloads in browser RAM with instant export.</p>
+              </div>
+            </div>
+            <div class="flex items-center justify-between pt-3 mt-auto border-t border-outline/10">
+              <span class="text-[10px] font-mono text-on-surface-variant">★ 4.89</span>
+              <span class="inline-flex items-center gap-0.5 text-xs font-mono text-on-surface-variant">Soon</span>
+            </div>
+          </article>
+
+          <!-- Tool 13: Open Graph (OG) Meta Live Preview -->
+          <article class="tool-card bg-surface-container-low border border-outline/15 rounded-xl p-3 sm:p-4 flex flex-col justify-between shadow-xs hover:border-primary/50 hover:shadow-md transition-all group" data-cat="text" data-tool-id="tool-og" data-keywords="open graph og meta preview twitter cards linkedin slack seo social">
+            <div class="flex flex-col gap-2">
+              <div class="flex items-center justify-between">
+                <div class="w-8 h-8 rounded-lg bg-blue-500/10 text-blue-500 flex items-center justify-center">
+                  <span class="material-symbols-outlined text-[18px]">share</span>
+                </div>
+                <button type="button" aria-label="Bookmark Tool" class="bookmark-btn text-on-surface-variant/60 hover:text-primary transition-colors" data-tool-id="tool-og" data-tool-title="OG Meta Previewer">
+                  <span class="material-symbols-outlined text-[17px]">bookmark</span>
+                </button>
+              </div>
+              <div>
+                <h3 class="font-bold text-xs sm:text-sm text-on-surface group-hover:text-primary transition-colors leading-tight">OG Meta Previewer</h3>
+                <p class="text-[11px] text-on-surface-variant line-clamp-2 mt-0.5">Social card simulator for Twitter / X, LinkedIn, Discord &amp; Slack.</p>
+              </div>
+            </div>
+            <div class="flex items-center justify-between pt-3 mt-auto border-t border-outline/10">
+              <span class="text-[10px] font-mono text-on-surface-variant">★ 4.95</span>
+              <span class="inline-flex items-center gap-0.5 text-xs font-mono text-on-surface-variant">Soon</span>
+            </div>
+          </article>
+
+          <!-- Tool 14: UTM Campaign Builder -->
+          <article class="tool-card bg-surface-container-low border border-outline/15 rounded-xl p-3 sm:p-4 flex flex-col justify-between shadow-xs hover:border-primary/50 hover:shadow-md transition-all group" data-cat="text" data-tool-id="tool-utm" data-keywords="utm campaign builder url tracking source medium term parameters marketing">
+            <div class="flex flex-col gap-2">
+              <div class="flex items-center justify-between">
+                <div class="w-8 h-8 rounded-lg bg-indigo-500/10 text-indigo-500 flex items-center justify-center">
+                  <span class="material-symbols-outlined text-[18px]">link</span>
+                </div>
+                <button type="button" aria-label="Bookmark Tool" class="bookmark-btn text-on-surface-variant/60 hover:text-primary transition-colors" data-tool-id="tool-utm" data-tool-title="UTM Tracking URL">
+                  <span class="material-symbols-outlined text-[17px]">bookmark</span>
+                </button>
+              </div>
+              <div>
+                <h3 class="font-bold text-xs sm:text-sm text-on-surface group-hover:text-primary transition-colors leading-tight">UTM Tracking URL</h3>
+                <p class="text-[11px] text-on-surface-variant line-clamp-2 mt-0.5">Clean campaign query constructor with parameter sanity check.</p>
+              </div>
+            </div>
+            <div class="flex items-center justify-between pt-3 mt-auto border-t border-outline/10">
+              <span class="text-[10px] font-mono text-on-surface-variant">★ 4.87</span>
+              <span class="inline-flex items-center gap-0.5 text-xs font-mono text-on-surface-variant">Soon</span>
+            </div>
+          </article>
+
+          <!-- Tool 15: Regex Tester & Explainer -->
+          <article class="tool-card bg-surface-container-low border border-outline/15 rounded-xl p-3 sm:p-4 flex flex-col justify-between shadow-xs hover:border-primary/50 hover:shadow-md transition-all group" data-cat="dev" data-tool-id="tool-regex" data-keywords="regex tester regular expression match flags explain javascript python">
+            <div class="flex flex-col gap-2">
+              <div class="flex items-center justify-between">
+                <div class="w-8 h-8 rounded-lg bg-pink-500/10 text-pink-500 flex items-center justify-center">
+                  <span class="material-symbols-outlined text-[18px]">data_object</span>
+                </div>
+                <button type="button" aria-label="Bookmark Tool" class="bookmark-btn text-on-surface-variant/60 hover:text-primary transition-colors" data-tool-id="tool-regex" data-tool-title="Client-Side Regex Lab">
+                  <span class="material-symbols-outlined text-[17px]">bookmark</span>
+                </button>
+              </div>
+              <div>
+                <h3 class="font-bold text-xs sm:text-sm text-on-surface group-hover:text-primary transition-colors leading-tight">Client-Side Regex Lab</h3>
+                <p class="text-[11px] text-on-surface-variant line-clamp-2 mt-0.5">Test regular expressions without sending proprietary logs outside.</p>
+              </div>
+            </div>
+            <div class="flex items-center justify-between pt-3 mt-auto border-t border-outline/10">
+              <span class="text-[10px] font-mono text-on-surface-variant">★ 4.96</span>
+              <span class="inline-flex items-center gap-0.5 text-xs font-mono text-on-surface-variant">Soon</span>
+            </div>
+          </article>
+
+          <!-- Tool 16: Markdown to Clean HTML -->
+          <article class="tool-card bg-surface-container-low border border-outline/15 rounded-xl p-3 sm:p-4 flex flex-col justify-between shadow-xs hover:border-primary/50 hover:shadow-md transition-all group" data-cat="text" data-tool-id="tool-md-html" data-keywords="markdown md to html convert sanitize wysiwyg parser blog writer">
+            <div class="flex flex-col gap-2">
+              <div class="flex items-center justify-between">
+                <div class="w-8 h-8 rounded-lg bg-emerald-500/10 text-emerald-500 flex items-center justify-center">
+                  <span class="material-symbols-outlined text-[18px]">edit_note</span>
+                </div>
+                <button type="button" aria-label="Bookmark Tool" class="bookmark-btn text-on-surface-variant/60 hover:text-primary transition-colors" data-tool-id="tool-md-html" data-tool-title="Markdown <> HTML">
+                  <span class="material-symbols-outlined text-[17px]">bookmark</span>
+                </button>
+              </div>
+              <div>
+                <h3 class="font-bold text-xs sm:text-sm text-on-surface group-hover:text-primary transition-colors leading-tight">Markdown &lt;&gt; HTML</h3>
+                <p class="text-[11px] text-on-surface-variant line-clamp-2 mt-0.5">Live bidirectional Markdown editor with sanitized HTML copying.</p>
+              </div>
+            </div>
+            <div class="flex items-center justify-between pt-3 mt-auto border-t border-outline/10">
+              <span class="text-[10px] font-mono text-on-surface-variant">★ 4.89</span>
+              <span class="inline-flex items-center gap-0.5 text-xs font-mono text-on-surface-variant">Soon</span>
+            </div>
+          </article>
         </div>
-        <button type="button" aria-label="Bookmark Tool" class="bookmark-btn text-on-surface-variant/60 hover:text-primary transition-colors" onclick="event.preventDefault(); event.stopPropagation();">
-          <span class="material-symbols-outlined text-[17px]">bookmark</span>
-        </button>
-      </div>
-      <div>
-        <h3 class="font-bold text-xs sm:text-sm text-on-surface group-hover:text-primary transition-colors leading-tight">Ecommerce Profit Calc</h3>
-        <p class="text-[11px] text-on-surface-variant line-clamp-2 mt-0.5">Calculate real product profit, margin, shipping, fees, ad spend, and selling price.</p>
-      </div>
-    </div>
-    <div class="flex items-center justify-between pt-3 mt-auto border-t border-outline/10">
-      <span class="text-[10px] font-mono text-on-surface-variant">★ 4.95</span>
-      <span class="inline-flex items-center gap-0.5 text-xs font-mono text-primary group-hover:translate-x-0.5 transition-transform">
-        Launch <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
-      </span>
-    </div>
-  </a>
-</article>
-<!-- Tool 10: SaaS Churn & LTV Calculator -->
-<article class="tool-card bg-surface-container-low border border-outline/15 rounded-xl p-3 sm:p-4 flex flex-col justify-between shadow-xs hover:border-primary/50 hover:shadow-md transition-all group" data-cat="calc" data-keywords="saas churn ltv lifetime value mrr arr retention payback runway">
-<div class="flex flex-col gap-2">
-<div class="flex items-center justify-between">
-<div class="w-8 h-8 rounded-lg bg-purple-500/10 text-purple-500 flex items-center justify-center">
-<span class="material-symbols-outlined text-[18px]">trending_up</span>
-</div>
-<button aria-label="Bookmark Tool" class="bookmark-btn text-on-surface-variant/60 hover:text-primary transition-colors">
-<span class="material-symbols-outlined text-[17px]">bookmark</span>
-</button>
-</div>
-<div>
-<h3 class="font-bold text-xs sm:text-sm text-on-surface group-hover:text-primary transition-colors leading-tight">SaaS Churn &amp; LTV</h3>
-<p class="text-[11px] text-on-surface-variant line-clamp-2 mt-0.5">Forecast customer lifetime value, payback period &amp; net MRR decay.</p>
-</div>
-</div>
-<div class="flex items-center justify-between pt-3 mt-auto border-t border-outline/10">
-<span class="text-[10px] font-mono text-on-surface-variant">★ 4.88</span>
-<span class="inline-flex items-center gap-0.5 text-xs font-mono text-primary group-hover:translate-x-0.5 transition-transform">
-                Launch <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
-</span>
-</div>
-</article>
-<!-- Tool 11: JSON to CSV / XML Converter -->
-<article class="tool-card bg-surface-container-low border border-outline/15 rounded-xl p-3 sm:p-4 flex flex-col justify-between shadow-xs hover:border-primary/50 hover:shadow-md transition-all group" data-cat="dev" data-keywords="json to csv xml parser convert table data memory local">
-<div class="flex flex-col gap-2">
-<div class="flex items-center justify-between">
-<div class="w-8 h-8 rounded-lg bg-cyan-500/10 text-cyan-500 flex items-center justify-center">
-<span class="material-symbols-outlined text-[18px]">sync_alt</span>
-</div>
-<button aria-label="Bookmark Tool" class="bookmark-btn text-on-surface-variant/60 hover:text-primary transition-colors">
-<span class="material-symbols-outlined text-[17px]">bookmark</span>
-</button>
-</div>
-<div>
-<h3 class="font-bold text-xs sm:text-sm text-on-surface group-hover:text-primary transition-colors leading-tight">JSON &lt;&gt; CSV / XML</h3>
-<p class="text-[11px] text-on-surface-variant line-clamp-2 mt-0.5">Parse multi-megabyte payloads in browser RAM with instant export.</p>
-</div>
-</div>
-<div class="flex items-center justify-between pt-3 mt-auto border-t border-outline/10">
-<span class="text-[10px] font-mono text-on-surface-variant">★ 4.89</span>
-<span class="inline-flex items-center gap-0.5 text-xs font-mono text-primary group-hover:translate-x-0.5 transition-transform">
-                Launch <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
-</span>
-</div>
-</article>
-<!-- Tool 12: Open Graph (OG) Meta Live Preview -->
-<article class="tool-card bg-surface-container-low border border-outline/15 rounded-xl p-3 sm:p-4 flex flex-col justify-between shadow-xs hover:border-primary/50 hover:shadow-md transition-all group" data-cat="text" data-keywords="open graph og meta preview twitter cards linkedin slack seo social">
-<div class="flex flex-col gap-2">
-<div class="flex items-center justify-between">
-<div class="w-8 h-8 rounded-lg bg-blue-500/10 text-blue-500 flex items-center justify-center">
-<span class="material-symbols-outlined text-[18px]">share</span>
-</div>
-<button aria-label="Bookmark Tool" class="bookmark-btn text-on-surface-variant/60 hover:text-primary transition-colors">
-<span class="material-symbols-outlined text-[17px]">bookmark</span>
-</button>
-</div>
-<div>
-<h3 class="font-bold text-xs sm:text-sm text-on-surface group-hover:text-primary transition-colors leading-tight">OG Meta Previewer</h3>
-<p class="text-[11px] text-on-surface-variant line-clamp-2 mt-0.5">Social card simulator for Twitter / X, LinkedIn, Discord &amp; Slack.</p>
-</div>
-</div>
-<div class="flex items-center justify-between pt-3 mt-auto border-t border-outline/10">
-<span class="text-[10px] font-mono text-on-surface-variant">★ 4.95</span>
-<span class="inline-flex items-center gap-0.5 text-xs font-mono text-primary group-hover:translate-x-0.5 transition-transform">
-                Launch <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
-</span>
-</div>
-</article>
-<!-- Tool 13: UTM Campaign Builder -->
-<article class="tool-card bg-surface-container-low border border-outline/15 rounded-xl p-3 sm:p-4 flex flex-col justify-between shadow-xs hover:border-primary/50 hover:shadow-md transition-all group" data-cat="text" data-keywords="utm campaign builder url tracking source medium term parameters marketing">
-<div class="flex flex-col gap-2">
-<div class="flex items-center justify-between">
-<div class="w-8 h-8 rounded-lg bg-indigo-500/10 text-indigo-500 flex items-center justify-center">
-<span class="material-symbols-outlined text-[18px]">link</span>
-</div>
-<button aria-label="Bookmark Tool" class="bookmark-btn text-on-surface-variant/60 hover:text-primary transition-colors">
-<span class="material-symbols-outlined text-[17px]">bookmark</span>
-</button>
-</div>
-<div>
-<h3 class="font-bold text-xs sm:text-sm text-on-surface group-hover:text-primary transition-colors leading-tight">UTM Tracking URL</h3>
-<p class="text-[11px] text-on-surface-variant line-clamp-2 mt-0.5">Clean campaign query constructor with parameter sanity check.</p>
-</div>
-</div>
-<div class="flex items-center justify-between pt-3 mt-auto border-t border-outline/10">
-<span class="text-[10px] font-mono text-on-surface-variant">★ 4.87</span>
-<span class="inline-flex items-center gap-0.5 text-xs font-mono text-primary group-hover:translate-x-0.5 transition-transform">
-                Launch <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
-</span>
-</div>
-</article>
-<!-- Tool 14: Regex Tester & Explainer -->
-<article class="tool-card bg-surface-container-low border border-outline/15 rounded-xl p-3 sm:p-4 flex flex-col justify-between shadow-xs hover:border-primary/50 hover:shadow-md transition-all group" data-cat="dev" data-keywords="regex tester regular expression match flags explain javascript python">
-<div class="flex flex-col gap-2">
-<div class="flex items-center justify-between">
-<div class="w-8 h-8 rounded-lg bg-pink-500/10 text-pink-500 flex items-center justify-center">
-<span class="material-symbols-outlined text-[18px]">data_object</span>
-</div>
-<button aria-label="Bookmark Tool" class="bookmark-btn text-on-surface-variant/60 hover:text-primary transition-colors">
-<span class="material-symbols-outlined text-[17px]">bookmark</span>
-</button>
-</div>
-<div>
-<h3 class="font-bold text-xs sm:text-sm text-on-surface group-hover:text-primary transition-colors leading-tight">Client-Side Regex Lab</h3>
-<p class="text-[11px] text-on-surface-variant line-clamp-2 mt-0.5">Test regular expressions without sending proprietary logs outside.</p>
-</div>
-</div>
-<div class="flex items-center justify-between pt-3 mt-auto border-t border-outline/10">
-<span class="text-[10px] font-mono text-on-surface-variant">★ 4.96</span>
-<span class="inline-flex items-center gap-0.5 text-xs font-mono text-primary group-hover:translate-x-0.5 transition-transform">
-                Launch <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
-</span>
-</div>
-</article>
-<!-- Tool 15: Markdown to Clean HTML -->
-<article class="tool-card bg-surface-container-low border border-outline/15 rounded-xl p-3 sm:p-4 flex flex-col justify-between shadow-xs hover:border-primary/50 hover:shadow-md transition-all group" data-cat="text" data-keywords="markdown md to html convert sanitize wysiwyg parser blog writer">
-<div class="flex flex-col gap-2">
-<div class="flex items-center justify-between">
-<div class="w-8 h-8 rounded-lg bg-emerald-500/10 text-emerald-500 flex items-center justify-center">
-<span class="material-symbols-outlined text-[18px]">edit_note</span>
-</div>
-<button aria-label="Bookmark Tool" class="bookmark-btn text-on-surface-variant/60 hover:text-primary transition-colors">
-<span class="material-symbols-outlined text-[17px]">bookmark</span>
-</button>
-</div>
-<div>
-<h3 class="font-bold text-xs sm:text-sm text-on-surface group-hover:text-primary transition-colors leading-tight">Markdown &lt;&gt; HTML</h3>
-<p class="text-[11px] text-on-surface-variant line-clamp-2 mt-0.5">Live bidirectional Markdown editor with sanitized HTML copying.</p>
-</div>
-</div>
-<div class="flex items-center justify-between pt-3 mt-auto border-t border-outline/10">
-<span class="text-[10px] font-mono text-on-surface-variant">★ 4.89</span>
-<span class="inline-flex items-center gap-0.5 text-xs font-mono text-primary group-hover:translate-x-0.5 transition-transform">
-                Launch <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
-</span>
-</div>
-</article>
-<!-- Tool 16: Climate & Altitude Hydration Calc -->
-<article class="tool-card bg-surface-container-low border border-outline/15 rounded-xl p-3 sm:p-4 flex flex-col justify-between shadow-xs hover:border-primary/50 hover:shadow-md transition-all group" data-cat="calc" data-keywords="climate hydration calculator water intake humidity elevation caffeine health">
-<div class="flex flex-col gap-2">
-<div class="flex items-center justify-between">
-<div class="w-8 h-8 rounded-lg bg-blue-500/10 text-blue-500 flex items-center justify-center">
-<span class="material-symbols-outlined text-[18px]">water_drop</span>
-</div>
-<button aria-label="Bookmark Tool" class="bookmark-btn text-on-surface-variant/60 hover:text-primary transition-colors">
-<span class="material-symbols-outlined text-[17px]">bookmark</span>
-</button>
-</div>
-<div>
-<h3 class="font-bold text-xs sm:text-sm text-on-surface group-hover:text-primary transition-colors leading-tight">Climate Hydration</h3>
-<p class="text-[11px] text-on-surface-variant line-clamp-2 mt-0.5">Calibrate daily water intake for local elevation and humidity.</p>
-</div>
-</div>
-<div class="flex items-center justify-between pt-3 mt-auto border-t border-outline/10">
-<span class="text-[10px] font-mono text-on-surface-variant">★ 4.90</span>
-<span class="inline-flex items-center gap-0.5 text-xs font-mono text-primary group-hover:translate-x-0.5 transition-transform">
-                Launch <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
-</span>
-</div>
-</article>
-</div>
-</section>
-<!-- AD PLACEMENT 2: Mid-Page Content Rectangle (AdSense Compliant) -->
-<section aria-label="Sponsored Utility" class="w-full flex flex-col items-center justify-center my-3">
-<div class="w-full max-w-4xl p-3.5 rounded-xl bg-surface-container border border-dashed border-outline/25 text-center flex flex-col items-center justify-center min-h-[100px]">
-<span class="text-[9px] font-mono tracking-widest uppercase text-on-surface-variant/70 mb-1">SPONSORED ADVERTISEMENT</span>
-<div class="flex flex-col sm:flex-row items-center gap-3">
-<div class="w-8 h-8 rounded-lg bg-primary/20 text-primary flex items-center justify-center font-bold text-sm">
+      </section>
+
+      <!-- Mid-Page Banner -->
+      <section aria-label="Sponsored Utility" class="w-full flex flex-col items-center justify-center my-3">
+        <div class="w-full max-w-4xl p-3.5 rounded-xl bg-surface-container border border-dashed border-outline/25 text-center flex flex-col items-center justify-center min-h-[100px]">
+          <span class="text-[9px] font-mono tracking-widest uppercase text-on-surface-variant/70 mb-1">SPONSORED ADVERTISEMENT</span>
+          <div class="flex flex-col sm:flex-row items-center gap-3">
+            <div class="w-8 h-8 rounded-lg bg-primary/20 text-primary flex items-center justify-center font-bold text-sm">
               VPN
             </div>
-<div class="text-left">
-<h4 class="text-xs font-bold text-on-surface">Proton VPN &amp; WireGuard Encryption</h4>
-<p class="text-[11px] text-on-surface-variant">Pair in-browser client tools with zero-logs network tunneling.</p>
-</div>
-<a class="mt-2 sm:mt-0 px-3 py-1 rounded bg-surface-container-high hover:bg-primary hover:text-white text-xs font-mono font-medium transition-colors" href="#" rel="noopener sponsored">
+            <div class="text-left">
+              <h4 class="text-xs font-bold text-on-surface">Proton VPN &amp; WireGuard Encryption</h4>
+              <p class="text-[11px] text-on-surface-variant">Pair in-browser client tools with zero-logs network tunneling.</p>
+            </div>
+            <a class="mt-2 sm:mt-0 px-3 py-1 rounded bg-surface-container-high hover:bg-primary hover:text-white text-xs font-mono font-medium transition-colors" href="https://protonvpn.com/" target="_blank" rel="noopener noreferrer nofollow sponsored">
               Visit Site →
             </a>
-</div>
-<span class="text-[9px] text-on-surface-variant/40 mt-2">Advertiser Disclosure: DevCraft receives affiliate support to keep free tools running without paywalls.</span>
-</div>
-</section>
-<!-- Public Roadmap / Suggestion Card -->
-<section class="relative bg-gradient-to-r from-indigo-900/30 via-surface-container to-surface-container-high p-4 sm:p-6 rounded-2xl border border-outline/15 shadow-sm overflow-hidden flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-<div class="flex flex-col gap-1 max-w-lg">
-<div class="flex items-center gap-1.5 text-indigo-400 font-mono text-xs font-semibold uppercase tracking-wider">
-<span class="material-symbols-outlined text-[16px]">rocket_launch</span>
-<span>Public Open Roadmap</span>
-</div>
-<h3 class="text-base sm:text-xl font-bold text-on-surface">Have an In-Browser Tool Idea?</h3>
-<p class="text-xs sm:text-sm text-on-surface-variant">
-            6 new client-side micro-tools are scheduled to drop every Tuesday. Suggest a utility and we build it in under 48 hours.
+          </div>
+          <span class="text-[9px] text-on-surface-variant/40 mt-2">Advertiser Disclosure: DivCraft keeps free tools accessible in your browser.</span>
+        </div>
+      </section>
+
+      <!-- Public Roadmap / Suggestion Card -->
+      <section id="submit-tool-section" class="relative bg-gradient-to-r from-indigo-900/30 via-surface-container to-surface-container-high p-4 sm:p-6 rounded-2xl border border-outline/15 shadow-sm overflow-hidden flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+        <div class="flex flex-col gap-1 max-w-lg">
+          <div class="flex items-center gap-1.5 text-indigo-400 font-mono text-xs font-semibold uppercase tracking-wider">
+            <span class="material-symbols-outlined text-[16px]">rocket_launch</span>
+            <span>Public Open Roadmap</span>
+          </div>
+          <h3 class="text-base sm:text-xl font-bold text-on-surface">Have an In-Browser Tool Idea?</h3>
+          <p class="text-xs sm:text-sm text-on-surface-variant">
+            Suggest a calculator, converter, or developer micro-tool and we can add it to the hub.
           </p>
-</div>
-<div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 w-full sm:w-auto">
-<button class="px-4 py-2.5 rounded-xl bg-primary hover:bg-primary-container text-white text-xs font-mono font-semibold shadow-sm active:scale-95 transition-all text-center" id="requestToolBtn">
+        </div>
+        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 w-full sm:w-auto">
+          <button type="button" class="px-4 py-2.5 rounded-xl bg-primary hover:bg-primary-container text-white text-xs font-mono font-semibold shadow-sm active:scale-95 transition-all text-center" id="requestToolBtn">
             Submit Tool Request
           </button>
-</div>
-</section>
-<!-- Comprehensive Knowledge Base & SEO FAQ Section -->
-<section aria-labelledby="faq-title" class="flex flex-col gap-3 pt-2">
-<div class="flex flex-col gap-1">
-<div class="inline-flex items-center gap-1.5 text-primary text-xs font-mono font-semibold uppercase tracking-wider">
-<span class="material-symbols-outlined text-[16px]">help_center</span>
-<span>Privacy &amp; Architecture FAQ</span>
-</div>
-<h2 class="text-lg sm:text-2xl font-bold text-on-surface" id="faq-title">Frequently Asked Questions</h2>
-<p class="text-xs sm:text-sm text-on-surface-variant">Everything you need to know about our zero-server data processing architecture.</p>
-</div>
-<div class="flex flex-col gap-2 mt-2">
-<!-- FAQ 1 -->
-<div class="faq-item bg-surface-container-low border border-outline/15 rounded-xl overflow-hidden shadow-xs transition-colors">
-<button class="faq-toggle w-full p-3.5 sm:p-4 flex items-center justify-between text-left font-semibold text-xs sm:text-sm text-on-surface focus:outline-none">
-<span>Why choose DivCraft client-side micro-tools over standard web apps?</span>
-<span class="material-symbols-outlined text-[20px] text-on-surface-variant faq-arrow transition-transform duration-200">expand_more</span>
-</button>
-<div class="faq-content hidden px-3.5 sm:px-4 pb-4 text-xs sm:text-sm text-on-surface-variant leading-relaxed border-t border-outline/10 pt-2.5">
-              Traditional web utilities rely on backend servers to parse your inputs, generate previews, or convert datasets. This introduces latency, privacy risks, and potential data leakage. DevCraft runs entirely within your browser environment using WebAssembly, HTML5 APIs, and optimized JavaScript—providing immediate 0ms response times and total data isolation.
+        </div>
+      </section>
+
+      <!-- FAQ Section -->
+      <section aria-labelledby="faq-title" class="flex flex-col gap-3 pt-2">
+        <div class="flex flex-col gap-1">
+          <div class="inline-flex items-center gap-1.5 text-primary text-xs font-mono font-semibold uppercase tracking-wider">
+            <span class="material-symbols-outlined text-[16px]">help_center</span>
+            <span>Privacy &amp; Architecture FAQ</span>
+          </div>
+          <h2 class="text-lg sm:text-2xl font-bold text-on-surface" id="faq-title">Frequently Asked Questions</h2>
+          <p class="text-xs sm:text-sm text-on-surface-variant">Common questions about how DivCraft tools run in your browser.</p>
+        </div>
+
+        <div class="flex flex-col gap-2 mt-2">
+          <div class="faq-item bg-surface-container-low border border-outline/15 rounded-xl overflow-hidden shadow-xs transition-colors">
+            <button type="button" class="faq-toggle w-full p-3.5 sm:p-4 flex items-center justify-between text-left font-semibold text-xs sm:text-sm text-on-surface focus:outline-none">
+              <span>Why choose DivCraft client-side micro-tools over standard web apps?</span>
+              <span class="material-symbols-outlined text-[20px] text-on-surface-variant faq-arrow transition-transform duration-200">expand_more</span>
+            </button>
+            <div class="faq-content hidden px-3.5 sm:px-4 pb-4 text-xs sm:text-sm text-on-surface-variant leading-relaxed border-t border-outline/10 pt-2.5">
+              DivCraft runs directly in your browser using JavaScript and HTML5 APIs so you get instant calculations, previews, and conversions without waiting on a remote server.
             </div>
-</div>
-<!-- FAQ 2 -->
-<div class="faq-item bg-surface-container-low border border-outline/15 rounded-xl overflow-hidden shadow-xs transition-colors">
-<button class="faq-toggle w-full p-3.5 sm:p-4 flex items-center justify-between text-left font-semibold text-xs sm:text-sm text-on-surface focus:outline-none">
-<span>Is my source code, image file, or calculation sent to any cloud server?</span>
-<span class="material-symbols-outlined text-[20px] text-on-surface-variant faq-arrow transition-transform duration-200">expand_more</span>
-</button>
-<div class="faq-content hidden px-3.5 sm:px-4 pb-4 text-xs sm:text-sm text-on-surface-variant leading-relaxed border-t border-outline/10 pt-2.5">
-              Never. Not a single byte leaves your hardware. All image resizing, color computations, regex tests, and financial models execute within your local machine's memory sandbox. You can verify this in the DevTools Network tab or completely disconnect your Wi-Fi after the initial bundle loads.
+          </div>
+
+          <div class="faq-item bg-surface-container-low border border-outline/15 rounded-xl overflow-hidden shadow-xs transition-colors">
+            <button type="button" class="faq-toggle w-full p-3.5 sm:p-4 flex items-center justify-between text-left font-semibold text-xs sm:text-sm text-on-surface focus:outline-none">
+              <span>Is my source code, image file, or calculation sent to any cloud server?</span>
+              <span class="material-symbols-outlined text-[20px] text-on-surface-variant faq-arrow transition-transform duration-200">expand_more</span>
+            </button>
+            <div class="faq-content hidden px-3.5 sm:px-4 pb-4 text-xs sm:text-sm text-on-surface-variant leading-relaxed border-t border-outline/10 pt-2.5">
+              No. Inputs in our client-side calculators and converters are processed locally in your browser rather than uploaded to a backend server.
             </div>
-</div>
-<!-- FAQ 3 -->
-<div class="faq-item bg-surface-container-low border border-outline/15 rounded-xl overflow-hidden shadow-xs transition-colors">
-<button class="faq-toggle w-full p-3.5 sm:p-4 flex items-center justify-between text-left font-semibold text-xs sm:text-sm text-on-surface focus:outline-none">
-<span>Can I use these tools offline while traveling or during outages?</span>
-<span class="material-symbols-outlined text-[20px] text-on-surface-variant faq-arrow transition-transform duration-200">expand_more</span>
-</button>
-<div class="faq-content hidden px-3.5 sm:px-4 pb-4 text-xs sm:text-sm text-on-surface-variant leading-relaxed border-t border-outline/10 pt-2.5">
-              Yes. DivCraft assets are cached in local browser storage. Every generator, validator, and calculator is engineered to run offline seamlessly on mobile, tablet, or desktop laptops.
+          </div>
+
+          <div class="faq-item bg-surface-container-low border border-outline/15 rounded-xl overflow-hidden shadow-xs transition-colors">
+            <button type="button" class="faq-toggle w-full p-3.5 sm:p-4 flex items-center justify-between text-left font-semibold text-xs sm:text-sm text-on-surface focus:outline-none">
+              <span>Can I use these tools offline once the page is loaded?</span>
+              <span class="material-symbols-outlined text-[20px] text-on-surface-variant faq-arrow transition-transform duration-200">expand_more</span>
+            </button>
+            <div class="faq-content hidden px-3.5 sm:px-4 pb-4 text-xs sm:text-sm text-on-surface-variant leading-relaxed border-t border-outline/10 pt-2.5">
+              Yes, static browser tools and cached assets continue to work locally on your device even when your network connection is slow or offline.
             </div>
-</div>
-<!-- FAQ 4 -->
-<div class="faq-item bg-surface-container-low border border-outline/15 rounded-xl overflow-hidden shadow-xs transition-colors">
-<button class="faq-toggle w-full p-3.5 sm:p-4 flex items-center justify-between text-left font-semibold text-xs sm:text-sm text-on-surface focus:outline-none">
-<span>How does DivCraft comply with Google AdSense and privacy regulations?</span>
-<span class="material-symbols-outlined text-[20px] text-on-surface-variant faq-arrow transition-transform duration-200">expand_more</span>
-</button>
-<div class="faq-content hidden px-3.5 sm:px-4 pb-4 text-xs sm:text-sm text-on-surface-variant leading-relaxed border-t border-outline/10 pt-2.5">
-              DivCraft strictly adheres to Google AdSense Publisher Policies, GDPR, and CCPA standards. Ad placements are distinctly labeled as 'SPONSORED' or 'ADVERTISEMENT' with zero intrusive pop-ups. We provide comprehensive disclosures, a transparent privacy policy, and dedicated cookie preference controls.
+          </div>
+
+          <div class="faq-item bg-surface-container-low border border-outline/15 rounded-xl overflow-hidden shadow-xs transition-colors">
+            <button type="button" class="faq-toggle w-full p-3.5 sm:p-4 flex items-center justify-between text-left font-semibold text-xs sm:text-sm text-on-surface focus:outline-none">
+              <span>How does DivCraft handle privacy and cookie preferences?</span>
+              <span class="material-symbols-outlined text-[20px] text-on-surface-variant faq-arrow transition-transform duration-200">expand_more</span>
+            </button>
+            <div class="faq-content hidden px-3.5 sm:px-4 pb-4 text-xs sm:text-sm text-on-surface-variant leading-relaxed border-t border-outline/10 pt-2.5">
+              DivCraft labels sponsored blocks clearly and provides transparent privacy, terms, and cookie preference controls.
             </div>
-</div>
-</div>
-</section>
-<!-- Full Mandatory Google AdSense Footer & Compliance Policy Navigation -->
-<footer class="mt-6 pt-8 pb-4 border-t border-outline/15 text-xs text-on-surface-variant flex flex-col gap-6">
-<!-- Mandatory Legal & Editorial Navigation Links -->
-<div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 font-mono text-[11px] text-on-surface-variant">
-<a class="hover:text-primary transition-colors" href="#about">About Us</a>
-<a class="hover:text-primary transition-colors font-medium" href="#privacy">Privacy Policy</a>
-<a class="hover:text-primary transition-colors" href="#terms">Terms of Service</a>
-<a class="hover:text-primary transition-colors" href="#contact">Contact Us</a>
-<a class="hover:text-primary transition-colors" href="#cookies">Cookie Policy</a>
-<a class="hover:text-primary transition-colors" href="#disclaimer">Disclaimer</a>
-<a class="hover:text-primary transition-colors" href="#editorial">Editorial Standards</a>
-</div>
-<!-- Publisher Disclosure & Zero-Server Commitment -->
-<div class="max-w-3xl mx-auto text-center flex flex-col gap-2">
-<p class="text-[11px] leading-relaxed text-on-surface-variant/80">
-<strong>Publisher Disclosure:</strong> DivCraft is committed to zero-server telemetry and full data privacy. All tools execute locally via client-side WebAssembly, HTML5, and JavaScript APIs. We do not store, view, or transmit user inputs to third-party databases.
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="mt-6 pt-8 pb-4 border-t border-outline/15 text-xs text-on-surface-variant flex flex-col gap-6">
+        <div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 font-mono text-[11px] text-on-surface-variant">
+          <button type="button" class="info-modal-trigger hover:text-primary transition-colors" data-info="about">About Us</button>
+          <button type="button" class="info-modal-trigger hover:text-primary transition-colors font-medium" data-info="privacy">Privacy Policy</button>
+          <button type="button" class="info-modal-trigger hover:text-primary transition-colors" data-info="terms">Terms of Service</button>
+          <button type="button" class="info-modal-trigger hover:text-primary transition-colors" data-info="contact">Contact Us</button>
+          <button type="button" class="info-modal-trigger hover:text-primary transition-colors" data-info="cookies">Cookie Policy</button>
+          <button type="button" class="info-modal-trigger hover:text-primary transition-colors" data-info="disclaimer">Disclaimer</button>
+          <button type="button" class="info-modal-trigger hover:text-primary transition-colors" data-info="editorial">Editorial Standards</button>
+        </div>
+
+        <div class="max-w-3xl mx-auto text-center flex flex-col gap-2">
+          <p class="text-[11px] leading-relaxed text-on-surface-variant/80">
+            <strong>Publisher Disclosure:</strong> DivCraft tools run locally in your browser using JavaScript and HTML5 APIs without sending your inputs to a backend database. Sponsored links are clearly labeled.
           </p>
-<p class="text-[10px] text-on-surface-variant/60">
-            Google AdSense &amp; TCF v2.2 Compliant · ISO/IEC 27001 Security Practice Aligned · © 2026 DivCraft Hub. All rights reserved.
+          <p class="text-[10px] text-on-surface-variant/60">
+            © 2026 DivCraft Hub. All rights reserved.
           </p>
-</div>
-<!-- Cookie Consent & Compliance Indicator Badge -->
-<div class="flex items-center justify-center gap-2 pt-2">
-<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container border border-outline/15 text-[10px] font-mono text-on-surface">
-<span class="text-emerald-500 font-bold">✓</span>
-<span>AdSense &amp; GDPR Cookie Compliant</span>
-</div>
-<button class="text-[10px] font-mono text-primary underline hover:text-indigo-400" id="cookieSettingsBtn">
+        </div>
+
+        <div class="flex items-center justify-center gap-2 pt-2">
+          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container border border-outline/15 text-[10px] font-mono text-on-surface">
+            <span class="text-emerald-500 font-bold">✓</span>
+            <span>Client-Side Privacy Ready</span>
+          </div>
+          <button type="button" class="text-[10px] font-mono text-primary underline hover:text-indigo-400" id="cookieSettingsBtn">
             Cookie Preferences
           </button>
-</div>
-</footer>
-</div>
-</main>
-<!-- Fixed Bottom App Navigation (Mobile iOS Safe Bar) -->
-<nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl border-t border-outline/15 shadow-lg transition-colors duration-200" data-active-classes="text-primary font-semibold">
-<div class="flex justify-around items-center h-16 max-w-lg mx-auto px-4">
-<a aria-current="page" class="nav-item flex flex-col items-center justify-center gap-1 min-w-[56px] min-h-[44px] transition-colors text-primary font-semibold" href="#">
-<span class="material-symbols-outlined text-[22px]">terminal</span>
-<span class="text-[10px] font-mono font-medium">Explore</span>
-</a>
-<a class="nav-item flex flex-col items-center justify-center gap-1 min-w-[56px] min-h-[44px] text-on-surface-variant hover:text-on-surface transition-colors" data-scroll-to="toolsGrid" href="#">
-<span class="material-symbols-outlined text-[22px]">category</span>
-<span class="text-[10px] font-mono font-medium">Categories</span>
-</a>
-<a class="nav-item flex flex-col items-center justify-center gap-1 min-w-[56px] min-h-[44px] text-on-surface-variant hover:text-on-surface transition-colors" href="#" id="navSavedLink">
-<span class="material-symbols-outlined text-[22px]">bookmark</span>
-<span class="text-[10px] font-mono font-medium">Saved</span>
-</a>
-<a class="nav-item flex flex-col items-center justify-center gap-1 min-w-[56px] min-h-[44px] text-on-surface-variant hover:text-on-surface transition-colors" href="#" id="navSubmitLink">
-<span class="material-symbols-outlined text-[22px]">add_circle</span>
-<span class="text-[10px] font-mono font-medium">Submit</span>
-</a>
-</div>
-</nav>
-<!-- Complete Vanilla JavaScript Interactive Engine -->
-<script>
+        </div>
+      </footer>
+    </div>
+  </main>
+
+  <!-- Fixed Bottom App Navigation -->
+  <nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl border-t border-outline/15 shadow-lg transition-colors duration-200" data-active-classes="text-primary font-semibold">
+    <div class="flex justify-around items-center h-16 max-w-lg mx-auto px-4">
+      <a aria-current="page" class="nav-item flex flex-col items-center justify-center gap-1 min-w-[56px] min-h-[44px] transition-colors text-primary font-semibold" href="index.html">
+        <span class="material-symbols-outlined text-[22px]">terminal</span>
+        <span class="text-[10px] font-mono font-medium">Explore</span>
+      </a>
+      <a class="nav-item flex flex-col items-center justify-center gap-1 min-w-[56px] min-h-[44px] text-on-surface-variant hover:text-on-surface transition-colors" href="#toolsGrid">
+        <span class="material-symbols-outlined text-[22px]">category</span>
+        <span class="text-[10px] font-mono font-medium">Categories</span>
+      </a>
+      <button type="button" class="nav-item flex flex-col items-center justify-center gap-1 min-w-[56px] min-h-[44px] text-on-surface-variant hover:text-on-surface transition-colors" id="navSavedLink">
+        <span class="material-symbols-outlined text-[22px]">bookmark</span>
+        <span class="text-[10px] font-mono font-medium">Saved</span>
+      </button>
+      <a class="nav-item flex flex-col items-center justify-center gap-1 min-w-[56px] min-h-[44px] text-on-surface-variant hover:text-on-surface transition-colors" href="#submit-tool-section">
+        <span class="material-symbols-outlined text-[22px]">add_circle</span>
+        <span class="text-[10px] font-mono font-medium">Submit</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- Saved Tools Modal -->
+  <div id="savedModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/60 backdrop-blur-xs p-4" role="dialog" aria-modal="true" aria-labelledby="savedModalTitle">
+    <div class="w-full max-w-md rounded-2xl bg-surface-container-low border border-outline/20 p-5 shadow-xl flex flex-col gap-4">
+      <div class="flex items-center justify-between border-b border-outline/10 pb-3">
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-primary text-[20px]">bookmark</span>
+          <h3 id="savedModalTitle" class="font-bold text-base text-on-surface">Saved Micro-Tools</h3>
+        </div>
+        <button type="button" id="closeSavedModal" aria-label="Close Saved Modal" class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-on-surface">✕</button>
+      </div>
+      <div id="savedToolsList" class="flex flex-col gap-2 max-h-64 overflow-y-auto text-xs"></div>
+      <div class="flex items-center justify-between pt-2 border-t border-outline/10">
+        <button type="button" id="clearSavedBtn" class="text-xs font-mono text-on-surface-variant hover:text-on-surface underline">Clear All</button>
+        <button type="button" id="doneSavedModal" class="px-3.5 py-1.5 rounded-lg bg-primary text-white text-xs font-mono font-medium">Done</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer Info Modal -->
+  <div id="infoModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/60 backdrop-blur-xs p-4" role="dialog" aria-modal="true" aria-labelledby="infoModalTitle">
+    <div class="w-full max-w-lg rounded-2xl bg-surface-container-low border border-outline/20 p-5 shadow-xl flex flex-col gap-3">
+      <div class="flex items-center justify-between border-b border-outline/10 pb-3">
+        <h3 id="infoModalTitle" class="font-bold text-base text-on-surface">DivCraft Info</h3>
+        <button type="button" id="closeInfoModal" aria-label="Close Info Modal" class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-on-surface">✕</button>
+      </div>
+      <p id="infoModalBody" class="text-xs sm:text-sm text-on-surface-variant leading-relaxed"></p>
+      <div class="flex justify-end pt-2">
+        <button type="button" id="doneInfoModal" class="px-4 py-1.5 rounded-lg bg-primary text-white text-xs font-mono font-medium">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
     document.addEventListener('DOMContentLoaded', () => {
-      // 1. Working Dark/Light Mode Toggle Switch (Default to Light Mode)
+      // 1. Dark/Light Mode Toggle
       const themeToggleBtn = document.getElementById('themeToggleBtn');
       const lightIcon = document.getElementById('themeIconLight');
       const darkIcon = document.getElementById('themeIconDark');
@@ -1068,37 +1122,43 @@
       function updateThemeIcons(isDark) {
         if (isDark) {
           rootHtml.classList.add('dark');
-          lightIcon.classList.remove('hidden');
-          darkIcon.classList.add('hidden');
+          lightIcon?.classList.remove('hidden');
+          darkIcon?.classList.add('hidden');
         } else {
           rootHtml.classList.remove('dark');
-          darkIcon.classList.remove('hidden');
-          lightIcon.classList.add('hidden');
+          darkIcon?.classList.remove('hidden');
+          lightIcon?.classList.add('hidden');
         }
       }
 
-      // Check system or saved preference (Default to light mode if not set)
       const savedTheme = localStorage.getItem('devcraft_theme');
-      if (savedTheme) {
-        updateThemeIcons(savedTheme === 'dark');
-      } else {
-        updateThemeIcons(false); // Default to Light Mode
-      }
+      updateThemeIcons(savedTheme === 'dark');
 
-      if (themeToggleBtn) {
-        themeToggleBtn.addEventListener('click', () => {
-          const willBeDark = !rootHtml.classList.contains('dark');
-          updateThemeIcons(willBeDark);
-          localStorage.setItem('devcraft_theme', willBeDark ? 'dark' : 'light');
-        });
-      }
+      themeToggleBtn?.addEventListener('click', () => {
+        const willBeDark = !rootHtml.classList.contains('dark');
+        updateThemeIcons(willBeDark);
+        localStorage.setItem('devcraft_theme', willBeDark ? 'dark' : 'light');
+      });
 
-      // 2. Real-Time Tool Search & Filtering
+      // 2. Dynamic Category Counts Sync
+      const toolCards = Array.from(document.querySelectorAll('.tool-card'));
+      const catCounts = { all: toolCards.length, dev: 0, css: 0, text: 0, calc: 0, privacy: 0 };
+      toolCards.forEach(card => {
+        const c = card.getAttribute('data-cat');
+        if (catCounts[c] !== undefined) catCounts[c]++;
+      });
+      document.querySelectorAll('.pill-count[data-count-cat]').forEach(el => {
+        const c = el.getAttribute('data-count-cat');
+        if (catCounts[c] !== undefined) el.textContent = catCounts[c];
+      });
+      const heroToolsCount = document.getElementById('heroToolsCount');
+      if (heroToolsCount) heroToolsCount.textContent = `| ${catCounts.all} Active Tools`;
+
+      // 3. Real-Time Tool Search & Category Filtering
       const searchInput = document.getElementById('toolSearchInput');
       const headerSearchBtn = document.getElementById('headerSearchBtn');
       const clearSearchBtn = document.getElementById('clearSearchBtn');
       const resetSearchBtn = document.getElementById('resetSearchBtn');
-      const toolCards = document.querySelectorAll('.tool-card');
       const noResultsState = document.getElementById('noResultsState');
       const toolsCount = document.getElementById('toolsCount');
       let currentCategory = 'all';
@@ -1114,14 +1174,14 @@
         toolCards.forEach(card => {
           const cat = card.getAttribute('data-cat');
           const keywords = (card.getAttribute('data-keywords') || '').toLowerCase();
-          const title = (card.querySelector('h3') ? card.querySelector('h3').textContent : '').toLowerCase();
-          const desc = (card.querySelector('p') ? card.querySelector('p').textContent : '').toLowerCase();
+          const title = (card.querySelector('h3')?.textContent || '').toLowerCase();
+          const desc = (card.querySelector('p')?.textContent || '').toLowerCase();
 
           const matchesCat = (currentCategory === 'all' || cat === currentCategory);
-          const matchesQuery = query === '' || 
-                               title.includes(query) || 
-                               desc.includes(query) || 
-                               keywords.includes(query);
+          const matchesQuery = query === '' ||
+            title.includes(query) ||
+            desc.includes(query) ||
+            keywords.includes(query);
 
           if (matchesCat && matchesQuery) {
             card.classList.remove('hidden');
@@ -1144,46 +1204,35 @@
         }
       }
 
-      if (searchInput) {
-        searchInput.addEventListener('input', filterTools);
-      }
+      searchInput?.addEventListener('input', filterTools);
 
-      if (headerSearchBtn && searchInput) {
-        headerSearchBtn.addEventListener('click', () => {
-          searchInput.focus();
-          searchInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        });
-      }
+      headerSearchBtn?.addEventListener('click', () => {
+        searchInput?.focus();
+        searchInput?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      });
 
-      if (clearSearchBtn) {
-        clearSearchBtn.addEventListener('click', () => {
-          searchInput.value = '';
-          filterTools();
-          searchInput.focus();
-        });
-      }
+      clearSearchBtn?.addEventListener('click', () => {
+        if (!searchInput) return;
+        searchInput.value = '';
+        filterTools();
+        searchInput.focus();
+      });
 
-      if (resetSearchBtn) {
-        resetSearchBtn.addEventListener('click', () => {
-          if (searchInput) searchInput.value = '';
-          currentCategory = 'all';
-          updateActivePill('all');
-          filterTools();
-        });
-      }
+      resetSearchBtn?.addEventListener('click', () => {
+        if (searchInput) searchInput.value = '';
+        currentCategory = 'all';
+        updateActivePill('all');
+        filterTools();
+      });
 
-      // Keyboard shortcut ⌘K / Ctrl+K
       window.addEventListener('keydown', (e) => {
         if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
           e.preventDefault();
-          if (searchInput) {
-            searchInput.focus();
-            searchInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
-          }
+          searchInput?.focus();
+          searchInput?.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
       });
 
-      // 3. Category Filter Pills
       const catPills = document.querySelectorAll('.cat-pill');
       function updateActivePill(cat) {
         catPills.forEach(pill => {
@@ -1209,7 +1258,7 @@
         });
       });
 
-      // 4. Interactive Live PX to REM Converter Widget
+      // 4. PX to REM Sandbox
       const pxInputWidget = document.getElementById('pxInputWidget');
       const basePxInput = document.getElementById('basePxInput');
       const remOutputWidget = document.getElementById('remOutputWidget');
@@ -1217,8 +1266,8 @@
       const copyRemWidgetBtn = document.getElementById('copyRemWidgetBtn');
 
       function calculateRem() {
-        const px = parseFloat(pxInputWidget ? pxInputWidget.value : 24) || 0;
-        const base = parseFloat(basePxInput ? basePxInput.value : 16) || 16;
+        const px = parseFloat(pxInputWidget?.value ?? 24) || 0;
+        const base = parseFloat(basePxInput?.value ?? 16) || 16;
         const rem = (px / base).toFixed(3).replace(/\.?0+$/, '') + 'rem';
         if (remOutputWidget) remOutputWidget.textContent = rem;
         if (pxVisualSample) {
@@ -1226,138 +1275,250 @@
         }
       }
 
-      if (pxInputWidget) pxInputWidget.addEventListener('input', calculateRem);
-      if (basePxInput) basePxInput.addEventListener('input', calculateRem);
+      pxInputWidget?.addEventListener('input', calculateRem);
+      basePxInput?.addEventListener('input', calculateRem);
 
-      if (copyRemWidgetBtn) {
-        copyRemWidgetBtn.addEventListener('click', () => {
-          const val = remOutputWidget ? remOutputWidget.textContent : '1.5rem';
-          navigator.clipboard?.writeText(`font-size: ${val};`);
-          const original = copyRemWidgetBtn.innerHTML;
-          copyRemWidgetBtn.innerHTML = `<span class="material-symbols-outlined text-[14px]">check</span><span>Copied!</span>`;
-          setTimeout(() => {
-            copyRemWidgetBtn.innerHTML = original;
-          }, 1500);
-        });
-      }
+      copyRemWidgetBtn?.addEventListener('click', () => {
+        const val = remOutputWidget?.textContent || '1.5rem';
+        navigator.clipboard?.writeText(`font-size: ${val};`);
+        const original = copyRemWidgetBtn.innerHTML;
+        copyRemWidgetBtn.innerHTML = `<span class="material-symbols-outlined text-[14px]">check</span><span>Copied!</span>`;
+        setTimeout(() => { copyRemWidgetBtn.innerHTML = original; }, 1500);
+      });
 
-      // 5. Interactive Glassmorphism Live Slider & Copy
+      // 5. Glassmorphism Sandbox
       const glassBlurSlider = document.getElementById('glassBlurSlider');
       const glassBlurVal = document.getElementById('glassBlurVal');
       const glassPreviewCard = document.getElementById('glassPreviewCard');
       const glassCSSLabel = document.getElementById('glassCSSLabel');
       const copyGlassBtn = document.getElementById('copyGlassBtn');
 
-      if (glassBlurSlider) {
-        glassBlurSlider.addEventListener('input', (e) => {
-          const blur = e.target.value;
-          if (glassBlurVal) glassBlurVal.textContent = `${blur}px`;
-          if (glassPreviewCard) {
-            glassPreviewCard.style.backdropFilter = `blur(${blur}px)`;
-            glassPreviewCard.style.webkitBackdropFilter = `blur(${blur}px)`;
-          }
-          if (glassCSSLabel) {
-            glassCSSLabel.textContent = `backdrop-filter: blur(${blur}px);`;
-          }
-        });
-      }
+      glassBlurSlider?.addEventListener('input', (e) => {
+        const blur = e.target.value;
+        if (glassBlurVal) glassBlurVal.textContent = `${blur}px`;
+        if (glassPreviewCard) {
+          glassPreviewCard.style.backdropFilter = `blur(${blur}px)`;
+          glassPreviewCard.style.webkitBackdropFilter = `blur(${blur}px)`;
+        }
+        if (glassCSSLabel) {
+          glassCSSLabel.textContent = `backdrop-filter: blur(${blur}px);`;
+        }
+      });
 
-      if (copyGlassBtn) {
-        copyGlassBtn.addEventListener('click', () => {
-          const blur = glassBlurSlider ? glassBlurSlider.value : '12';
-          const css = `background: rgba(255, 255, 255, 0.15);\nbackdrop-filter: blur(${blur}px);\n-webkit-backdrop-filter: blur(${blur}px);\nborder: 1px solid rgba(255, 255, 255, 0.2);`;
-          navigator.clipboard?.writeText(css);
-          const orig = copyGlassBtn.innerHTML;
-          copyGlassBtn.innerHTML = `<span class="material-symbols-outlined text-[14px]">check</span><span>Copied!</span>`;
-          setTimeout(() => {
-            copyGlassBtn.innerHTML = orig;
-          }, 1500);
-        });
-      }
+      copyGlassBtn?.addEventListener('click', () => {
+        const blur = glassBlurSlider?.value || '12';
+        const css = `background: rgba(255, 255, 255, 0.15);\nbackdrop-filter: blur(${blur}px);\n-webkit-backdrop-filter: blur(${blur}px);\nborder: 1px solid rgba(255, 255, 255, 0.2);`;
+        navigator.clipboard?.writeText(css);
+        const orig = copyGlassBtn.innerHTML;
+        copyGlassBtn.innerHTML = `<span class="material-symbols-outlined text-[14px]">check</span><span>Copied!</span>`;
+        setTimeout(() => { copyGlassBtn.innerHTML = orig; }, 1500);
+      });
 
-      // 6. Interactive Bookmark Counter & Buttons
-      const bookmarkBtns = document.querySelectorAll('.bookmark-btn');
+      // 6. Persistent Saved Tools (localStorage + Modal)
+      const STORAGE_KEY = 'divcraft_saved_tools_v1';
+      const bookmarkBtns = Array.from(document.querySelectorAll('.bookmark-btn'));
       const savedCounter = document.getElementById('savedCounter');
-      let bookmarkedCount = 0;
+      const savedModal = document.getElementById('savedModal');
+      const savedToolsList = document.getElementById('savedToolsList');
+      const headerSavedBtn = document.getElementById('headerSavedBtn');
+      const navSavedLink = document.getElementById('navSavedLink');
+      const closeSavedModal = document.getElementById('closeSavedModal');
+      const doneSavedModal = document.getElementById('doneSavedModal');
+      const clearSavedBtn = document.getElementById('clearSavedBtn');
+
+      function loadSavedTools() {
+        try {
+          const parsed = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+          return Array.isArray(parsed) ? parsed : [];
+        } catch {
+          return [];
+        }
+      }
+
+      function saveSavedTools(items) {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
+        syncBookmarkUI(items);
+      }
+
+      function syncBookmarkUI(items) {
+        const idSet = new Set(items.map(i => i.id));
+        bookmarkBtns.forEach(btn => {
+          const id = btn.getAttribute('data-tool-id');
+          const icon = btn.querySelector('.material-symbols-outlined');
+          const active = id && idSet.has(id);
+          if (icon) {
+            icon.style.fontVariationSettings = active ? "'FILL' 1" : "'FILL' 0";
+            icon.classList.toggle('text-primary', Boolean(active));
+          }
+        });
+
+        if (savedCounter) {
+          savedCounter.textContent = String(items.length);
+          savedCounter.classList.toggle('hidden', items.length === 0);
+        }
+      }
+
+      function renderSavedModal() {
+        const items = loadSavedTools();
+        if (!savedToolsList) return;
+        if (items.length === 0) {
+          savedToolsList.innerHTML = `<p class="text-on-surface-variant py-4 text-center">No saved tools yet. Tap the bookmark icon on any tool to save it here.</p>`;
+          return;
+        }
+        savedToolsList.innerHTML = items.map(item => `
+          <div class="flex items-center justify-between gap-2 p-2.5 rounded-xl bg-surface-container border border-outline/10">
+            <span class="font-semibold text-on-surface truncate">${item.title}</span>
+            <button type="button" data-remove-id="${item.id}" class="remove-saved-btn text-[11px] font-mono text-primary hover:underline shrink-0">Remove</button>
+          </div>
+        `).join('');
+
+        savedToolsList.querySelectorAll('.remove-saved-btn').forEach(rmBtn => {
+          rmBtn.addEventListener('click', () => {
+            const targetId = rmBtn.getAttribute('data-remove-id');
+            const next = loadSavedTools().filter(x => x.id !== targetId);
+            saveSavedTools(next);
+            renderSavedModal();
+          });
+        });
+      }
+
+      function openSavedModal() {
+        renderSavedModal();
+        savedModal?.classList.remove('hidden');
+        savedModal?.classList.add('flex');
+      }
+
+      function closeSaved() {
+        savedModal?.classList.add('hidden');
+        savedModal?.classList.remove('flex');
+      }
 
       bookmarkBtns.forEach(btn => {
         btn.addEventListener('click', (e) => {
           e.stopPropagation();
-          const icon = btn.querySelector('.material-symbols-outlined');
-          if (!icon) return;
-
-          const isSaved = icon.style.fontVariationSettings?.includes("'FILL' 1");
-          if (isSaved) {
-            icon.style.fontVariationSettings = "'FILL' 0";
-            icon.classList.remove('text-primary');
-            bookmarkedCount = Math.max(0, bookmarkedCount - 1);
-          } else {
-            icon.style.fontVariationSettings = "'FILL' 1";
-            icon.classList.add('text-primary');
-            bookmarkedCount++;
-          }
-
-          if (savedCounter) {
-            savedCounter.textContent = bookmarkedCount;
-            if (bookmarkedCount > 0) {
-              savedCounter.classList.remove('hidden');
-            } else {
-              savedCounter.classList.add('hidden');
-            }
-          }
+          const id = btn.getAttribute('data-tool-id');
+          const title = btn.getAttribute('data-tool-title') || 'Micro-Tool';
+          if (!id) return;
+          const current = loadSavedTools();
+          const exists = current.some(x => x.id === id);
+          const next = exists ? current.filter(x => x.id !== id) : [...current, { id, title }];
+          saveSavedTools(next);
         });
       });
 
-      // 7. Accordion Toggle for FAQ Section
+      headerSavedBtn?.addEventListener('click', openSavedModal);
+      navSavedLink?.addEventListener('click', openSavedModal);
+      closeSavedModal?.addEventListener('click', closeSaved);
+      doneSavedModal?.addEventListener('click', closeSaved);
+      savedModal?.addEventListener('click', (e) => {
+        if (e.target === savedModal) closeSaved();
+      });
+      clearSavedBtn?.addEventListener('click', () => {
+        saveSavedTools([]);
+        renderSavedModal();
+      });
+
+      syncBookmarkUI(loadSavedTools());
+
+      // 7. FAQ Accordion
       const faqItems = document.querySelectorAll('.faq-item');
       faqItems.forEach(item => {
         const toggle = item.querySelector('.faq-toggle');
         const content = item.querySelector('.faq-content');
         const arrow = item.querySelector('.faq-arrow');
 
-        if (toggle && content) {
-          toggle.addEventListener('click', () => {
-            const isClosed = content.classList.contains('hidden');
-            // Close other items
-            faqItems.forEach(other => {
-              const otherC = other.querySelector('.faq-content');
-              const otherA = other.querySelector('.faq-arrow');
-              if (otherC) otherC.classList.add('hidden');
-              if (otherA) otherA.style.transform = 'rotate(0deg)';
-            });
-
-            if (isClosed) {
-              content.classList.remove('hidden');
-              if (arrow) arrow.style.transform = 'rotate(180deg)';
-            } else {
-              content.classList.add('hidden');
-              if (arrow) arrow.style.transform = 'rotate(0deg)';
-            }
+        toggle?.addEventListener('click', () => {
+          if (!content) return;
+          const isClosed = content.classList.contains('hidden');
+          faqItems.forEach(other => {
+            other.querySelector('.faq-content')?.classList.add('hidden');
+            const otherA = other.querySelector('.faq-arrow');
+            if (otherA) otherA.style.transform = 'rotate(0deg)';
           });
-        }
+
+          if (isClosed) {
+            content.classList.remove('hidden');
+            if (arrow) arrow.style.transform = 'rotate(180deg)';
+          }
+        });
       });
 
-      // 8. Public Roadmap Request Button & Cookie Preferences Toast
+      // 8. Roadmap, Cookie & Footer Info Modals
       const requestToolBtn = document.getElementById('requestToolBtn');
-      if (requestToolBtn) {
-        requestToolBtn.addEventListener('click', () => {
-          const original = requestToolBtn.textContent;
-          requestToolBtn.textContent = 'Feedback Portal Launched ✓';
-          setTimeout(() => {
-            requestToolBtn.textContent = original;
-          }, 2000);
-        });
+      requestToolBtn?.addEventListener('click', () => {
+        const original = requestToolBtn.textContent;
+        requestToolBtn.textContent = 'Request Noted ✓';
+        setTimeout(() => { requestToolBtn.textContent = original; }, 2000);
+      });
+
+      const infoModal = document.getElementById('infoModal');
+      const infoModalTitle = document.getElementById('infoModalTitle');
+      const infoModalBody = document.getElementById('infoModalBody');
+      const closeInfoModal = document.getElementById('closeInfoModal');
+      const doneInfoModal = document.getElementById('doneInfoModal');
+
+      const infoCopy = {
+        about: {
+          title: 'About DivCraft',
+          body: 'DivCraft provides fast, free in-browser developer, CSS, text, and calculator micro-tools designed to run locally on your device.'
+        },
+        privacy: {
+          title: 'Privacy Policy',
+          body: 'DivCraft client-side calculators and sandboxes process inputs directly in your browser. Theme and bookmark preferences are stored locally in your browser storage.'
+        },
+        terms: {
+          title: 'Terms of Service',
+          body: 'DivCraft tools are provided as-is for general productivity, development, and estimation purposes. Always verify critical financial or production outputs independently.'
+        },
+        contact: {
+          title: 'Contact Us',
+          body: 'You can reach the DivCraft project through your repository or public updates at https://divcraft.online/.'
+        },
+        cookies: {
+          title: 'Cookie & Storage Policy',
+          body: 'DivCraft uses local storage for UI preferences (such as dark/light mode and saved tools). Any future ad or analytics partner disclosures will appear here.'
+        },
+        disclaimer: {
+          title: 'Disclaimer',
+          body: 'Calculations, conversions, and previews shown on DivCraft are informational aids and do not constitute legal, tax, or financial advice.'
+        },
+        editorial: {
+          title: 'Editorial & Tool Standards',
+          body: 'Tools listed on DivCraft focus on speed, clarity, transparent formulas, and local browser execution without unnecessary bloat.'
+        }
+      };
+
+      function openInfoModal(key) {
+        const data = infoCopy[key];
+        if (!data || !infoModal || !infoModalTitle || !infoModalBody) return;
+        infoModalTitle.textContent = data.title;
+        infoModalBody.textContent = data.body;
+        infoModal.classList.remove('hidden');
+        infoModal.classList.add('flex');
       }
 
-      const cookieSettingsBtn = document.getElementById('cookieSettingsBtn');
-      if (cookieSettingsBtn) {
-        cookieSettingsBtn.addEventListener('click', (e) => {
-          e.preventDefault();
-          alert('DevCraft Cookie Preferences:\n\n• Strictly Necessary: Always Active (Runs local in-browser utilities)\n• Analytical & AdSense Cookies: Consent Granted (Google Privacy Compliant)');
-        });
+      function closeInfo() {
+        infoModal?.classList.add('hidden');
+        infoModal?.classList.remove('flex');
       }
 
-      // Initial filter run to set correct counter
+      document.querySelectorAll('.info-modal-trigger').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const key = btn.getAttribute('data-info');
+          if (key) openInfoModal(key);
+        });
+      });
+
+      document.getElementById('cookieSettingsBtn')?.addEventListener('click', () => {
+        openInfoModal('cookies');
+      });
+
+      closeInfoModal?.addEventListener('click', closeInfo);
+      doneInfoModal?.addEventListener('click', closeInfo);
+      infoModal?.addEventListener('click', (e) => {
+        if (e.target === infoModal) closeInfo();
+      });
+
       filterTools();
     });
   </script>
