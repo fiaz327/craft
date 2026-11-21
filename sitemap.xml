@@ -36,5 +36,40 @@
   <changefreq>monthly</changefreq>
   <priority>0.7</priority>
 </url>
+   <!-- Contact-us -->
+  <url>
+  <loc>https://divcraft.online/Contact-us.html</loc>
+  <lastmod>2026-11-21</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.4</priority>
+</url>
+   <!-- Cookie -->
+  <url>
+  <loc>https://divcraft.online/Cookie.html</loc>
+  <lastmod>2026-11-21</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.4</priority>
+</url>
+   <!-- Disclaimer -->
+  <url>
+  <loc>https://divcraft.online/Disclaimer.html</loc>
+  <lastmod>2026-11-21</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.4</priority>
+</url>
+   <!-- Terms -->
+  <url>
+  <loc>https://divcraft.online/Terms.html</loc>
+  <lastmod>2026-11-21</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.4</priority>
+</url>
+   <!-- privacy-policy -->
+  <url>
+  <loc>https://divcraft.online/privacy-policy.html</loc>
+  <lastmod>2026-11-21</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.4</priority>
+</url>
 
 </urlset>
