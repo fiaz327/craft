@@ -8,6 +8,7 @@ DivCraft is a collection of fast, browser-based micro-tools built for developers
 
 | Tool | Category | Direct Link |
 | :--- | :--- | :--- |
+| **Icon Lab** | SVG & UI Icons | [Open Icon Lab](https://divcraft.online/icon-lab.html) |
 | **Receipt Maker** | Billing & Invoices | [Open Receipt Maker](https://divcraft.online/receipt-maker.html) |
 | **Ecommerce Profit Calc** | Seller Margin & Fees | [Open Profit Calculator](https://divcraft.online/ecommerce-margin-calculator.html) |
 | **Black Friday Deal Calc** | Discount & Tax Math | [Open Deal Calculator](https://divcraft.online/black-friday-deal-calculator.html) |
