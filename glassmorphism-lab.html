@@ -55,9 +55,9 @@
   "@graph": [
     {
       "@type": "WebApplication",
-      "name": "Glassmorphism & Frosted Glass CSS Builder",
+      "name": "Glassmorphism & Frosted Glass CSS Generator",
       "url": "https://divcraft.online/glassmorphism-lab.html",
-      "applicationCategory": "DesignApplication",
+      "applicationCategory": "DeveloperApplication",
       "operatingSystem": "Any (Web Browser)",
       "browserRequirements": "Requires JavaScript. Runs locally in the browser.",
       "isAccessibleForFree": true,
@@ -66,7 +66,7 @@
         "price": "0",
         "priceCurrency": "USD"
       },
-      "description": "Free client-side frosted glass and glassmorphism generator to tune backdrop blur, glass opacity, and border shine and export CSS or Tailwind classes.",
+      "description": "Free browser-based glassmorphism and frosted glass CSS generator. Adjust backdrop-filter blur, opacity, and border shine and export Pure CSS or Tailwind utility classes.",
       "provider": {
         "@type": "Organization",
         "name": "DivCraft",
@@ -81,7 +81,7 @@
           "name": "Why is my CSS backdrop-filter blur not showing up?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "backdrop-filter requires a semi-transparent background or overlay over content or backgrounds that have visual contrast behind them, along with proper browser support."
+            "text": "Two things are required for backdrop-filter: blur() to work: your element must have a semi-transparent background color (such as rgba(255, 255, 255, 0.16)), and there must be colorful shapes, gradients, or an image directly behind it. Over a plain solid white page, blur has nothing to distort."
           }
         },
         {
@@ -89,7 +89,7 @@
           "name": "Does Safari require the -webkit-backdrop-filter prefix?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Including -webkit-backdrop-filter alongside backdrop-filter helps ensure consistent frosted glass rendering across Safari and WebKit-based browsers."
+            "text": "Yes. Apple Safari on iOS and macOS still relies on -webkit-backdrop-filter in several versions. Our generator automatically includes both the standard property and the -webkit- prefix so your glass cards work across Chrome, Safari, Edge, and Firefox."
           }
         },
         {
@@ -97,7 +97,7 @@
           "name": "Is my uploaded preview image sent to any server?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "No. Preview images and tool controls run locally in your browser without uploading files to a server."
+            "text": "Never. When you choose a custom wallpaper using the Use your image button, your browser reads the file locally via the FileReader API. Nothing is uploaded or stored on any external server."
           }
         }
       ]
@@ -105,7 +105,6 @@
   ]
 }
 </script>
-
   <style>
     @layer base {
       html, body {
@@ -220,56 +219,6 @@
     }
   </style>
 
-  <!-- JSON-LD Structured Data for SEO -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "SoftwareApplication",
-        "name": "Frosted Glass Effect CSS & Tailwind Card Builder",
-        "applicationCategory": "DeveloperApplication",
-        "operatingSystem": "Web Browser",
-        "url": "https://divcraft.online/glassmorphism-lab.html",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD"
-        },
-        "description": "Free browser-based frosted glass CSS and Tailwind card builder with live blur preview, custom image testing, and Safari webkit support."
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "How do I make a frosted glass effect in CSS?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Combine a semi-transparent rgba() background color with backdrop-filter: blur(18px), -webkit-backdrop-filter: blur(18px) for Safari, and a 1px translucent border."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Why is CSS backdrop-filter blur not working on my card?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Backdrop blur requires two things: a semi-transparent background (like rgba(255, 255, 255, 0.16)) and a colorful gradient, shape, or photo directly behind the card. Over a solid white page, blur has nothing to distort."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How do I do frosted glass in Tailwind CSS?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Use a translucent background utility like bg-white/15 paired with backdrop-blur-lg and border border-white/30."
-            }
-          }
-        ]
-      }
-    ]
-  }
-  </script>
 </head>
 <body class="bg-surface text-on-surface font-sans flex flex-col min-h-screen transition-colors duration-200">
 
@@ -326,11 +275,11 @@
             <span>Back to All Tools</span>
           </a>
           <h1 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-on-surface">
-            Frosted Glass Effect CSS &amp; Tailwind Builder
-          </h1>
-          <p class="text-sm text-on-surface-variant max-w-2xl">
-            Tune background blur, transparency, and border shine over live gradients or your own image, then copy clean CSS or Tailwind utility classes in one click.
-          </p>
+  Glassmorphism &amp; Frosted Glass CSS Generator
+</h1>
+<p class="text-sm text-on-surface-variant max-w-2xl">
+  Design frosted glass cards, buttons, and transparent blur overlays right in your browser. Adjust <code class="font-mono text-primary">backdrop-filter</code> blur, opacity, and border shine over gradients or your own image, then copy clean CSS or Tailwind utility classes in one click.
+</p>
         </div>
 
         <!-- Saved Presets Quick Drawer Button -->
@@ -637,44 +586,45 @@
       </section>
 
       <!-- SEO Content Section: Easy Human Guide (~500 Words) -->
-      <article class="bg-surface-container-low border border-outline/15 rounded-2xl p-5 sm:p-8 shadow-sm flex flex-col gap-6 mt-2">
-        <div class="flex flex-col gap-2 max-w-3xl">
-          <span class="text-xs font-mono uppercase tracking-wider text-primary font-semibold">Design Guide &amp; Best Practices</span>
-          <h2 class="text-xl sm:text-2xl font-bold text-on-surface">How to Make a Frosted Glass Effect in CSS and Tailwind Without Broken Blur</h2>
-          <p class="text-sm text-on-surface-variant leading-relaxed">
-            A frosted glass card lets your background colors and hero photos shine softly through an overlay while keeping headlines crisp and readable. Whether you write plain CSS or copy-paste Tailwind utility classes, getting the right balance between blur radius, transparency, and edge lighting makes the difference between a muddy box and a clean UI panel.
-          </p>
-        </div>
+      <!-- SEO Content Section: Easy Human Guide -->
+<article class="bg-surface-container-low border border-outline/15 rounded-2xl p-5 sm:p-8 shadow-sm flex flex-col gap-6 mt-2">
+  <div class="flex flex-col gap-2 max-w-3xl">
+    <span class="text-xs font-mono uppercase tracking-wider text-primary font-semibold">CSS &amp; Tailwind Glassmorphism Guide</span>
+    <h2 class="text-xl sm:text-2xl font-bold text-on-surface">How to Create a Frosted Glass Effect in CSS &amp; Tailwind</h2>
+    <p class="text-sm text-on-surface-variant leading-relaxed">
+      A <strong>glassmorphism UI card</strong> lets background gradients and photos shine softly through a translucent layer while keeping text sharp and readable. Using CSS <code class="font-mono text-primary">backdrop-filter: blur()</code> or Tailwind backdrop blur utilities, you can balance transparency, saturation, and subtle border highlights without heavy scripts.
+    </p>
+  </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2 border-t border-outline/10">
-          <div class="flex flex-col gap-2">
-            <h3 class="text-base font-bold text-on-surface flex items-center gap-2">
-              <span class="w-6 h-6 rounded-lg bg-primary/10 text-primary font-mono text-xs flex items-center justify-center font-bold">1</span>
-              Build a Transparent Blurred Card in 3 Steps
-            </h3>
-            <p class="text-sm text-on-surface-variant leading-relaxed">
-              Start by picking <strong>Frosted</strong> for bright backgrounds or <strong>Midnight</strong> for dark themes. Next, keep <strong>Background Blur</strong> between 14px and 22px and set <strong>Glass Opacity</strong> around 12% to 25%. Finally, click <em>Use your image</em> to test how your text reads over an actual screenshot from your website before copying the CSS.
-            </p>
-          </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2 border-t border-outline/10">
+    <div class="flex flex-col gap-2">
+      <h3 class="text-base font-bold text-on-surface flex items-center gap-2">
+        <span class="w-6 h-6 rounded-lg bg-primary/10 text-primary font-mono text-xs flex items-center justify-center font-bold">1</span>
+        Build a Transparent Blurred Card in 3 Steps
+      </h3>
+      <p class="text-sm text-on-surface-variant leading-relaxed">
+        Start with the <strong>Frosted</strong> preset for light themes or <strong>Midnight</strong> for dark interfaces. Keep <strong>Background Blur</strong> between <code class="font-mono text-primary">14px</code> and <code class="font-mono text-primary">22px</code> and <strong>Glass Opacity</strong> around <code class="font-mono text-primary">12%</code> to <code class="font-mono text-primary">25%</code>. Click <em>Use your image</em> to test contrast over your own layout before copying the CSS or Tailwind classes.
+      </p>
+    </div>
 
-          <div class="flex flex-col gap-2">
-            <h3 class="text-base font-bold text-on-surface flex items-center gap-2">
-              <span class="w-6 h-6 rounded-lg bg-primary/10 text-primary font-mono text-xs flex items-center justify-center font-bold">2</span>
-              Fix Safari Blur &amp; Low-Contrast Text Issues
-            </h3>
-            <p class="text-sm text-on-surface-variant leading-relaxed">
-              Apple Safari on iPhone and Mac requires the <code class="font-mono text-primary">-webkit-backdrop-filter</code> prefix alongside standard <code class="font-mono text-primary">backdrop-filter</code>. Our output includes both automatically. Also add a thin 1px semi-transparent border so your card edge stays sharp even when placed over busy photography.
-            </p>
-          </div>
-        </div>
+    <div class="flex flex-col gap-2">
+      <h3 class="text-base font-bold text-on-surface flex items-center gap-2">
+        <span class="w-6 h-6 rounded-lg bg-primary/10 text-primary font-mono text-xs flex items-center justify-center font-bold">2</span>
+        Safari <code class="font-mono text-primary">-webkit-backdrop-filter</code> &amp; Edge Shine
+      </h3>
+      <p class="text-sm text-on-surface-variant leading-relaxed">
+        Apple Safari on iOS and macOS requires the <code class="font-mono text-primary">-webkit-backdrop-filter</code> vendor prefix alongside standard <code class="font-mono text-primary">backdrop-filter</code>. This generator outputs both automatically, paired with a crisp <code class="font-mono text-primary">1px</code> translucent border so your frosted glass card stands out over busy backgrounds.
+      </p>
+    </div>
+  </div>
 
-        <div class="flex flex-col gap-2 pt-2 border-t border-outline/10">
-          <h3 class="text-base font-bold text-on-surface">Where Frosted Glass Overlays Work Best on Modern Sites</h3>
-          <p class="text-sm text-on-surface-variant leading-relaxed">
-            Use glass overlays selectively on sticky navigation bars, pricing cards, login modals, floating CTA buttons, and hero feature badges. Pairing a translucent card with soft radial gradients or colorful shapes behind it creates natural depth without adding heavy JavaScript libraries.
-          </p>
-        </div>
-      </article>
+  <div class="flex flex-col gap-2 pt-2 border-t border-outline/10">
+    <h3 class="text-base font-bold text-on-surface">Best UI Use Cases for Frosted Glass &amp; Backdrop Blur</h3>
+    <p class="text-sm text-on-surface-variant leading-relaxed">
+      Frosted glass overlays work best on sticky navigation headers, pricing cards, login modals, floating action buttons, and hero badges. Placing a semi-transparent <code class="font-mono text-primary">rgba()</code> container over colorful mesh gradients or photography creates layered visual depth with pure CSS.
+    </p>
+  </div>
+</article>
 
       <!-- FAQ Section -->
       <section aria-labelledby="faq-heading" class="flex flex-col gap-3">
