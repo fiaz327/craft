@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+  <title>EXIF &amp; GPS Metadata Remover — Free Browser Image Privacy Tool | DivCraft</title>
+  <meta name="description" content="Remove hidden EXIF metadata, GPS location, and camera details from photos locally in your browser. Free client-side image privacy tool with zero server uploads."/>
+  <meta property="og:title" content="EXIF &amp; GPS Metadata Remover — Free Browser Image Privacy Tool | DivCraft"/>
+  <meta property="og:description" content="Inspect and strip hidden EXIF tags, GPS coordinates, and device metadata from photos right in your browser—100% client-side with zero server uploads."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://divcraft.online/exif-metadata-remover.html"/>
+  <link rel="canonical" href="https://divcraft.online/exif-metadata-remover.html"/>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%234f46e5'><path d='M12 2L2 7l10 5 10-5-10-5zm0 13l-10-5v6l10 5 10-5v-6l-10 5z'/></svg>"/>
+
+  <!-- Google Fonts & Material Symbols -->
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-surface": "#131b2e",
+            "secondary": "#00687a",
+            "primary-container": "#4f46e5",
+            "outline": "#777587",
+            "surface": "#faf8ff",
+            "surface-container-high": "#e2e7ff",
+            "surface-container": "#eaedff",
+            "primary": "#3525cd",
+            "on-surface-variant": "#464555",
+            "outline-variant": "#c7c4d8",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-low": "#f2f3ff"
+          },
+          fontFamily: {
+            sans: ["Inter", "sans-serif"],
+            mono: ["JetBrains Mono", "monospace"]
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- WebApplication & FAQ Structured Data -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "EXIF & GPS Metadata Remover",
+      "url": "https://divcraft.online/exif-metadata-remover.html",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any (Web Browser)",
+      "browserRequirements": "Requires JavaScript. Runs 100% locally in the browser.",
+      "isAccessibleForFree": true,
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "description": "Remove hidden EXIF metadata, GPS location, and camera details from photos locally in your browser. Free client-side image privacy tool with zero server uploads.",
+      "provider": {
+        "@type": "Organization",
+        "name": "DivCraft",
+        "url": "https://divcraft.online/"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I remove GPS coordinates from a photo in my browser?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Pick or drop your photo into the tool above, see if GPS tags are present, choose your preferred clean format, and download the updated image. Everything is processed locally on your device without uploading files to any server."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I check EXIF data and remove location before sharing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The side panel reads standard JPEG EXIF and GPS coordinates first so you know what details are inside the file, then exports a clean copy without those tags."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is EXIF data removed when resizing an image?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Not always. Some image editors or resizing apps preserve old EXIF and GPS tags when saving. Re-exporting a clean image or stripping metadata segments removes hidden tags reliably."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does this tool upload my photos to any server?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. DivCraft runs 100% client-side in your browser with zero server tracking or file uploads."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+  <style>
+    @layer base {
+      html, body {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        transition: background-color 0.25s ease, color 0.25s ease;
+      }
+      body { overscroll-behavior-y: none; }
+      .pb-safe { padding-bottom: env(safe-area-inset-bottom, 16px); }
+      .pt-safe { padding-top: env(safe-area-inset-top, 0px); }
+    }
+
+    html.dark { color-scheme: dark; }
+    html.dark body { background-color: #0c1019 !important; color: #e4e9f7 !important; }
+    html.dark .bg-surface { background-color: #0c1019 !important; }
+    html.dark .bg-surface-container-lowest { background-color: #080c14 !important; }
+    html.dark .bg-surface-container-low { background-color: #121826 !important; }
+    html.dark .bg-surface-container { background-color: #182033 !important; }
+    html.dark .bg-surface-container-high { background-color: #1f2a42 !important; }
+    html.dark .text-on-surface { color: #f1f5f9 !important; }
+    html.dark .text-on-surface-variant { color: #94a3b8 !important; }
+    html.dark .border-outline-variant { border-color: #1e293b !important; }
+
+    html:not(.dark) body { background-color: #f8fafc !important; color: #0f172a !important; }
+    html:not(.dark) .bg-surface { background-color: #f8fafc !important; }
+    html:not(.dark) .bg-surface-container-lowest { background-color: #ffffff !important; }
+    html:not(.dark) .bg-surface-container-low { background-color: #ffffff !important; }
+    html:not(.dark) .bg-surface-container { background-color: #f1f5f9 !important; }
+    html:not(.dark) .bg-surface-container-high { background-color: #e2e8f0 !important; }
+    html:not(.dark) .text-on-surface { color: #0f172a !important; }
+    html:not(.dark) .text-on-surface-variant { color: #475569 !important; }
+  </style>
+</head>
+<body class="bg-surface text-on-surface font-sans flex flex-col min-h-screen transition-colors duration-200">
+
+  <!-- Fixed Top Navigation Header -->
+  <header class="fixed top-0 w-full z-50 pt-safe bg-surface/90 backdrop-blur-xl border-b border-outline/10 shadow-sm transition-colors duration-200">
+    <div class="h-16 px-4 md:px-8 max-w-7xl mx-auto flex items-center justify-between gap-3">
+      <a href="index.html" class="flex items-center gap-2.5 group">
+        <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-indigo-600 via-primary to-cyan-400 p-[1.5px] shadow-sm flex items-center justify-center">
+          <div class="w-full h-full bg-surface-container-lowest rounded-[10px] flex items-center justify-center">
+            <span class="material-symbols-outlined text-primary text-[20px]" aria-hidden="true">terminal</span>
+          </div>
+        </div>
+        <div class="flex flex-col">
+          <div class="flex items-center gap-1.5">
+            <span class="font-bold text-lg tracking-tight text-on-surface group-hover:text-primary transition-colors">DivCraft</span>
+            <span class="text-[9px] font-mono font-bold px-1.5 py-0.5 rounded bg-primary/10 text-primary uppercase tracking-wider">v2.4</span>
+          </div>
+          <span class="text-[10px] font-mono text-on-surface-variant font-medium tracking-wide">Client-Side Hub</span>
+        </div>
+      </a>
+
+      <div class="flex items-center gap-2">
+        <a href="index.html" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-surface-container hover:bg-surface-container-high text-xs font-mono font-medium text-on-surface transition-all">
+          <span class="material-symbols-outlined text-[16px]" aria-hidden="true">grid_view</span>
+          <span>All Tools</span>
+        </a>
+
+        <button type="button" aria-label="Toggle Theme Mode" class="w-9 h-9 flex items-center justify-center rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface transition-all active:scale-90" id="themeToggleBtn" title="Toggle Light / Dark Mode">
+          <span class="material-symbols-outlined text-[20px] text-amber-400" id="themeIconLight" aria-hidden="true">light_mode</span>
+          <span class="material-symbols-outlined text-[20px] text-indigo-400 hidden" id="themeIconDark" aria-hidden="true">dark_mode</span>
+        </button>
+
+        <div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 dark:text-emerald-400 text-[11px] font-mono font-medium">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+          <span>100% Client-Side</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Area -->
+  <main class="flex flex-col relative w-full pt-20 pb-24 min-h-screen">
+    <div class="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 flex flex-col gap-8">
+
+      <!-- Page Header & Privacy Status Banner -->
+      <section class="pt-3 flex flex-col lg:flex-row lg:items-end justify-between gap-4">
+        <div class="flex flex-col gap-1.5">
+          <a href="index.html" class="inline-flex items-center gap-1 text-xs font-mono text-primary hover:underline w-fit">
+            <span class="material-symbols-outlined text-[15px]" aria-hidden="true">arrow_back</span>
+            <span>Back to All Tools</span>
+          </a>
+          <h1 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-on-surface">
+            EXIF &amp; GPS Metadata Remover
+          </h1>
+          <p class="text-sm text-on-surface-variant max-w-2xl">
+            Inspect and strip hidden EXIF tags, GPS coordinates, and device metadata from photos right in your browser—100% client-side with zero server uploads.
+          </p>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-2 shrink-0">
+          <span class="px-3 py-1.5 rounded-xl bg-emerald-500/10 border border-emerald-500/25 text-xs font-mono font-bold text-emerald-600 dark:text-emerald-400">
+            Zero Server Uploads
+          </span>
+          <span class="px-3 py-1.5 rounded-xl bg-surface-container border border-outline/15 text-xs font-mono font-semibold text-on-surface-variant">
+            JPG • PNG • WebP
+          </span>
+        </div>
+      </section>
+
+      <!-- MAIN INTERACTIVE TOOL WORKSPACE -->
+      <section class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+
+        <!-- LEFT: UPLOAD, OPTIONS & QUEUE (7 COLS) -->
+        <div class="lg:col-span-7 bg-surface-container-low border border-outline/15 rounded-2xl p-4 sm:p-6 shadow-sm flex flex-col gap-5">
+
+          <!-- Dropzone -->
+          <div id="dropzone" role="button" tabindex="0" aria-label="Drop or select photos to remove EXIF and GPS metadata" class="border-2 border-dashed border-primary/35 hover:border-primary bg-surface-container-lowest rounded-2xl p-6 sm:p-8 text-center cursor-pointer transition-all flex flex-col items-center gap-2">
+            <input type="file" id="fileInput" accept="image/jpeg,image/png,image/webp,image/*" multiple class="hidden"/>
+            <div class="w-12 h-12 rounded-2xl bg-primary/10 text-primary flex items-center justify-center">
+              <span class="material-symbols-outlined text-[26px]" aria-hidden="true">shield_lock</span>
+            </div>
+            <p class="text-sm sm:text-base font-bold text-on-surface">Drop photos here or click to select</p>
+            <p class="text-xs font-mono text-on-surface-variant">Processed locally on your device • Supports single or multiple images</p>
+          </div>
+
+          <!-- Strip & Output Controls -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2 border-t border-outline/10">
+            <div class="flex flex-col gap-1.5">
+              <label for="outputMode" class="text-xs font-bold text-on-surface">Cleaning &amp; Export Mode</label>
+              <select id="outputMode" class="rounded-xl bg-surface-container-lowest border border-outline/20 px-3 py-2.5 text-xs font-mono text-on-surface focus:border-primary">
+                <option value="canvas-jpeg" selected>Clean JPEG Re-Encode (Strips All Metadata)</option>
+                <option value="jpeg-segment-strip">JPEG Binary Segment Strip (Keeps JPEG Bytes)</option>
+                <option value="canvas-png">Clean PNG Export (Lossless, No EXIF)</option>
+                <option value="canvas-webp">Clean WebP Export (Compact, No EXIF)</option>
+              </select>
+              <span class="text-[11px] text-on-surface-variant">Canvas re-encode guarantees full EXIF, GPS, and XMP removal.</span>
+            </div>
+
+            <div class="flex flex-col gap-1.5">
+              <div class="flex items-center justify-between">
+                <label for="qualityRange" class="text-xs font-bold text-on-surface">JPEG / WebP Quality</label>
+                <span id="qualityVal" class="text-xs font-mono font-bold text-primary">92%</span>
+              </div>
+              <input id="qualityRange" type="range" min="50" max="100" value="92" class="mt-2 accent-primary cursor-pointer"/>
+              <span class="text-[11px] text-on-surface-variant">Applies when exporting clean JPEG or WebP files.</span>
+            </div>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="flex flex-wrap items-center justify-between gap-2 pt-2 border-t border-outline/10">
+            <div class="flex flex-wrap gap-2">
+              <button type="button" id="cleanSelectedBtn" disabled class="px-3.5 py-2 rounded-xl bg-surface-container hover:bg-surface-container-high border border-outline/15 text-xs font-mono font-semibold text-on-surface disabled:opacity-40 transition-all">
+                Strip Selected
+              </button>
+              <button type="button" id="cleanAllBtn" disabled class="px-3.5 py-2 rounded-xl bg-primary hover:bg-primary-container text-white text-xs font-mono font-semibold disabled:opacity-40 transition-all active:scale-95">
+                Strip All Photos
+              </button>
+            </div>
+
+            <div class="flex flex-wrap gap-2">
+              <button type="button" id="downloadBtn" disabled class="px-3.5 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-mono font-semibold disabled:opacity-40 transition-all active:scale-95">
+                Download Cleaned
+              </button>
+              <button type="button" id="clearBtn" disabled class="px-3 py-2 rounded-xl bg-surface-container hover:bg-rose-500/15 hover:text-rose-600 text-xs font-mono font-medium text-on-surface-variant disabled:opacity-40 transition-all">
+                Clear
+              </button>
+            </div>
+          </div>
+
+          <!-- Loaded Files List -->
+          <div class="flex flex-col gap-2">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono font-bold uppercase tracking-wider text-on-surface-variant">Loaded Photos (<span id="fileCountEl">0</span>)</span>
+              <span id="batchStatusText" class="text-[11px] font-mono text-on-surface-variant">Ready</span>
+            </div>
+            <div id="fileList" class="flex flex-col gap-2 max-h-60 overflow-y-auto">
+              <div class="rounded-xl bg-surface-container-lowest border border-outline/15 p-4 text-xs font-mono text-on-surface-variant text-center">
+                No images loaded yet. Select a photo to inspect GPS &amp; EXIF tags.
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- RIGHT: LIVE PREVIEW & METADATA INSPECTOR (5 COLS) -->
+        <div class="lg:col-span-5 lg:sticky lg:top-20 flex flex-col gap-4">
+          <div class="bg-surface-container-low border border-outline/15 rounded-2xl p-5 shadow-sm flex flex-col gap-4">
+
+            <div class="flex items-center justify-between border-b border-outline/10 pb-3">
+              <div>
+                <span class="text-[11px] font-mono uppercase tracking-wider text-on-surface-variant">Privacy &amp; GPS Inspector</span>
+                <h2 id="inspectorTitleEl" class="text-lg font-extrabold text-on-surface mt-0.5">No Photo Selected</h2>
+              </div>
+              <span id="privacyBadge" class="px-3 py-1 rounded-full text-[11px] font-mono font-bold bg-surface-container text-on-surface-variant">
+                WAITING
+              </span>
+            </div>
+
+            <!-- Photo Preview Box -->
+            <div class="rounded-xl bg-surface-container-lowest border border-outline/15 p-2.5 flex items-center justify-center min-h-[170px] max-h-56 overflow-hidden">
+              <img id="previewImg" alt="Selected photo preview" class="hidden max-h-48 w-auto object-contain rounded-lg"/>
+              <span id="previewPlaceholder" class="text-xs font-mono text-on-surface-variant">Preview will appear here</span>
+            </div>
+
+            <!-- GPS Alert Box -->
+            <div id="gpsAlertBox" class="rounded-xl border border-outline/15 bg-surface-container p-3 text-xs leading-relaxed text-on-surface-variant">
+              Upload a JPEG, PNG, or WebP file to check for embedded GPS coordinates, camera model, and timestamps.
+            </div>
+
+            <!-- Before vs After Size Summary -->
+            <div class="grid grid-cols-2 gap-3">
+              <div class="bg-surface-container-lowest border border-outline/15 rounded-xl p-3">
+                <span class="text-[11px] text-on-surface-variant block">Original File</span>
+                <span id="origSizeEl" class="text-base font-extrabold font-mono text-on-surface">—</span>
+                <span id="origDimsEl" class="text-[11px] font-mono text-on-surface-variant block">—</span>
+              </div>
+
+              <div class="bg-surface-container-lowest border border-outline/15 rounded-xl p-3">
+                <span class="text-[11px] text-on-surface-variant block">Cleaned Output</span>
+                <span id="cleanSizeEl" class="text-base font-extrabold font-mono text-emerald-600 dark:text-emerald-400">Not stripped yet</span>
+                <span id="cleanFormatEl" class="text-[11px] font-mono text-on-surface-variant block">—</span>
+              </div>
+            </div>
+
+            <!-- Metadata Table -->
+            <div class="bg-surface-container-lowest border border-outline/15 rounded-xl overflow-hidden">
+              <table class="w-full text-left border-collapse text-xs">
+                <tbody id="metaTableBody" class="divide-y divide-outline/10 font-mono">
+                  <tr>
+                    <th class="py-2 px-3 text-on-surface-variant font-semibold w-2/5">GPS Coordinates</th>
+                    <td class="py-2 px-3 text-on-surface">—</td>
+                  </tr>
+                  <tr>
+                    <th class="py-2 px-3 text-on-surface-variant font-semibold">Camera / Make</th>
+                    <td class="py-2 px-3 text-on-surface">—</td>
+                  </tr>
+                  <tr>
+                    <th class="py-2 px-3 text-on-surface-variant font-semibold">Software / Tool</th>
+                    <td class="py-2 px-3 text-on-surface">—</td>
+                  </tr>
+                  <tr>
+                    <th class="py-2 px-3 text-on-surface-variant font-semibold">Date / Timestamp</th>
+                    <td class="py-2 px-3 text-on-surface">—</td>
+                  </tr>
+                  <tr>
+                    <th class="py-2 px-3 text-on-surface-variant font-semibold">EXIF Segment</th>
+                    <td class="py-2 px-3 text-on-surface">—</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+          </div>
+        </div>
+
+      </section>
+
+      <!-- SEO CONTENT SECTION: EASY HUMAN GUIDE & Q&A -->
+      <article class="bg-surface-container-low border border-outline/15 rounded-2xl p-5 sm:p-8 shadow-sm flex flex-col gap-7">
+
+        <div class="flex flex-col gap-3">
+          <span class="text-[11px] font-mono font-bold uppercase tracking-wider text-primary">Image Privacy &amp; Metadata Guide</span>
+          <h2 class="text-xl sm:text-2xl font-extrabold text-on-surface">
+            Why You Should Remove EXIF Metadata &amp; GPS Location Before Sharing Photos
+          </h2>
+          <p class="text-sm leading-relaxed text-on-surface-variant">
+            When you take a photo with a phone or digital camera, the image file often stores hidden <strong>EXIF metadata</strong> inside its headers. That data can include exact <strong>GPS latitude and longitude</strong>, device make and model, software tags, and the date and time the shot was taken. Using a <strong>client-side EXIF remover</strong> lets you inspect those details and strip them locally before posting photos on forums, marketplaces, social media, or shared links.
+          </p>
+        </div>
+
+        <!-- 3 Highlight Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div class="bg-surface-container-lowest border border-outline/15 rounded-xl p-4 flex flex-col gap-2">
+            <div class="flex items-center gap-2 text-primary font-bold text-sm">
+              <span class="material-symbols-outlined text-[19px]" aria-hidden="true">location_on</span>
+              <h3>Hidden GPS Location Risks</h3>
+            </div>
+            <p class="text-xs leading-relaxed text-on-surface-variant">
+              Photos taken at home, work, or school can embed precise GPS coordinates. Checking and removing GPS data before sharing helps keep your physical location private.
+            </p>
+          </div>
+
+          <div class="bg-surface-container-lowest border border-outline/15 rounded-xl p-4 flex flex-col gap-2">
+            <div class="flex items-center gap-2 text-primary font-bold text-sm">
+              <span class="material-symbols-outlined text-[19px]" aria-hidden="true">photo_camera</span>
+              <h3>Camera &amp; Device Footprints</h3>
+            </div>
+            <p class="text-xs leading-relaxed text-on-surface-variant">
+              EXIF tags frequently record phone/camera models, editing apps, and capture timestamps. Stripping metadata removes those extra file details cleanly.
+            </p>
+          </div>
+
+          <div class="bg-surface-container-lowest border border-outline/15 rounded-xl p-4 flex flex-col gap-2">
+            <div class="flex items-center gap-2 text-primary font-bold text-sm">
+              <span class="material-symbols-outlined text-[19px]" aria-hidden="true">lock</span>
+              <h3>Zero Server Upload Privacy</h3>
+            </div>
+            <p class="text-xs leading-relaxed text-on-surface-variant">
+              Sensitive or personal photos never need to be uploaded to a remote server. All parsing and cleaning run inside your browser tab with JavaScript.
+            </p>
+          </div>
+        </div>
+
+        <!-- Step-by-Step How-To -->
+        <div class="bg-surface-container-lowest border border-outline/15 rounded-xl p-5 flex flex-col gap-2.5">
+          <h3 class="font-bold text-base text-on-surface">
+            How to Check EXIF Data &amp; Remove Location in 3 Steps
+          </h3>
+          <ul class="text-xs sm:text-sm text-on-surface-variant space-y-1.5 pl-4 list-disc">
+            <li><strong>Select your photo:</strong> Drop or pick a JPG/JPEG, PNG, or WebP image in the box above.</li>
+            <li><strong>Review detected tags:</strong> Check if GPS coordinates, camera details, or timestamps are present in the inspector.</li>
+            <li><strong>Strip &amp; download:</strong> Click <strong>Strip All Photos</strong> or <strong>Download Cleaned</strong> to save a metadata-free copy.</li>
+          </ul>
+        </div>
+
+        <!-- Q&A Section -->
+        <div class="flex flex-col gap-3">
+          <h3 class="font-bold text-base sm:text-lg text-on-surface">Quick Questions &amp; Answers</h3>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-3.5">
+            <div class="bg-surface-container-lowest border border-outline/15 rounded-xl p-4 flex flex-col gap-1">
+              <h4 class="font-bold text-xs sm:text-sm text-on-surface">Q1. How do I remove GPS coordinates from a photo?</h4>
+              <p class="text-xs leading-relaxed text-on-surface-variant">
+                Pick your file in the box above, see if GPS tags appear in the report, choose your clean export format, and download the updated image. It all happens on your own device with no server upload.
+              </p>
+            </div>
+
+            <div class="bg-surface-container-lowest border border-outline/15 rounded-xl p-4 flex flex-col gap-1">
+              <h4 class="font-bold text-xs sm:text-sm text-on-surface">Q2. Can I check EXIF data and remove location before sharing?</h4>
+              <p class="text-xs leading-relaxed text-on-surface-variant">
+                Yes. The side panel reads available JPEG EXIF and GPS tags first so you can spot location coordinates or camera info, then exports a stripped copy without them.
+              </p>
+            </div>
+
+            <div class="bg-surface-container-lowest border border-outline/15 rounded-xl p-4 flex flex-col gap-1">
+              <h4 class="font-bold text-xs sm:text-sm text-on-surface">Q3. Is EXIF data removed when resizing an image?</h4>
+              <p class="text-xs leading-relaxed text-on-surface-variant">
+                Not always. Some image editors or resizing apps retain old EXIF and GPS tags when saving. Re-exporting a clean image or stripping metadata segments removes hidden tags reliably.
+              </p>
+            </div>
+
+            <div class="bg-surface-container-lowest border border-outline/15 rounded-xl p-4 flex flex-col gap-1">
+              <h4 class="font-bold text-xs sm:text-sm text-on-surface">Q4. Are my photos uploaded to any server?</h4>
+              <p class="text-xs leading-relaxed text-on-surface-variant">
+                No. Every image is inspected and cleaned locally in your browser with zero server uploads.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </article>
+
+      <!-- Related DivCraft Tools -->
+      <section class="flex flex-col gap-3.5">
+        <div class="flex items-center justify-between">
+          <h2 class="text-lg sm:text-xl font-bold text-on-surface">More Tools on DivCraft</h2>
+          <a href="index.html" class="text-xs font-mono text-primary hover:underline">All Tools →</a>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5">
+          <a href="black-friday-deal-calculator.html" class="bg-surface-container-low border border-outline/15 hover:border-primary/50 rounded-xl p-4 flex flex-col justify-between gap-2 transition-all group">
+            <div>
+              <h3 class="font-bold text-sm text-on-surface group-hover:text-primary transition-colors">Black Friday Deal &amp; Tax Calc</h3>
+              <p class="text-xs text-on-surface-variant mt-0.5">Calculate stackable coupons, cashback, pre-sale price checks, and US state sales tax.</p>
+            </div>
+            <span class="text-xs font-mono text-primary inline-flex items-center gap-1">Open Tool <span class="material-symbols-outlined text-[14px]" aria-hidden="true">arrow_forward</span></span>
+          </a>
+
+          <a href="icon-lab.html" class="bg-surface-container-low border border-outline/15 hover:border-primary/50 rounded-xl p-4 flex flex-col justify-between gap-2 transition-all group">
+            <div>
+              <h3 class="font-bold text-sm text-on-surface group-hover:text-primary transition-colors">Icon Lab – Vector Customizer</h3>
+              <p class="text-xs text-on-surface-variant mt-0.5">Customize colors, stroke, and size for free vector icons and copy SVG code.</p>
+            </div>
+            <span class="text-xs font-mono text-primary inline-flex items-center gap-1">Open Tool <span class="material-symbols-outlined text-[14px]" aria-hidden="true">arrow_forward</span></span>
+          </a>
+
+          <a href="ecommerce-margin-calculator.html" class="bg-surface-container-low border border-outline/15 hover:border-primary/50 rounded-xl p-4 flex flex-col justify-between gap-2 transition-all group">
+            <div>
+              <h3 class="font-bold text-sm text-on-surface group-hover:text-primary transition-colors">Ecommerce Profit Calc</h3>
+              <p class="text-xs text-on-surface-variant mt-0.5">Calculate real product profit, margin, shipping, fees, ad spend, and selling price.</p>
+            </div>
+            <span class="text-xs font-mono text-primary inline-flex items-center gap-1">Open Tool <span class="material-symbols-outlined text-[14px]" aria-hidden="true">arrow_forward</span></span>
+          </a>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="mt-2 pt-8 pb-4 border-t border-outline/15 text-xs text-on-surface-variant flex flex-col gap-4">
+        <div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 font-mono text-[11px]">
+          <a class="hover:text-primary transition-colors" href="index.html">Home</a>
+          <a class="hover:text-primary transition-colors" href="index.html#about">About Us</a>
+          <a class="hover:text-primary transition-colors" href="index.html#privacy">Privacy Policy</a>
+          <a class="hover:text-primary transition-colors" href="index.html#terms">Terms of Service</a>
+          <a class="hover:text-primary transition-colors" href="index.html#contact">Contact Us</a>
+        </div>
+        <div class="max-w-3xl mx-auto text-center flex flex-col gap-1.5">
+          <p class="text-[11px] leading-relaxed text-on-surface-variant/80">
+            <strong>Publisher Disclosure:</strong> DivCraft runs 100% locally in your browser with zero server tracking. Always verify your cleaned photo in the inspector before publishing sensitive images.
+          </p>
+          <p class="text-[10px] text-on-surface-variant/60">
+            © 2026 DivCraft Hub. All rights reserved.
+          </p>
+        </div>
+      </footer>
+
+    </div>
+  </main>
+
+  <script>
+    (function () {
+      // Theme Toggle (matches DivCraft storage key & behavior)
+      const themeToggleBtn = document.getElementById('themeToggleBtn');
+      const lightIcon = document.getElementById('themeIconLight');
+      const darkIcon = document.getElementById('themeIconDark');
+      const rootHtml = document.documentElement;
+
+      function updateThemeIcons(isDark) {
+        if (isDark) {
+          rootHtml.classList.add('dark');
+          if (lightIcon) lightIcon.classList.remove('hidden');
+          if (darkIcon) darkIcon.classList.add('hidden');
+        } else {
+          rootHtml.classList.remove('dark');
+          if (darkIcon) darkIcon.classList.remove('hidden');
+          if (lightIcon) lightIcon.classList.add('hidden');
+        }
+      }
+
+      updateThemeIcons(localStorage.getItem('devcraft_theme') === 'dark');
+      if (themeToggleBtn) {
+        themeToggleBtn.addEventListener('click', function () {
+          const willBeDark = !rootHtml.classList.contains('dark');
+          updateThemeIcons(willBeDark);
+          localStorage.setItem('devcraft_theme', willBeDark ? 'dark' : 'light');
+        });
+      }
+
+      const fileInput = document.getElementById('fileInput');
+      const dropzone = document.getElementById('dropzone');
+      const outputMode = document.getElementById('outputMode');
+      const qualityRange = document.getElementById('qualityRange');
+      const qualityVal = document.getElementById('qualityVal');
+      const cleanSelectedBtn = document.getElementById('cleanSelectedBtn');
+      const cleanAllBtn = document.getElementById('cleanAllBtn');
+      const downloadBtn = document.getElementById('downloadBtn');
+      const clearBtn = document.getElementById('clearBtn');
+      const fileCountEl = document.getElementById('fileCountEl');
+      const batchStatusText = document.getElementById('batchStatusText');
+      const fileListEl = document.getElementById('fileList');
+
+      const inspectorTitleEl = document.getElementById('inspectorTitleEl');
+      const privacyBadge = document.getElementById('privacyBadge');
+      const previewImg = document.getElementById('previewImg');
+      const previewPlaceholder = document.getElementById('previewPlaceholder');
+      const gpsAlertBox = document.getElementById('gpsAlertBox');
+      const origSizeEl = document.getElementById('origSizeEl');
+      const origDimsEl = document.getElementById('origDimsEl');
+      const cleanSizeEl = document.getElementById('cleanSizeEl');
+      const cleanFormatEl = document.getElementById('cleanFormatEl');
+      const metaTableBody = document.getElementById('metaTableBody');
+
+      let items = [];
+      let activeIndex = -1;
+
+      qualityRange.addEventListener('input', () => {
+        qualityVal.textContent = qualityRange.value + '%';
+      });
+
+      dropzone.addEventListener('click', () => fileInput.click());
+      dropzone.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          fileInput.click();
+        }
+      });
+
+      ['dragenter', 'dragover'].forEach((evt) => {
+        dropzone.addEventListener(evt, (e) => {
+          e.preventDefault();
+          dropzone.classList.add('border-primary', 'bg-primary/5');
+        });
+      });
+
+      ['dragleave', 'drop'].forEach((evt) => {
+        dropzone.addEventListener(evt, (e) => {
+          e.preventDefault();
+          dropzone.classList.remove('border-primary', 'bg-primary/5');
+        });
+      });
+
+      dropzone.addEventListener('drop', (e) => {
+        const files = Array.from(e.dataTransfer.files || []).filter((f) => f.type.startsWith('image/'));
+        if (files.length) handleFiles(files);
+      });
+
+      fileInput.addEventListener('change', (e) => {
+        const files = Array.from(e.target.files || []);
+        if (files.length) handleFiles(files);
+        fileInput.value = '';
+      });
+
+      async function handleFiles(files) {
+        for (const file of files) {
+          const buffer = await file.arrayBuffer();
+          const img = await loadImageFromFile(file);
+          const exif = parseJpegExif(buffer);
+          items.push({
+            file,
+            buffer,
+            previewUrl: URL.createObjectURL(file),
+            width: img.naturalWidth,
+            height: img.naturalHeight,
+            exif,
+            cleanedBlob: null,
+            cleanedName: null,
+            cleanedExif: null
+          });
+        }
+        if (activeIndex === -1 && items.length > 0) activeIndex = 0;
+        batchStatusText.textContent = `${items.length} file(s) ready`;
+        renderAll();
+      }
+
+      function loadImageFromFile(file) {
+        return new Promise((resolve, reject) => {
+          const url = URL.createObjectURL(file);
+          const img = new Image();
+          img.onload = () => {
+            URL.revokeObjectURL(url);
+            resolve(img);
+          };
+          img.onerror = (err) => {
+            URL.revokeObjectURL(url);
+            reject(err);
+          };
+          img.src = url;
+        });
+      }
+
+      function parseJpegExif(buffer) {
+        const view = new DataView(buffer);
+        const result = { hasExif: false, tags: {}, gps: null };
+        if (view.byteLength < 4 || view.getUint16(0) !== 0xffd8) return result;
+
+        let offset = 2;
+        while (offset + 4 < view.byteLength) {
+          const marker = view.getUint16(offset);
+          offset += 2;
+          if (marker === 0xffda || marker === 0xffd9) break;
+          const size = view.getUint16(offset);
+          if (size < 2 || offset + size > view.byteLength) break;
+
+          if (marker === 0xffe1 && size >= 8 && readAscii(view, offset + 2, 4) === 'Exif') {
+            result.hasExif = true;
+            const tiffStart = offset + 8;
+            const endian = view.getUint16(tiffStart);
+            const little = endian === 0x4949;
+            const ifd0Offset = view.getUint32(tiffStart + 4, little);
+            parseIfd(view, tiffStart, tiffStart + ifd0Offset, little, result);
+            break;
+          }
+          offset += size;
+        }
+        return result;
+      }
+
+      function parseIfd(view, tiffStart, dirStart, little, out) {
+        if (dirStart + 2 > view.byteLength) return;
+        const count = view.getUint16(dirStart, little);
+        let gpsIfdOffset = null;
+        let exifIfdOffset = null;
+
+        for (let i = 0; i < count; i++) {
+          const entryOffset = dirStart + 2 + i * 12;
+          if (entryOffset + 12 > view.byteLength) break;
+          const tag = view.getUint16(entryOffset, little);
+          const type = view.getUint16(entryOffset + 2, little);
+          const num = view.getUint32(entryOffset + 4, little);
+          const valOrOff = view.getUint32(entryOffset + 8, little);
+
+          if (tag === 0x010f) out.tags.Make = readTagString(view, tiffStart, type, num, entryOffset + 8, valOrOff, little);
+          if (tag === 0x0110) out.tags.Model = readTagString(view, tiffStart, type, num, entryOffset + 8, valOrOff, little);
+          if (tag === 0x0131) out.tags.Software = readTagString(view, tiffStart, type, num, entryOffset + 8, valOrOff, little);
+          if (tag === 0x0132) out.tags.DateTime = readTagString(view, tiffStart, type, num, entryOffset + 8, valOrOff, little);
+          if (tag === 0x8769) exifIfdOffset = tiffStart + valOrOff;
+          if (tag === 0x8825) gpsIfdOffset = tiffStart + valOrOff;
+        }
+
+        if (exifIfdOffset && exifIfdOffset + 2 <= view.byteLength) {
+          const eCount = view.getUint16(exifIfdOffset, little);
+          for (let i = 0; i < eCount; i++) {
+            const entryOffset = exifIfdOffset + 2 + i * 12;
+            if (entryOffset + 12 > view.byteLength) break;
+            const tag = view.getUint16(entryOffset, little);
+            const type = view.getUint16(entryOffset + 2, little);
+            const num = view.getUint32(entryOffset + 4, little);
+            const valOrOff = view.getUint32(entryOffset + 8, little);
+            if (tag === 0x9003 || tag === 0x9004) {
+              out.tags.OriginalDate = readTagString(view, tiffStart, type, num, entryOffset + 8, valOrOff, little);
+            }
+          }
+        }
+
+        if (gpsIfdOffset && gpsIfdOffset + 2 <= view.byteLength) {
+          out.gps = parseGpsIfd(view, tiffStart, gpsIfdOffset, little);
+        }
+      }
+
+      function parseGpsIfd(view, tiffStart, gpsStart, little) {
+        const count = view.getUint16(gpsStart, little);
+        let latRef = null, latVals = null, lonRef = null, lonVals = null;
+
+        for (let i = 0; i < count; i++) {
+          const entryOffset = gpsStart + 2 + i * 12;
+          if (entryOffset + 12 > view.byteLength) break;
+          const tag = view.getUint16(entryOffset, little);
+          const type = view.getUint16(entryOffset + 2, little);
+          const num = view.getUint32(entryOffset + 4, little);
+          const valOrOff = view.getUint32(entryOffset + 8, little);
+
+          if (tag === 1) latRef = readAscii(view, entryOffset + 8, 1).trim();
+          if (tag === 2 && num === 3 && type === 5) latVals = readRationalTriple(view, tiffStart + valOrOff, little);
+          if (tag === 3) lonRef = readAscii(view, entryOffset + 8, 1).trim();
+          if (tag === 4 && num === 3 && type === 5) lonVals = readRationalTriple(view, tiffStart + valOrOff, little);
+        }
+
+        if (latVals && lonVals) {
+          let lat = latVals[0] + latVals[1] / 60 + latVals[2] / 3600;
+          let lon = lonVals[0] + lonVals[1] / 60 + lonVals[2] / 3600;
+          if (latRef === 'S') lat = -lat;
+          if (lonRef === 'W') lon = -lon;
+          return { lat: Number(lat.toFixed(6)), lon: Number(lon.toFixed(6)) };
+        }
+        return null;
+      }
+
+      function readRationalTriple(view, addr, little) {
+        if (addr + 24 > view.byteLength) return null;
+        const out = [];
+        for (let i = 0; i < 3; i++) {
+          const num = view.getUint32(addr + i * 8, little);
+          const den = view.getUint32(addr + i * 8 + 4, little) || 1;
+          out.push(num / den);
+        }
+        return out;
+      }
+
+      function readTagString(view, tiffStart, type, num, inlineAddr, offsetVal, little) {
+        if (type !== 2 || num === 0) return '';
+        const addr = num <= 4 ? inlineAddr : tiffStart + offsetVal;
+        if (addr + num > view.byteLength) return '';
+        return readAscii(view, addr, num).replace(/\0+$/, '').trim();
+      }
+
+      function readAscii(view, start, len) {
+        let s = '';
+        for (let i = 0; i < len && start + i < view.byteLength; i++) {
+          s += String.fromCharCode(view.getUint8(start + i));
+        }
+        return s;
+      }
+
+      function stripJpegSegments(buffer) {
+        const view = new DataView(buffer);
+        if (view.byteLength < 4 || view.getUint16(0) !== 0xffd8) return null;
+
+        const chunks = [new Uint8Array([0xff, 0xd8])];
+        let offset = 2;
+        while (offset + 4 <= view.byteLength) {
+          const marker = view.getUint16(offset);
+          if (marker === 0xffda) {
+            chunks.push(new Uint8Array(buffer.slice(offset)));
+            break;
+          }
+          const segLen = view.getUint16(offset + 2);
+          const totalLen = 2 + segLen;
+          if (segLen < 2 || offset + totalLen > view.byteLength) return null;
+
+          // Strip APP1 (EXIF/XMP) and APP13 (IPTC)
+          if (marker !== 0xffe1 && marker !== 0xffed) {
+            chunks.push(new Uint8Array(buffer.slice(offset, offset + totalLen)));
+          }
+          offset += totalLen;
+        }
+        return new Blob(chunks, { type: 'image/jpeg' });
+      }
+
+      async function cleanItem(item) {
+        const mode = outputMode.value;
+        const q = Number(qualityRange.value) / 100;
+        const baseName = item.file.name.replace(/\.[^/.]+$/, '');
+
+        if (mode === 'jpeg-segment-strip') {
+          const stripped = stripJpegSegments(item.buffer);
+          if (stripped) {
+            const buf = await stripped.arrayBuffer();
+            item.cleanedBlob = stripped;
+            item.cleanedName = `${baseName}-no-exif.jpg`;
+            item.cleanedExif = parseJpegExif(buf);
+            return;
+          }
+        }
+
+        const mimeMap = {
+          'canvas-jpeg': 'image/jpeg',
+          'canvas-png': 'image/png',
+          'canvas-webp': 'image/webp',
+          'jpeg-segment-strip': 'image/jpeg'
+        };
+        const extMap = {
+          'image/jpeg': 'jpg',
+          'image/png': 'png',
+          'image/webp': 'webp'
+        };
+        const mime = mimeMap[mode] || 'image/jpeg';
+        const img = await loadImageFromFile(item.file);
+        const canvas = document.createElement('canvas');
+        canvas.width = img.naturalWidth;
+        canvas.height = img.naturalHeight;
+        const ctx = canvas.getContext('2d');
+        ctx.drawImage(img, 0, 0);
+
+        const blob = await new Promise((resolve) => canvas.toBlob(resolve, mime, q));
+        const buf = await blob.arrayBuffer();
+        item.cleanedBlob = blob;
+        item.cleanedName = `${baseName}-clean.${extMap[mime] || 'jpg'}`;
+        item.cleanedExif = parseJpegExif(buf);
+      }
+
+      cleanSelectedBtn.addEventListener('click', async () => {
+        if (activeIndex < 0 || !items[activeIndex]) return;
+        await cleanItem(items[activeIndex]);
+        renderAll();
+      });
+
+      cleanAllBtn.addEventListener('click', async () => {
+        if (!items.length) return;
+        for (const it of items) {
+          await cleanItem(it);
+        }
+        batchStatusText.textContent = `${items.length} file(s) stripped`;
+        renderAll();
+      });
+
+      downloadBtn.addEventListener('click', async () => {
+        const current = items[activeIndex];
+        if (!current) return;
+        if (!current.cleanedBlob) {
+          await cleanItem(current);
+          renderAll();
+        }
+        if (!current.cleanedBlob) return;
+        const url = URL.createObjectURL(current.cleanedBlob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = current.cleanedName || 'cleaned-image.jpg';
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        setTimeout(() => URL.revokeObjectURL(url), 1000);
+      });
+
+      clearBtn.addEventListener('click', () => {
+        items.forEach((it) => {
+          if (it.previewUrl) URL.revokeObjectURL(it.previewUrl);
+        });
+        items = [];
+        activeIndex = -1;
+        batchStatusText.textContent = 'Ready';
+        renderAll();
+      });
+
+      function renderAll() {
+        const hasItems = items.length > 0;
+        cleanSelectedBtn.disabled = !hasItems;
+        cleanAllBtn.disabled = !hasItems;
+        downloadBtn.disabled = !hasItems;
+        clearBtn.disabled = !hasItems;
+        fileCountEl.textContent = String(items.length);
+
+        if (!hasItems) {
+          fileListEl.innerHTML = `
+            <div class="rounded-xl bg-surface-container-lowest border border-outline/15 p-4 text-xs font-mono text-on-surface-variant text-center">
+              No images loaded yet. Select a photo to inspect GPS &amp; EXIF tags.
+            </div>
+          `;
+          inspectorTitleEl.textContent = 'No Photo Selected';
+          privacyBadge.textContent = 'WAITING';
+          privacyBadge.className = 'px-3 py-1 rounded-full text-[11px] font-mono font-bold bg-surface-container text-on-surface-variant';
+          previewImg.classList.add('hidden');
+          previewImg.removeAttribute('src');
+          previewPlaceholder.classList.remove('hidden');
+          gpsAlertBox.className = 'rounded-xl border border-outline/15 bg-surface-container p-3 text-xs leading-relaxed text-on-surface-variant';
+          gpsAlertBox.textContent = 'Upload a JPEG, PNG, or WebP file to check for embedded GPS coordinates, camera model, and timestamps.';
+          origSizeEl.textContent = '—';
+          origDimsEl.textContent = '—';
+          cleanSizeEl.textContent = 'Not stripped yet';
+          cleanFormatEl.textContent = '—';
+          metaTableBody.innerHTML = `
+            <tr><th class="py-2 px-3 text-on-surface-variant font-semibold w-2/5">GPS Coordinates</th><td class="py-2 px-3 text-on-surface">—</td></tr>
+            <tr><th class="py-2 px-3 text-on-surface-variant font-semibold">Camera / Make</th><td class="py-2 px-3 text-on-surface">—</td></tr>
+            <tr><th class="py-2 px-3 text-on-surface-variant font-semibold">Software / Tool</th><td class="py-2 px-3 text-on-surface">—</td></tr>
+            <tr><th class="py-2 px-3 text-on-surface-variant font-semibold">Date / Timestamp</th><td class="py-2 px-3 text-on-surface">—</td></tr>
+            <tr><th class="py-2 px-3 text-on-surface-variant font-semibold">EXIF Segment</th><td class="py-2 px-3 text-on-surface">—</td></tr>
+          `;
+          return;
+        }
+
+        fileListEl.innerHTML = items.map((it, idx) => {
+          const isAct = idx === activeIndex;
+          const tag = it.cleanedBlob
+            ? '<span class="px-2 py-0.5 rounded bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 text-[10px] font-bold">STRIPPED</span>'
+            : (it.exif.gps
+              ? '<span class="px-2 py-0.5 rounded bg-amber-500/15 text-amber-600 dark:text-amber-400 text-[10px] font-bold">GPS FOUND</span>'
+              : '<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant text-[10px]">INSPECTED</span>');
+
+          return `
+            <div data-idx="${idx}" class="file-row flex items-center justify-between gap-2 px-3 py-2.5 rounded-xl border cursor-pointer transition-all ${isAct ? 'bg-primary/10 border-primary/50' : 'bg-surface-container-lowest border-outline/15 hover:border-outline/30'}">
+              <div class="min-w-0">
+                <div class="text-xs font-mono font-bold text-on-surface truncate">${escapeHtml(it.file.name)}</div>
+                <div class="text-[11px] font-mono text-on-surface-variant">${(it.file.size / 1024).toFixed(1)} KB • ${it.width}×${it.height}</div>
+              </div>
+              ${tag}
+            </div>
+          `;
+        }).join('');
+
+        fileListEl.querySelectorAll('.file-row').forEach((row) => {
+          row.addEventListener('click', () => {
+            activeIndex = Number(row.getAttribute('data-idx'));
+            renderAll();
+          });
+        });
+
+        const cur = items[activeIndex];
+        inspectorTitleEl.textContent = cur.file.name;
+        previewImg.src = cur.previewUrl;
+        previewImg.classList.remove('hidden');
+        previewPlaceholder.classList.add('hidden');
+
+        origSizeEl.textContent = `${(cur.file.size / 1024).toFixed(1)} KB`;
+        origDimsEl.textContent = `${cur.width} × ${cur.height} px`;
+
+        const cleanCheck = cur.cleanedExif;
+        const cleanHasGps = Boolean(cleanCheck && cleanCheck.gps);
+        const cleanHasExif = Boolean(cleanCheck && cleanCheck.hasExif);
+
+        if (cur.cleanedBlob) {
+          cleanSizeEl.textContent = `${(cur.cleanedBlob.size / 1024).toFixed(1)} KB`;
+          cleanFormatEl.textContent = cur.cleanedName;
+          if (!cleanHasGps && !cleanHasExif) {
+            privacyBadge.textContent = 'VERIFIED CLEAN';
+            privacyBadge.className = 'px-3 py-1 rounded-full text-[11px] font-mono font-bold bg-emerald-500/15 text-emerald-600 dark:text-emerald-400';
+            gpsAlertBox.className = 'rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-3 text-xs leading-relaxed text-emerald-700 dark:text-emerald-300';
+            gpsAlertBox.textContent = `Verified clean (${cur.cleanedName}): 0 GPS coordinates and 0 EXIF headers detected in the output file.`;
+          } else {
+            privacyBadge.textContent = 'CHECK OUTPUT';
+            privacyBadge.className = 'px-3 py-1 rounded-full text-[11px] font-mono font-bold bg-amber-500/15 text-amber-600 dark:text-amber-400';
+            gpsAlertBox.className = 'rounded-xl border border-amber-500/35 bg-amber-500/10 p-3 text-xs leading-relaxed text-amber-700 dark:text-amber-300';
+            gpsAlertBox.textContent = `Cleaned file created (${cur.cleanedName}), though residual metadata markers were detected—re-encoding via Canvas strips all EXIF tags.`;
+          }
+        } else {
+          cleanSizeEl.textContent = 'Not stripped yet';
+          cleanFormatEl.textContent = 'Click Strip or Download';
+          if (cur.exif.gps) {
+            privacyBadge.textContent = 'GPS DETECTED';
+            privacyBadge.className = 'px-3 py-1 rounded-full text-[11px] font-mono font-bold bg-amber-500/15 text-amber-600 dark:text-amber-400';
+            gpsAlertBox.className = 'rounded-xl border border-amber-500/35 bg-amber-500/10 p-3 text-xs leading-relaxed text-amber-700 dark:text-amber-300';
+            gpsAlertBox.innerHTML = `<strong>GPS Location Found:</strong> ${cur.exif.gps.lat}, ${cur.exif.gps.lon}. Strip metadata before sharing publicly.`;
+          } else {
+            privacyBadge.textContent = cur.exif.hasExif ? 'EXIF ONLY' : 'NO EXIF';
+            privacyBadge.className = 'px-3 py-1 rounded-full text-[11px] font-mono font-bold bg-primary/15 text-primary';
+            gpsAlertBox.className = 'rounded-xl border border-outline/15 bg-surface-container p-3 text-xs leading-relaxed text-on-surface-variant';
+            gpsAlertBox.textContent = cur.exif.hasExif
+              ? 'EXIF tags found without GPS coordinates. You can still strip device and timestamp tags.'
+              : 'No JPEG EXIF or GPS location coordinates detected in this file.';
+          }
+        }
+
+        const camera = [cur.exif.tags.Make, cur.exif.tags.Model].filter(Boolean).join(' ') || 'None detected';
+        const software = cur.exif.tags.Software || 'None detected';
+        const dateTime = cur.exif.tags.OriginalDate || cur.exif.tags.DateTime || 'None detected';
+        const gpsText = cur.exif.gps ? `${cur.exif.gps.lat}, ${cur.exif.gps.lon}` : 'None detected';
+        const segText = cur.cleanedBlob
+          ? (cleanHasExif ? 'Residual EXIF found' : 'Stripped (0 EXIF)')
+          : (cur.exif.hasExif ? 'APP1 EXIF present' : 'No EXIF header');
+
+        metaTableBody.innerHTML = `
+          <tr><th class="py-2 px-3 text-on-surface-variant font-semibold w-2/5">GPS Coordinates</th><td class="py-2 px-3 text-on-surface">${escapeHtml(gpsText)}</td></tr>
+          <tr><th class="py-2 px-3 text-on-surface-variant font-semibold">Camera / Make</th><td class="py-2 px-3 text-on-surface">${escapeHtml(camera)}</td></tr>
+          <tr><th class="py-2 px-3 text-on-surface-variant font-semibold">Software / Tool</th><td class="py-2 px-3 text-on-surface">${escapeHtml(software)}</td></tr>
+          <tr><th class="py-2 px-3 text-on-surface-variant font-semibold">Date / Timestamp</th><td class="py-2 px-3 text-on-surface">${escapeHtml(dateTime)}</td></tr>
+          <tr><th class="py-2 px-3 text-on-surface-variant font-semibold">EXIF Segment</th><td class="py-2 px-3 text-on-surface">${escapeHtml(segText)}</td></tr>
+        `;
+      }
+
+      function escapeHtml(str) {
+        return String(str || '').replace(/[&<>"']/g, (m) => ({
+          '&': '&amp;',
+          '<': '&lt;',
+          '>': '&gt;',
+          '"': '&quot;',
+          "'": '&#39;'
+        }[m]));
+      }
+    })();
+  </script>
+</body>
+</html>
