@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="google-site-verification" content="SNRxAZ5-8fnrHgYWHSv89TLdrGZBaA8onmHV8cwDjRc"/>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+
+  <!-- Primary SEO Title & Meta Description -->
+  <title>Open Graph Meta Tags &amp; Social Preview Checker — OG Tags Generator</title>
+  <meta content="Free Open Graph meta tags checker, social preview checker, and OG tags generator. Preview WhatsApp link preview, X, LinkedIn, and Facebook cards, check og:image size, and copy clean HTML OG tags in your browser." name="description"/>
+  <meta name="robots" content="index, follow, max-image-preview:large"/>
+  <link rel="canonical" href="https://divcraft.online/og-meta-social-card-previewer.html"/>
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="website"/>
+  <meta property="og:site_name" content="DivCraft"/>
+  <meta property="og:title" content="Open Graph Meta Tags &amp; Social Preview Checker — OG Tags Generator"/>
+  <meta property="og:description" content="Check Open Graph meta tags, test WhatsApp link preview and social share cards, verify og:image size, and generate clean OG tags in HTML."/>
+  <meta property="og:url" content="https://divcraft.online/og-meta-social-card-previewer.html"/>
+  <meta property="og:image" content="https://divcraft.online/logo.png"/>
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Open Graph Meta Tags &amp; Social Preview Checker — DivCraft"/>
+  <meta name="twitter:description" content="Free client-side Open Graph meta tags checker, social preview checker, and HTML OG tags generator."/>
+  <meta name="twitter:image" content="https://divcraft.online/logo.png"/>
+
+  <!-- Favicon & Touch Icons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png"/>
+  <link rel="icon" type="image/png" sizes="192x192" href="favicon.png"/>
+  <link rel="apple-touch-icon" href="favicon.png"/>
+
+  <!-- Preconnect & Non-Blocking Google Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+  </noscript>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-surface": "#131b2e",
+            "secondary": "#00687a",
+            "primary-container": "#4f46e5",
+            "outline": "#777587",
+            "on-secondary": "#ffffff",
+            "surface": "#faf8ff",
+            "surface-container-high": "#e2e7ff",
+            "surface-container": "#eaedff",
+            "on-primary": "#ffffff",
+            "tertiary": "#005338",
+            "primary": "#3525cd",
+            "on-surface-variant": "#464555",
+            "outline-variant": "#c7c4d8",
+            "background": "#faf8ff",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-low": "#f2f3ff"
+          },
+          fontFamily: {
+            sans: ["Inter", "system-ui", "sans-serif"],
+            mono: ["JetBrains Mono", "monospace"]
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    @layer base {
+      html, body {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+        transition: background-color 0.2s ease, color 0.2s ease;
+      }
+      .pb-safe { padding-bottom: env(safe-area-inset-bottom, 16px); }
+      .pt-safe { padding-top: env(safe-area-inset-top, 0px); }
+    }
+    html.dark { color-scheme: dark; }
+    html.dark body { background-color: #0c1019 !important; color: #e4e9f7 !important; }
+    html.dark .bg-surface { background-color: #0c1019 !important; }
+    html.dark .bg-surface-container-lowest { background-color: #080c14 !important; }
+    html.dark .bg-surface-container-low { background-color: #121826 !important; }
+    html.dark .bg-surface-container { background-color: #182033 !important; }
+    html.dark .bg-surface-container-high { background-color: #1f2a42 !important; }
+    html.dark .text-on-surface { color: #f1f5f9 !important; }
+    html.dark .text-on-surface-variant { color: #94a3b8 !important; }
+
+    html:not(.dark) body { background-color: #f8fafc !important; color: #0f172a !important; }
+    html:not(.dark) .bg-surface { background-color: #f8fafc !important; }
+    html:not(.dark) .bg-surface-container-lowest { background-color: #ffffff !important; }
+    html:not(.dark) .bg-surface-container-low { background-color: #ffffff !important; }
+    html:not(.dark) .bg-surface-container { background-color: #f1f5f9 !important; }
+    html:not(.dark) .bg-surface-container-high { background-color: #e2e8f0 !important; }
+    html:not(.dark) .text-on-surface { color: #0f172a !important; }
+    html:not(.dark) .text-on-surface-variant { color: #475569 !important; }
+  </style>
+
+  <!-- Structured Schema (JSON-LD: WebApplication + BreadcrumbList + Synced FAQPage) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://divcraft.online/og-meta-social-card-previewer.html#app",
+        "name": "Open Graph Meta Tags & Social Preview Checker",
+        "url": "https://divcraft.online/og-meta-social-card-previewer.html",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "All (Web Browser)",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "Free browser-based Open Graph meta tags checker, social preview checker, WhatsApp link preview simulator, and HTML OG tags generator.",
+        "featureList": "Open Graph meta tags checker, social share preview for Facebook, X, LinkedIn, WhatsApp, and Slack, og:image dimension check, HTML OG tags generator."
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "DivCraft Home",
+            "item": "https://divcraft.online/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Open Graph Meta Tags & Social Preview Checker",
+            "item": "https://divcraft.online/og-meta-social-card-previewer.html"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://divcraft.online/og-meta-social-card-previewer.html#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What are OG tags?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "OG tags are Open Graph meta tags placed inside the <head> section of an HTML page. They tell social apps and messaging platforms which title, description, page type, and image to show when someone shares a link."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How to check OG tags?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "You can check OG tags by viewing the page source in your browser and looking for <meta property=\"og:...\"> tags, or by pasting your details and image into a social preview checker to see how the card looks and whether key tags are missing."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What does OG mean in SEO?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "OG stands for Open Graph, a protocol originally introduced by Facebook and now used across social platforms and chat apps. While OG tags do not directly act as a primary search ranking factor, clear social share cards improve click-through rates and brand trust when links are shared."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is an OG title?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "An OG title is the headline set with <meta property=\"og:title\" content=\"...\">. It controls the main title displayed on social share cards and can be tailored for social readers even if it differs slightly from your HTML <title>."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is OG image size?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A widely recommended og:image size is 1200 x 630 pixels with a 1.91:1 aspect ratio, kept under a few megabytes in JPG or PNG format so it loads quickly and avoids awkward cropping on large social cards."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is OG content?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "In an Open Graph tag, the content attribute holds the actual value for that property, such as the headline text inside og:title, the summary inside og:description, or the image URL inside og:image."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="bg-surface text-on-surface font-sans flex flex-col min-h-screen transition-colors duration-200">
+
+  <!-- Fixed Top Navigation Header (Exact Match with index.html) -->
+  <header class="fixed top-0 w-full z-50 pt-safe bg-surface/90 backdrop-blur-xl border-b border-outline/10 shadow-sm transition-colors duration-200">
+    <div class="h-16 px-4 md:px-8 max-w-7xl mx-auto flex items-center justify-between gap-3">
+      <a class="flex items-center gap-2.5 group" href="index.html">
+        <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-indigo-600 via-primary to-cyan-400 p-[1.5px] shadow-sm flex items-center justify-center overflow-hidden">
+          <div class="w-full h-full bg-surface-container-lowest rounded-[10px] flex items-center justify-center overflow-hidden">
+            <img
+              src="logo.png"
+              alt="DivCraft Logo"
+              width="32"
+              height="32"
+              decoding="async"
+              class="w-7 h-7 object-contain"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-flex';"
+            />
+            <span class="material-symbols-outlined text-primary text-[20px] hidden" aria-hidden="true">terminal</span>
+          </div>
+        </div>
+        <div class="flex flex-col">
+          <div class="flex items-center gap-1.5">
+            <span class="font-bold text-lg tracking-tight text-on-surface group-hover:text-primary transition-colors">DivCraft</span>
+            <span class="text-[9px] font-mono font-bold px-1.5 py-0.5 rounded bg-primary/10 text-primary uppercase tracking-wider">v2.4</span>
+          </div>
+          <span class="text-[10px] font-mono text-on-surface-variant font-medium tracking-wide">Client-Side Hub</span>
+        </div>
+      </a>
+
+      <div class="flex items-center gap-2">
+        <a href="index.html" class="inline-flex items-center gap-1 px-2.5 sm:px-3 py-1.5 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-primary text-xs font-mono font-medium transition-colors">
+          <span class="material-symbols-outlined text-[16px]" aria-hidden="true">arrow_back</span>
+          <span class="hidden xs:inline sm:inline">All Tools</span>
+        </a>
+
+        <button type="button" aria-label="Toggle Theme Mode" class="w-9 h-9 flex items-center justify-center rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface transition-all active:scale-90" id="themeToggleBtn" title="Toggle Light / Dark Mode">
+          <span class="material-symbols-outlined text-[20px] text-amber-400" id="themeIconLight" aria-hidden="true">light_mode</span>
+          <span class="material-symbols-outlined text-[20px] text-indigo-400 hidden" id="themeIconDark" aria-hidden="true">dark_mode</span>
+        </button>
+
+        <div class="hidden sm:flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-500 text-[11px] font-mono font-medium">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+          <span>Zero Server I/O</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="flex-1 w-full pt-20 sm:pt-24 pb-16">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-5 sm:gap-6 pt-3">
+
+      <!-- Breadcrumb -->
+      <nav aria-label="Breadcrumb" class="flex items-center gap-1.5 text-xs font-mono text-on-surface-variant overflow-x-auto whitespace-nowrap">
+        <a href="index.html" class="hover:text-primary transition-colors">Home</a>
+        <span>/</span>
+        <span class="text-on-surface font-semibold">Open Graph Meta Tags &amp; Social Preview Checker</span>
+      </nav>
+
+      <!-- Hero Header -->
+      <section class="flex flex-col gap-2.5">
+        <div class="inline-flex items-center gap-2 px-3 py-1 bg-surface-container rounded-full w-fit border border-outline/10 text-xs">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span class="font-mono text-primary font-semibold text-[11px]">OG Tags Checker · Social Share Preview · HTML Tag Builder</span>
+        </div>
+        <h1 class="text-2xl sm:text-4xl font-extrabold tracking-tight text-on-surface leading-tight">
+          Open Graph Meta Tags &amp; Social Preview Checker
+        </h1>
+        <p class="text-sm sm:text-base text-on-surface-variant max-w-3xl leading-relaxed">
+          Check and preview your <strong>Open Graph meta tags</strong> across WhatsApp, X (Twitter), LinkedIn, and Facebook before you publish. Test your <strong>og:image size</strong>, spot missing tag lengths, and copy clean HTML OG tags directly in your browser.
+        </p>
+      </section>
+
+      <!-- Main Interactive Tool Card -->
+      <section class="bg-surface-container-low border border-outline/15 rounded-2xl p-3.5 sm:p-6 shadow-sm flex flex-col gap-5">
+
+        <!-- Top Action Bar -->
+        <div class="flex flex-wrap items-center justify-between gap-2 pb-4 border-b border-outline/10">
+          <div class="flex items-center gap-2 text-xs font-mono text-on-surface-variant">
+            <span class="material-symbols-outlined text-[18px] text-primary" aria-hidden="true">share</span>
+            <span>Live Social Card &amp; OG Tag Audit</span>
+          </div>
+          <div class="flex flex-wrap items-center gap-2">
+            <button type="button" id="loadSampleOgBtn" class="px-3 py-1.5 rounded-xl bg-primary/10 hover:bg-primary/20 text-primary text-xs font-mono font-semibold transition-colors">
+              Load Sample
+            </button>
+            <button type="button" id="resetOgBtn" class="px-3 py-1.5 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface text-xs font-mono transition-colors">
+              Clear Fields
+            </button>
+          </div>
+        </div>
+
+        <!-- Two-Column Workspace: Editor + Live Previews & Tag Checker -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 items-start">
+
+          <!-- Left Column: OG & Social Inputs -->
+          <div class="lg:col-span-5 flex flex-col gap-3.5 bg-surface-container-lowest border border-outline/15 rounded-xl p-4">
+            <div>
+              <label for="ogUrlInput" class="block text-xs font-mono font-semibold text-on-surface mb-1">Page URL (og:url)</label>
+              <input id="ogUrlInput" type="url" value="https://divcraft.online/markdown-table-generator.html" class="w-full rounded-xl bg-surface-container border border-outline/15 px-3 py-2 text-xs sm:text-sm text-on-surface focus:outline-none focus:border-primary"/>
+            </div>
+
+            <div>
+              <div class="flex items-center justify-between mb-1">
+                <label for="ogTitleInput" class="text-xs font-mono font-semibold text-on-surface">OG Title (og:title)</label>
+                <span id="titleCounter" class="text-[11px] font-mono text-on-surface-variant">0 / 65</span>
+              </div>
+              <input id="ogTitleInput" type="text" value="Markdown Table Generator &amp; Formatter — Convert Excel &amp; Export PNG" class="w-full rounded-xl bg-surface-container border border-outline/15 px-3 py-2 text-xs sm:text-sm text-on-surface focus:outline-none focus:border-primary"/>
+            </div>
+
+            <div>
+              <div class="flex items-center justify-between mb-1">
+                <label for="ogDescInput" class="text-xs font-mono font-semibold text-on-surface">OG Description (og:description)</label>
+                <span id="descCounter" class="text-[11px] font-mono text-on-surface-variant">0 / 160</span>
+              </div>
+              <textarea id="ogDescInput" rows="3" class="w-full rounded-xl bg-surface-container border border-outline/15 px-3 py-2 text-xs sm:text-sm text-on-surface focus:outline-none focus:border-primary">Build, align, and convert Markdown tables from Excel or CSV, preview live, toggle headerless tables, and export to PNG locally.</textarea>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div>
+                <label for="ogSiteNameInput" class="block text-xs font-mono font-semibold text-on-surface mb-1">Site Name (og:site_name)</label>
+                <input id="ogSiteNameInput" type="text" value="DivCraft" class="w-full rounded-xl bg-surface-container border border-outline/15 px-3 py-2 text-xs text-on-surface focus:outline-none focus:border-primary"/>
+              </div>
+              <div>
+                <label for="ogTypeSelect" class="block text-xs font-mono font-semibold text-on-surface mb-1">Content Type (og:type)</label>
+                <select id="ogTypeSelect" class="w-full rounded-xl bg-surface-container border border-outline/15 px-3 py-2 text-xs font-mono text-on-surface focus:outline-none focus:border-primary">
+                  <option value="website" selected>website</option>
+                  <option value="article">article</option>
+                  <option value="product">product</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label for="ogImageInput" class="block text-xs font-mono font-semibold text-on-surface mb-1">OG Image URL (og:image)</label>
+              <input id="ogImageInput" type="url" value="https://divcraft.online/logo.png" class="w-full rounded-xl bg-surface-container border border-outline/15 px-3 py-2 text-xs text-on-surface focus:outline-none focus:border-primary"/>
+              <div class="flex flex-wrap items-center justify-between gap-2 mt-2">
+                <label class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-surface-container hover:bg-surface-container-high text-[11px] font-mono text-on-surface cursor-pointer transition-colors">
+                  <span class="material-symbols-outlined text-[15px] text-primary" aria-hidden="true">image</span>
+                  <span>Test Local Image</span>
+                  <input id="localImageFile" type="file" accept="image/*" class="hidden"/>
+                </label>
+                <span id="imageMetaBadge" class="text-[11px] font-mono text-on-surface-variant">Recommended: 1200×630px</span>
+              </div>
+            </div>
+
+            <div>
+              <label for="twitterCardSelect" class="block text-xs font-mono font-semibold text-on-surface mb-1">X / Twitter Card Style</label>
+              <select id="twitterCardSelect" class="w-full rounded-xl bg-surface-container border border-outline/15 px-3 py-2 text-xs font-mono text-on-surface focus:outline-none focus:border-primary">
+                <option value="summary_large_image" selected>summary_large_image</option>
+                <option value="summary">summary</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Right Column: Platform Previews & OG Tag Health Check -->
+          <div class="lg:col-span-7 flex flex-col gap-4">
+
+            <!-- Platform Tabs -->
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <div class="flex flex-wrap items-center gap-1.5 bg-surface-container p-1 rounded-xl" role="tablist" aria-label="Social Preview Platforms">
+                <button type="button" data-platform="whatsapp" class="platform-tab px-3 py-1.5 rounded-lg bg-primary text-white text-xs font-mono font-semibold transition-all">WhatsApp</button>
+                <button type="button" data-platform="x" class="platform-tab px-3 py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface text-xs font-mono font-semibold transition-all">X / Twitter</button>
+                <button type="button" data-platform="linkedin" class="platform-tab px-3 py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface text-xs font-mono font-semibold transition-all">LinkedIn / FB</button>
+              </div>
+              <span id="ogHealthStatus" class="text-[11px] font-mono px-2.5 py-1 rounded-full bg-emerald-500/10 text-emerald-500 font-semibold">
+                OG Tags Ready
+              </span>
+            </div>
+
+            <!-- Preview Card Container -->
+            <div class="rounded-2xl bg-surface-container-lowest border border-outline/15 p-4 sm:p-5 flex flex-col items-center justify-center min-h-[270px]">
+
+              <!-- WhatsApp Link Preview -->
+              <div id="preview-whatsapp" class="platform-preview w-full max-w-sm rounded-xl bg-[#0b141a] text-[#e9edef] border border-white/10 overflow-hidden shadow-md">
+                <div class="p-2 flex flex-col gap-1.5">
+                  <div class="rounded-lg overflow-hidden bg-[#111b21] aspect-[1.91/1] flex items-center justify-center">
+                    <img id="waImg" src="https://divcraft.online/logo.png" alt="WhatsApp link preview" class="w-full h-full object-cover"/>
+                  </div>
+                  <div class="px-1.5 py-1 flex flex-col gap-0.5">
+                    <span id="waDomain" class="text-[11px] text-[#8696a0] uppercase tracking-wide">divcraft.online</span>
+                    <h3 id="waTitle" class="text-sm font-semibold text-[#e9edef] leading-snug line-clamp-2"></h3>
+                    <p id="waDesc" class="text-xs text-[#aebac1] line-clamp-2 leading-snug"></p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- X (Twitter) Preview -->
+              <div id="preview-x" class="platform-preview hidden w-full max-w-md rounded-2xl bg-black text-white border border-neutral-800 overflow-hidden shadow-md">
+                <div id="xImgWrap" class="w-full aspect-[1.91/1] bg-neutral-900 overflow-hidden">
+                  <img id="xImg" src="https://divcraft.online/logo.png" alt="X card preview" class="w-full h-full object-cover"/>
+                </div>
+                <div class="p-3 flex flex-col gap-0.5 border-t border-neutral-800">
+                  <span id="xDomain" class="text-[11px] text-neutral-400">divcraft.online</span>
+                  <h3 id="xTitle" class="text-sm font-semibold text-white leading-snug line-clamp-1"></h3>
+                  <p id="xDesc" class="text-xs text-neutral-400 line-clamp-2 leading-snug"></p>
+                </div>
+              </div>
+
+              <!-- LinkedIn / Facebook Preview -->
+              <div id="preview-linkedin" class="platform-preview hidden w-full max-w-md rounded-xl bg-white dark:bg-[#1b1f23] text-slate-900 dark:text-slate-100 border border-slate-200 dark:border-slate-700 overflow-hidden shadow-md">
+                <div class="w-full aspect-[1.91/1] bg-slate-100 dark:bg-slate-800 overflow-hidden">
+                  <img id="liImg" src="https://divcraft.online/logo.png" alt="LinkedIn and Facebook social preview" class="w-full h-full object-cover"/>
+                </div>
+                <div class="p-3 bg-slate-50 dark:bg-[#22272c] border-t border-slate-200 dark:border-slate-700 flex flex-col gap-1">
+                  <div class="flex items-center justify-between gap-2">
+                    <span id="liDomain" class="text-[11px] text-slate-500 dark:text-slate-400 uppercase truncate">divcraft.online</span>
+                    <span id="liSite" class="text-[10px] font-mono text-slate-500 dark:text-slate-400 shrink-0">DivCraft</span>
+                  </div>
+                  <h3 id="liTitle" class="text-sm font-bold leading-snug line-clamp-2"></h3>
+                  <p id="liDesc" class="text-xs text-slate-600 dark:text-slate-300 line-clamp-2 leading-snug"></p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Quick Checker Checklist -->
+            <div id="ogChecklist" class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs font-mono">
+              <!-- Populated via JS -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Generated HTML OG Tags Output Box -->
+        <div class="flex flex-col gap-2.5 pt-2 border-t border-outline/10">
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <span class="text-xs font-mono font-semibold text-on-surface">Generated HTML Open Graph &amp; Twitter Tags</span>
+            <div class="flex items-center gap-2">
+              <button type="button" id="copyOgCodeBtn" class="inline-flex items-center gap-1 px-3.5 py-1.5 rounded-xl bg-primary hover:bg-primary-container text-white text-xs font-mono font-semibold shadow-sm active:scale-95 transition-all">
+                <span class="material-symbols-outlined text-[16px]" aria-hidden="true">content_copy</span>
+                <span>Copy HTML Tags</span>
+              </button>
+              <button type="button" id="downloadOgCodeBtn" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface text-xs font-mono font-medium transition-colors">
+                <span class="material-symbols-outlined text-[16px]" aria-hidden="true">download</span>
+                <span>.HTML</span>
+              </button>
+            </div>
+          </div>
+          <textarea
+            id="ogCodeOutput"
+            readonly
+            rows="9"
+            aria-label="Generated Open Graph HTML Meta Tags"
+            class="w-full rounded-xl bg-surface-container-lowest border border-outline/15 p-3.5 sm:p-4 font-mono text-xs text-on-surface focus:outline-none focus:border-primary leading-relaxed whitespace-pre overflow-x-auto"
+          ></textarea>
+        </div>
+      </section>
+
+      <!-- Long-Form Guide & Q&A Article (~800 Words, Easy Human English) -->
+      <article class="bg-surface-container-low border border-outline/15 rounded-2xl p-5 sm:p-8 shadow-sm flex flex-col gap-4 leading-relaxed">
+        <div class="flex flex-col gap-1">
+          <span class="text-xs font-mono font-semibold uppercase tracking-wider text-primary">Practical Guide &amp; Q&amp;A</span>
+          <h2 class="text-xl sm:text-2xl font-bold text-on-surface">
+            Open Graph Meta Tags &amp; Social Preview Guide for Websites
+          </h2>
+        </div>
+
+        <p class="text-sm text-on-surface-variant">
+          Sharing a link on social media or chat apps only works well when the preview card looks clear, accurate, and inviting. When you paste a URL into WhatsApp, X, LinkedIn, or Facebook, the platform fetches metadata from your page to build a preview box with a title, short summary, and image. Using an <strong>Open Graph meta tags checker</strong> and <strong>social preview checker</strong> before publishing helps you catch missing fields, awkward text cuts, or stretched images early.
+        </p>
+
+        <h3 class="text-base sm:text-lg font-bold text-on-surface pt-1">
+          How to Check and Preview Your Social Share Card
+        </h3>
+        <p class="text-sm text-on-surface-variant">
+          Start by entering your page URL, headline, summary, and image link into the editor above. You can switch between the WhatsApp link preview, X card, and LinkedIn or Facebook layout to see how your text wraps on smaller screens. If you are working on a design before uploading assets, you can also pick a local image file to inspect its dimensions right away. Once your fields look balanced, copy the generated HTML tags and paste them inside the <code class="font-mono text-xs bg-surface-container px-1.5 py-0.5 rounded">&lt;head&gt;</code> section of your page.
+        </p>
+
+        <h3 class="text-base sm:text-lg font-bold text-on-surface pt-1">
+          Choosing the Right og:image Size and Layout
+        </h3>
+        <p class="text-sm text-on-surface-variant">
+          Visuals do most of the heavy lifting on a social feed. A standard <strong>og:image size</strong> of 1200 by 630 pixels fits a 1.91:1 ratio that works smoothly across major social cards and messaging apps. Keep important text, logos, and faces away from the outer edges so nothing gets clipped when a platform crops the thumbnail. A crisp image with a reasonable file size also loads faster on mobile connections, which matters a lot for a <strong>WhatsApp link preview</strong> where readers often check links on the go.
+        </p>
+
+        <h3 class="text-base sm:text-lg font-bold text-on-surface pt-1">
+          Quick Questions and Answers on OG Tags
+        </h3>
+        <div class="flex flex-col gap-3 text-sm text-on-surface-variant">
+          <div>
+            <h4 class="font-bold text-on-surface">Why do some shared links show an old title or missing image?</h4>
+            <p class="mt-1">
+              Social apps and chat tools cache link previews for a while so they do not re-fetch the same page on every single share. If you update your <code class="font-mono text-xs bg-surface-container px-1 py-0.5 rounded">og:title</code> or <code class="font-mono text-xs bg-surface-container px-1 py-0.5 rounded">og:image</code> after publishing, platforms may still display the older version until their cache refreshes or you test with a fresh URL parameter.
+            </p>
+          </div>
+          <div>
+            <h4 class="font-bold text-on-surface">Should my OG title match my SEO page title word for word?</h4>
+            <p class="mt-1">
+              Not always. Search engines look at your <code class="font-mono text-xs bg-surface-container px-1 py-0.5 rounded">&lt;title&gt;</code> and meta description for search results, while social readers scan a feed quickly. An <code class="font-mono text-xs bg-surface-container px-1 py-0.5 rounded">og:title</code> can be slightly punchier or clearer for social audiences while still staying honest to what is on the page.
+            </p>
+          </div>
+          <div>
+            <h4 class="font-bold text-on-surface">Do I need both Open Graph tags and Twitter card tags?</h4>
+            <p class="mt-1">
+              Adding both is good practice. Many platforms fall back to Open Graph tags when dedicated card tags are absent, while adding <code class="font-mono text-xs bg-surface-container px-1 py-0.5 rounded">twitter:card</code> gives you explicit control over whether X displays a large banner or a compact summary card.
+            </p>
+          </div>
+          <div>
+            <h4 class="font-bold text-on-surface">Can I build social preview cards with site builders like Framer or custom HTML?</h4>
+            <p class="mt-1">
+              Yes. Whether you manage page metadata inside a visual builder like Framer or write raw HTML templates for a static site or custom app, the underlying idea is the same: give each page a clear title, helpful description, canonical URL, and high-quality preview image.
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <!-- FAQ Section (Synced 1:1 with JSON-LD FAQPage) -->
+      <section aria-labelledby="faq-title" class="flex flex-col gap-3">
+        <div class="flex flex-col gap-1">
+          <span class="text-primary text-xs font-mono font-semibold uppercase tracking-wider">Common Questions</span>
+          <h2 class="text-lg sm:text-2xl font-bold text-on-surface" id="faq-title">Frequently Asked Questions</h2>
+        </div>
+
+        <div class="flex flex-col gap-2">
+          <div class="faq-item bg-surface-container-low border border-outline/15 rounded-xl overflow-hidden">
+            <button type="button" class="faq-toggle w-full p-4 flex items-center justify-between gap-3 text-left font-semibold text-xs sm:text-sm text-on-surface">
+              <span>What are OG tags?</span>
+              <span class="material-symbols-outlined text-[20px] text-on-surface-variant faq-arrow transition-transform duration-200 shrink-0" aria-hidden="true">expand_more</span>
+            </button>
+            <div class="faq-content hidden px-4 pb-4 text-xs sm:text-sm text-on-surface-variant leading-relaxed border-t border-outline/10 pt-2.5">
+              OG tags are Open Graph meta tags placed inside the <code class="font-mono">&lt;head&gt;</code> section of an HTML page. They tell social apps and messaging platforms which title, description, page type, and image to show when someone shares a link.
+            </div>
+          </div>
+
+          <div class="faq-item bg-surface-container-low border border-outline/15 rounded-xl overflow-hidden">
+            <button type="button" class="faq-toggle w-full p-4 flex items-center justify-between gap-3 text-left font-semibold text-xs sm:text-sm text-on-surface">
+              <span>How to check OG tags?</span>
+              <span class="material-symbols-outlined text-[20px] text-on-surface-variant faq-arrow transition-transform duration-200 shrink-0" aria-hidden="true">expand_more</span>
+            </button>
+            <div class="faq-content hidden px-4 pb-4 text-xs sm:text-sm text-on-surface-variant leading-relaxed border-t border-outline/10 pt-2.5">
+              You can check OG tags by viewing the page source in your browser and looking for <code class="font-mono">&lt;meta property="og:..."&gt;</code> tags, or by pasting your details and image into a social preview checker to see how the card looks and whether key tags are missing.
+            </div>
+          </div>
+
+          <div class="faq-item bg-surface-container-low border border-outline/15 rounded-xl overflow-hidden">
+            <button type="button" class="faq-toggle w-full p-4 flex items-center justify-between gap-3 text-left font-semibold text-xs sm:text-sm text-on-surface">
+              <span>What does OG mean in SEO?</span>
+              <span class="material-symbols-outlined text-[20px] text-on-surface-variant faq-arrow transition-transform duration-200 shrink-0" aria-hidden="true">expand_more</span>
+            </button>
+            <div class="faq-content hidden px-4 pb-4 text-xs sm:text-sm text-on-surface-variant leading-relaxed border-t border-outline/10 pt-2.5">
+              OG stands for Open Graph, a protocol originally introduced by Facebook and now used across social platforms and chat apps. While OG tags do not directly act as a primary search ranking factor, clear social share cards improve click-through rates and brand trust when links are shared.
+            </div>
+          </div>
+
+          <div class="faq-item bg-surface-container-low border border-outline/15 rounded-xl overflow-hidden">
+            <button type="button" class="faq-toggle w-full p-4 flex items-center justify-between gap-3 text-left font-semibold text-xs sm:text-sm text-on-surface">
+              <span>What is an OG title?</span>
+              <span class="material-symbols-outlined text-[20px] text-on-surface-variant faq-arrow transition-transform duration-200 shrink-0" aria-hidden="true">expand_more</span>
+            </button>
+            <div class="faq-content hidden px-4 pb-4 text-xs sm:text-sm text-on-surface-variant leading-relaxed border-t border-outline/10 pt-2.5">
+              An OG title is the headline set with <code class="font-mono">&lt;meta property="og:title" content="..."&gt;</code>. It controls the main title displayed on social share cards and can be tailored for social readers even if it differs slightly from your HTML <code class="font-mono">&lt;title&gt;</code>.
+            </div>
+          </div>
+
+          <div class="faq-item bg-surface-container-low border border-outline/15 rounded-xl overflow-hidden">
+            <button type="button" class="faq-toggle w-full p-4 flex items-center justify-between gap-3 text-left font-semibold text-xs sm:text-sm text-on-surface">
+              <span>What is OG image size?</span>
+              <span class="material-symbols-outlined text-[20px] text-on-surface-variant faq-arrow transition-transform duration-200 shrink-0" aria-hidden="true">expand_more</span>
+            </button>
+            <div class="faq-content hidden px-4 pb-4 text-xs sm:text-sm text-on-surface-variant leading-relaxed border-t border-outline/10 pt-2.5">
+              A widely recommended <strong>og:image size</strong> is 1200 x 630 pixels with a 1.91:1 aspect ratio, kept under a few megabytes in JPG or PNG format so it loads quickly and avoids awkward cropping on large social cards.
+            </div>
+          </div>
+
+          <div class="faq-item bg-surface-container-low border border-outline/15 rounded-xl overflow-hidden">
+            <button type="button" class="faq-toggle w-full p-4 flex items-center justify-between gap-3 text-left font-semibold text-xs sm:text-sm text-on-surface">
+              <span>What is OG content?</span>
+              <span class="material-symbols-outlined text-[20px] text-on-surface-variant faq-arrow transition-transform duration-200 shrink-0" aria-hidden="true">expand_more</span>
+            </button>
+            <div class="faq-content hidden px-4 pb-4 text-xs sm:text-sm text-on-surface-variant leading-relaxed border-t border-outline/10 pt-2.5">
+              In an Open Graph tag, the <code class="font-mono">content</code> attribute holds the actual value for that property, such as the headline text inside <code class="font-mono">og:title</code>, the summary inside <code class="font-mono">og:description</code>, or the image URL inside <code class="font-mono">og:image</code>.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Internal Linking: More Tools on DivCraft -->
+      <section class="flex flex-col gap-3 pt-2">
+        <h2 class="text-base sm:text-lg font-bold text-on-surface">More Free Tools on DivCraft</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+          <a href="https://divcraft.online/markdown-table-generator.html" class="p-4 rounded-xl bg-surface-container-low border border-outline/15 hover:border-primary/50 transition-all flex flex-col gap-1">
+            <span class="font-bold text-sm text-on-surface">Markdown Table Generator</span>
+            <span class="text-xs text-on-surface-variant">Convert Excel or CSV to Markdown, preview live, and export PNG.</span>
+          </a>
+          <a href="https://divcraft.online/exif-metadata-remover.html" class="p-4 rounded-xl bg-surface-container-low border border-outline/15 hover:border-primary/50 transition-all flex flex-col gap-1">
+            <span class="font-bold text-sm text-on-surface">EXIF &amp; GPS Metadata Remover</span>
+            <span class="text-xs text-on-surface-variant">Strip hidden GPS location and camera tags from photos locally.</span>
+          </a>
+          <a href="https://divcraft.online/receipt-maker.html" class="p-4 rounded-xl bg-surface-container-low border border-outline/15 hover:border-primary/50 transition-all flex flex-col gap-1">
+            <span class="font-bold text-sm text-on-surface">Free Receipt Maker</span>
+            <span class="text-xs text-on-surface-variant">Create and print clean itemized receipts in your browser.</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="mt-4 pt-6 border-t border-outline/15 text-xs text-on-surface-variant flex flex-col items-center gap-3 text-center">
+        <div class="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 font-mono text-[11px]">
+          <a class="hover:text-primary transition-colors" href="index.html">Home</a>
+          <a class="hover:text-primary transition-colors" href="privacy-policy.html">Privacy Policy</a>
+          <a class="hover:text-primary transition-colors" href="Terms.html">Terms of Service</a>
+          <a class="hover:text-primary transition-colors" href="Contact-us.html">Contact Us</a>
+          <a class="hover:text-primary transition-colors" href="Cookie.html">Cookie Policy</a>
+          <a class="hover:text-primary transition-colors" href="Disclaimer.html">Disclaimer</a>
+        </div>
+        <p class="text-[11px] text-on-surface-variant/70">© 2026 DivCraft Hub · 100% Client-Side Developer &amp; Utility Tools.</p>
+      </footer>
+    </div>
+  </main>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Dark/Light Theme Sync
+      const themeToggleBtn = document.getElementById('themeToggleBtn');
+      const lightIcon = document.getElementById('themeIconLight');
+      const darkIcon = document.getElementById('themeIconDark');
+      const rootHtml = document.documentElement;
+
+      function updateThemeIcons(isDark) {
+        if (isDark) {
+          rootHtml.classList.add('dark');
+          lightIcon?.classList.remove('hidden');
+          darkIcon?.classList.add('hidden');
+        } else {
+          rootHtml.classList.remove('dark');
+          darkIcon?.classList.remove('hidden');
+          lightIcon?.classList.add('hidden');
+        }
+      }
+      updateThemeIcons(localStorage.getItem('devcraft_theme') === 'dark');
+      themeToggleBtn?.addEventListener('click', () => {
+        const willBeDark = !rootHtml.classList.contains('dark');
+        updateThemeIcons(willBeDark);
+        localStorage.setItem('devcraft_theme', willBeDark ? 'dark' : 'light');
+      });
+
+      // 2. OG Previewer & Tag Generator
+      const ogUrlInput = document.getElementById('ogUrlInput');
+      const ogTitleInput = document.getElementById('ogTitleInput');
+      const ogDescInput = document.getElementById('ogDescInput');
+      const ogSiteNameInput = document.getElementById('ogSiteNameInput');
+      const ogTypeSelect = document.getElementById('ogTypeSelect');
+      const ogImageInput = document.getElementById('ogImageInput');
+      const localImageFile = document.getElementById('localImageFile');
+      const twitterCardSelect = document.getElementById('twitterCardSelect');
+
+      const titleCounter = document.getElementById('titleCounter');
+      const descCounter = document.getElementById('descCounter');
+      const imageMetaBadge = document.getElementById('imageMetaBadge');
+      const ogChecklist = document.getElementById('ogChecklist');
+      const ogHealthStatus = document.getElementById('ogHealthStatus');
+      const ogCodeOutput = document.getElementById('ogCodeOutput');
+
+      let customObjectUrl = null;
+      let detectedDimensions = null;
+
+      function escapeAttr(val) {
+        return String(val ?? '')
+          .replace(/&/g, '&amp;')
+          .replace(/"/g, '&quot;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;');
+      }
+
+      function getDomain(urlStr) {
+        try {
+          const u = new URL(urlStr);
+          return u.hostname.replace(/^www\./, '');
+        } catch {
+          return 'example.com';
+        }
+      }
+
+      function inspectImageDimensions(src) {
+        if (!src) {
+          detectedDimensions = null;
+          imageMetaBadge.textContent = 'No image set';
+          return;
+        }
+        const img = new Image();
+        img.onload = () => {
+          detectedDimensions = { w: img.naturalWidth, h: img.naturalHeight };
+          const ratio = (img.naturalWidth / Math.max(1, img.naturalHeight)).toFixed(2);
+          imageMetaBadge.textContent = `${img.naturalWidth}×${img.naturalHeight}px (${ratio}:1)`;
+          renderChecklist();
+        };
+        img.onerror = () => {
+          detectedDimensions = null;
+          imageMetaBadge.textContent = 'Could not load preview image';
+          renderChecklist();
+        };
+        img.src = src;
+      }
+
+      function renderChecklist() {
+        const title = ogTitleInput.value.trim();
+        const desc = ogDescInput.value.trim();
+        const img = ogImageInput.value.trim();
+        const url = ogUrlInput.value.trim();
+
+        const checks = [
+          { ok: title.length >= 15 && title.length <= 75, label: 'og:title length (15–75 chars)' },
+          { ok: desc.length >= 50 && desc.length <= 180, label: 'og:description length (50–180)' },
+          { ok: Boolean(img), label: 'og:image present' },
+          { ok: Boolean(url), label: 'og:url present' }
+        ];
+
+        const passed = checks.filter(c => c.ok).length;
+        ogHealthStatus.textContent = `${passed}/${checks.length} Checks Passed`;
+        ogHealthStatus.className = passed === checks.length
+          ? 'text-[11px] font-mono px-2.5 py-1 rounded-full bg-emerald-500/10 text-emerald-500 font-semibold'
+          : 'text-[11px] font-mono px-2.5 py-1 rounded-full bg-amber-500/10 text-amber-500 font-semibold';
+
+        ogChecklist.innerHTML = checks.map(c => `
+          <div class="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-surface-container-lowest border border-outline/10">
+            <span class="${c.ok ? 'text-emerald-500' : 'text-amber-500'} font-bold">${c.ok ? '✓' : '!'}</span>
+            <span class="text-on-surface truncate">${c.label}</span>
+          </div>
+        `).join('');
+      }
+
+      function updateAll() {
+        const url = ogUrlInput.value.trim() || 'https://divcraft.online/';
+        const title = ogTitleInput.value.trim() || 'Open Graph Meta Tags & Social Preview Checker';
+        const desc = ogDescInput.value.trim() || 'Preview and generate clean Open Graph meta tags for social sharing.';
+        const site = ogSiteNameInput.value.trim() || 'DivCraft';
+        const type = ogTypeSelect.value;
+        const imgUrl = customObjectUrl || ogImageInput.value.trim() || 'logo.png';
+        const codeImgUrl = ogImageInput.value.trim() || 'https://divcraft.online/logo.png';
+        const twCard = twitterCardSelect.value;
+        const domain = getDomain(url);
+
+        titleCounter.textContent = `${ogTitleInput.value.length} / 65`;
+        descCounter.textContent = `${ogDescInput.value.length} / 160`;
+
+        // Update WhatsApp
+        document.getElementById('waDomain').textContent = domain;
+        document.getElementById('waTitle').textContent = title;
+        document.getElementById('waDesc').textContent = desc;
+        document.getElementById('waImg').src = imgUrl;
+
+        // Update X
+        document.getElementById('xDomain').textContent = domain;
+        document.getElementById('xTitle').textContent = title;
+        document.getElementById('xDesc').textContent = desc;
+        const xImg = document.getElementById('xImg');
+        const xImgWrap = document.getElementById('xImgWrap');
+        xImg.src = imgUrl;
+        xImgWrap.classList.toggle('hidden', twCard === 'summary');
+
+        // Update LinkedIn / FB
+        document.getElementById('liDomain').textContent = domain;
+        document.getElementById('liSite').textContent = site;
+        document.getElementById('liTitle').textContent = title;
+        document.getElementById('liDesc').textContent = desc;
+        document.getElementById('liImg').src = imgUrl;
+
+        // Generate Clean HTML OG Tags
+        ogCodeOutput.value = [
+          `<meta property="og:type" content="${escapeAttr(type)}" />`,
+          `<meta property="og:url" content="${escapeAttr(url)}" />`,
+          `<meta property="og:title" content="${escapeAttr(title)}" />`,
+          `<meta property="og:description" content="${escapeAttr(desc)}" />`,
+          `<meta property="og:site_name" content="${escapeAttr(site)}" />`,
+          `<meta property="og:image" content="${escapeAttr(codeImgUrl)}" />`,
+          `<meta name="twitter:card" content="${escapeAttr(twCard)}" />`,
+          `<meta name="twitter:title" content="${escapeAttr(title)}" />`,
+          `<meta name="twitter:description" content="${escapeAttr(desc)}" />`,
+          `<meta name="twitter:image" content="${escapeAttr(codeImgUrl)}" />`
+        ].join('\n');
+
+        renderChecklist();
+      }
+
+      [ogUrlInput, ogTitleInput, ogDescInput, ogSiteNameInput, ogTypeSelect, twitterCardSelect].forEach(el => {
+        el?.addEventListener('input', updateAll);
+        el?.addEventListener('change', updateAll);
+      });
+
+      ogImageInput?.addEventListener('input', () => {
+        if (customObjectUrl) {
+          URL.revokeObjectURL(customObjectUrl);
+          customObjectUrl = null;
+        }
+        inspectImageDimensions(ogImageInput.value.trim());
+        updateAll();
+      });
+
+      localImageFile?.addEventListener('change', (e) => {
+        const file = e.target.files?.[0];
+        if (!file) return;
+        if (customObjectUrl) URL.revokeObjectURL(customObjectUrl);
+        customObjectUrl = URL.createObjectURL(file);
+        inspectImageDimensions(customObjectUrl);
+        updateAll();
+      });
+
+      // Platform Tab Switcher
+      const platformTabs = document.querySelectorAll('.platform-tab');
+      const platformPreviews = document.querySelectorAll('.platform-preview');
+      platformTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          const target = tab.getAttribute('data-platform');
+          platformTabs.forEach(t => {
+            const active = t === tab;
+            t.className = active
+              ? 'platform-tab px-3 py-1.5 rounded-lg bg-primary text-white text-xs font-mono font-semibold transition-all'
+              : 'platform-tab px-3 py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface text-xs font-mono font-semibold transition-all';
+          });
+          platformPreviews.forEach(p => {
+            p.classList.toggle('hidden', p.id !== `preview-${target}`);
+          });
+        });
+      });
+
+      // Sample & Clear
+      document.getElementById('loadSampleOgBtn')?.addEventListener('click', () => {
+        if (customObjectUrl) {
+          URL.revokeObjectURL(customObjectUrl);
+          customObjectUrl = null;
+        }
+        ogUrlInput.value = 'https://divcraft.online/markdown-table-generator.html';
+        ogTitleInput.value = 'Markdown Table Generator & Formatter — Convert Excel & Export PNG';
+        ogDescInput.value = 'Build, align, and convert Markdown tables from Excel or CSV, preview live, toggle headerless tables, and export to PNG locally.';
+        ogSiteNameInput.value = 'DivCraft';
+        ogTypeSelect.value = 'website';
+        ogImageInput.value = 'https://divcraft.online/logo.png';
+        twitterCardSelect.value = 'summary_large_image';
+        inspectImageDimensions(ogImageInput.value);
+        updateAll();
+      });
+
+      document.getElementById('resetOgBtn')?.addEventListener('click', () => {
+        if (customObjectUrl) {
+          URL.revokeObjectURL(customObjectUrl);
+          customObjectUrl = null;
+        }
+        ogUrlInput.value = '';
+        ogTitleInput.value = '';
+        ogDescInput.value = '';
+        ogSiteNameInput.value = '';
+        ogImageInput.value = '';
+        updateAll();
+      });
+
+      // Copy & Download HTML Tags
+      const copyOgCodeBtn = document.getElementById('copyOgCodeBtn');
+      copyOgCodeBtn?.addEventListener('click', () => {
+        navigator.clipboard?.writeText(ogCodeOutput.value);
+        const orig = copyOgCodeBtn.innerHTML;
+        copyOgCodeBtn.innerHTML = `<span class="material-symbols-outlined text-[16px]">check</span><span>Copied!</span>`;
+        setTimeout(() => { copyOgCodeBtn.innerHTML = orig; }, 1500);
+      });
+
+      document.getElementById('downloadOgCodeBtn')?.addEventListener('click', () => {
+        const blob = new Blob([ogCodeOutput.value], { type: 'text/plain;charset=utf-8' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'open-graph-meta-tags.html';
+        a.click();
+        URL.revokeObjectURL(url);
+      });
+
+      // FAQ Accordion
+      document.querySelectorAll('.faq-item').forEach(item => {
+        const toggle = item.querySelector('.faq-toggle');
+        const content = item.querySelector('.faq-content');
+        const arrow = item.querySelector('.faq-arrow');
+        toggle?.addEventListener('click', () => {
+          const isClosed = content.classList.contains('hidden');
+          document.querySelectorAll('.faq-item').forEach(other => {
+            other.querySelector('.faq-content')?.classList.add('hidden');
+            const a = other.querySelector('.faq-arrow');
+            if (a) a.style.transform = 'rotate(0deg)';
+          });
+          if (isClosed) {
+            content.classList.remove('hidden');
+            if (arrow) arrow.style.transform = 'rotate(180deg)';
+          }
+        });
+      });
+
+      inspectImageDimensions(ogImageInput.value);
+      updateAll();
+    });
+  </script>
+</body>
+</html>
