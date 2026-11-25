@@ -14,6 +14,8 @@ DivCraft is a collection of fast, browser-based micro-tools built for developers
 | **Black Friday Deal Calc** | Discount & Tax Math | [Open Deal Calculator](https://divcraft.online/black-friday-deal-calculator.html) |
 | **Glassmorphism Lab** | CSS & UI Design | [Open Glassmorphism Lab](https://divcraft.online/glassmorphism-lab.html) |
 | **PX to REM Sandbox** | Responsive Typography | [Open PX to REM Tool](https://divcraft.online/#pxInputWidget) |
+| **OG Graph Meta Tags** | social | [OG Graph Meta Tags Tool](https://divcraft.online/og-meta-social-card-previewer.html) |
+| **Markdown Table Generator** | dev | [Markdown Table Generator Tool](https://divcraft.online/markdown-table-generator.html) |
 
 ## Site Information
 - [Privacy Policy](https://divcraft.online/privacy-policy.html)
